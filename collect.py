@@ -167,6 +167,56 @@ def google_news():
     return list(found.values())
 
 
+RELEVANT = re.compile(r"\bion\b|\biov\b|linius|o'hanlon|priority impact|swinburne", re.I)
+
+
+def gn_decode(link):
+    """Resolve a Google News article link to the publisher URL (best effort)."""
+    m = re.search(r"/articles/([^?/]+)", link or "")
+    if not m:
+        return None
+    gid = m.group(1)
+    sg = ts = None
+    for page_url in (f"https://news.google.com/articles/{gid}", f"https://news.google.com/rss/articles/{gid}"):
+        try:
+            _, page = get(page_url, "text/html")
+        except Exception:  # noqa: BLE001
+            continue
+        sg = re.search(r'data-n-a-sg="([^"]+)"', page)
+        ts = re.search(r'data-n-a-ts="([^"]+)"', page)
+        if sg and ts:
+            break
+    if not (sg and ts):
+        return None
+    inner = ["garturlreq", [["X", "X", ["X", "X"], None, None, 1, 1, "US:en", None, 1, None, None, None,
+                             None, None, 0, 1], "X", "X", 1, [1, 1, 1], 1, 1, None, 0, 0, None, 0],
+             gid, int(ts.group(1)), sg.group(1)]
+    body = "f.req=" + urllib.parse.quote(json.dumps([[["Fbv4je", json.dumps(inner), None, "generic"]]]))
+    req = urllib.request.Request(
+        "https://news.google.com/_/DotsSplashUi/data/batchexecute", data=body.encode(),
+        headers={"User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        txt = r.read().decode("utf-8", "replace")
+    chunk = txt.split("\n\n", 1)[1] if "\n\n" in txt else txt
+    url = json.loads(json.loads(chunk)[0][2])[1]
+    return url if isinstance(url, str) and url.startswith("http") else None
+
+
+def resolve_google_links(items):
+    done = 0
+    for it in items:
+        if done >= 30 or not RELEVANT.search(it.get("title") or ""):
+            continue
+        try:
+            real = gn_decode(it.get("link"))
+            if real:
+                it["google_link"], it["link"] = it["link"], real
+                done += 1
+        except Exception as e:  # noqa: BLE001
+            it["decode_error"] = f"{type(e).__name__}"[:60]
+    return done
+
+
 def bing_news():
     found = {}
     for q in ('"ION Video"', '"ASX: IOV"'):
@@ -245,6 +295,9 @@ def main():
     out["asx_key_stats"] = attempt("asx_key_stats", lambda: asx_json("key-statistics"))
     out["asx_announcements"] = attempt("asx_announcements", asx_announcements)
     out["news_google"] = attempt("google_news", google_news)
+    if out["news_google"]:
+        out["google_links_resolved"] = attempt("google_link_resolve",
+                                               lambda: resolve_google_links(out["news_google"]))
     out["news_bing"] = attempt("bing_news", bing_news)
     out["reddit"] = attempt("reddit", reddit)
     out["hotcopper"] = attempt("hotcopper", hotcopper)
