@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install the PDF reader for register notices
-        run: pip install --quiet pypdf
+        run: pip install --quiet "pypdf[crypto]"
       - name: Collect
         env:
           NEWS_WINDOW: ${{ inputs.backfill && '30d' || '3d' }}
