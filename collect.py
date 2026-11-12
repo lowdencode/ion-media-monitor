@@ -29,7 +29,7 @@ NEWS_QUERIES = [
     '"ION Video"',
     '"ASX:IOV" OR "ASX: IOV" OR "IOV.AX"',
     '"ion.video"',
-    'Linius video',
+    '"Linius Technologies" OR "Linius Video"',
     '"Finbar O\'Hanlon"',
     '"programmable video" OR "virtual video" ION',
     '"Priority Impact" Swinburne video',
@@ -38,16 +38,14 @@ NEWS_EDITIONS = [("AU", "en-AU", "AU:en"), ("US", "en-US", "US:en")]
 
 RATINGS = {
     "Morningstar": "https://www.morningstar.com.au/investments/security/asx/IOV",
-    "TipRanks": "https://www.tipranks.com/stocks/au:iov/forecast",
-    "Simply Wall St": "https://simplywall.st/stocks/au/software/asx-iov/ion-video-shares",
-    "Stockopedia": "https://www.stockopedia.com/share-prices/ion-video-ASX:IOV",
-    "Investing.com": "https://www.investing.com/equities/firestrike-resources-ltd-technical",
     "Market Index": "https://www.marketindex.com.au/asx/iov",
 }
+# TipRanks, Simply Wall St, Stockopedia and Investing.com block GitHub's servers;
+# the daily run checks those by web search on Mondays.
 RATING_WORDS = re.compile(
     r"(price target|target price|fair value|consensus|analyst|rating|stockrank|"
     r"snowflake|strong buy|strong sell|\bbuy\b|\bhold\b|\bsell\b|undervalued|"
-    r"overvalued|momentum|broker|coverage|star rating|moat)", re.I)
+    r"overvalued|momentum|broker|coverage|star rating|moat|\brank\b|stock score)", re.I)
 
 
 def get(url, accept="*/*", timeout=25):
