@@ -217,6 +217,48 @@ def resolve_google_links(items):
     return done
 
 
+ERROR_TERMS = {
+    "calls ION a compression company": r"compression (?:company|technology|tech)",
+    "calls ION a platform": r"\b(?:its|the|ION's|Ion's) (?:video )?platform\b",
+    "says six patent families": r"\b(?:six|6) patent families\b",
+    "names Linius": r"\bLinius\b",
+    "names Vattenfall": r"\bVattenfall\b",
+    "spells Fossefall as Fossenfall": r"\bFossenfall\b",
+    "gives the tender in US dollars": r"US\$\s?1 ?(?:million|m)\b",
+}
+
+
+def meta(page, *names):
+    for n in names:
+        m = re.search(r'<meta[^>]+(?:property|name)=["\']' + re.escape(n) +
+                      r'["\'][^>]+content=["\']([^"\']+)', page, re.I) or \
+            re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']' +
+                      re.escape(n) + r'["\']', page, re.I)
+        if m:
+            return html.unescape(m.group(1)).strip()
+    return None
+
+
+def enrich(items, cap=15):
+    """Add the publisher's own description and any known error phrases, never article text."""
+    n = 0
+    for it in items:
+        link = it.get("link") or ""
+        if n >= cap or "news.google.com" in link or not RELEVANT.search(it.get("title") or ""):
+            continue
+        n += 1
+        try:
+            _, page = get(link, "text/html")
+            text = strip_html(page)
+            it["description"] = (meta(page, "og:description", "description", "twitter:description") or "")[:300]
+            it["published_meta"] = meta(page, "article:published_time", "datePublished")
+            it["author"] = meta(page, "author", "article:author")
+            it["error_terms"] = [k for k, rx in ERROR_TERMS.items() if re.search(rx, text, re.I)]
+        except Exception as e:  # noqa: BLE001
+            it["enrich_error"] = f"{type(e).__name__}: {e}"[:80]
+    return n
+
+
 def bing_news():
     found = {}
     for q in ('"ION Video"', '"ASX: IOV"'):
@@ -299,6 +341,10 @@ def main():
         out["google_links_resolved"] = attempt("google_link_resolve",
                                                lambda: resolve_google_links(out["news_google"]))
     out["news_bing"] = attempt("bing_news", bing_news)
+    recent_cut = (now - dt.timedelta(days=3)).isoformat()
+    fresh = [it for it in (out["news_google"] or []) + (out["news_bing"] or [])
+             if str(it.get("published", "")) >= recent_cut]
+    out["articles_enriched"] = attempt("article_enrich", lambda: enrich(fresh))
     out["reddit"] = attempt("reddit", reddit)
     out["hotcopper"] = attempt("hotcopper", hotcopper)
     out["ratings"] = {n: attempt(f"rating:{n}", lambda n=n, u=u: rating_page(n, u))
