@@ -1,16 +1,8 @@
 {
- "fetched_at_utc": "2026-11-12T03:36:08+00:00",
- "melbourne_date": "2026-11-12",
+ "fetched_at_utc": "2026-11-12T23:31:09+00:00",
+ "melbourne_date": "2026-11-13",
  "price_yahoo": {
   "sessions": [
-   {
-    "date": "2026-08-12",
-    "open": 0.45500001311302185,
-    "high": 0.4749999940395355,
-    "low": 0.4350000023841858,
-    "close": 0.475,
-    "volume": 19063
-   },
    {
     "date": "2026-08-13",
     "open": 0.47999998927116394,
@@ -534,17 +526,25 @@
    {
     "date": "2026-11-12",
     "open": 0.5899999737739563,
-    "high": 0.6100000143051147,
+    "high": 0.6150000095367432,
     "low": 0.5899999737739563,
     "close": 0.6,
-    "volume": 83683
+    "volume": 119143
+   },
+   {
+    "date": "2026-11-13",
+    "open": 0.6100000143051147,
+    "high": 0.6100000143051147,
+    "low": 0.6000000238418579,
+    "close": 0.605,
+    "volume": 46364
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.6,
-   "regularMarketTime": 1794453065,
+   "regularMarketPrice": 0.605,
+   "regularMarketTime": 1794525037,
    "previousClose": null,
-   "chartPreviousClose": 0.475,
+   "chartPreviousClose": 0.435,
    "fiftyTwoWeekHigh": 0.67,
    "fiftyTwoWeekLow": 0.1,
    "currency": "AUD"
@@ -555,10 +555,6 @@
   "asx200": {
    "symbol": "^AXJO",
    "sessions": [
-    {
-     "date": "2026-10-12",
-     "close": 8783.2
-    },
     {
      "date": "2026-10-13",
      "close": 8783.9
@@ -648,12 +644,12 @@
      "close": 9153.2
     },
     {
-     "date": "2026-11-12",
-     "close": 9122.3
+     "date": "2026-11-13",
+     "close": 9102.7
     }
    ],
-   "price": 9122.3,
-   "market_time_utc": "2026-11-12T03:15+00:00",
+   "price": 9102.7,
+   "market_time_utc": "2026-11-12T23:10+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -661,10 +657,6 @@
   "asx_tech": {
    "symbol": "^AXIJ",
    "sessions": [
-    {
-     "date": "2026-10-12",
-     "close": 1722.9
-    },
     {
      "date": "2026-10-13",
      "close": 1647.6
@@ -754,12 +746,12 @@
      "close": 1832.1
     },
     {
-     "date": "2026-11-12",
-     "close": 1861.3
+     "date": "2026-11-13",
+     "close": 1817.0
     }
    ],
-   "price": 1861.3,
-   "market_time_utc": "2026-11-12T03:15+00:00",
+   "price": 1817.0,
+   "market_time_utc": "2026-11-12T23:10+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -767,10 +759,6 @@
   "sp500": {
    "symbol": "^GSPC",
    "sessions": [
-    {
-     "date": "2026-10-12",
-     "close": 7807.24
-    },
     {
      "date": "2026-10-13",
      "close": 7805.45
@@ -858,10 +846,14 @@
     {
      "date": "2026-11-11",
      "close": 7619.38
+    },
+    {
+     "date": "2026-11-12",
+     "close": 7592.4
     }
    ],
-   "price": 7619.38,
-   "market_time_utc": "2026-11-11T21:42+00:00",
+   "price": 7592.4,
+   "market_time_utc": "2026-11-12T21:58+00:00",
    "state": "closed",
    "exchange_tz": "America/New_York",
    "name": "S&P 500"
@@ -869,10 +861,6 @@
   "nasdaq": {
    "symbol": "^IXIC",
    "sessions": [
-    {
-     "date": "2026-10-12",
-     "close": 27245.9
-    },
     {
      "date": "2026-10-13",
      "close": 27204.38
@@ -960,10 +948,14 @@
     {
      "date": "2026-11-11",
      "close": 25466.19
+    },
+    {
+     "date": "2026-11-12",
+     "close": 25366.09
     }
    ],
-   "price": 25466.19,
-   "market_time_utc": "2026-11-11T22:15+00:00",
+   "price": 25366.094,
+   "market_time_utc": "2026-11-12T22:15+00:00",
    "state": "closed",
    "exchange_tz": "America/New_York",
    "name": "Nasdaq"
@@ -972,36 +964,36 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.605,
-  "priceBid": 0.59,
-  "priceChange": 0.010000000000000009,
-  "priceChangePercent": 1.6949152542372898,
-  "priceLast": 0.6,
+  "priceAsk": 0.61,
+  "priceBid": 0.5650000000000001,
+  "priceChange": 0.0050000000000000044,
+  "priceChangePercent": 0.8333333333333341,
+  "priceLast": 0.605,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 83683,
+  "volume": 46364,
   "xid": "35079877",
-  "marketCap": 83468695,
+  "marketCap": 84883418,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.605,
-  "priceBid": 0.59,
-  "priceClose": 0.59,
+  "priceAsk": 0.61,
+  "priceBid": 0.5650000000000001,
+  "priceClose": 0.6,
   "priceDayHigh": 0.61,
-  "priceDayLow": 0.59,
+  "priceDayLow": 0.6,
   "priceFiftyTwoWeekHigh": 0.67,
   "priceFiftyTwoWeekLow": 0.1,
-  "volumeAverage": 80089.895349,
+  "volumeAverage": 80917.372093,
   "cashFlow": -3.2096,
   "earningsPerShare": -0.05489,
   "freeCashFlowYield": -1.00000010000001e-05,
   "priceEarningsRatio": -99999.99,
   "priceToCash": -99999.99,
-  "enterprisevalue": 73.50208,
+  "enterprisevalue": 82.69778,
   "totalAssets": 1.3957,
   "totalLiabilities": 0.54195,
   "opCashFlowRevTTM": -954.2725,
@@ -1090,15 +1082,15 @@
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
-   "title": "Ion Video Ltd to Issue 2 Million Shares and 3.2 Million Options at $0.50 on 18 December 2026 - Kalkine",
-   "link": "https://kalkine.com.au/news/announcements/ion-video-ltd-to-issue-2-million-shares-and-32-million-options-at-050-on-18-december-2026",
+   "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
    "published": "2026-11-11T01:32:27+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5",
+   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
@@ -1114,28 +1106,6 @@
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
-   "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
-   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
-   "published": "2026-11-11T01:32:27+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQ2F5MzEtdVVYdFpxSWFTMklxSXQzcm1JRnBPRFZZanZKLXlNdzQ5V1lPV3UtVlUwemlqcG85cFJuNndEbVZCQzdac2JzczViaVBybHJ4bjltTDFsN0g1cGhwUlJyb1VweG9vX1RiOS1Ud01mZ1ZFSHlyZFczRkxoSjgxN1pNWTlxekozQVBPNnZjdlV0OHl1NmdxSEZiZVZMYVNkcVhvOWJjaHFoWW92RjZ1YW1rczRleFY0NA?oc=5",
-   "published": "2026-11-11T05:50:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "WiseTech Global Limited (ASX:WTC): How Are e2open Integration and AI Reshaping FY27 Margins? - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSUFrOUxXXzUzLU1URXRybFRoRE5kbXFvOFFQRHBtNW1lakRqTDFEa2FoSlVreGJ0Qlh3RkFwMTdxU0VJc2dTVWlJVEgwT3QwQU9XY3hrSm9CVDVZUnp2WnVzbjJYamdfUW41ZDlSYW9VSHo1SWZDM29BYWRjbDJNTHl0VVE1dVY2QUZ0d1JwdTY3R3NXRDAtcjIyWU1oTTQwRHpQR0o2NWtfOE02S1ZHM3VxeGVtNnM3eG9JRW03QWRPS0U0UUQ4MDJYWFZCTG9qRkE?oc=5",
    "published": "2026-11-11T06:15:00+00:00",
@@ -1149,6 +1119,26 @@
    "title": "Tuas Limited (ASX:TUA): How Will Singapore’s Spectrum Review Affect Its FY27 Plans? - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUHFzVG9fN2hJQ2JBemJweWItZ3FxVGZKWGIxRFpCMVplUE1BcDhralk2RUdkNDVITWo1eWg1b191MjctS0JVYXJEWHpOOHVTWjZld2NSYmtvMjBuRUlxd1VnQ3N0cTJTbG9JTldCMWF0NHY3SGswNjNWV0lFSjF1MkpMQ1JfbFE5dkFkVUk5MEhKeFBkX24tX3R0ZHdsNUsxWmZyWEE2SGx5MkVBRFpWRFAyWjFXeVVKeHJJdTBiTU5POVE5?oc=5",
    "published": "2026-11-11T06:15:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNX0pTUWlWTDJkWGRlZE5RTWVkdno1RjhaR0hleElmZzJqZ1VVWE5aWHNkUzhyNC1zaE9BMGtFN3dKYTN1aFoxVFZlRDgxWEM5Q1JjdlhGZDhYMm9UajJFVXNId3d5OTRmUmE3YVp5bktZS0NYRlo5eHVBc3VDSVRHYXpRbjhyMHJINXNvdWc1azhpQ0c0eFpwSHF0NmRTelZ3Q1QtM2dMZ09rODJlcVRJ?oc=5",
+   "published": "2026-11-11T05:50:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "COSOL Limited (ASX:COS): Can Rail Contracts Extend Its FY26 Margin Recovery? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWEZFYy1lNDFybGVoUU95aTV2dEQ1bXZGRXhkMHBnd2c5Y2ROZTlIZE1LczdoUllDblh1S2VKZ0pBbXZrN0p0X19TR1lWNG5iU2l6ZTNqMlFIb3RRcWFleXpMZG9WT1JxT3hKd1N6Wldqa3Q2Y1k1UmVyeDVBZDRTSjdaV01uakR2MkxVOUloNUU2RjdRMEpqTGN6Wm5nUmtGZ1BWRlc1U3pBaUUwMTkw?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
@@ -1176,9 +1166,19 @@
    "via": "google_news",
    "google_link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0YwSDRueDFoTWpvWDFYa2ZVSnRjZE9lMUZyZU50SU5YU1FsNF9lbF9TMTUtWTRfWnVxc1hSa0Q2ZFZJS0UzWHFtOFRBbUVkS2xvXzV5MV9GZjMtcEhEMU5rdTdaR2pwMDhpS1hMMUFmU0dQZ1JXNWRQckRpV1k0YkhVMk14N3h1LTY0amk0MVJWUkNHaDhFTGhhNFJIZU5rODFwcHhKaUREX3ZHZFZRbmY0U21DYVRvbmNFbEloMENsOXgzVlJ0WDlha2c?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Metallium Limited (ASX:MTM): Texas Reactor Tests and the PCB Commercialisation Plan - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOFJXS0s1QUFVWWJ1WGJYRXZRWTNWMWpoMVJ2X1F5QU1XenJxUDVhVHVubVo4cVU4bHJ2OTYxb1lZVHVXbTdIME43b21oTUtLaS1wZENXYkhEQW0tUkluMG1NcjNEdXN1ZXNONk5sLXI3YjhnMmhfdThKSVVldmRYVG1meEZhSHAydUNTTDkxTEVBc3I5ajBHQU90QWhDZ3IwRUtGN0tXQnkyS2FlZi12cDV1bW1NYll2bXc?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
   }
  ],
- "google_links_resolved": 5,
+ "google_links_resolved": 4,
  "news_bing": [
   {
    "title": "Ion Video explains the future of AI-powered content - ICYMI",
@@ -1197,14 +1197,6 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video Cuts Debt with Early Note Conversion to Equity",
-   "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/1128389/ion-video-cuts-debt-with-early-note-conversion-to-equity/",
-   "published": "2026-05-10T09:42:00+00:00",
-   "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
    "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
    "published": "2026-10-27T23:49:00+00:00",
@@ -1217,6 +1209,22 @@
    "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
    "published": "2026-02-26T16:19:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video Cuts Debt with Early Note Conversion to Equity",
+   "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/1128389/ion-video-cuts-debt-with-early-note-conversion-to-equity/",
+   "published": "2026-05-10T09:42:00+00:00",
+   "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Criterion: The ASX minnow with a solution for on-the-nose ‘Big DC’",
+   "link": "https://www.msn.com/en-au/money/markets/criterion-the-asx-minnow-with-a-solution-for-on-the-nose-big-dc/ar-AA2gS5z8",
+   "published": "2026-11-06T01:30:26+00:00",
+   "snippet": "Data centres are on the nose politically, but demand for their server capacity is unlikely to abate. Some companies seek ... Read More The post Criterion: The ASX minnow with a solution for ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1248,27 +1256,27 @@
    "title": "Ion Video Stock Price History",
    "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data",
    "published": "2026-10-10T17:00:00+00:00",
-   "snippet": "The average daily trading volume for Ion Video (IOV) is 165,426. The opening price for Ion Video today was 0.525.",
+   "snippet": "The average daily trading volume for Ion Video (IOV) is 119,143. The opening price for Ion Video today was 0.590.",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
   {
-   "title": "Ion Video Ltd (ASX:IOV)",
-   "link": "https://kalkinemedia.com/au/companies/asx-iov",
-   "published": "2026-09-17T17:00:00+00:00",
-   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
-   "query": "\"ASX: IOV\"",
+   "title": "Ion Video",
+   "link": "https://www.businessnews.com.au/Company/Ion-Video",
+   "published": "2026-04-05T01:43:00+00:00",
+   "snippet": "Get notifications in MyBN when activity occurs. Yes. Corporate subscriptions are available for teams and organisations, with discounted rates as user numbers increase. Pricing starts from $1,625 + GST ...",
+   "query": "\"ION Video\"",
    "via": "bing_news"
   }
  ],
- "articles_enriched": 5,
+ "articles_enriched": 4,
  "news_window": "3d",
  "reddit": null,
  "ratings": {
   "Morningstar": {
    "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
    "status": 200,
-   "text_len": 3870,
+   "text_len": 3888,
    "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
    "snippets": [
     " Stock market news and analysis Australian Market News US Market News ASX Today How to invest in stocks? Stocks News & Analysis stocks Two cheap wide moat ASX shares These shares are trading at a discount to our fair value discount and have sustainable competitive advantages. Morningstar | 11 November 2026 stocks Anthropic: Are the shares undervalued given the IPO pricing range? There may be meani"
@@ -1282,8 +1290,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 255 ASX RANK 1,062 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +196.28% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,062 of 2,356 Sector Rank 75 of 255 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 255 ASX RANK 1,065 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +198.55% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,065 of 2,356 Sector Rank 75 of 255 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
