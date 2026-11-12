@@ -1,0 +1,37 @@
+name: collect
+
+# Runs at 18:07 and 19:07 UTC: 5:07am and 6:07am in Melbourne during daylight
+# saving, 4:07am and 5:07am the rest of the year. The second run refreshes the
+# first; the 6:45am report reads whichever landed last.
+on:
+  schedule:
+    - cron: "7 18 * * *"
+    - cron: "7 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect
+        run: python collect.py
+      - name: Commit data
+        run: |
+          git config user.name "ion-monitor-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "data $(date -u +%Y-%m-%dT%H:%MZ)" || echo "no changes"
+          git pull --rebase --quiet || true
+          git push
