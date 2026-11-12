@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-12T03:32:57+00:00",
+ "fetched_at_utc": "2026-11-12T03:36:08+00:00",
  "melbourne_date": "2026-11-12",
  "price_yahoo": {
   "sessions": [
@@ -649,11 +649,11 @@
     },
     {
      "date": "2026-11-12",
-     "close": 9122.2
+     "close": 9122.3
     }
    ],
-   "price": 9122.2,
-   "market_time_utc": "2026-11-12T03:12+00:00",
+   "price": 9122.3,
+   "market_time_utc": "2026-11-12T03:15+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -755,11 +755,11 @@
     },
     {
      "date": "2026-11-12",
-     "close": 1862.1
+     "close": 1861.3
     }
    ],
-   "price": 1862.1,
-   "market_time_utc": "2026-11-12T03:12+00:00",
+   "price": 1861.3,
+   "market_time_utc": "2026-11-12T03:15+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -1061,7 +1061,7 @@
    "price_sensitive": false,
    "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03157041-6A1353242?access_token=83ff96335c2d45a094df02a206a39ff4",
    "register_kind": "substantial",
-   "notice_error": "DependencyError: cryptography>=3.1 is required for AES algorithm"
+   "notice_text": "603 Page 1 of 4 15 July 2001 Form 603 Corporations Act 2001 Section 671B Notice of initial substantial holder To Company Name/Scheme ION Video Limited ACN/ARSN ABN 84 149 796 332 1. Details of substantial holder (1) Name Technical Investing Pty Ltd ACN/ARSN (if applicable) ACN 111 646 032 The holder became a substantial holder on 7 October 2026 2. Details of voting power The total number of votes attached to all the voting shares in the company or voting interests in the scheme that the substantial holder or an associate (2) had a relevant interest (3) in on the date the substantial holder became a substantial holder are as follows: Class of securities (4) Number of securities Person's votes (5) Voting power (6) Fully Paid Ordinary (FPO) shares 8,050,123 8,050,123 5.7% 3. Details of relevant interests The nature of the relevant interest the substantial holder or an associate had in the following votin g securities on the date the substantial holder became a substantial holder are as follows: Holder of relevant interest Nature of relevant interest (7) Class and number of securities Technical Investing Pty Ltd As trustee for Technical Investing Absolute Return Fund 860,764 FPO Technical Investing Pty Ltd As trustee for TI Family Wealth Fund 95,305 FPO Technical Investing Pty Ltd As trustee for TI High Conviction Fund 250,000 FPO Technical Investing Pty Ltd As trustee for TI Growth Fund 5,934,400 FPO Technical Investing Pty Ltd beneficially owns 8,000 FPO Craig Scheef As trustee for CAS super fund 520,440 FPO Craig Scheef As trustee for CAS family trust 381,214 FPO 4. Details of present registered holders The persons registered as holders of the securities referred to in paragraph 3 above are as follows: Holder of relevant interest Registered holder of securities Person entitled to be registered as holder (8) Class and number of securities Technical Investing Pty Ltd One Managed Investment Funds Ltd One Managed Investment Funds Ltd 7,045,164 FPO Technical Investing Pty Ltd Technical Investing Pty Ltd Technical Investing Pty Ltd 103,305 FPO Craig Scheef Craig Scheef Craig Scheef 901,654 FPO 5. Consideration For personal use only 603 Page 2 of 4 15 July 2001 The consideration paid for each relevant interest referred to in paragraph 3 above, and acquired in the four months prior to the day that the substantial holder became a substantial holder is as follows: Holder of relevant interest Date of acquisition Consideration (9) Class and number of securities Cash Non-cash See attached 6. Associates The reasons the persons named in paragraph 3 above are associates of the substantial holder are as follows: Name and ACN/ARSN (if applicable) Nature of association Technical Investing Pty Ltd Trustee of investment funds Craig Scheef Director of Technical Investing Pty Ltd 7. Addresses The addresses of persons named in this form are as follows: Name Address Technical Investing Pty Ltd Level 6, 350 Collins St, Melbourne Vic 3000 Craig Scheef 1 Spencer Place Richmo"
   },
   {
    "date": "2026-10-30T06:38:21.000Z",
@@ -1253,11 +1253,11 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video (IOV) Stock Split History",
-   "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data-splits",
-   "published": "2026-09-17T23:05:00+00:00",
-   "snippet": "Explore the full Ion Video stock split history. Explore the IOV stock split dates, split ratios, and view how many times Ion Video has split its shares.",
-   "query": "\"ION Video\"",
+   "title": "Ion Video Ltd (ASX:IOV)",
+   "link": "https://kalkinemedia.com/au/companies/asx-iov",
+   "published": "2026-09-17T17:00:00+00:00",
+   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
+   "query": "\"ASX: IOV\"",
    "via": "bing_news"
   }
  ],
