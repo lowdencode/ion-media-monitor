@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-12T02:51:26+00:00",
+ "fetched_at_utc": "2026-11-12T02:54:46+00:00",
  "melbourne_date": "2026-11-12",
  "price_yahoo": {
   "sessions": [
@@ -665,7 +665,8 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5"
+   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
    "title": "Ion Video Ltd to Issue 2 Million Shares and 3.2 Million Options at $0.50 on 18 December 2026 - Kalkine",
@@ -676,7 +677,8 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5"
+   "google_link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
    "title": "ION Video raises $692K from Priority Impact founder ahead of Nordic trial - Dealroom",
@@ -687,7 +689,8 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOVFodU9DMElUSXhJRy0wLUpMb2ZqXzJVamNFMkE0OEthTmUxeDJhbFJRdUJzQldVSUUwcEFwdjRlTllGSXdYemgxbUFhVllzeHpkam94RkctQVRkVHBFcGpOWkJ4Sk5XNU9xZlZvOG5YN0JJRlphMXg2TFdvMVJUS2tqdHhBS1JvS3RJZU5QdXBIRkptUkx0a0FqcjI4X25DdkozemRxQ3pCQQ?oc=5"
+   "google_link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOVFodU9DMElUSXhJRy0wLUpMb2ZqXzJVamNFMkE0OEthTmUxeDJhbFJRdUJzQldVSUUwcEFwdjRlTllGSXdYemgxbUFhVllzeHpkam94RkctQVRkVHBFcGpOWkJ4Sk5XNU9xZlZvOG5YN0JJRlphMXg2TFdvMVJUS2tqdHhBS1JvS3RJZU5QdXBIRkptUkx0a0FqcjI4X25DdkozemRxQ3pCQQ?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
    "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
@@ -698,7 +701,8 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5"
+   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
    "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
@@ -749,7 +753,8 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0YwSDRueDFoTWpvWDFYa2ZVSnRjZE9lMUZyZU50SU5YU1FsNF9lbF9TMTUtWTRfWnVxc1hSa0Q2ZFZJS0UzWHFtOFRBbUVkS2xvXzV5MV9GZjMtcEhEMU5rdTdaR2pwMDhpS1hMMUFmU0dQZ1JXNWRQckRpV1k0YkhVMk14N3h1LTY0amk0MVJWUkNHaDhFTGhhNFJIZU5rODFwcHhKaUREX3ZHZFZRbmY0U21DYVRvbmNFbEloMENsOXgzVlJ0WDlha2c?oc=5"
+   "google_link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0YwSDRueDFoTWpvWDFYa2ZVSnRjZE9lMUZyZU50SU5YU1FsNF9lbF9TMTUtWTRfWnVxc1hSa0Q2ZFZJS0UzWHFtOFRBbUVkS2xvXzV5MV9GZjMtcEhEMU5rdTdaR2pwMDhpS1hMMUFmU0dQZ1JXNWRQckRpV1k0YkhVMk14N3h1LTY0amk0MVJWUkNHaDhFTGhhNFJIZU5rODFwcHhKaUREX3ZHZFZRbmY0U21DYVRvbmNFbEloMENsOXgzVlJ0WDlha2c?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   }
  ],
  "google_links_resolved": 5,
@@ -819,22 +824,6 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video Limited Announces Board Changes",
-   "link": "https://www.marketscreener.com/news/ion-video-limited-announces-board-changes-ce785cd8d88cff24",
-   "published": "2026-10-18T18:22:00+00:00",
-   "snippet": "ION Video Limited (ION or the Company) announced that Director Brent Jones had changed role on ION?s Board of Directors from Non-Executive Chair to Executive Chair with effect from October 19, 2026.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video",
-   "link": "https://www.businessnews.com.au/Company/Ion-Video",
-   "published": "2026-04-05T01:43:00+00:00",
-   "snippet": "Get notifications in MyBN when activity occurs. Yes. Corporate subscriptions are available for teams and organisations, with discounted rates as user numbers increase. Pricing starts from $1,625 + GST ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Ion Video Stock Price History",
    "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data",
    "published": "2026-10-10T17:00:00+00:00",
@@ -843,14 +832,15 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video Ltd (ASX:IOV)",
-   "link": "https://kalkinemedia.com/au/companies/asx-iov",
-   "published": "2026-09-17T17:00:00+00:00",
-   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
-   "query": "\"ASX: IOV\"",
+   "title": "Ion Video (IOV) Stock Split History",
+   "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data-splits",
+   "published": "2026-09-17T23:05:00+00:00",
+   "snippet": "Explore the full Ion Video stock split history. Explore the IOV stock split dates, split ratios, and view how many times Ion Video has split its shares.",
+   "query": "\"ION Video\"",
    "via": "bing_news"
   }
  ],
+ "articles_enriched": 5,
  "reddit": null,
  "hotcopper": null,
  "ratings": {
@@ -914,6 +904,10 @@
   },
   {
    "source": "bing_news",
+   "ok": true
+  },
+  {
+   "source": "article_enrich",
    "ok": true
   },
   {
