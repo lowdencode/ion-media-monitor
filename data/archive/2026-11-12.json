@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-12T02:49:36+00:00",
+ "fetched_at_utc": "2026-11-12T02:51:26+00:00",
  "melbourne_date": "2026-11-12",
  "price_yahoo": {
   "sessions": [
@@ -658,43 +658,47 @@
  "news_google": [
   {
    "title": "ION Video Limited (ASX:IOV): Nordic Data Centre Trials Put Video Virtualisation to the Test - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5",
+   "link": "https://kalkine.com.au/news/technology/ion-video-limited-asxiov-nordic-data-centre-trials-put-video-virtualisation-to-the-test",
    "published": "2026-11-11T05:49:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news"
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5"
   },
   {
    "title": "Ion Video Ltd to Issue 2 Million Shares and 3.2 Million Options at $0.50 on 18 December 2026 - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-ltd-to-issue-2-million-shares-and-32-million-options-at-050-on-18-december-2026",
    "published": "2026-11-11T01:32:27+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news"
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5"
   },
   {
    "title": "ION Video raises $692K from Priority Impact founder ahead of Nordic trial - Dealroom",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOVFodU9DMElUSXhJRy0wLUpMb2ZqXzJVamNFMkE0OEthTmUxeDJhbFJRdUJzQldVSUUwcEFwdjRlTllGSXdYemgxbUFhVllzeHpkam94RkctQVRkVHBFcGpOWkJ4Sk5XNU9xZlZvOG5YN0JJRlphMXg2TFdvMVJUS2tqdHhBS1JvS3RJZU5QdXBIRkptUkx0a0FqcjI4X25DdkozemRxQ3pCQQ?oc=5",
+   "link": "https://app.dealroom.co/news/note/ion-video-raises-692k-from-priority-impact-founder-ahead-of-nordic-trial",
    "published": "2026-11-10T23:26:34+00:00",
    "outlet": "Dealroom",
    "outlet_url": "https://app.dealroom.co",
    "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news"
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOVFodU9DMElUSXhJRy0wLUpMb2ZqXzJVamNFMkE0OEthTmUxeDJhbFJRdUJzQldVSUUwcEFwdjRlTllGSXdYemgxbUFhVllzeHpkam94RkctQVRkVHBFcGpOWkJ4Sk5XNU9xZlZvOG5YN0JJRlphMXg2TFdvMVJUS2tqdHhBS1JvS3RJZU5QdXBIRkptUkx0a0FqcjI4X25DdkozemRxQ3pCQQ?oc=5"
   },
   {
    "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
    "published": "2026-11-11T01:32:27+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news"
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5"
   },
   {
    "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
@@ -738,15 +742,17 @@
   },
   {
    "title": "ION Video Receives A$1 Million Investment Commitment From Priority Impact Founder - TipRanks",
-   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0YwSDRueDFoTWpvWDFYa2ZVSnRjZE9lMUZyZU50SU5YU1FsNF9lbF9TMTUtWTRfWnVxc1hSa0Q2ZFZJS0UzWHFtOFRBbUVkS2xvXzV5MV9GZjMtcEhEMU5rdTdaR2pwMDhpS1hMMUFmU0dQZ1JXNWRQckRpV1k0YkhVMk14N3h1LTY0amk0MVJWUkNHaDhFTGhhNFJIZU5rODFwcHhKaUREX3ZHZFZRbmY0U21DYVRvbmNFbEloMENsOXgzVlJ0WDlha2c?oc=5",
+   "link": "https://www.tipranks.com/news/company-announcements/ion-video-receives-a1-million-investment-commitment-from-priority-impact-founder",
    "published": "2026-11-10T22:37:59+00:00",
    "outlet": "TipRanks",
    "outlet_url": "https://www.tipranks.com",
    "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news"
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0YwSDRueDFoTWpvWDFYa2ZVSnRjZE9lMUZyZU50SU5YU1FsNF9lbF9TMTUtWTRfWnVxc1hSa0Q2ZFZJS0UzWHFtOFRBbUVkS2xvXzV5MV9GZjMtcEhEMU5rdTdaR2pwMDhpS1hMMUFmU0dQZ1JXNWRQckRpV1k0YkhVMk14N3h1LTY0amk0MVJWUkNHaDhFTGhhNFJIZU5rODFwcHhKaUREX3ZHZFZRbmY0U21DYVRvbmNFbEloMENsOXgzVlJ0WDlha2c?oc=5"
   }
  ],
+ "google_links_resolved": 5,
  "news_bing": [
   {
    "title": "Ion Video explains the future of AI-powered content - ICYMI",
@@ -773,18 +779,18 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
-   "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
-   "published": "2026-02-26T16:19:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
    "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
    "published": "2026-10-27T23:49:00+00:00",
    "snippet": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
+   "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
+   "published": "2026-02-26T16:19:00+00:00",
+   "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -821,11 +827,27 @@
    "via": "bing_news"
   },
   {
+   "title": "Ion Video",
+   "link": "https://www.businessnews.com.au/Company/Ion-Video",
+   "published": "2026-04-05T01:43:00+00:00",
+   "snippet": "Get notifications in MyBN when activity occurs. Yes. Corporate subscriptions are available for teams and organisations, with discounted rates as user numbers increase. Pricing starts from $1,625 + GST ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
    "title": "Ion Video Stock Price History",
    "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data",
    "published": "2026-10-10T17:00:00+00:00",
    "snippet": "The average daily trading volume for Ion Video (IOV) is 165,426. The opening price for Ion Video today was 0.525.",
    "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Ion Video Ltd (ASX:IOV)",
+   "link": "https://kalkinemedia.com/au/companies/asx-iov",
+   "published": "2026-09-17T17:00:00+00:00",
+   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
+   "query": "\"ASX: IOV\"",
    "via": "bing_news"
   }
  ],
@@ -884,6 +906,10 @@
   },
   {
    "source": "google_news",
+   "ok": true
+  },
+  {
+   "source": "google_link_resolve",
    "ok": true
   },
   {
