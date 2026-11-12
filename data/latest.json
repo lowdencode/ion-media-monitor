@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-12T02:54:46+00:00",
+ "fetched_at_utc": "2026-11-12T03:08:43+00:00",
  "melbourne_date": "2026-11-12",
  "price_yahoo": {
   "sessions": [
@@ -657,27 +657,71 @@
  ],
  "news_google": [
   {
-   "title": "ION Video Limited (ASX:IOV): Nordic Data Centre Trials Put Video Virtualisation to the Test - Kalkine",
-   "link": "https://kalkine.com.au/news/technology/ion-video-limited-asxiov-nordic-data-centre-trials-put-video-virtualisation-to-the-test",
-   "published": "2026-11-11T05:49:00+00:00",
+   "title": "Capital Moves in Focus: Count (ASX:CUP), ION Video (ASX:IOV) and Ceretas (ASX:CTS) - Kalkine",
+   "link": "https://kalkine.com.au/news/general-news/capital-moves-in-focus-count-asxcup-ion-video-asxiov-and-ceretas-asxcts",
+   "published": "2026-10-30T00:54:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5",
+   "google_link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaTU2OTZESWJINkh5V01CTjlzektkVEtyZ2RmZnIwcVdvcjBiaUw2eXpWYVAtdEl4YldILURYWE1tOFQwMmtFMDVrM0tWWnoyUU1OWW52MF9kWnlGaGkyQ3ptaVNjeFlkWUp6cWI0a0RTRjlKMnZQalRyTUpoTHpOel96WE5QVUFJU1FsQ2lydE42ZV9nTFNwSjVKY0JXZzhDb1VzWG9CdldQeXA3TkxyOXBB?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
-   "title": "Ion Video Ltd to Issue 2 Million Shares and 3.2 Million Options at $0.50 on 18 December 2026 - Kalkine",
-   "link": "https://kalkine.com.au/news/announcements/ion-video-ltd-to-issue-2-million-shares-and-32-million-options-at-050-on-18-december-2026",
-   "published": "2026-11-11T01:32:27+00:00",
+   "title": "ION Video eyes Nordic data centre trial with Priority Impact - ChannelLife Australia",
+   "link": "https://channellife.com.au/story/ion-video-eyes-nordic-data-centre-trial-with-priority-impact",
+   "published": "2026-10-28T07:00:00+00:00",
+   "outlet": "ChannelLife Australia",
+   "outlet_url": "https://channellife.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPV2RJMzE2WVVicHdJcUwtRHFPeEJYLTZDeUxDVE1rVUpRWUJUclZGVFF4c1FFdHhlNGlOQ3JGQmVDX25qc1lIaGwzUTNLWU5YcHhBUlR5NTVGbWZtNE9uSjY4UlJOOS1iM1NkVXZaandCMmhPUXF1VE1Ga1EyaDRVYlg0ME1lOGRkNXBSNktrUS16NzQ4ZUhsUQ?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 406: Not Acceptable"
+  },
+  {
+   "title": "ION establishes clear pathway to commercialisation: Nordic data centre partnership with minimum $1 million tender - iTWire",
+   "link": "https://itwire.com/it-industry-news/deals/ion-establishes-clear-pathway-to-commercialisation-nordic-data-centre-partnership-with-minimum-1-million-tender",
+   "published": "2026-10-28T07:00:00+00:00",
+   "outlet": "iTWire",
+   "outlet_url": "https://itwire.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOeXluMFNERndzaEtuZl8zajI2ZDdYS3AxcVNlRGJYYTVVVVVzMWFrN2hKMnhwcGZrMnZsemx6dm1fbTJiUFpSOFlZeGctUlFWX3JkaDdrSkhGTnVsdWk5RzlvTFNMcWkzdGZOUG42RXdpOWgyM0ozN0V5andtRkNadmZmV1BUdlJrSUE2OGlJVHk4bWpwVVA4eHdCemZVMXFMRGhFSElORXFtU0poXzVocDNyMzFwOFdwTkw0Ry1vbFdUT3BvUUlTbG5vbXA2OG5aaW1tS3pBSVZoOGZzTlNwZy12VmZsbzFk?oc=5",
+   "description": "Melbourne tech company ION Video ASX code IOV will partner with Swedish advisory and investment firm Priority Impact to commercialise ION’s technology which aims to...",
+   "published_meta": "2026-10-28T00:07:15.671Z",
+   "author": null,
+   "error_terms": [
+    "spells Fossefall as Fossenfall"
+   ]
+  },
+  {
+   "title": "Ion Video Ltd Estimates – ASX:IOV - TradingView",
+   "link": "https://www.tradingview.com/symbols/ASX-IOV/financials-estimates/?category=cash_flow",
+   "published": "2026-10-28T11:44:10+00:00",
+   "outlet": "TradingView",
+   "outlet_url": "https://www.tradingview.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOR2FjNFVMSmpRVXhPYmZfVjYwWGk1M3BRUTNQQ0dEN0JiQTVQRC1WWFpBZm4xSmZ0Zzd1SHQzZ0Y4SkxEMXFnNjNCdEo4RTRock9ZUHl0cnloN3JKQm5CZVI5ZlVjZHBUVFFPbjZEOHI5MHNZZnJRUjFENW1WeVhDZ0J5aERwUk5MQ2pDUA?oc=5",
+   "description": "See how Ion Video Ltd performed against analyst expectations and compare actual results with revenue, earnings, cash flow, and valuation estimates.",
+   "published_meta": null,
+   "author": null,
+   "error_terms": []
+  },
+  {
+   "title": "Ion Video (ASX:IOV) Pursues Nordic Data Centre Trial After Technology Partnership - Kalkine",
+   "link": "https://kalkine.com.au/news/growth-stocks/ion-video-asxiov-pursues-nordic-data-centre-trial-after-technology-partnership",
+   "published": "2026-11-03T02:25:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5",
+   "google_link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTjBKaGUxTF9lTThiOElSVnVJMG91ejBCZjAwbmhsTlU2Mno5ZnlmMUhRRDF2ZEtYRlUtNmlTLUtPN18xSVI0WkVDckM0ZE92b1JyaUpVbUpQaE1Ycl9wcFE0cFZhb0NWOVNHSll5MUlZaFhFLXFKWXliUEFBeWV1c19qYzZJa3k0d2JKMmh3NGhrV0lPU1ZBUFpvZDFnaVdWVVJ1OVNBT2xUWTMzbDVsQmdwa3cxbWtfQksyRQ?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
@@ -693,56 +737,142 @@
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
-   "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
-   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
+   "title": "Can ION Video (ASX:IOV) Break Into Data Centres? - Kalkine Media",
+   "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
+   "published": "2026-10-28T06:49:00+00:00",
+   "outlet": "Kalkine Media",
+   "outlet_url": "https://kalkinemedia.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQS1J6alZsbHROaDhoWlZERHhZTDJuajYxUnMtQWtKN3BDVjQ0R2NybGZWUXUxRF9uX1RJVUstTmc0TTFkR0k1SFprb0tMdDVaUm5xM3dmN3hwaGJ2bDcyTjM4SHZuVlExLXRlVFR0d1otQ0t4REZ0R3BScXNielh5Q0VYY19nd0tYdkpJQTBPMC11Y2FL?oc=5",
+   "description": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
+   "published_meta": null,
+   "author": null,
+   "error_terms": []
+  },
+  {
+   "title": "What Is Lifting ION Video (ASX:IOV) Shares Up 11% Today? - Kalkine",
+   "link": "https://kalkine.com.au/stock-analysis/technology/what-is-lifting-ion-video-asxiov-shares-up-11-today",
+   "published": "2026-10-30T07:00:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPM3Q1dUFGMWRvOXdoQVBhYWZiYVVRZFF3UlFGRHA5UTg3RWh0MkctNW95QS00U2pjZ0dWcEtrSUJ2OFFKUVE4RGVBWS1VbzB1dXppSU0yYk9KYS1qWDNBOWtGZUNLVnAwYUhwSkVIcHdheTFEUXJuVE1YZkF4ZnRuT2kyUGJsSFh2dUx1RVlwcXdxaGFpSW1jQV9JWkFBM0t1Rmc?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Ion Video Requests Trading Halt Pending Announcement On Strategic Validation Program - TradingView",
+   "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN46A0ES:0-ion-video-requests-trading-halt-pending-announcement-on-strategic-validation-program/",
+   "published": "2026-10-25T07:00:00+00:00",
+   "outlet": "TradingView",
+   "outlet_url": "https://www.tradingview.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNQW9tcFY3bm5nTXlkSFhDMGJ6R3VWZk1rYlRLRG4zdDRzVVR3SThyU1ZQYWlIdkZjMm8tR2hYODdKRUh0YldyY1JOS3d0dzNQM194Yi1pUm5PcDUwRXpYdzc1VWJidko3RlVCd2U3ZmtVUUpBeXZSOUNrMmRBeU9qdmhLMkstZVpUYUp1cERic2lEaHNqMnpla1BBMk91TFVfODh4bmt5YWVwRklHYlRlUC1UWUNqVmhmTXkxV0E2UEdqeFhRbmJMRHFJdzFMSC1CallKTElxRXhZLUFxVENJR0ZUWm1EQjNPRUE?oc=5",
+   "description": "Ion Video Ltd ASX:IOV:",
+   "published_meta": null,
+   "author": null,
+   "error_terms": []
+  },
+  {
+   "title": "ION Video Limited (ASX:IOV): Nordic Data Centre Trials Put Video Virtualisation to the Test - Kalkine",
+   "link": "https://kalkine.com.au/news/technology/ion-video-limited-asxiov-nordic-data-centre-trials-put-video-virtualisation-to-the-test",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION Video (ASX:IOV) Launches Data Centre Validation Trial with Swinburne University - Kalkine",
+   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-launches-data-centre-validation-trial-with-swinburne-university",
+   "published": "2026-10-28T07:00:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdGJFb19acURZbEhvalRlT3V1aFBsVVpFak1LLVdHSG82OUdEc2RlUzBmX2JZeEZRanZlWDZLQnhIM1RINWpyT0RWemFlOWYybEFVN09pRzJQdFhyNk8zVWRHeF9fQnE0QzFuUllQdXpZVDVkZFhrbVNoRldpZnhXZ0IyMl8ybHhKaTlrYXdxR0xueXdtSHNsTjBqazlZN1dPNE1VTDV0RHlOMjVWUUVBQVZzV3VKQzlSbEln?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Trial One of Six Is Live at ION Video (ASX:IOV), With a Nordic Door Opening - Kalkine",
+   "link": "https://kalkine.com.au/news/technology/trial-one-of-six-is-live-at-ion-video-asxiov-with-a-nordic-door-opening",
+   "published": "2026-10-28T05:10:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMU43dW5kcGNsdWkzSnUxYkZRQlJBZ2RTYWh4alFCT3FSWVA1SGJMMDlLZDNFUjZkWXVZLVgxSUlkMmFVNTRoRDBSNU1scnhfbGlSS0JrUExPODE3X1NMWGZpQTNDNWViQmFKR0t2MTFUVHY1VHl1cThLTUdzZExUc09rV281NmpNUWFHc1RVaGNJbXV5M0NSbUVkZDU2LVppUzZtNFNvX2NTbGJoT2kw?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Ion Video Ltd Enters Trading Halt Pending Material Commercial Agreement Announcement - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-ltd-enters-trading-halt-pending-material-commercial-agreement-announcement",
+   "published": "2026-10-26T07:00:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOb1FHS1BreFo2aGhIU1J2YW9XZ3oxOFowekp5enZCWkxtTHdKTUVHNUFOVlVhOUljWVFoMm12QjBwT0lHbWR3VUNySUFSV19XZFlXTnpMWWRmZ25ieF94eFE4WjBRZlZJdmZhTXBlS0E1MHdhTlZQSW1UOElsOFVSLWkwSDUxYkZoZDdzOWtSWWJZNnRPb3M5ZURpM2dFdFQ2WG5jRTZvOVQwRV9ZNTRtRHd1NnNyS1Y2c25iUnhzM2RKUk1T?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION Video Limited Receives Substantial Holder Notice from Technical Investing Pty Ltd with 5.7% Voting Power - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-limited-receives-substantial-holder-notice-from-technical-investing-pty-ltd-with-57-voting-power",
+   "published": "2026-11-02T00:19:20+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxONkNZSXFfeGU0RFM3TGlJZDJpVnFSUTNlT3RxQVByVHRSbDRpeE5MbXZPUm1RVnp4R281QWFZYkQxMFV5S1pidEFGdGhHUy1zLUs2cmstZ0ZyTm9HV29TZVpxZDlmVlBSNE0zbkpEVnZ1X2hwTDVxa1djS01UNlJwazVQb2NodS1TYUR5QUZJbmN3a2NKSTNtVVp6YWpZYTJDd3JIWjFJVnR6Wkt3RS13ZWNJbnJUT0d0YW9UczV6NGdXNDI2V0ZnZmh3ZDRLNTV0djBVaTBOMzlSNHgyRWhkaVVB?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION Video Launches Two-Phase Data Centre Validation Trial with Swinburne University and Nordic Partner Priority Impact - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-launches-two-phase-data-centre-validation-trial-with-swinburne-university-and-nordic-partner-priority-impact",
+   "published": "2026-10-27T23:15:02+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOdHI2cUhOZ1lyd1dxM1k5MVRHelFUT2ZuWTI4RkpzcUJrQXM3V3V2anNING9BQTlpQzNfbU82LW5fMUJncHFnRzhybE5LYzFfX19uMlBHV0lpNlpaOXZyalhXZXB3aG9WcjlBT2hoZm9XbWwtbU9SazlpaDJyZnRISGhmLTFucHJGNmhuNG9xUWNUc3Q5clFVVGZSdW5veGV2Y1R2cko3QkQ1LWU1QWctMW4xZFZzbHU2MVRPMHlLcFFNeFhlLWhDOHl6T0pyZFlCMnJPbUlaYnY2VUc3bnFtRnJMUzRNRm5WTFdiNnM0XzBVQQ?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Battery Materials Shares Move Higher: Firebird (ASX:FRB), AnteoTech (ASX:ADO) and ION Video (ASX:IOV) - Kalkine",
+   "link": "https://kalkine.com.au/stock-analysis/technology/battery-materials-shares-move-higher-firebird-asxfrb-anteotech-asxado-and-ion-video-asxiov",
+   "published": "2026-10-30T07:00:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQRUZyTG9JYzN3UUk4MjAyRkZnZnUtU25jVlRxc2ZmUlNKLUp3UFRveEt4SGpTRXVJWVh6Q2hWOFJNcVhNaTdzdlJxQWJZQ1lXV09yQkxzSTlSak9aSjN4dWhoc05IYUNOVWtZem9FckViOTVRRFB2MTJfdWZIelVPTUNMQ0x1aER5Y255dzAza1gwUTNxbnhNTE5nZ0tNMnZUYUwtNktNZklERVRpbXB5MFRHaTVnQ29oWnhYaVN4Q3NRSDkydEdVcTRfcGlwUTkzY1Yyb1Vn?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Ion Video Ltd to Issue 2 Million Shares and 3.2 Million Options at $0.50 on 18 December 2026 - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-ltd-to-issue-2-million-shares-and-32-million-options-at-050-on-18-december-2026",
    "published": "2026-11-11T01:32:27+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
+   "google_link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSWdVWE5iM0U3N2F0V1RFMjZueHRTY0QtNzBobnNteS1PVHpuRzh2a1VudEJ1WXZMZGlhLVpIb3pCZzZub0ZWUGEzUm1ONW52WmhDd3djM0RBdXc0WEo2NV9xcUJHUDhzSTNGNEE3eVpSZHp3LUpSamN0WUlrV3pfU0RiMVhtVUFHTGVBU1dKcjZ2ZElhYk5GQWI4VnJ0MUViRWJvblFSRU42aWFwYjRTTmR6enpCWjZ2Q0ZKNDRWbEI1cUZvb2xNTnFqYw?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQ2F5MzEtdVVYdFpxSWFTMklxSXQzcm1JRnBPRFZZanZKLXlNdzQ5V1lPV3UtVlUwemlqcG85cFJuNndEbVZCQzdac2JzczViaVBybHJ4bjltTDFsN0g1cGhwUlJyb1VweG9vX1RiOS1Ud01mZ1ZFSHlyZFczRkxoSjgxN1pNWTlxekozQVBPNnZjdlV0OHl1NmdxSEZiZVZMYVNkcVhvOWJjaHFoWW92RjZ1YW1rczRleFY0NA?oc=5",
-   "published": "2026-11-11T05:50:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "WiseTech Global Limited (ASX:WTC): How Are e2open Integration and AI Reshaping FY27 Margins? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSUFrOUxXXzUzLU1URXRybFRoRE5kbXFvOFFQRHBtNW1lakRqTDFEa2FoSlVreGJ0Qlh3RkFwMTdxU0VJc2dTVWlJVEgwT3QwQU9XY3hrSm9CVDVZUnp2WnVzbjJYamdfUW41ZDlSYW9VSHo1SWZDM29BYWRjbDJNTHl0VVE1dVY2QUZ0d1JwdTY3R3NXRDAtcjIyWU1oTTQwRHpQR0o2NWtfOE02S1ZHM3VxeGVtNnM3eG9JRW03QWRPS0U0UUQ4MDJYWFZCTG9qRkE?oc=5",
-   "published": "2026-11-11T06:15:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Tuas Limited (ASX:TUA): How Will Singapore’s Spectrum Review Affect Its FY27 Plans? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUHFzVG9fN2hJQ2JBemJweWItZ3FxVGZKWGIxRFpCMVplUE1BcDhralk2RUdkNDVITWo1eWg1b191MjctS0JVYXJEWHpOOHVTWjZld2NSYmtvMjBuRUlxd1VnQ3N0cTJTbG9JTldCMWF0NHY3SGswNjNWV0lFSjF1MkpMQ1JfbFE5dkFkVUk5MEhKeFBkX24tX3R0ZHdsNUsxWmZyWEE2SGx5MkVBRFpWRFAyWjFXeVVKeHJJdTBiTU5POVE5?oc=5",
-   "published": "2026-11-11T06:15:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Chrysos Corporation Limited (ASX:C79): How PhotonAssay Leasing Is Changing Its FY27 Pipeline - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQekVRaDhiV3l2T20wVUIwb0R2WjVCOG9fNDZoQ2RSWENBcGJUd3JwZFBrSU5VcTJNbjJSaWZKRk5nVlhTVW1mWHhHT2ZvcElIbGtsWlotQnIwYnQwa3Q2eUdvbnI5UnlUTkgzUzJBQXFsd0hhdjIyWEF3WW9Selg4bzFJYTNQSGxqQXphc1h6TGtuaTJfSzh1dVhwczBfZDJJdi04b1UyT1dQQzZiV3FLS2ZvN1M5ZHdObXBQY2pCaUNva0JZRFE?oc=5",
-   "published": "2026-11-11T05:49:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
   },
   {
    "title": "ION Video Receives A$1 Million Investment Commitment From Priority Impact Founder - TipRanks",
@@ -755,9 +885,46 @@
    "via": "google_news",
    "google_link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0YwSDRueDFoTWpvWDFYa2ZVSnRjZE9lMUZyZU50SU5YU1FsNF9lbF9TMTUtWTRfWnVxc1hSa0Q2ZFZJS0UzWHFtOFRBbUVkS2xvXzV5MV9GZjMtcEhEMU5rdTdaR2pwMDhpS1hMMUFmU0dQZ1JXNWRQckRpV1k0YkhVMk14N3h1LTY0amk0MVJWUkNHaDhFTGhhNFJIZU5rODFwcHhKaUREX3ZHZFZRbmY0U21DYVRvbmNFbEloMENsOXgzVlJ0WDlha2c?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
+   "published": "2026-11-11T01:32:27+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "Ion Video Says Validation Trial For Data Centres Establishes Clear Pathway To Commercialisation - TradingView",
+   "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN46D1RD:0-ion-video-says-validation-trial-for-data-centres-establishes-clear-pathway-to-commercialisation/",
+   "published": "2026-10-27T07:00:00+00:00",
+   "outlet": "TradingView",
+   "outlet_url": "https://www.tradingview.com",
+   "query": "\"ion.video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNM1NLa3pZVDdSMDlYcFNYMWVUMzQ0WklYTmV6bkZhMlJBWTZFanhUaVc4SGFyQmYtaW96NTZRMFV5UUVJMUVMU1VFaE43V3ZWQ2V3TWxaZHNRRGNkQ29EcjFHMUpEME5FcGJBNkxxVTFGTGFVRGJXSEwxTS1aLUZDLVdQdEZuZ0R5RDIzcVdXeEU0MVNlZVVaUGk3TURjQmYxSUQxNXp5N29zVzlXcnZrcEpyZ1lzVWRCek5NVXVWYWFobi1KU3pKc2xuNWlONmIxcWFmYVhOYTRWZHBiM2dDWmdKNEhBNHRhWkxvbWplSEpteEZnUWFFSA?oc=5",
+   "description": "Ion Video Ltd ASX:IOV:",
+   "published_meta": null,
+   "author": null,
+   "error_terms": []
+  },
+  {
+   "title": "Criterion: as long as ‘crazy cat;’ videos are here to stay, so too are DCs - Herald Sun",
+   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOTlI4eThZOXh4ZHQzcEJHcktYNUduRXVBYnlfeWg2V0l6LWdwcEFxS3BvYUFscVR3UEpOdUZXMXZPNXJTajBDMmdfeXQxQ051T0dMVXR2bVVJZ1pZZ0JpR29zTEFLUEw4OVozTlFuVkEydEJZclVDOHdZVDVZMkE2ci1ETFJfbFJ0dUpfbGxpZFY0TElRUUc0TlFncHduRXNsbWZLSGc2WmotRVlvTHl6SVlyS0h1NzFfdkgzZG5aRDlFQ3V3amx2VGZtSXQzMGZXb09tbmJmaDdIbnBTa1pLVGh4V2k3RHVs?oc=5",
+   "published": "2026-11-07T04:30:00+00:00",
+   "outlet": "Herald Sun",
+   "outlet_url": "https://www.heraldsun.com.au",
+   "query": "\"Priority Impact\" Swinburne video",
+   "edition": "AU",
+   "via": "google_news"
   }
  ],
- "google_links_resolved": 5,
+ "google_links_resolved": 20,
  "news_bing": [
   {
    "title": "Ion Video explains the future of AI-powered content - ICYMI",
@@ -789,7 +956,11 @@
    "published": "2026-10-27T23:49:00+00:00",
    "snippet": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
    "query": "\"ION Video\"",
-   "via": "bing_news"
+   "via": "bing_news",
+   "description": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
+   "published_meta": null,
+   "author": null,
+   "error_terms": []
   },
   {
    "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
@@ -832,15 +1003,16 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video (IOV) Stock Split History",
-   "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data-splits",
-   "published": "2026-09-17T23:05:00+00:00",
-   "snippet": "Explore the full Ion Video stock split history. Explore the IOV stock split dates, split ratios, and view how many times Ion Video has split its shares.",
-   "query": "\"ION Video\"",
+   "title": "Ion Video Ltd (ASX:IOV)",
+   "link": "https://kalkinemedia.com/au/companies/asx-iov",
+   "published": "2026-09-17T17:00:00+00:00",
+   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
+   "query": "\"ASX: IOV\"",
    "via": "bing_news"
   }
  ],
- "articles_enriched": 5,
+ "articles_enriched": 21,
+ "news_window": "30d",
  "reddit": null,
  "hotcopper": null,
  "ratings": {
@@ -861,8 +1033,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 255 ASX RANK 1,062 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +201.42% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,062 of 2,356 Sector Rank 75 of 255 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 255 ASX RANK 1,061 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +201.33% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,061 of 2,356 Sector Rank 75 of 255 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
