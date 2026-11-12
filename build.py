@@ -1,28 +1,41 @@
 #!/usr/bin/env python3
-"""ION Media Monitor: renders the daily email.
+"""ION Media Monitor: renders the email.
 
 Usage: python3 build.py latest.json analysis.json out.html subject.txt
+
+Writes, beside out.html:
+  out.html           the email. Its trading chart is an inline image (cid:att0) when chart.png exists
+  chart.png          the one-month price and volume chart (needs matplotlib)
+  out_fallback.html  the same email with table-drawn charts and no image, for when an image can't be sent
+  subject.txt
+The last printed line is "chart: image" or "chart: tables" (matplotlib missing, out.html has no image).
 
 latest.json   the collector output (data/latest.json in the repo)
 analysis.json written by the daily run:
   {
     "report_date": "YYYY-MM-DD",            Melbourne date of the report
+    "edition": "weekday" | "monday" | "weekend",
     "summary": "Two or three plain sentences for the CEO.",
-    "mentions_24h": 0, "mentions_7d_avg": 0.0,
+    "mentions_24h": 0,                       count shown in the mentions tile
+    "mentions_label": "Mentions, 24 hours",  optional tile label
+    "mentions_7d_avg": 0.0,                  or null; "mentions_sub" overrides the line under the count
     "sentiment": {"positive": 0, "neutral": 0, "negative": 0},
     "needs_look": [{"text": "...", "owner": "Anthony", "link": "https://..."}],
+    "flags_sub": "one short line under the Flags count when there are flags",
     "coverage": [{"outlet": "...", "headline": "...", "link": "https://...",
                   "sentiment": "positive|neutral|negative", "note": "..."}],
     "more_count": 0,
     "coverage_days": ["YYYY-MM-DD"],         dates with media coverage, for chart markers
-    "ratings": [{"source": "...", "value": "...", "as_at": "...", "change": ""}],
-    "sentiment_30d": [{"date": "YYYY-MM-DD", "positive": 0, "neutral": 0, "negative": 0}],
-                                             one row per day with mentions, last 30 days
-    "notion_url": "https://..."
+    "register": [{"date": "YYYY-MM-DD", "text": "...", "link": "https://..."}],   "register_title" optional
+    "ratings": [{"source": "...", "value": "...", "as_at": "...", "change": ""}],   Mondays
+    "sentiment_30d": [{"date": "YYYY-MM-DD", "positive": 0, "neutral": 0, "negative": 0}],   Mondays
+    "notion_url": "https://...",
+    "window_label": "optional footer line"
   }
 """
 import datetime as dt
 import json
+import os
 import sys
 from html import escape
 from html.parser import HTMLParser
@@ -33,14 +46,50 @@ SHARES_ON_ISSUE = 141_472_364  # fallback only; ASX key statistics supply the li
 
 INK, DEEP, VIVID, ACCENT = "#0A1312", "#06231A", "#00E27B", "#007D4D"
 MIST, LINE, SLATE, BODY = "#F3F6F5", "#E1E8E5", "#5B6B68", "#16201F"
-NEG, GREY = "#B3261E", "#9AA6A3"
+NEG, GREY, SOFT = "#B3261E", "#9AA6A3", "#9CC7B4"
 FONT = "font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;"
 NUM = "font-variant-numeric:tabular-nums;"
 SENT_COLOUR = {"positive": ACCENT, "neutral": GREY, "negative": NEG}
 
 latest = json.load(open(sys.argv[1]))
 a = json.load(open(sys.argv[2]))
+OUT_HTML, OUT_SUBJECT = sys.argv[3], sys.argv[4]
+OUT_DIR = os.path.dirname(os.path.abspath(OUT_HTML))
+CHART_PNG = os.path.join(OUT_DIR, "chart.png")
 report_date = dt.date.fromisoformat(a["report_date"])
+edition = a.get("edition") or "weekday"
+assert edition in ("weekday", "monday", "weekend"), f"unknown edition {edition}"
+WEEKLY, WEEKEND = edition == "monday", edition == "weekend"
+
+
+# ---------- formatting ----------
+def cents(p):
+    c = p * 100
+    return f"{c:.1f}c" if abs(c - round(c)) >= 0.05 else f"{round(c)}c"
+
+
+def short_day(iso):
+    d = dt.date.fromisoformat(iso)
+    return f"{d:%a} {d.day}"
+
+
+def day_month(iso):
+    d = dt.date.fromisoformat(iso)
+    return f"{d.day} {d:%b}"
+
+
+def kfmt(v):
+    if v >= 1_000_000:
+        return f"{v / 1e6:.1f}m"
+    if v >= 10_000:
+        return f"{round(v / 1000)}k"
+    if v >= 1000:
+        return f"{v / 1000:.1f}k"
+    return f"{round(v)}"
+
+
+def pct(v, dp=1):
+    return f"{'+' if v >= 0 else '-'}{abs(v):.{dp}f}%"
 
 
 # ---------- trading ----------
@@ -50,7 +99,7 @@ def sessions():
         rows = [r for r in (src.get("sessions") or []) if r.get("close")]
         if rows:
             rows = sorted({r["date"]: r for r in rows}.values(), key=lambda r: r["date"])
-            # never show a session dated after the report date (a part-day bar)
+            # never show a session dated on or after the report date (a part-day bar)
             return [r for r in rows if r["date"] < report_date.isoformat()], key
     return [], None
 
@@ -66,21 +115,22 @@ for ann in latest.get("asx_announcements") or []:
 coverage_days = set(a.get("coverage_days") or [])
 
 
-def cents(p):
-    c = p * 100
-    return f"{c:.1f}c" if abs(c - round(c)) >= 0.05 else f"{round(c)}c"
+def window(days_from, days_to, last_d):
+    """Sessions dated in (last_d - days_from, last_d - days_to]."""
+    return [r for r in rows if last_d - dt.timedelta(days=days_from) < dt.date.fromisoformat(r["date"])
+            <= last_d - dt.timedelta(days=days_to)]
 
 
-def short_day(iso):
-    d = dt.date.fromisoformat(iso)
-    return f"{d:%a} {d.day}"
+def avg(xs):
+    return sum(xs) / len(xs) if xs else 0.0
 
 
 trade = None
 if len(rows) >= 2:
     last, prev = rows[-1], rows[-2]
     last_d = dt.date.fromisoformat(last["date"])
-    month = [r for r in rows if dt.date.fromisoformat(r["date"]) > last_d - dt.timedelta(days=30)]
+    month = window(30, 0, last_d)
+    prior = window(60, 30, last_d)
     ks = latest.get("asx_key_stats") or {}
     shares = ks.get("numOfShares") if isinstance(ks, dict) else None
     shares = shares if isinstance(shares, (int, float)) and shares > 1e7 else SHARES_ON_ISSUE
@@ -88,13 +138,73 @@ if len(rows) >= 2:
         "close": last["close"], "date": last["date"],
         "chg_pct": (last["close"] / prev["close"] - 1) * 100 if prev["close"] else 0.0,
         "volume": last["volume"],
-        "avg_vol": sum(r["volume"] for r in month) / len(month),
-        "avg_close": sum(r["close"] for r in month) / len(month),
+        "avg_vol": avg([r["volume"] for r in month]),
+        "avg_close": avg([r["close"] for r in month]),
         "value": last["close"] * last["volume"],
-        "avg_value": sum(r["close"] * r["volume"] for r in month) / len(month),
+        "avg_value": avg([r["close"] * r["volume"] for r in month]),
+        "prior_value": avg([r["close"] * r["volume"] for r in prior]) if len(prior) >= 5 else None,
         "mcap": last["close"] * shares,
+        "month": month,
         "seven": rows[-7:],
     }
+    if len(rows) >= 11:
+        wk, wk0 = rows[-5:], rows[-10:-5]
+        trade["week"] = {
+            "volume": sum(r["volume"] for r in wk), "value": sum(r["close"] * r["volume"] for r in wk),
+            "prev_volume": sum(r["volume"] for r in wk0), "prev_value": sum(r["close"] * r["volume"] for r in wk0),
+            "chg_pct": (wk[-1]["close"] / rows[-6]["close"] - 1) * 100 if rows[-6]["close"] else 0.0,
+        }
+
+
+# ---------- markets line ----------
+def index_change(ix, on_or_before):
+    s = [r for r in ix.get("sessions") or [] if r["date"] <= on_or_before]
+    if len(s) < 2 or not s[-2]["close"]:
+        return None, None
+    return (s[-1]["close"] / s[-2]["close"] - 1) * 100, s[-1]["date"]
+
+
+def markets_line():
+    mk = latest.get("markets") or {}
+    asx_asof = trade["date"] if trade else (report_date - dt.timedelta(days=1)).isoformat()
+    asx_bits, asx_day = [], None
+    for key in ("asx200", "asx_tech"):
+        ix = mk.get(key)
+        if not ix:
+            continue
+        chg, d = index_change(ix, asx_asof)
+        if chg is not None:
+            asx_bits.append(f"{ix['name']} {pct(chg)}")
+            asx_day = asx_day or d
+    us_bits, us_label = [], None
+    for key in ("sp500", "nasdaq"):
+        ix = mk.get(key)
+        if not ix or not ix.get("sessions"):
+            continue
+        s = ix["sessions"]
+        if ix.get("state") == "open" and ix.get("price"):
+            mt = dt.datetime.fromisoformat(ix["market_time_utc"])
+            tz = ZoneInfo(ix.get("exchange_tz") or "America/New_York")
+            mdate = mt.astimezone(tz).date().isoformat()
+            base = [r for r in s if r["date"] < mdate]
+            if not base:
+                continue
+            chg = (ix["price"] / base[-1]["close"] - 1) * 100
+            t = mt.astimezone(MEL)
+            us_label = us_label or f"US at {t:%-I:%M}{t:%p}".replace("AM", "am").replace("PM", "pm") + ", mid-session"
+        else:
+            chg, d = index_change(ix, "9999-12-31")
+            if chg is None:
+                continue
+            us_label = us_label or f"US {dt.date.fromisoformat(d):%A} close"
+        us_bits.append(f"{ix['name']} {pct(chg)}")
+    out = []
+    if asx_bits:
+        day = f" on {dt.date.fromisoformat(asx_day):%A}" if asx_day else ""
+        out.append(" and ".join(asx_bits) + day + ".")
+    if us_bits:
+        out.append(f"{us_label}: " + ", ".join(us_bits) + ".")
+    return " ".join(out)
 
 
 # ---------- html helpers ----------
@@ -102,10 +212,13 @@ def p(text, size=15, colour=BODY, extra=""):
     return f'<p style="margin:0;{FONT}font-size:{size}px;line-height:1.5;color:{colour};{extra}">{text}</p>'
 
 
-def section(title, inner, top=28):
-    return (f'<tr><td style="padding:{top}px 28px 0 28px;">'
-            f'<p style="margin:0 0 12px 0;{FONT}font-size:15px;font-weight:bold;color:{INK};">{title}</p>'
-            f'{inner}</td></tr>')
+def section(title, inner, top=28, right=""):
+    head = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td style="{FONT}font-size:15px;font-weight:bold;color:{INK};padding-bottom:12px;">{title}</td>'
+            f'<td align="right" style="{FONT}font-size:12px;color:{SLATE};padding-bottom:12px;">{right}</td>'
+            f'</tr></table>') if right else \
+        f'<p style="margin:0 0 12px 0;{FONT}font-size:15px;font-weight:bold;color:{INK};">{title}</p>'
+    return f'<tr><td style="padding:{top}px 28px 0 28px;">{head}{inner}</td></tr>'
 
 
 def tile(label, value, sub, sub_colour=SLATE):
@@ -114,7 +227,7 @@ def tile(label, value, sub, sub_colour=SLATE):
             f'bgcolor="{MIST}" style="background:{MIST};border-radius:10px;"><tr>'
             f'<td style="padding:14px 16px;{FONT}">'
             f'<p style="margin:0;font-size:12px;color:{SLATE};">{label}</p>'
-            f'<p style="margin:4px 0 0 0;font-size:24px;font-weight:bold;color:{INK};{NUM}">{value}</p>'
+            f'<p style="margin:4px 0 0 0;font-size:24px;font-weight:bold;color:{INK};">{value}</p>'
             f'<p style="margin:3px 0 0 0;font-size:12px;color:{sub_colour};{NUM}">{sub}</p>'
             f'</td></tr></table></td>')
 
@@ -126,95 +239,10 @@ def dot(colour, size=8):
             f'&nbsp;</td></tr></table>')
 
 
-def kfmt(v):
-    if v >= 1_000_000:
-        return f"{v / 1e6:.1f}m"
-    if v >= 10_000:
-        return f"{round(v / 1000)}k"
-    if v >= 1000:
-        return f"{v / 1000:.1f}k"
-    return f"{v}"
+def link(href, text, bold=True):
+    return (f'<a href="{escape(href)}" style="color:{ACCENT};text-decoration:underline;'
+            f'{"font-weight:bold;" if bold else ""}">{text}</a>')
 
-
-# ---------- tiles ----------
-sent = a.get("sentiment") or {}
-pos, neu, neg = (int(sent.get(k, 0)) for k in ("positive", "neutral", "negative"))
-total = pos + neu + neg
-if total == 0:
-    tone, tone_sub = "Quiet", "no new mentions"
-else:
-    if pos == neg and pos >= neu:
-        tone = "Mixed"
-    else:
-        tone = max((("Positive", pos), ("Negative", neg), ("Neutral", neu)), key=lambda x: x[1])[0]
-    order = sorted(((pos, "positive"), (neu, "neutral"), (neg, "negative")), key=lambda x: -x[0])
-    tone_sub = ", ".join(f"{n} {w}" for n, w in order if n)
-
-m24 = int(a.get("mentions_24h", total))
-m7 = a.get("mentions_7d_avg")
-m7_sub = "trend starts tomorrow" if m7 is None else f"7-day average {float(m7):.1f}"
-mentions_label = a.get("mentions_label") or "Mentions, 24 hours"
-if trade:
-    up = trade["chg_pct"] >= 0
-    price_tile = tile("IOV last close", cents(trade["close"]),
-                      f"{'+' if up else ''}{trade['chg_pct']:.1f}% on {dt.date.fromisoformat(trade['date']):%a}",
-                      ACCENT if up else NEG)
-    ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
-    vol_tile = tile("Volume, shares", f"{trade['volume']:,}",
-                    f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
-else:
-    price_tile = tile("IOV last close", "n/a", "price feed unavailable", GREY)
-    vol_tile = tile("Volume", "n/a", "price feed unavailable", GREY)
-tiles = (f'<tr><td style="padding:20px 22px 0 22px;">'
-         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-         f'<tr>{price_tile}{vol_tile}</tr>'
-         f'<tr>{tile(mentions_label, f"{m24}", m7_sub)}'
-         f'{tile("Sentiment", tone, tone_sub)}</tr>'
-         f'</table></td></tr>')
-
-parts = []
-
-# ---------- needs a look ----------
-flags = a.get("needs_look") or []
-if flags:
-    rows_html = ""
-    for f in flags:
-        link = f' <a href="{escape(f["link"])}" style="color:{ACCENT};text-decoration:underline;font-weight:bold;">Open link</a>' if f.get("link") else ""
-        owner = f' <span style="color:{SLATE};">({escape(f["owner"])})</span>' if f.get("owner") else ""
-        rows_html += (f'<tr><td width="3" bgcolor="{VIVID}" style="width:3px;background:{VIVID};font-size:0;">&nbsp;</td>'
-                      f'<td style="padding:10px 14px;{FONT}font-size:14px;line-height:1.45;color:{BODY};">'
-                      f'{escape(f["text"])}{owner}{link}</td></tr>'
-                      f'<tr><td colspan="2" style="height:8px;font-size:0;line-height:0;">&nbsp;</td></tr>')
-    parts.append(section("Needs a look",
-                         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
-                         f'bgcolor="{MIST}" style="background:{MIST};">{rows_html}</table>'))
-
-# ---------- coverage ----------
-cov = (a.get("coverage") or [])[:5]
-if cov:
-    items = ""
-    for i, c in enumerate(cov):
-        border = f"border-top:1px solid {LINE};" if i else ""
-        colour = SENT_COLOUR.get(str(c.get("sentiment", "")).lower(), GREY)
-        items += (f'<tr><td width="18" valign="top" style="padding:16px 0 0 0;{border}">{dot(colour)}</td>'
-                  f'<td style="padding:12px 0;{border}{FONT}">'
-                  f'<p style="margin:0;font-size:12px;color:{SLATE};">{escape(c.get("outlet") or "")}</p>'
-                  f'<p style="margin:2px 0 0 0;font-size:15px;line-height:1.4;">'
-                  f'<a href="{escape(c.get("link") or "#")}" style="color:{ACCENT};text-decoration:underline;font-weight:bold;">'
-                  f'{escape(c.get("headline") or "")}</a></p>'
-                  f'<p style="margin:4px 0 0 0;font-size:13px;line-height:1.45;color:{SLATE};">{escape(c.get("note") or "")}</p>'
-                  f'</td></tr>')
-    more = int(a.get("more_count") or 0)
-    tail = ""
-    if more:
-        log = a.get("notion_url")
-        label = f"{more} more in the mentions log"
-        tail = p(f'<a href="{escape(log)}" style="color:{ACCENT};text-decoration:underline;">{label}</a>' if log else label,
-                 13, SLATE, "padding-top:4px;")
-    parts.append(section("Coverage",
-                         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{items}</table>{tail}'))
-else:
-    parts.append(section("Coverage", p("No new coverage in the last 24 hours.", 14, SLATE)))
 
 def chart_head(left, right):
     return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
@@ -233,13 +261,199 @@ def spacer(h):
             f'<td height="{h}" style="height:{h}px;font-size:0;line-height:0;">&nbsp;</td></tr></table>') if h > 0 else ""
 
 
-# ---------- 30-day sentiment wave ----------
+def stat_rows(pairs):
+    out = ""
+    for i, (label, value) in enumerate(pairs):
+        border = f"border-top:1px solid {LINE};" if i else ""
+        out += (f'<tr><td style="padding:8px 0;{border}{FONT}font-size:13px;color:{SLATE};">{label}</td>'
+                f'<td align="right" style="padding:8px 0;{border}{FONT}font-size:13px;color:{BODY};{NUM}">{value}</td></tr>')
+    return f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{out}</table>'
+
+
+# ---------- chart image ----------
+def panel_title(fig, ax, bold, note, y):
+    """Panel label in ink with a grey note after it, both above the plot."""
+    t = ax.text(0, y, bold, transform=ax.transAxes, fontsize=9, fontweight="bold", color="#0A1312", ha="left")
+    fig.canvas.draw()
+    box = t.get_window_extent(renderer=fig.canvas.get_renderer()).transformed(ax.transAxes.inverted())
+    ax.text(box.x1 + 0.015, y, note, transform=ax.transAxes, fontsize=8, color="#5B6B68", ha="left")
+
+
+def render_chart(month, path):
+    """One-month close and volume, two panels on a shared date axis. Returns True if written."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        from matplotlib import font_manager
+        from matplotlib.ticker import FuncFormatter, MaxNLocator
+    except ImportError:
+        return False
+    names = {f.name for f in font_manager.fontManager.ttflist}
+    family = next((f for f in ("Inter", "Helvetica Neue", "Helvetica", "Arial", "Liberation Sans")
+                   if f in names), "DejaVu Sans")
+    plt.rcParams.update({"font.family": family, "font.size": 8, "axes.unicode_minus": False})
+
+    n = len(month)
+    xs = list(range(n))
+    closes = [r["close"] * 100 for r in month]
+    vols = [r["volume"] for r in month]
+    avg_c, avg_v = avg(closes), avg(vols)
+
+    fig = plt.figure(figsize=(4.6, 3.0), dpi=240, facecolor="white")
+    gs = fig.add_gridspec(2, 1, height_ratios=[1.75, 1], hspace=0.36,
+                          left=0.015, right=0.86, top=0.9, bottom=0.135)
+    axp = fig.add_subplot(gs[0])
+    axv = fig.add_subplot(gs[1], sharex=axp)
+    for ax in (axp, axv):
+        ax.set_facecolor("white")
+        for side in ("top", "left", "right"):
+            ax.spines[side].set_visible(False)
+        ax.spines["bottom"].set_color(LINE)
+        ax.spines["bottom"].set_linewidth(0.7)
+        ax.yaxis.tick_right()
+        ax.yaxis.grid(True, color=LINE, linewidth=0.6)
+        ax.set_axisbelow(True)
+        ax.tick_params(length=0, colors=SLATE, labelsize=8, pad=4)
+
+    # price
+    lo, hi = min(closes + [avg_c]), max(closes + [avg_c])
+    pad = (hi - lo) * 0.18 or 1
+    axp.set_ylim(lo - pad, hi + pad * 1.3)
+    axp.yaxis.set_major_locator(MaxNLocator(nbins=4, steps=[1, 2, 2.5, 5, 10]))
+    axp.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}c"))
+    axp.axhline(avg_c, color=GREY, linewidth=0.9, dashes=(3, 2.5), zorder=1)
+    axp.plot(xs, closes, color=ACCENT, linewidth=1.6, solid_joinstyle="round", solid_capstyle="round", zorder=2)
+    axp.scatter([n - 1], [closes[-1]], s=30, color=ACCENT, edgecolors="white", linewidths=1.3, zorder=3)
+    axp.annotate(cents(month[-1]["close"]), (n - 1, closes[-1]), xytext=(-6, 6), textcoords="offset points",
+                 ha="right", va="bottom", fontsize=9, fontweight="bold", color=INK)
+    panel_title(fig, axp, "Close", f"dashed line is the 1-month average, {cents(avg_c / 100)}", 1.06)
+    plt.setp(axp.get_xticklabels(), visible=False)
+
+    # volume
+    colours = [SOFT] * (n - 1) + [DEEP]
+    axv.bar(xs, vols, width=0.62, color=colours, zorder=2)
+    top_v = max(vols + [avg_v]) or 1
+    axv.set_ylim(0, top_v * 1.18)
+    axv.yaxis.set_major_locator(MaxNLocator(nbins=3, steps=[1, 2, 2.5, 5, 10]))
+    axv.yaxis.set_major_formatter(FuncFormatter(lambda v, _: "0" if v == 0 else kfmt(v)))
+    axv.axhline(avg_v, color=GREY, linewidth=0.9, dashes=(3, 2.5), zorder=3)
+    panel_title(fig, axv, "Volume, shares", f"1-month average {kfmt(avg_v)}", 1.1)
+
+    # release and coverage markers under the date axis
+    ymark = -top_v * 0.13
+    for i, r in enumerate(month):
+        rel, cov = r["date"] in releases, r["date"] in coverage_days
+        if rel:
+            axv.scatter([i - (0.2 if cov else 0)], [ymark], s=14, color=VIVID, clip_on=False, zorder=4, linewidths=0)
+        if cov:
+            axv.scatter([i + (0.2 if rel else 0)], [ymark], s=14, color=GREY, clip_on=False, zorder=4, linewidths=0)
+
+    ticks = list(range(n - 1, -1, -7))[::-1]
+    axv.set_xticks(ticks)
+    axv.set_xticklabels([day_month(month[i]["date"]) for i in ticks])
+    axv.tick_params(axis="x", pad=13)
+    axv.set_xlim(-0.7, n - 0.3)
+    fig.savefig(path, dpi=240, facecolor="white")
+    plt.close(fig)
+    return True
+
+
+# ---------- tiles ----------
+sent = a.get("sentiment") or {}
+pos, neu, neg = (int(sent.get(k, 0)) for k in ("positive", "neutral", "negative"))
+m24 = int(a.get("mentions_24h", pos + neu + neg))
+m7 = a.get("mentions_7d_avg")
+m_sub = a.get("mentions_sub") or ("trend starts tomorrow" if m7 is None else f"7-day average {float(m7):.1f}")
+mentions_label = a.get("mentions_label") or "Mentions, 24 hours"
+flags = a.get("needs_look") or []
+if flags:
+    flag_tile = tile("Flags", f"{len(flags)}", escape(a.get("flags_sub") or "see Needs a look"), NEG)
+else:
+    flag_tile = tile("Flags", "None", "nothing negative or inaccurate")
+mention_tile = tile(mentions_label, f"{m24}", escape(m_sub))
+
+if trade:
+    up = trade["chg_pct"] >= 0
+    price_tile = tile("IOV last close", cents(trade["close"]),
+                      f"{pct(trade['chg_pct'])} on {dt.date.fromisoformat(trade['date']):%a}",
+                      ACCENT if up else NEG)
+    ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
+    vol_tile = tile("Volume, shares", f"{trade['volume']:,}",
+                    f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
+else:
+    price_tile = tile("IOV last close", "n/a", "price feed unavailable", GREY)
+    vol_tile = tile("Volume", "n/a", "price feed unavailable", GREY)
+
+grid_rows = f"<tr>{mention_tile}{flag_tile}</tr>" if WEEKEND else \
+    f"<tr>{price_tile}{vol_tile}</tr><tr>{mention_tile}{flag_tile}</tr>"
+tiles = (f'<tr><td style="padding:20px 22px 0 22px;">'
+         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
+         f'{grid_rows}</table></td></tr>')
+
+parts = []
+
+# ---------- needs a look ----------
+if flags:
+    rows_html = ""
+    for f in flags:
+        lk = " " + link(f["link"], "Open link") if f.get("link") else ""
+        owner = f' <span style="color:{SLATE};">({escape(f["owner"])})</span>' if f.get("owner") else ""
+        rows_html += (f'<tr><td width="3" bgcolor="{VIVID}" style="width:3px;background:{VIVID};font-size:0;">&nbsp;</td>'
+                      f'<td style="padding:10px 14px;{FONT}font-size:14px;line-height:1.45;color:{BODY};">'
+                      f'{escape(f["text"])}{owner}{lk}</td></tr>'
+                      f'<tr><td colspan="2" style="height:8px;font-size:0;line-height:0;">&nbsp;</td></tr>')
+    parts.append(section("Needs a look",
+                         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+                         f'bgcolor="{MIST}" style="background:{MIST};">{rows_html}</table>'))
+
+# ---------- coverage ----------
+cov = (a.get("coverage") or [])[:5]
+split = ", ".join(f"{n} {w}" for n, w in ((pos, "positive"), (neu, "neutral"), (neg, "negative")) if n)
+if cov:
+    items = ""
+    for i, c in enumerate(cov):
+        border = f"border-top:1px solid {LINE};" if i else ""
+        colour = SENT_COLOUR.get(str(c.get("sentiment", "")).lower(), GREY)
+        items += (f'<tr><td width="18" valign="top" style="padding:16px 0 0 0;{border}">{dot(colour)}</td>'
+                  f'<td style="padding:12px 0;{border}{FONT}">'
+                  f'<p style="margin:0;font-size:12px;color:{SLATE};">{escape(c.get("outlet") or "")}</p>'
+                  f'<p style="margin:2px 0 0 0;font-size:15px;line-height:1.4;">'
+                  f'{link(c.get("link") or "#", escape(c.get("headline") or ""))}</p>'
+                  f'<p style="margin:4px 0 0 0;font-size:13px;line-height:1.45;color:{SLATE};">{escape(c.get("note") or "")}</p>'
+                  f'</td></tr>')
+    more = int(a.get("more_count") or 0)
+    tail = ""
+    if more:
+        log = a.get("notion_url")
+        label = f"{more} more in the mentions log"
+        tail = p(link(log, label, bold=False) if log else label, 13, SLATE, "padding-top:4px;")
+    parts.append(section("Coverage",
+                         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{items}</table>{tail}',
+                         right=split))
+else:
+    parts.append(section("Coverage", p("No new coverage since the last report.", 14, SLATE)))
+
+# ---------- register ----------
+reg = a.get("register") or []
+if reg:
+    r_html = ""
+    for i, r in enumerate(reg):
+        border = f"border-top:1px solid {LINE};" if i else ""
+        lk = " " + link(r["link"], "Notice", bold=False) if r.get("link") else ""
+        r_html += (f'<tr><td width="52" valign="top" style="padding:9px 0;{border}{FONT}font-size:12px;color:{SLATE};'
+                   f'white-space:nowrap;{NUM}">{escape(day_month(r["date"]))}</td>'
+                   f'<td style="padding:9px 0;{border}{FONT}font-size:14px;line-height:1.45;color:{BODY};">'
+                   f'{escape(r["text"])}{lk}</td></tr>')
+    parts.append(section(a.get("register_title") or ("Register, last 7 days" if WEEKLY else "Register"),
+                         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_html}</table>'))
+
+# ---------- 30-day sentiment wave (weekly edition) ----------
 s30 = {r["date"]: r for r in (a.get("sentiment_30d") or [])}
-if s30:
+if WEEKLY and s30:
     days = [report_date - dt.timedelta(days=i) for i in range(29, -1, -1)]
     raw = [(int(s30.get(d.isoformat(), {}).get("positive", 0)), int(s30.get(d.isoformat(), {}).get("neutral", 0)),
             int(s30.get(d.isoformat(), {}).get("negative", 0))) for d in days]
-
     WEIGHTS = (1, 2, 3, 2, 1)  # 5-day centred, triangular: smooths daily spikes into a wave
 
     def roll(i, k):
@@ -251,15 +465,15 @@ if s30:
                 den += w
         return num / den
 
-    up = [roll(i, 0) for i in range(len(raw))]
-    down = [roll(i, 2) for i in range(len(raw))]
-    top = max(up + down) or 1
+    up_s = [roll(i, 0) for i in range(len(raw))]
+    down_s = [roll(i, 2) for i in range(len(raw))]
+    top = max(up_s + down_s) or 1
     WH = 44
-    DH = round(max(down) / top * WH)  # negative half only takes the room it needs
+    DH = round(max(down_s) / top * WH)  # negative half only takes the room it needs
     up_row = dn_row = lab_row = ""
     for i, d in enumerate(days):
-        hu = round(up[i] / top * WH)
-        hd = round(down[i] / top * WH) if DH else 0
+        hu = round(up_s[i] / top * WH)
+        hd = round(down_s[i] / top * WH) if DH else 0
         up_bar = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
                   f'<td height="{hu}" bgcolor="{ACCENT}" style="height:{hu}px;background:{ACCENT};font-size:0;line-height:0;">&nbsp;</td>'
                   f'</tr></table>') if hu else ""
@@ -275,17 +489,18 @@ if s30:
     tp, tn, tg = (sum(x[k] for x in raw) for k in (0, 1, 2))
     tot = tp + tn + tg
     net = round((tp - tg) / tot * 100) if tot else 0
-    net_txt = f"{'+' if net > 0 else ''}{net}"
     wave_chart = (chart_head(f"{tot} mention{'' if tot == 1 else 's'}: {tp} positive, {tn} neutral, {tg} negative",
-                             f"Net {net_txt}")
-                  + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
+                             f"Net {'+' if net > 0 else ''}{net}")
+                  + '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
                   + f"<tr>{up_row}</tr>" + axis(len(days)) + (f"<tr>{dn_row}</tr>" if DH else "") + f"<tr>{lab_row}</tr></table>"
                   + p(f'<span style="color:{ACCENT};">&#9632;</span> Positive above the line &nbsp; '
-                      f'<span style="color:{NEG};">&#9632;</span> Negative below the line &nbsp;|&nbsp; 5-day smoothing', 12, SLATE, "padding-top:8px;"))
+                      f'<span style="color:{NEG};">&#9632;</span> Negative below the line &nbsp;|&nbsp; 5-day smoothing',
+                      12, SLATE, "padding-top:8px;"))
     parts.append(section("Sentiment, last 30 days", wave_chart))
 
-# ---------- trading charts ----------
-if trade:
+
+# ---------- trading ----------
+def table_charts():
     seven = trade["seven"]
     n = len(seven)
     closes = [r["close"] for r in seven]
@@ -296,7 +511,7 @@ if trade:
     pcells = vcells = labels = marks = ""
     for r in seven:
         is_last = r["date"] == trade["date"]
-        colour = DEEP if is_last else "#9CC7B4"
+        colour = DEEP if is_last else SOFT
         txt, wt = (INK, "bold") if is_last else (SLATE, "normal")
         lift = round((r["close"] - lo) / span * PH)
         pcells += (f'<td valign="bottom" align="center" style="height:{PH + 30}px;{FONT}">'
@@ -318,65 +533,104 @@ if trade:
         if r["date"] in coverage_days:
             m += ("&nbsp;" if m else "") + dot(GREY, 7)
         marks += f'<td align="center" style="padding-top:5px;height:10px;font-size:0;line-height:0;">{m or "&nbsp;"}</td>'
-    grid = f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
-    price_chart = (chart_head("Close", f"1-month average {cents(trade['avg_close'])}")
-                   + grid + f"<tr>{pcells}</tr>" + axis(n) + "</table>")
-    volume_chart = (chart_head("Volume, shares and A$",
-                               f"1-month average {round(trade['avg_vol']):,} (A${kfmt(trade['avg_value'])})")
-                    + grid + f"<tr>{vcells}</tr>" + axis(n) + f"<tr>{labels}</tr><tr>{marks}</tr></table>")
-    any_marks = any(r["date"] in releases or r["date"] in coverage_days for r in seven)
-    key = (f'<span style="color:{VIVID};">&#9679;</span> ASX release &nbsp; '
-           f'<span style="color:{GREY};">&#9679;</span> Media coverage') if any_marks else ""
-    foot = ((p(key, 12, SLATE, "padding-top:10px;") if key else "")
-            + p(f"Market cap A${trade['mcap'] / 1e6:,.1f}m at the last close", 12, SLATE, f"padding-top:6px;{NUM}"))
-    parts.append(section("Trading, last 7 sessions",
-                         price_chart + spacer(18) + volume_chart + foot))
-else:
-    parts.append(section("Trading, last 7 sessions", p("Price data unavailable this morning.", 14, SLATE)))
+    grid = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
+    return (chart_head("Close", "")
+            + grid + f"<tr>{pcells}</tr>" + axis(n) + "</table>" + spacer(18)
+            + chart_head("Volume, shares and A$", "")
+            + grid + f"<tr>{vcells}</tr>" + axis(n) + f"<tr>{labels}</tr><tr>{marks}</tr></table>")
 
-# ---------- ratings ----------
+
+def trading_section(image):
+    if WEEKEND:
+        if not trade:
+            return ""
+        return section("Trading", p(f"No trading since {dt.date.fromisoformat(trade['date']):%A}'s close of "
+                                    f"{cents(trade['close'])}. Monday's edition covers the week.", 14, SLATE))
+    if not trade:
+        return section("Trading", p("Price data unavailable this morning.", 14, SLATE))
+    if image:
+        chart = (f'<img src="cid:att0" width="572" alt="IOV close and daily volume over the last month" '
+                 f'style="display:block;width:100%;max-width:572px;height:auto;border:0;outline:none;">')
+        marks_in = trade["month"]
+    else:
+        chart = table_charts()
+        marks_in = trade["seven"]
+    any_marks = any(r["date"] in releases or r["date"] in coverage_days for r in marks_in)
+    key = p(f'<span style="color:{VIVID};">&#9679;</span> ASX release &nbsp; '
+            f'<span style="color:{GREY};">&#9679;</span> Media coverage', 12, SLATE, "padding:8px 0 4px 0;") if any_marks else ""
+    stats = [] if image else [("1-month average close", cents(trade["avg_close"]))]
+    stats.append(("1-month average volume", f"{round(trade['avg_vol']):,} shares a day"))
+    if trade.get("prior_value") is not None:
+        stats.append(("Value traded per day, last 30 days",
+                      f"A${kfmt(trade['avg_value'])} (previous 30 days A${kfmt(trade['prior_value'])})"))
+    if WEEKLY and trade.get("week"):
+        w = trade["week"]
+        stats.append(("Last 5 sessions",
+                      f"{kfmt(w['volume'])} shares, A${kfmt(w['value'])} (previous 5: {kfmt(w['prev_volume'])}, "
+                      f"A${kfmt(w['prev_value'])})"))
+    stats.append(("Market cap at the last close", f"A${trade['mcap'] / 1e6:,.1f}m"))
+    if not image:
+        return section("Trading, last 7 sessions", chart + key + spacer(6) + stat_rows(stats))
+    # the image gets most of the card's width; the title, key and figures keep the usual margins
+    return (section("Trading, last month", "")
+            + f'<tr><td style="padding:0 14px;">{chart}</td></tr>'
+            + f'<tr><td style="padding:0 28px;">{key}{spacer(6)}{stat_rows(stats)}</td></tr>')
+
+
+# ---------- ratings (weekly edition) ----------
 ratings = a.get("ratings") or []
+ratings_html = ""
 if ratings:
     r_rows = ""
     for i, r in enumerate(ratings):
         border = f"border-top:1px solid {LINE};" if i else ""
-        chg = (f' <span style="color:{ACCENT};font-weight:bold;">{escape(r["change"])}</span>'
-               if r.get("change") else "")
+        chg = (f' <span style="color:{ACCENT};font-weight:bold;">{escape(r["change"])}</span>' if r.get("change") else "")
         r_rows += (f'<tr><td style="padding:9px 0;{border}{FONT}font-size:13px;color:{SLATE};width:38%;">{escape(r["source"])}</td>'
                    f'<td style="padding:9px 0;{border}{FONT}font-size:13px;color:{BODY};{NUM}">{escape(r["value"])}{chg}'
                    f'<span style="color:{GREY};"> &nbsp;{escape(r.get("as_at") or "")}</span></td></tr>')
-    parts.append(section("Third-party ratings",
-                         f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_rows}</table>'))
+    ratings_html = section("Third-party ratings",
+                           f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_rows}</table>')
 
 # ---------- assemble ----------
+title = {"monday": "Weekly media and market monitor", "weekend": "Weekend media monitor"}.get(
+    edition, "Media and market monitor")
 date_line = f"{report_date:%A} {report_date.day} {report_date:%B %Y}"
 header = (f'<tr><td bgcolor="{INK}" style="background:{INK};padding:24px 28px;border-radius:14px 14px 0 0;{FONT}">'
           f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
           f'<td style="{FONT}font-size:22px;font-weight:bold;letter-spacing:3px;color:#FFFFFF;">ION</td>'
           f'<td align="right" style="{FONT}font-size:13px;color:#B9C6C2;">{date_line}</td></tr></table>'
-          f'<p style="margin:14px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">Media and market monitor</p>'
+          f'<p style="margin:14px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">{title}</p>'
           f'</td></tr>'
           f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
-summary = f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}</td></tr>'
+mline = markets_line()
+summary = (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}'
+           + (p(escape(mline), 13, SLATE, f"padding-top:10px;{NUM}") if mline else "") + '</td></tr>')
 log = a.get("notion_url")
-footer_text = ((a.get("window_label") or "Last 24 hours to 6:30am Melbourne time.")
+footer_text = ((a.get("window_label") or "Covers the 24 hours to 6:30am Melbourne time.")
                + " Prices are the last session close; value traded is shares times the closing price."
-               + " Net sentiment is positive minus negative mentions as a share of all mentions.")
+               + " Index moves are from Yahoo Finance.")
+if WEEKLY and s30:
+    footer_text += " Net sentiment is positive minus negative mentions as a share of all mentions."
 if log:
-    footer_text += f' Full archive in the <a href="{escape(log)}" style="color:{ACCENT};text-decoration:underline;">mentions log</a>.'
+    footer_text += f' Full archive in the {link(log, "mentions log", bold=False)}.'
 footer = (f'<tr><td style="padding:28px 28px 26px 28px;">'
           f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
           f'<td style="border-top:1px solid {LINE};padding-top:14px;{FONT}font-size:11px;line-height:1.5;color:{GREY};">'
           f'{footer_text}</td></tr></table></td></tr>')
 
-html = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E9EEEC" '
-        f'style="background:#E9EEEC;"><tr><td align="center" style="padding:24px 10px;">'
-        f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" '
-        f'style="max-width:600px;background:#FFFFFF;border-radius:14px;">'
-        + header + summary + tiles + "".join(parts) + footer +
-        '</table></td></tr></table>')
 
-assert "—" not in html and "–" not in html, "dash found"
+def page(image):
+    body = (header + summary + tiles + "".join(parts) + trading_section(image) + ratings_html + footer)
+    out = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E9EEEC" '
+           f'style="background:#E9EEEC;"><tr><td align="center" style="padding:24px 10px;">'
+           f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" '
+           f'style="max-width:600px;background:#FFFFFF;border-radius:14px;">'
+           + body + '</table></td></tr></table>')
+    assert "—" not in out and "–" not in out, "dash found"
+    checker = Nest()
+    checker.feed(out)
+    assert not checker.stack, f"unclosed {checker.stack}"
+    return out
 
 
 class Nest(HTMLParser):
@@ -395,16 +649,23 @@ class Nest(HTMLParser):
         self.stack.pop()
 
 
-n = Nest()
-n.feed(html)
-assert not n.stack, f"unclosed {n.stack}"
+if os.path.exists(CHART_PNG):
+    os.remove(CHART_PNG)
+have_image = bool(trade) and not WEEKEND and len(trade["month"]) >= 5 and render_chart(trade["month"], CHART_PNG)
+open(os.path.join(OUT_DIR, "out_fallback.html"), "w").write(page(False))
+open(OUT_HTML, "w").write(page(have_image))
 
-open(sys.argv[3], "w").write(html)
 bits = [f"{report_date:%a} {report_date.day} {report_date:%b}"]
-if trade:
-    bits.append(f"IOV {cents(trade['close'])} {'+' if trade['chg_pct'] >= 0 else ''}{trade['chg_pct']:.1f}%")
-bits.append(f"{m24} mention{'' if m24 == 1 else 's'}")
-subject = "ION monitor, " + bits[0] + ": " + ", ".join(bits[1:])
-open(sys.argv[4], "w").write(subject)
+if flags:
+    bits.append(f"{len(flags)} flag{'' if len(flags) == 1 else 's'}")
+if trade and WEEKLY and trade.get("week"):
+    bits.append(f"IOV {cents(trade['close'])}, {pct(trade['week']['chg_pct'])} on the week")
+elif trade and not WEEKEND:
+    bits.append(f"IOV {cents(trade['close'])} {pct(trade['chg_pct'])}")
+bits.append(f"{m24} mention{'' if m24 == 1 else 's'}" + (" this week" if WEEKLY else ""))
+name = {"monday": "ION weekly monitor", "weekend": "ION weekend monitor"}.get(edition, "ION monitor")
+subject = f"{name}, " + bits[0] + ": " + ", ".join(bits[1:])
+open(OUT_SUBJECT, "w").write(subject)
 print(subject)
-print(f"price source {price_source}; sessions {len(rows)}; releases on {sorted(releases)[-3:]}")
+print(f"edition {edition}; price source {price_source}; sessions {len(rows)}; markets: {mline or 'none'}")
+print("chart: image" if have_image else "chart: tables")
