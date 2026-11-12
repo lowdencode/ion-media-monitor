@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """ION Media Monitor collector.
 
-Runs on GitHub Actions each morning. Pulls IOV price and volume, ASX releases,
-news search results, social and forum signals, and third-party rating pages,
-then writes data/latest.json (plus a dated copy in data/archive/).
+Runs on GitHub Actions each morning. Pulls IOV price and volume, market
+indices, ASX releases (with the text of register notices), news search results,
+Reddit and third-party rating pages, then writes data/latest.json (plus a dated
+copy in data/archive/). HotCopper is never fetched.
 
-Standard library only, so the workflow needs no installs. Every source is
-optional: a failure is logged in sources[] and the rest still runs.
+Standard library apart from pypdf, which reads register notice PDFs and is
+optional. Every source is best effort: a failure is logged in sources[] and the
+rest still runs.
 """
 import datetime as dt
 import html
@@ -87,30 +89,75 @@ def strip_html(raw):
 
 
 # ---------- price ----------
-def yahoo():
+def yahoo_chart(symbol, rng="3mo"):
     last_err = None
     for host in ("query1", "query2"):
-        url = (f"https://{host}.finance.yahoo.com/v8/finance/chart/IOV.AX"
-               "?range=3mo&interval=1d&includePrePost=false")
+        url = (f"https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}"
+               f"?range={rng}&interval=1d&includePrePost=false")
         try:
             _, body = get(url, "application/json")
-            res = json.loads(body)["chart"]["result"][0]
-            q = res["indicators"]["quote"][0]
-            rows = []
-            for i, ts in enumerate(res.get("timestamp") or []):
-                c = q["close"][i]
-                if c is None:
-                    continue
-                rows.append({"date": mel_date(ts), "open": q["open"][i], "high": q["high"][i],
-                             "low": q["low"][i], "close": round(c, 4),
-                             "volume": int(q["volume"][i] or 0)})
-            meta = res.get("meta", {})
-            return {"sessions": rows, "meta": {k: meta.get(k) for k in (
-                "regularMarketPrice", "regularMarketTime", "previousClose",
-                "chartPreviousClose", "fiftyTwoWeekHigh", "fiftyTwoWeekLow", "currency")}}
+            return json.loads(body)["chart"]["result"][0]
         except Exception as e:  # noqa: BLE001
             last_err = e
     raise last_err
+
+
+def yahoo():
+    res = yahoo_chart("IOV.AX")
+    q = res["indicators"]["quote"][0]
+    rows = []
+    for i, ts in enumerate(res.get("timestamp") or []):
+        c = q["close"][i]
+        if c is None:
+            continue
+        rows.append({"date": mel_date(ts), "open": q["open"][i], "high": q["high"][i],
+                     "low": q["low"][i], "close": round(c, 4),
+                     "volume": int(q["volume"][i] or 0)})
+    meta = res.get("meta", {})
+    return {"sessions": rows, "meta": {k: meta.get(k) for k in (
+        "regularMarketPrice", "regularMarketTime", "previousClose",
+        "chartPreviousClose", "fiftyTwoWeekHigh", "fiftyTwoWeekLow", "currency")}}
+
+
+# ASX first (as at IOV's last session), then the US (usually mid-session when this runs).
+INDICES = [("asx200", "ASX 200", ["^AXJO"]),
+           ("asx_tech", "ASX tech", ["^AXIJ", "^AXTJ"]),
+           ("sp500", "S&P 500", ["^GSPC"]),
+           ("nasdaq", "Nasdaq", ["^IXIC"])]
+
+
+def index_series(symbols):
+    last_err = None
+    for sym in symbols:
+        try:
+            res = yahoo_chart(sym, "1mo")
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            continue
+        meta = res.get("meta", {})
+        tz = ZoneInfo(meta.get("exchangeTimezoneName") or "UTC")
+        closes = res["indicators"]["quote"][0]["close"]
+        rows = [{"date": dt.datetime.fromtimestamp(ts, UTC).astimezone(tz).date().isoformat(),
+                 "close": round(c, 2)}
+                for ts, c in zip(res.get("timestamp") or [], closes) if c is not None]
+        regular = (meta.get("currentTradingPeriod") or {}).get("regular") or {}
+        now = dt.datetime.now(UTC).timestamp()
+        live = bool(regular) and regular.get("start", 0) <= now < regular.get("end", 0)
+        return {"symbol": sym, "sessions": rows, "price": meta.get("regularMarketPrice"),
+                "market_time_utc": dt.datetime.fromtimestamp(meta.get("regularMarketTime") or 0, UTC)
+                .isoformat(timespec="minutes"),
+                "state": "open" if live else "closed", "exchange_tz": meta.get("exchangeTimezoneName")}
+    raise last_err or ValueError("no symbol")
+
+
+def markets():
+    out = {}
+    for key, name, syms in INDICES:
+        val = attempt(f"index:{name}", lambda syms=syms: index_series(syms))
+        if val:
+            val["name"] = name
+            out[key] = val
+    return out
 
 
 def stooq():
@@ -132,17 +179,53 @@ def asx_json(path):
     return json.loads(body).get("data")
 
 
+def get_bytes(url, timeout=30):
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/pdf,*/*"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read()
+
+
+REGISTER_KINDS = [
+    ("substantial", re.compile(r"substantial hold", re.I)),
+    ("director", re.compile(r"director'?s? interest", re.I)),
+    ("issue", re.compile(r"application for quotation|proposed issue of securities|issue of securities|"
+                         r"notification regarding unquoted|cessation of securities|cleansing", re.I)),
+]
+
+
+def pdf_text(url, limit=3000):
+    """First part of a notice's text. Register notices are short forms; the start holds who and how much."""
+    try:
+        from pypdf import PdfReader  # installed by the workflow; optional
+    except ImportError:
+        return None
+    import io
+    reader = PdfReader(io.BytesIO(get_bytes(url)))
+    text = " ".join((page.extract_text() or "") for page in reader.pages[:3])
+    return re.sub(r"\s+", " ", text).strip()[:limit]
+
+
 def asx_announcements():
     data = asx_json("announcements?count=20&market_sensitive=false")
     items = data.get("items", []) if isinstance(data, dict) else []
     out = []
+    cutoff = (dt.datetime.now(UTC) - dt.timedelta(days=35)).isoformat()
     for it in items:
         key = it.get("documentKey")
         url = (f"https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/{key}"
                "?access_token=83ff96335c2d45a094df02a206a39ff4") if key else \
             "https://www.asx.com.au/markets/trade-our-cash-market/announcements.iov"
-        out.append({"date": it.get("date"), "headline": it.get("headline"),
-                    "price_sensitive": it.get("isPriceSensitive"), "url": url})
+        row = {"date": it.get("date"), "headline": it.get("headline"),
+               "price_sensitive": it.get("isPriceSensitive"), "url": url}
+        kind = next((k for k, rx in REGISTER_KINDS if rx.search(row["headline"] or "")), None)
+        if kind:
+            row["register_kind"] = kind
+            if kind in ("substantial", "director") and key and str(row["date"]) >= cutoff:
+                try:
+                    row["notice_text"] = pdf_text(url)
+                except Exception as e:  # noqa: BLE001
+                    row["notice_error"] = f"{type(e).__name__}: {e}"[:120]
+        out.append(row)
     return out
 
 
@@ -300,13 +383,6 @@ def reddit():
     return out
 
 
-def hotcopper():
-    status, body = get("https://hotcopper.com.au/asx/iov/", "text/html")
-    text = strip_html(body)
-    i = text.find("Latest Threads")
-    return {"status": status, "latest_threads_text": text[i:i + 2500] if i >= 0 else text[:1500]}
-
-
 # ---------- ratings ----------
 def rating_page(name, url):
     status, body = get(url, "text/html")
@@ -336,6 +412,7 @@ def main():
 
     out["price_yahoo"] = attempt("yahoo", yahoo)
     out["price_stooq"] = attempt("stooq", stooq)
+    out["markets"] = markets()
     out["asx_header"] = attempt("asx_header", lambda: asx_json("header"))
     out["asx_key_stats"] = attempt("asx_key_stats", lambda: asx_json("key-statistics"))
     out["asx_announcements"] = attempt("asx_announcements", asx_announcements)
@@ -350,7 +427,6 @@ def main():
     out["articles_enriched"] = attempt("article_enrich", lambda: enrich(fresh, cap=40 if BACKFILL else 15))
     out["news_window"] = NEWS_WINDOW
     out["reddit"] = attempt("reddit", reddit)
-    out["hotcopper"] = attempt("hotcopper", hotcopper)
     out["ratings"] = {n: attempt(f"rating:{n}", lambda n=n, u=u: rating_page(n, u))
                       for n, u in RATINGS.items()}
     out["sources"] = SOURCES

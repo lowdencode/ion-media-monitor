@@ -7,6 +7,10 @@ on:
   schedule:
     - cron: "7 18 * * *"
     - cron: "7 19 * * *"
+  # A change to the collector runs it straight away, so new sources can be checked.
+  push:
+    branches: [main]
+    paths: [collect.py, .github/workflows/collect.yml]
   workflow_dispatch:
     inputs:
       backfill:
@@ -30,6 +34,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install the PDF reader for register notices
+        run: pip install --quiet pypdf
       - name: Collect
         env:
           NEWS_WINDOW: ${{ inputs.backfill && '30d' || '3d' }}
