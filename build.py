@@ -27,7 +27,7 @@ from html.parser import HTMLParser
 from zoneinfo import ZoneInfo
 
 MEL = ZoneInfo("Australia/Melbourne")
-SHARES_ON_ISSUE = 141_472_364  # Appendix 2A, 13 Oct 2026. Update after any issue of shares.
+SHARES_ON_ISSUE = 141_472_364  # fallback only; ASX key statistics supply the live count
 
 INK, DEEP, VIVID, ACCENT = "#0A1312", "#06231A", "#00E27B", "#007D4D"
 MIST, LINE, SLATE, BODY = "#F3F6F5", "#E1E8E5", "#5B6B68", "#16201F"
@@ -79,13 +79,14 @@ if len(rows) >= 2:
     last, prev = rows[-1], rows[-2]
     window = rows[-20:]
     avg20 = sum(r["volume"] for r in window) / len(window)
-    hdr = latest.get("asx_header") or {}
-    mcap = hdr.get("marketCap") if isinstance(hdr, dict) else None
+    ks = latest.get("asx_key_stats") or {}
+    shares = ks.get("numOfShares") if isinstance(ks, dict) else None
+    shares = shares if isinstance(shares, (int, float)) and shares > 1e7 else SHARES_ON_ISSUE
     trade = {
         "close": last["close"], "date": last["date"],
         "chg_pct": (last["close"] / prev["close"] - 1) * 100 if prev["close"] else 0.0,
         "volume": last["volume"], "avg20": avg20,
-        "mcap": mcap if isinstance(mcap, (int, float)) and mcap > 0 else last["close"] * SHARES_ON_ISSUE,
+        "mcap": last["close"] * shares,
         "seven": rows[-7:],
     }
 
@@ -129,10 +130,13 @@ else:
     tone = "Positive" if pos > neg else "Negative" if neg > pos else "Neutral"
     tone_sub = ", ".join(f"{n} {w}" for n, w in ((pos, "positive"), (neu, "neutral"), (neg, "negative")) if n)
 
-m24, m7 = int(a.get("mentions_24h", total)), float(a.get("mentions_7d_avg", 0))
+m24 = int(a.get("mentions_24h", total))
+m7 = a.get("mentions_7d_avg")
+m7_sub = "trend starts tomorrow" if m7 is None else f"7-day average {float(m7):.1f}"
+mentions_label = a.get("mentions_label") or "Mentions, 24 hours"
 if trade:
     up = trade["chg_pct"] >= 0
-    price_tile = tile("IOV last close", f"A${trade['close']:.3f}",
+    price_tile = tile("IOV last close", cents(trade["close"]),
                       f"{'+' if up else ''}{trade['chg_pct']:.1f}% on {dt.date.fromisoformat(trade['date']):%a}",
                       ACCENT if up else NEG)
     ratio = trade["volume"] / trade["avg20"] if trade["avg20"] else 0
@@ -143,7 +147,7 @@ else:
 tiles = (f'<tr><td style="padding:20px 22px 0 22px;">'
          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
          f'<tr>{price_tile}{vol_tile}</tr>'
-         f'<tr>{tile("Mentions, 24 hours", f"{m24}", f"7-day average {m7:.1f}")}'
+         f'<tr>{tile(mentions_label, f"{m24}", m7_sub)}'
          f'{tile("Sentiment", tone, tone_sub)}</tr>'
          f'</table></td></tr>')
 
@@ -255,7 +259,7 @@ header = (f'<tr><td bgcolor="{INK}" style="background:{INK};padding:24px 28px;bo
           f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
 summary = f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}</td></tr>'
 log = a.get("notion_url")
-footer_text = "Last 24 hours to 6:30am Melbourne time. Prices are the last session close."
+footer_text = (a.get("window_label") or "Last 24 hours to 6:30am Melbourne time.") + " Prices are the last session close."
 if log:
     footer_text += f' Full archive in the <a href="{escape(log)}" style="color:{SLATE};">mentions log</a>.'
 footer = (f'<tr><td style="padding:28px 28px 26px 28px;">'
@@ -296,7 +300,7 @@ assert not n.stack, f"unclosed {n.stack}"
 open(sys.argv[3], "w").write(html)
 bits = [f"{report_date:%a} {report_date.day} {report_date:%b}"]
 if trade:
-    bits.append(f"IOV A${trade['close']:.3f} {'+' if trade['chg_pct'] >= 0 else ''}{trade['chg_pct']:.1f}%")
+    bits.append(f"IOV {cents(trade['close'])} {'+' if trade['chg_pct'] >= 0 else ''}{trade['chg_pct']:.1f}%")
 bits.append(f"{m24} mention{'' if m24 == 1 else 's'}")
 subject = "ION monitor, " + bits[0] + ": " + ", ".join(bits[1:])
 open(sys.argv[4], "w").write(subject)
