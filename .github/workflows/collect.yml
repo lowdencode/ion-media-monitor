@@ -8,6 +8,11 @@ on:
     - cron: "7 18 * * *"
     - cron: "7 19 * * *"
   workflow_dispatch:
+    inputs:
+      backfill:
+        description: Look back 30 days for news
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +31,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Collect
+        env:
+          NEWS_WINDOW: ${{ inputs.backfill && '30d' || '3d' }}
         run: python collect.py
       - name: Commit data
         run: |

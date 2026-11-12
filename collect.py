@@ -35,6 +35,9 @@ NEWS_QUERIES = [
     '"Priority Impact" Swinburne video',
 ]
 NEWS_EDITIONS = [("AU", "en-AU", "AU:en"), ("US", "en-US", "US:en")]
+# Daily runs look back 3 days; a manual backfill run (workflow input) looks back 30.
+NEWS_WINDOW = os.environ.get("NEWS_WINDOW") or "3d"
+BACKFILL = NEWS_WINDOW != "3d"
 
 RATINGS = {
     "Morningstar": "https://www.morningstar.com.au/investments/security/asx/IOV",
@@ -151,7 +154,7 @@ def google_news():
             if ed == "US" and q != NEWS_QUERIES[0]:
                 continue
             url = ("https://news.google.com/rss/search?q=" +
-                   urllib.parse.quote(f"{q} when:3d") + f"&hl={hl}&gl={ed}&ceid={ceid}")
+                   urllib.parse.quote(f"{q} when:{NEWS_WINDOW}") + f"&hl={hl}&gl={ed}&ceid={ceid}")
             _, body = get(url, "application/rss+xml")
             for item in ET.fromstring(body).iter("item"):
                 title = (item.findtext("title") or "").strip()
@@ -205,7 +208,7 @@ def gn_decode(link):
 def resolve_google_links(items):
     done = 0
     for it in items:
-        if done >= 30 or not RELEVANT.search(it.get("title") or ""):
+        if done >= (90 if BACKFILL else 30) or not RELEVANT.search(it.get("title") or ""):
             continue
         try:
             real = gn_decode(it.get("link"))
@@ -341,10 +344,11 @@ def main():
         out["google_links_resolved"] = attempt("google_link_resolve",
                                                lambda: resolve_google_links(out["news_google"]))
     out["news_bing"] = attempt("bing_news", bing_news)
-    recent_cut = (now - dt.timedelta(days=3)).isoformat()
+    recent_cut = (now - dt.timedelta(days=31 if BACKFILL else 3)).isoformat()
     fresh = [it for it in (out["news_google"] or []) + (out["news_bing"] or [])
              if str(it.get("published", "")) >= recent_cut]
-    out["articles_enriched"] = attempt("article_enrich", lambda: enrich(fresh))
+    out["articles_enriched"] = attempt("article_enrich", lambda: enrich(fresh, cap=40 if BACKFILL else 15))
+    out["news_window"] = NEWS_WINDOW
     out["reddit"] = attempt("reddit", reddit)
     out["hotcopper"] = attempt("hotcopper", hotcopper)
     out["ratings"] = {n: attempt(f"rating:{n}", lambda n=n, u=u: rating_page(n, u))
