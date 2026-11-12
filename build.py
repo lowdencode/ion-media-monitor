@@ -16,6 +16,8 @@ analysis.json written by the daily run:
     "more_count": 0,
     "coverage_days": ["YYYY-MM-DD"],         dates with media coverage, for chart markers
     "ratings": [{"source": "...", "value": "...", "as_at": "...", "change": ""}],
+    "sentiment_30d": [{"date": "YYYY-MM-DD", "positive": 0, "neutral": 0, "negative": 0}],
+                                             one row per day with mentions, last 30 days
     "notion_url": "https://..."
   }
 """
@@ -88,6 +90,8 @@ if len(rows) >= 2:
         "volume": last["volume"],
         "avg_vol": sum(r["volume"] for r in month) / len(month),
         "avg_close": sum(r["close"] for r in month) / len(month),
+        "value": last["close"] * last["volume"],
+        "avg_value": sum(r["close"] * r["volume"] for r in month) / len(month),
         "mcap": last["close"] * shares,
         "seven": rows[-7:],
     }
@@ -122,6 +126,16 @@ def dot(colour, size=8):
             f'&nbsp;</td></tr></table>')
 
 
+def kfmt(v):
+    if v >= 1_000_000:
+        return f"{v / 1e6:.1f}m"
+    if v >= 10_000:
+        return f"{round(v / 1000)}k"
+    if v >= 1000:
+        return f"{v / 1000:.1f}k"
+    return f"{v}"
+
+
 # ---------- tiles ----------
 sent = a.get("sentiment") or {}
 pos, neu, neg = (int(sent.get(k, 0)) for k in ("positive", "neutral", "negative"))
@@ -146,7 +160,8 @@ if trade:
                       f"{'+' if up else ''}{trade['chg_pct']:.1f}% on {dt.date.fromisoformat(trade['date']):%a}",
                       ACCENT if up else NEG)
     ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
-    vol_tile = tile("Volume", f"{trade['volume']:,}", f"{ratio:.1f}x 1-month average")
+    vol_tile = tile("Volume, shares", f"{trade['volume']:,}",
+                    f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
 else:
     price_tile = tile("IOV last close", "n/a", "price feed unavailable", GREY)
     vol_tile = tile("Volume", "n/a", "price feed unavailable", GREY)
@@ -164,7 +179,7 @@ flags = a.get("needs_look") or []
 if flags:
     rows_html = ""
     for f in flags:
-        link = f' <a href="{escape(f["link"])}" style="color:{ACCENT};text-decoration:none;">Open</a>' if f.get("link") else ""
+        link = f' <a href="{escape(f["link"])}" style="color:{ACCENT};text-decoration:underline;font-weight:bold;">Open link</a>' if f.get("link") else ""
         owner = f' <span style="color:{SLATE};">({escape(f["owner"])})</span>' if f.get("owner") else ""
         rows_html += (f'<tr><td width="3" bgcolor="{VIVID}" style="width:3px;background:{VIVID};font-size:0;">&nbsp;</td>'
                       f'<td style="padding:10px 14px;{FONT}font-size:14px;line-height:1.45;color:{BODY};">'
@@ -185,7 +200,7 @@ if cov:
                   f'<td style="padding:12px 0;{border}{FONT}">'
                   f'<p style="margin:0;font-size:12px;color:{SLATE};">{escape(c.get("outlet") or "")}</p>'
                   f'<p style="margin:2px 0 0 0;font-size:15px;line-height:1.4;">'
-                  f'<a href="{escape(c.get("link") or "#")}" style="color:{INK};text-decoration:none;font-weight:bold;">'
+                  f'<a href="{escape(c.get("link") or "#")}" style="color:{ACCENT};text-decoration:underline;font-weight:bold;">'
                   f'{escape(c.get("headline") or "")}</a></p>'
                   f'<p style="margin:4px 0 0 0;font-size:13px;line-height:1.45;color:{SLATE};">{escape(c.get("note") or "")}</p>'
                   f'</td></tr>')
@@ -194,23 +209,12 @@ if cov:
     if more:
         log = a.get("notion_url")
         label = f"{more} more in the mentions log"
-        tail = p(f'<a href="{escape(log)}" style="color:{ACCENT};text-decoration:none;">{label}</a>' if log else label,
+        tail = p(f'<a href="{escape(log)}" style="color:{ACCENT};text-decoration:underline;">{label}</a>' if log else label,
                  13, SLATE, "padding-top:4px;")
     parts.append(section("Coverage",
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{items}</table>{tail}'))
 else:
     parts.append(section("Coverage", p("No new coverage in the last 24 hours.", 14, SLATE)))
-
-# ---------- trading charts ----------
-def kfmt(v):
-    if v >= 1_000_000:
-        return f"{v / 1e6:.1f}m"
-    if v >= 10_000:
-        return f"{round(v / 1000)}k"
-    if v >= 1000:
-        return f"{v / 1000:.1f}k"
-    return f"{v}"
-
 
 def chart_head(left, right):
     return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
@@ -229,6 +233,58 @@ def spacer(h):
             f'<td height="{h}" style="height:{h}px;font-size:0;line-height:0;">&nbsp;</td></tr></table>') if h > 0 else ""
 
 
+# ---------- 30-day sentiment wave ----------
+s30 = {r["date"]: r for r in (a.get("sentiment_30d") or [])}
+if s30:
+    days = [report_date - dt.timedelta(days=i) for i in range(29, -1, -1)]
+    raw = [(int(s30.get(d.isoformat(), {}).get("positive", 0)), int(s30.get(d.isoformat(), {}).get("neutral", 0)),
+            int(s30.get(d.isoformat(), {}).get("negative", 0))) for d in days]
+
+    WEIGHTS = (1, 2, 3, 2, 1)  # 5-day centred, triangular: smooths daily spikes into a wave
+
+    def roll(i, k):
+        num = den = 0
+        for off, w in zip(range(-2, 3), WEIGHTS):
+            j = i + off
+            if 0 <= j < len(raw):
+                num += raw[j][k] * w
+                den += w
+        return num / den
+
+    up = [roll(i, 0) for i in range(len(raw))]
+    down = [roll(i, 2) for i in range(len(raw))]
+    top = max(up + down) or 1
+    WH = 44
+    DH = round(max(down) / top * WH)  # negative half only takes the room it needs
+    up_row = dn_row = lab_row = ""
+    for i, d in enumerate(days):
+        hu = round(up[i] / top * WH)
+        hd = round(down[i] / top * WH) if DH else 0
+        up_bar = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+                  f'<td height="{hu}" bgcolor="{ACCENT}" style="height:{hu}px;background:{ACCENT};font-size:0;line-height:0;">&nbsp;</td>'
+                  f'</tr></table>') if hu else ""
+        dn_bar = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+                  f'<td height="{hd}" bgcolor="{NEG}" style="height:{hd}px;background:{NEG};font-size:0;line-height:0;">&nbsp;</td>'
+                  f'</tr></table>') if hd else ""
+        up_row += f'<td valign="bottom" style="height:{WH}px;padding:0;">{up_bar}</td>'
+        dn_row += f'<td valign="top" style="height:{DH}px;padding:0;">{dn_bar}</td>'
+        label = f"{d.day} {d:%b}" if i in (0, 14, 29) else ""
+        align = "left" if i == 0 else "right" if i == 29 else "center"
+        lab_row += (f'<td align="{align}" style="padding-top:6px;{FONT}font-size:11px;color:{SLATE};'
+                    f'white-space:nowrap;overflow:visible;">{label}</td>') if label else '<td></td>'
+    tp, tn, tg = (sum(x[k] for x in raw) for k in (0, 1, 2))
+    tot = tp + tn + tg
+    net = round((tp - tg) / tot * 100) if tot else 0
+    net_txt = f"{'+' if net > 0 else ''}{net}"
+    wave_chart = (chart_head(f"{tot} mention{'' if tot == 1 else 's'}: {tp} positive, {tn} neutral, {tg} negative",
+                             f"Net {net_txt}")
+                  + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
+                  + f"<tr>{up_row}</tr>" + axis(len(days)) + (f"<tr>{dn_row}</tr>" if DH else "") + f"<tr>{lab_row}</tr></table>"
+                  + p(f'<span style="color:{ACCENT};">&#9632;</span> Positive above the line &nbsp; '
+                      f'<span style="color:{NEG};">&#9632;</span> Negative below the line &nbsp;|&nbsp; 5-day smoothing', 12, SLATE, "padding-top:8px;"))
+    parts.append(section("Sentiment, last 30 days", wave_chart))
+
+# ---------- trading charts ----------
 if trade:
     seven = trade["seven"]
     n = len(seven)
@@ -250,8 +306,9 @@ if trade:
         bar = (f'<table role="presentation" width="62%" align="center" cellpadding="0" cellspacing="0" border="0">'
                f'<tr><td height="{h}" bgcolor="{colour}" style="height:{h}px;background:{colour};'
                f'border-radius:3px 3px 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>') if h else ""
-        vcells += (f'<td valign="bottom" align="center" style="height:{VH + 20}px;{FONT}">'
-                   f'<p style="margin:0 0 4px 0;font-size:11px;color:{txt};font-weight:{wt};{NUM}">{kfmt(r["volume"])}</p>'
+        vcells += (f'<td valign="bottom" align="center" style="height:{VH + 34}px;{FONT}">'
+                   f'<p style="margin:0;font-size:11px;color:{txt};font-weight:{wt};{NUM}">{kfmt(r["volume"])}</p>'
+                   f'<p style="margin:0 0 4px 0;font-size:10px;color:{GREY};{NUM}">A${kfmt(r["close"] * r["volume"])}</p>'
                    f'{bar}</td>')
         labels += (f'<td align="center" style="padding-top:6px;{FONT}font-size:11px;color:{txt};">'
                    f'{short_day(r["date"])}</td>')
@@ -264,7 +321,8 @@ if trade:
     grid = f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
     price_chart = (chart_head("Close", f"1-month average {cents(trade['avg_close'])}")
                    + grid + f"<tr>{pcells}</tr>" + axis(n) + "</table>")
-    volume_chart = (chart_head("Volume", f"1-month average {round(trade['avg_vol']):,}")
+    volume_chart = (chart_head("Volume, shares and A$",
+                               f"1-month average {round(trade['avg_vol']):,} (A${kfmt(trade['avg_value'])})")
                     + grid + f"<tr>{vcells}</tr>" + axis(n) + f"<tr>{labels}</tr><tr>{marks}</tr></table>")
     any_marks = any(r["date"] in releases or r["date"] in coverage_days for r in seven)
     key = (f'<span style="color:{VIVID};">&#9679;</span> ASX release &nbsp; '
@@ -301,9 +359,11 @@ header = (f'<tr><td bgcolor="{INK}" style="background:{INK};padding:24px 28px;bo
           f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
 summary = f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}</td></tr>'
 log = a.get("notion_url")
-footer_text = (a.get("window_label") or "Last 24 hours to 6:30am Melbourne time.") + " Prices are the last session close."
+footer_text = ((a.get("window_label") or "Last 24 hours to 6:30am Melbourne time.")
+               + " Prices are the last session close; value traded is shares times the closing price."
+               + " Net sentiment is positive minus negative mentions as a share of all mentions.")
 if log:
-    footer_text += f' Full archive in the <a href="{escape(log)}" style="color:{SLATE};">mentions log</a>.'
+    footer_text += f' Full archive in the <a href="{escape(log)}" style="color:{ACCENT};text-decoration:underline;">mentions log</a>.'
 footer = (f'<tr><td style="padding:28px 28px 26px 28px;">'
           f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
           f'<td style="border-top:1px solid {LINE};padding-top:14px;{FONT}font-size:11px;line-height:1.5;color:{GREY};">'
