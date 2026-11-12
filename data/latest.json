@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-12T02:47:29+00:00",
+ "fetched_at_utc": "2026-11-12T02:49:36+00:00",
  "melbourne_date": "2026-11-12",
  "price_yahoo": {
   "sessions": [
@@ -773,18 +773,18 @@
    "via": "bing_news"
   },
   {
-   "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
-   "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
-   "published": "2026-10-27T23:49:00+00:00",
-   "snippet": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
    "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
    "published": "2026-02-26T16:19:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
+   "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
+   "published": "2026-10-27T23:49:00+00:00",
+   "snippet": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
