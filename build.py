@@ -77,15 +77,17 @@ def short_day(iso):
 trade = None
 if len(rows) >= 2:
     last, prev = rows[-1], rows[-2]
-    window = rows[-20:]
-    avg20 = sum(r["volume"] for r in window) / len(window)
+    last_d = dt.date.fromisoformat(last["date"])
+    month = [r for r in rows if dt.date.fromisoformat(r["date"]) > last_d - dt.timedelta(days=30)]
     ks = latest.get("asx_key_stats") or {}
     shares = ks.get("numOfShares") if isinstance(ks, dict) else None
     shares = shares if isinstance(shares, (int, float)) and shares > 1e7 else SHARES_ON_ISSUE
     trade = {
         "close": last["close"], "date": last["date"],
         "chg_pct": (last["close"] / prev["close"] - 1) * 100 if prev["close"] else 0.0,
-        "volume": last["volume"], "avg20": avg20,
+        "volume": last["volume"],
+        "avg_vol": sum(r["volume"] for r in month) / len(month),
+        "avg_close": sum(r["close"] for r in month) / len(month),
         "mcap": last["close"] * shares,
         "seven": rows[-7:],
     }
@@ -127,8 +129,12 @@ total = pos + neu + neg
 if total == 0:
     tone, tone_sub = "Quiet", "no new mentions"
 else:
-    tone = "Positive" if pos > neg else "Negative" if neg > pos else "Neutral"
-    tone_sub = ", ".join(f"{n} {w}" for n, w in ((pos, "positive"), (neu, "neutral"), (neg, "negative")) if n)
+    if pos == neg and pos >= neu:
+        tone = "Mixed"
+    else:
+        tone = max((("Positive", pos), ("Negative", neg), ("Neutral", neu)), key=lambda x: x[1])[0]
+    order = sorted(((pos, "positive"), (neu, "neutral"), (neg, "negative")), key=lambda x: -x[0])
+    tone_sub = ", ".join(f"{n} {w}" for n, w in order if n)
 
 m24 = int(a.get("mentions_24h", total))
 m7 = a.get("mentions_7d_avg")
@@ -139,8 +145,8 @@ if trade:
     price_tile = tile("IOV last close", cents(trade["close"]),
                       f"{'+' if up else ''}{trade['chg_pct']:.1f}% on {dt.date.fromisoformat(trade['date']):%a}",
                       ACCENT if up else NEG)
-    ratio = trade["volume"] / trade["avg20"] if trade["avg20"] else 0
-    vol_tile = tile("Volume", f"{trade['volume']:,}", f"{ratio:.1f}x 4-week average")
+    ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
+    vol_tile = tile("Volume", f"{trade['volume']:,}", f"{ratio:.1f}x 1-month average")
 else:
     price_tile = tile("IOV last close", "n/a", "price feed unavailable", GREY)
     vol_tile = tile("Volume", "n/a", "price feed unavailable", GREY)
@@ -195,42 +201,78 @@ if cov:
 else:
     parts.append(section("Coverage", p("No new coverage in the last 24 hours.", 14, SLATE)))
 
-# ---------- trading chart ----------
+# ---------- trading charts ----------
+def kfmt(v):
+    if v >= 1_000_000:
+        return f"{v / 1e6:.1f}m"
+    if v >= 10_000:
+        return f"{round(v / 1000)}k"
+    if v >= 1000:
+        return f"{v / 1000:.1f}k"
+    return f"{v}"
+
+
+def chart_head(left, right):
+    return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td style="{FONT}font-size:13px;font-weight:bold;color:{INK};padding-bottom:8px;">{left}</td>'
+            f'<td align="right" style="{FONT}font-size:12px;color:{SLATE};padding-bottom:8px;{NUM}">{right}</td>'
+            f'</tr></table>')
+
+
+def axis(n):
+    return (f'<tr><td colspan="{n}" bgcolor="{LINE}" style="height:1px;background:{LINE};'
+            f'font-size:0;line-height:0;">&nbsp;</td></tr>')
+
+
+def spacer(h):
+    return (f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td height="{h}" style="height:{h}px;font-size:0;line-height:0;">&nbsp;</td></tr></table>') if h > 0 else ""
+
+
 if trade:
     seven = trade["seven"]
+    n = len(seven)
+    closes = [r["close"] for r in seven]
+    lo, hi = min(closes), max(closes)
+    span = (hi - lo) or 0.01
     peak = max(r["volume"] for r in seven) or 1
-    H = 96
-    bars, labels, marks = "", "", ""
+    PH, VH = 52, 72
+    pcells = vcells = labels = marks = ""
     for r in seven:
-        h = max(2, round(r["volume"] / peak * H)) if r["volume"] else 0
         is_last = r["date"] == trade["date"]
         colour = DEEP if is_last else "#9CC7B4"
-        bar = (f'<table role="presentation" width="70%" align="center" cellpadding="0" cellspacing="0" border="0">'
+        txt, wt = (INK, "bold") if is_last else (SLATE, "normal")
+        lift = round((r["close"] - lo) / span * PH)
+        pcells += (f'<td valign="bottom" align="center" style="height:{PH + 30}px;{FONT}">'
+                   f'<p style="margin:0 0 4px 0;font-size:11px;color:{txt};font-weight:{wt};{NUM}">{cents(r["close"])}</p>'
+                   f'{dot(colour, 9)}{spacer(lift)}</td>')
+        h = max(2, round(r["volume"] / peak * VH)) if r["volume"] else 0
+        bar = (f'<table role="presentation" width="62%" align="center" cellpadding="0" cellspacing="0" border="0">'
                f'<tr><td height="{h}" bgcolor="{colour}" style="height:{h}px;background:{colour};'
                f'border-radius:3px 3px 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>') if h else ""
-        bars += (f'<td valign="bottom" align="center" style="height:{H + 22}px;{FONT}">'
-                 f'<p style="margin:0 0 4px 0;font-size:11px;color:{INK if is_last else SLATE};'
-                 f'font-weight:{"bold" if is_last else "normal"};{NUM}">{cents(r["close"])}</p>{bar}</td>')
-        labels += (f'<td align="center" style="padding-top:6px;{FONT}font-size:11px;'
-                   f'color:{INK if is_last else SLATE};">{short_day(r["date"])}</td>')
+        vcells += (f'<td valign="bottom" align="center" style="height:{VH + 20}px;{FONT}">'
+                   f'<p style="margin:0 0 4px 0;font-size:11px;color:{txt};font-weight:{wt};{NUM}">{kfmt(r["volume"])}</p>'
+                   f'{bar}</td>')
+        labels += (f'<td align="center" style="padding-top:6px;{FONT}font-size:11px;color:{txt};">'
+                   f'{short_day(r["date"])}</td>')
         m = ""
         if r["date"] in releases:
             m += dot(VIVID, 7)
         if r["date"] in coverage_days:
             m += ("&nbsp;" if m else "") + dot(GREY, 7)
-        marks += f'<td align="center" style="padding-top:4px;height:10px;font-size:0;line-height:0;">{m or "&nbsp;"}</td>'
-    chart = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
-             f'<tr>{bars}</tr>'
-             f'<tr><td colspan="{len(seven)}" bgcolor="{LINE}" style="height:1px;background:{LINE};font-size:0;line-height:0;">&nbsp;</td></tr>'
-             f'<tr>{labels}</tr><tr>{marks}</tr></table>')
-    legend = p(f'Bars show daily volume, peak {peak:,}. '
-               f'<span style="color:{VIVID};">&#9679;</span> ASX release &nbsp; '
-               f'<span style="color:{GREY};">&#9679;</span> Media coverage',
-               12, SLATE, f"padding-top:10px;{NUM}")
-    mcap_m = trade["mcap"] / 1e6
-    facts = p(f"4-week average volume {round(trade['avg20']):,} &nbsp;|&nbsp; Market cap A${mcap_m:,.1f}m",
-              12, SLATE, f"padding-top:8px;{NUM}")
-    parts.append(section("Trading, last 7 sessions", chart + legend + facts))
+        marks += f'<td align="center" style="padding-top:5px;height:10px;font-size:0;line-height:0;">{m or "&nbsp;"}</td>'
+    grid = f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
+    price_chart = (chart_head("Close", f"1-month average {cents(trade['avg_close'])}")
+                   + grid + f"<tr>{pcells}</tr>" + axis(n) + "</table>")
+    volume_chart = (chart_head("Volume", f"1-month average {round(trade['avg_vol']):,}")
+                    + grid + f"<tr>{vcells}</tr>" + axis(n) + f"<tr>{labels}</tr><tr>{marks}</tr></table>")
+    any_marks = any(r["date"] in releases or r["date"] in coverage_days for r in seven)
+    key = (f'<span style="color:{VIVID};">&#9679;</span> ASX release &nbsp; '
+           f'<span style="color:{GREY};">&#9679;</span> Media coverage') if any_marks else ""
+    foot = ((p(key, 12, SLATE, "padding-top:10px;") if key else "")
+            + p(f"Market cap A${trade['mcap'] / 1e6:,.1f}m at the last close", 12, SLATE, f"padding-top:6px;{NUM}"))
+    parts.append(section("Trading, last 7 sessions",
+                         price_chart + spacer(18) + volume_chart + foot))
 else:
     parts.append(section("Trading, last 7 sessions", p("Price data unavailable this morning.", 14, SLATE)))
 
