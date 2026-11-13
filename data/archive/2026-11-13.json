@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-12T23:31:09+00:00",
+ "fetched_at_utc": "2026-11-13T00:09:51+00:00",
  "melbourne_date": "2026-11-13",
  "price_yahoo": {
   "sessions": [
@@ -536,13 +536,13 @@
     "open": 0.6100000143051147,
     "high": 0.6100000143051147,
     "low": 0.6000000238418579,
-    "close": 0.605,
-    "volume": 46364
+    "close": 0.61,
+    "volume": 80695
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.605,
-   "regularMarketTime": 1794525037,
+   "regularMarketPrice": 0.61,
+   "regularMarketTime": 1794526294,
    "previousClose": null,
    "chartPreviousClose": 0.435,
    "fiftyTwoWeekHigh": 0.67,
@@ -645,11 +645,11 @@
     },
     {
      "date": "2026-11-13",
-     "close": 9102.7
+     "close": 9093.9
     }
    ],
-   "price": 9102.7,
-   "market_time_utc": "2026-11-12T23:10+00:00",
+   "price": 9093.9,
+   "market_time_utc": "2026-11-12T23:49+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -747,11 +747,11 @@
     },
     {
      "date": "2026-11-13",
-     "close": 1817.0
+     "close": 1819.8
     }
    ],
-   "price": 1817.0,
-   "market_time_utc": "2026-11-12T23:10+00:00",
+   "price": 1819.8,
+   "market_time_utc": "2026-11-12T23:49+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -964,24 +964,24 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.61,
-  "priceBid": 0.5650000000000001,
-  "priceChange": 0.0050000000000000044,
-  "priceChangePercent": 0.8333333333333341,
-  "priceLast": 0.605,
+  "priceAsk": 0.6,
+  "priceBid": 0.58,
+  "priceChange": 0.010000000000000009,
+  "priceChangePercent": 1.6666666666666683,
+  "priceLast": 0.61,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 46364,
+  "volume": 80695,
   "xid": "35079877",
   "marketCap": 84883418,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.61,
-  "priceBid": 0.5650000000000001,
+  "priceAsk": 0.6,
+  "priceBid": 0.58,
   "priceClose": 0.6,
   "priceDayHigh": 0.61,
   "priceDayLow": 0.6,
@@ -1259,14 +1259,6 @@
    "snippet": "The average daily trading volume for Ion Video (IOV) is 119,143. The opening price for Ion Video today was 0.590.",
    "query": "\"ION Video\"",
    "via": "bing_news"
-  },
-  {
-   "title": "Ion Video",
-   "link": "https://www.businessnews.com.au/Company/Ion-Video",
-   "published": "2026-04-05T01:43:00+00:00",
-   "snippet": "Get notifications in MyBN when activity occurs. Yes. Corporate subscriptions are available for teams and organisations, with discounted rates as user numbers increase. Pricing starts from $1,625 + GST ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
   }
  ],
  "articles_enriched": 4,
@@ -1290,8 +1282,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 255 ASX RANK 1,065 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +198.55% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,065 of 2,356 Sector Rank 75 of 255 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 255 ASX RANK 1,061 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +201.27% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,061 of 2,356 Sector Rank 75 of 255 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
