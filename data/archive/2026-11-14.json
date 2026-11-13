@@ -1,0 +1,1356 @@
+{
+ "fetched_at_utc": "2026-11-13T23:28:34+00:00",
+ "melbourne_date": "2026-11-14",
+ "price_yahoo": {
+  "sessions": [
+   {
+    "date": "2026-08-13",
+    "open": 0.47999998927116394,
+    "high": 0.47999998927116394,
+    "low": 0.4300000071525574,
+    "close": 0.435,
+    "volume": 51402
+   },
+   {
+    "date": "2026-08-14",
+    "open": 0.4350000023841858,
+    "high": 0.4650000035762787,
+    "low": 0.4000000059604645,
+    "close": 0.45,
+    "volume": 162831
+   },
+   {
+    "date": "2026-08-17",
+    "open": 0.44999998807907104,
+    "high": 0.44999998807907104,
+    "low": 0.41999998688697815,
+    "close": 0.43,
+    "volume": 8633
+   },
+   {
+    "date": "2026-08-18",
+    "open": 0.42500001192092896,
+    "high": 0.42500001192092896,
+    "low": 0.42500001192092896,
+    "close": 0.425,
+    "volume": 3730
+   },
+   {
+    "date": "2026-08-19",
+    "open": 0.4300000071525574,
+    "high": 0.44999998807907104,
+    "low": 0.4050000011920929,
+    "close": 0.425,
+    "volume": 88629
+   },
+   {
+    "date": "2026-08-20",
+    "open": 0.4399999976158142,
+    "high": 0.4449999928474426,
+    "low": 0.42500001192092896,
+    "close": 0.44,
+    "volume": 20525
+   },
+   {
+    "date": "2026-08-21",
+    "open": 0.3799999952316284,
+    "high": 0.4350000023841858,
+    "low": 0.3799999952316284,
+    "close": 0.43,
+    "volume": 80888
+   },
+   {
+    "date": "2026-08-24",
+    "open": 0.42500001192092896,
+    "high": 0.4399999976158142,
+    "low": 0.4050000011920929,
+    "close": 0.44,
+    "volume": 113488
+   },
+   {
+    "date": "2026-08-25",
+    "open": 0.42500001192092896,
+    "high": 0.42500001192092896,
+    "low": 0.4000000059604645,
+    "close": 0.425,
+    "volume": 48187
+   },
+   {
+    "date": "2026-08-26",
+    "open": 0.41999998688697815,
+    "high": 0.41999998688697815,
+    "low": 0.4000000059604645,
+    "close": 0.405,
+    "volume": 7843
+   },
+   {
+    "date": "2026-08-27",
+    "open": 0.4099999964237213,
+    "high": 0.41499999165534973,
+    "low": 0.4000000059604645,
+    "close": 0.4,
+    "volume": 7850
+   },
+   {
+    "date": "2026-08-28",
+    "open": 0.4099999964237213,
+    "high": 0.4099999964237213,
+    "low": 0.4000000059604645,
+    "close": 0.4,
+    "volume": 3402
+   },
+   {
+    "date": "2026-08-31",
+    "open": 0.4000000059604645,
+    "high": 0.4050000011920929,
+    "low": 0.38999998569488525,
+    "close": 0.395,
+    "volume": 28864
+   },
+   {
+    "date": "2026-09-01",
+    "open": 0.39500001072883606,
+    "high": 0.4000000059604645,
+    "low": 0.3700000047683716,
+    "close": 0.37,
+    "volume": 16686
+   },
+   {
+    "date": "2026-09-02",
+    "open": 0.38499999046325684,
+    "high": 0.4300000071525574,
+    "low": 0.38499999046325684,
+    "close": 0.415,
+    "volume": 50048
+   },
+   {
+    "date": "2026-09-03",
+    "open": 0.4300000071525574,
+    "high": 0.4650000035762787,
+    "low": 0.38499999046325684,
+    "close": 0.385,
+    "volume": 19277
+   },
+   {
+    "date": "2026-09-04",
+    "open": 0.38499999046325684,
+    "high": 0.44999998807907104,
+    "low": 0.38499999046325684,
+    "close": 0.405,
+    "volume": 69564
+   },
+   {
+    "date": "2026-09-07",
+    "open": 0.4000000059604645,
+    "high": 0.4050000011920929,
+    "low": 0.3799999952316284,
+    "close": 0.38,
+    "volume": 84175
+   },
+   {
+    "date": "2026-09-08",
+    "open": 0.38499999046325684,
+    "high": 0.38499999046325684,
+    "low": 0.3700000047683716,
+    "close": 0.37,
+    "volume": 5438
+   },
+   {
+    "date": "2026-09-09",
+    "open": 0.375,
+    "high": 0.38499999046325684,
+    "low": 0.375,
+    "close": 0.375,
+    "volume": 3892
+   },
+   {
+    "date": "2026-09-10",
+    "open": 0.4000000059604645,
+    "high": 0.4000000059604645,
+    "low": 0.375,
+    "close": 0.38,
+    "volume": 21467
+   },
+   {
+    "date": "2026-09-11",
+    "open": 0.3799999952316284,
+    "high": 0.39500001072883606,
+    "low": 0.36500000953674316,
+    "close": 0.395,
+    "volume": 11739
+   },
+   {
+    "date": "2026-09-14",
+    "open": 0.39500001072883606,
+    "high": 0.39500001072883606,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 0
+   },
+   {
+    "date": "2026-09-15",
+    "open": 0.39500001072883606,
+    "high": 0.39500001072883606,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 0
+   },
+   {
+    "date": "2026-09-16",
+    "open": 0.4099999964237213,
+    "high": 0.4699999988079071,
+    "low": 0.4099999964237213,
+    "close": 0.45,
+    "volume": 109623
+   },
+   {
+    "date": "2026-09-17",
+    "open": 0.4449999928474426,
+    "high": 0.4449999928474426,
+    "low": 0.4099999964237213,
+    "close": 0.425,
+    "volume": 36904
+   },
+   {
+    "date": "2026-09-18",
+    "open": 0.41999998688697815,
+    "high": 0.41999998688697815,
+    "low": 0.4099999964237213,
+    "close": 0.42,
+    "volume": 18550
+   },
+   {
+    "date": "2026-09-21",
+    "open": 0.4099999964237213,
+    "high": 0.4350000023841858,
+    "low": 0.4000000059604645,
+    "close": 0.435,
+    "volume": 25718
+   },
+   {
+    "date": "2026-09-22",
+    "open": 0.4300000071525574,
+    "high": 0.4399999976158142,
+    "low": 0.4099999964237213,
+    "close": 0.41,
+    "volume": 148329
+   },
+   {
+    "date": "2026-09-23",
+    "open": 0.4099999964237213,
+    "high": 0.41499999165534973,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 13103
+   },
+   {
+    "date": "2026-09-24",
+    "open": 0.4050000011920929,
+    "high": 0.41999998688697815,
+    "low": 0.4000000059604645,
+    "close": 0.41,
+    "volume": 21825
+   },
+   {
+    "date": "2026-09-25",
+    "open": 0.41499999165534973,
+    "high": 0.41999998688697815,
+    "low": 0.4000000059604645,
+    "close": 0.4,
+    "volume": 26124
+   },
+   {
+    "date": "2026-09-28",
+    "open": 0.4000000059604645,
+    "high": 0.4050000011920929,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 29707
+   },
+   {
+    "date": "2026-09-29",
+    "open": 0.4000000059604645,
+    "high": 0.4050000011920929,
+    "low": 0.38999998569488525,
+    "close": 0.4,
+    "volume": 97131
+   },
+   {
+    "date": "2026-09-30",
+    "open": 0.4000000059604645,
+    "high": 0.4000000059604645,
+    "low": 0.3799999952316284,
+    "close": 0.4,
+    "volume": 157780
+   },
+   {
+    "date": "2026-10-01",
+    "open": 0.4050000011920929,
+    "high": 0.4050000011920929,
+    "low": 0.4000000059604645,
+    "close": 0.405,
+    "volume": 38021
+   },
+   {
+    "date": "2026-10-02",
+    "open": 0.4050000011920929,
+    "high": 0.4050000011920929,
+    "low": 0.3799999952316284,
+    "close": 0.39,
+    "volume": 165324
+   },
+   {
+    "date": "2026-10-05",
+    "open": 0.38999998569488525,
+    "high": 0.4050000011920929,
+    "low": 0.38999998569488525,
+    "close": 0.395,
+    "volume": 39683
+   },
+   {
+    "date": "2026-10-06",
+    "open": 0.38999998569488525,
+    "high": 0.4025000035762787,
+    "low": 0.35499998927116394,
+    "close": 0.385,
+    "volume": 190369
+   },
+   {
+    "date": "2026-10-07",
+    "open": 0.3700000047683716,
+    "high": 0.4050000011920929,
+    "low": 0.3700000047683716,
+    "close": 0.405,
+    "volume": 62207
+   },
+   {
+    "date": "2026-10-08",
+    "open": 0.4050000011920929,
+    "high": 0.4099999964237213,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 44590
+   },
+   {
+    "date": "2026-10-09",
+    "open": 0.38999998569488525,
+    "high": 0.39500001072883606,
+    "low": 0.38499999046325684,
+    "close": 0.39,
+    "volume": 696
+   },
+   {
+    "date": "2026-10-12",
+    "open": 0.4099999964237213,
+    "high": 0.4099999964237213,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 32673
+   },
+   {
+    "date": "2026-10-13",
+    "open": 0.39500001072883606,
+    "high": 0.4000000059604645,
+    "low": 0.38999998569488525,
+    "close": 0.4,
+    "volume": 96225
+   },
+   {
+    "date": "2026-10-14",
+    "open": 0.39500001072883606,
+    "high": 0.4000000059604645,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 2411
+   },
+   {
+    "date": "2026-10-15",
+    "open": 0.4000000059604645,
+    "high": 0.4000000059604645,
+    "low": 0.38999998569488525,
+    "close": 0.39,
+    "volume": 14958
+   },
+   {
+    "date": "2026-10-16",
+    "open": 0.4000000059604645,
+    "high": 0.4000000059604645,
+    "low": 0.36500000953674316,
+    "close": 0.365,
+    "volume": 75819
+   },
+   {
+    "date": "2026-10-19",
+    "open": 0.36500000953674316,
+    "high": 0.39500001072883606,
+    "low": 0.36500000953674316,
+    "close": 0.385,
+    "volume": 10794
+   },
+   {
+    "date": "2026-10-20",
+    "open": 0.39500001072883606,
+    "high": 0.39500001072883606,
+    "low": 0.38499999046325684,
+    "close": 0.385,
+    "volume": 19324
+   },
+   {
+    "date": "2026-10-21",
+    "open": 0.38499999046325684,
+    "high": 0.38999998569488525,
+    "low": 0.38499999046325684,
+    "close": 0.385,
+    "volume": 2669
+   },
+   {
+    "date": "2026-10-22",
+    "open": 0.3799999952316284,
+    "high": 0.4000000059604645,
+    "low": 0.375,
+    "close": 0.4,
+    "volume": 81836
+   },
+   {
+    "date": "2026-10-23",
+    "open": 0.4000000059604645,
+    "high": 0.4000000059604645,
+    "low": 0.3799999952316284,
+    "close": 0.395,
+    "volume": 94697
+   },
+   {
+    "date": "2026-10-26",
+    "open": 0.39500001072883606,
+    "high": 0.39500001072883606,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 0
+   },
+   {
+    "date": "2026-10-27",
+    "open": 0.39500001072883606,
+    "high": 0.39500001072883606,
+    "low": 0.39500001072883606,
+    "close": 0.395,
+    "volume": 0
+   },
+   {
+    "date": "2026-10-28",
+    "open": 0.4099999964237213,
+    "high": 0.44999998807907104,
+    "low": 0.3499999940395355,
+    "close": 0.425,
+    "volume": 555094
+   },
+   {
+    "date": "2026-10-29",
+    "open": 0.42500001192092896,
+    "high": 0.4950000047683716,
+    "low": 0.39500001072883606,
+    "close": 0.495,
+    "volume": 145355
+   },
+   {
+    "date": "2026-10-30",
+    "open": 0.5199999809265137,
+    "high": 0.6100000143051147,
+    "low": 0.5199999809265137,
+    "close": 0.55,
+    "volume": 181875
+   },
+   {
+    "date": "2026-11-02",
+    "open": 0.5299999713897705,
+    "high": 0.550000011920929,
+    "low": 0.512499988079071,
+    "close": 0.55,
+    "volume": 90781
+   },
+   {
+    "date": "2026-11-03",
+    "open": 0.5550000071525574,
+    "high": 0.5799999833106995,
+    "low": 0.5550000071525574,
+    "close": 0.565,
+    "volume": 14580
+   },
+   {
+    "date": "2026-11-04",
+    "open": 0.574999988079071,
+    "high": 0.574999988079071,
+    "low": 0.5,
+    "close": 0.5,
+    "volume": 65964
+   },
+   {
+    "date": "2026-11-05",
+    "open": 0.5,
+    "high": 0.5625,
+    "low": 0.5,
+    "close": 0.505,
+    "volume": 2029
+   },
+   {
+    "date": "2026-11-06",
+    "open": 0.5049999952316284,
+    "high": 0.5149999856948853,
+    "low": 0.49000000953674316,
+    "close": 0.5,
+    "volume": 87437
+   },
+   {
+    "date": "2026-11-09",
+    "open": 0.5099999904632568,
+    "high": 0.5450000166893005,
+    "low": 0.5,
+    "close": 0.53,
+    "volume": 16562
+   },
+   {
+    "date": "2026-11-10",
+    "open": 0.5299999713897705,
+    "high": 0.550000011920929,
+    "low": 0.5099999904632568,
+    "close": 0.525,
+    "volume": 41643
+   },
+   {
+    "date": "2026-11-11",
+    "open": 0.5249999761581421,
+    "high": 0.6000000238418579,
+    "low": 0.5,
+    "close": 0.59,
+    "volume": 165426
+   },
+   {
+    "date": "2026-11-12",
+    "open": 0.5899999737739563,
+    "high": 0.6150000095367432,
+    "low": 0.5899999737739563,
+    "close": 0.6,
+    "volume": 119143
+   },
+   {
+    "date": "2026-11-13",
+    "open": 0.6100000143051147,
+    "high": 0.6100000143051147,
+    "low": 0.5899999737739563,
+    "close": 0.6,
+    "volume": 166782
+   },
+   {
+    "date": "2026-11-13",
+    "open": 0.6100000143051147,
+    "high": 0.6100000143051147,
+    "low": 0.5899999737739563,
+    "close": 0.6,
+    "volume": 166782
+   }
+  ],
+  "meta": {
+   "regularMarketPrice": 0.6,
+   "regularMarketTime": 1794538648,
+   "previousClose": null,
+   "chartPreviousClose": 0.435,
+   "fiftyTwoWeekHigh": 0.67,
+   "fiftyTwoWeekLow": 0.1,
+   "currency": "AUD"
+  }
+ },
+ "price_stooq": null,
+ "markets": {
+  "asx200": {
+   "symbol": "^AXJO",
+   "sessions": [
+    {
+     "date": "2026-10-13",
+     "close": 8783.9
+    },
+    {
+     "date": "2026-10-14",
+     "close": 8727.9
+    },
+    {
+     "date": "2026-10-15",
+     "close": 8719.7
+    },
+    {
+     "date": "2026-10-16",
+     "close": 8806.7
+    },
+    {
+     "date": "2026-10-19",
+     "close": 8845.7
+    },
+    {
+     "date": "2026-10-20",
+     "close": 8816.9
+    },
+    {
+     "date": "2026-10-21",
+     "close": 8831.3
+    },
+    {
+     "date": "2026-10-22",
+     "close": 8793.2
+    },
+    {
+     "date": "2026-10-23",
+     "close": 8795.2
+    },
+    {
+     "date": "2026-10-26",
+     "close": 8809.9
+    },
+    {
+     "date": "2026-10-27",
+     "close": 8850.1
+    },
+    {
+     "date": "2026-10-28",
+     "close": 8847.3
+    },
+    {
+     "date": "2026-10-29",
+     "close": 8891.8
+    },
+    {
+     "date": "2026-10-30",
+     "close": 8908.1
+    },
+    {
+     "date": "2026-11-02",
+     "close": 8856.5
+    },
+    {
+     "date": "2026-11-03",
+     "close": 8886.8
+    },
+    {
+     "date": "2026-11-04",
+     "close": 8834.5
+    },
+    {
+     "date": "2026-11-05",
+     "close": 9065.1
+    },
+    {
+     "date": "2026-11-06",
+     "close": 9020.8
+    },
+    {
+     "date": "2026-11-09",
+     "close": 9029.7
+    },
+    {
+     "date": "2026-11-10",
+     "close": 9129.0
+    },
+    {
+     "date": "2026-11-11",
+     "close": 9153.2
+    },
+    {
+     "date": "2026-11-12",
+     "close": 9146.8
+    },
+    {
+     "date": "2026-11-13",
+     "close": 9082.2
+    }
+   ],
+   "price": 9082.2,
+   "market_time_utc": "2026-11-13T06:07+00:00",
+   "state": "closed",
+   "exchange_tz": "Australia/Sydney",
+   "name": "ASX 200"
+  },
+  "asx_tech": {
+   "symbol": "^AXIJ",
+   "sessions": [
+    {
+     "date": "2026-10-13",
+     "close": 1647.6
+    },
+    {
+     "date": "2026-10-14",
+     "close": 1653.3
+    },
+    {
+     "date": "2026-10-15",
+     "close": 1596.9
+    },
+    {
+     "date": "2026-10-16",
+     "close": 1686.6
+    },
+    {
+     "date": "2026-10-19",
+     "close": 1664.5
+    },
+    {
+     "date": "2026-10-20",
+     "close": 1670.5
+    },
+    {
+     "date": "2026-10-21",
+     "close": 1615.1
+    },
+    {
+     "date": "2026-10-22",
+     "close": 1615.2
+    },
+    {
+     "date": "2026-10-23",
+     "close": 1600.4
+    },
+    {
+     "date": "2026-10-26",
+     "close": 1616.9
+    },
+    {
+     "date": "2026-10-27",
+     "close": 1623.1
+    },
+    {
+     "date": "2026-10-28",
+     "close": 1661.4
+    },
+    {
+     "date": "2026-10-29",
+     "close": 1643.0
+    },
+    {
+     "date": "2026-10-30",
+     "close": 1621.0
+    },
+    {
+     "date": "2026-11-02",
+     "close": 1617.7
+    },
+    {
+     "date": "2026-11-03",
+     "close": 1630.1
+    },
+    {
+     "date": "2026-11-04",
+     "close": 1632.8
+    },
+    {
+     "date": "2026-11-05",
+     "close": 1797.6
+    },
+    {
+     "date": "2026-11-06",
+     "close": 1783.5
+    },
+    {
+     "date": "2026-11-09",
+     "close": 1799.2
+    },
+    {
+     "date": "2026-11-10",
+     "close": 1804.7
+    },
+    {
+     "date": "2026-11-11",
+     "close": 1832.1
+    },
+    {
+     "date": "2026-11-12",
+     "close": 1836.7
+    },
+    {
+     "date": "2026-11-13",
+     "close": 1822.3
+    }
+   ],
+   "price": 1822.3,
+   "market_time_utc": "2026-11-13T06:07+00:00",
+   "state": "closed",
+   "exchange_tz": "Australia/Sydney",
+   "name": "ASX tech"
+  },
+  "sp500": {
+   "symbol": "^GSPC",
+   "sessions": [
+    {
+     "date": "2026-10-14",
+     "close": 7718.94
+    },
+    {
+     "date": "2026-10-15",
+     "close": 7744.06
+    },
+    {
+     "date": "2026-10-16",
+     "close": 7659.44
+    },
+    {
+     "date": "2026-10-19",
+     "close": 7690.73
+    },
+    {
+     "date": "2026-10-20",
+     "close": 7712.57
+    },
+    {
+     "date": "2026-10-21",
+     "close": 7757.17
+    },
+    {
+     "date": "2026-10-22",
+     "close": 7663.43
+    },
+    {
+     "date": "2026-10-23",
+     "close": 7623.68
+    },
+    {
+     "date": "2026-10-26",
+     "close": 7676.77
+    },
+    {
+     "date": "2026-10-27",
+     "close": 7722.6
+    },
+    {
+     "date": "2026-10-28",
+     "close": 7743.98
+    },
+    {
+     "date": "2026-10-29",
+     "close": 7720.39
+    },
+    {
+     "date": "2026-10-30",
+     "close": 7580.07
+    },
+    {
+     "date": "2026-11-02",
+     "close": 7541.4
+    },
+    {
+     "date": "2026-11-03",
+     "close": 7568.92
+    },
+    {
+     "date": "2026-11-04",
+     "close": 7688.62
+    },
+    {
+     "date": "2026-11-05",
+     "close": 7353.73
+    },
+    {
+     "date": "2026-11-06",
+     "close": 7376.86
+    },
+    {
+     "date": "2026-11-09",
+     "close": 7549.94
+    },
+    {
+     "date": "2026-11-10",
+     "close": 7520.93
+    },
+    {
+     "date": "2026-11-11",
+     "close": 7619.38
+    },
+    {
+     "date": "2026-11-12",
+     "close": 7592.4
+    },
+    {
+     "date": "2026-11-13",
+     "close": 7561.67
+    }
+   ],
+   "price": 7561.67,
+   "market_time_utc": "2026-11-13T21:43+00:00",
+   "state": "closed",
+   "exchange_tz": "America/New_York",
+   "name": "S&P 500"
+  },
+  "nasdaq": {
+   "symbol": "^IXIC",
+   "sessions": [
+    {
+     "date": "2026-10-14",
+     "close": 26692.87
+    },
+    {
+     "date": "2026-10-15",
+     "close": 26713.03
+    },
+    {
+     "date": "2026-10-16",
+     "close": 26140.03
+    },
+    {
+     "date": "2026-10-19",
+     "close": 26430.89
+    },
+    {
+     "date": "2026-10-20",
+     "close": 26424.82
+    },
+    {
+     "date": "2026-10-21",
+     "close": 26702.86
+    },
+    {
+     "date": "2026-10-22",
+     "close": 26008.86
+    },
+    {
+     "date": "2026-10-23",
+     "close": 25955.34
+    },
+    {
+     "date": "2026-10-26",
+     "close": 26169.38
+    },
+    {
+     "date": "2026-10-27",
+     "close": 26477.81
+    },
+    {
+     "date": "2026-10-28",
+     "close": 26549.85
+    },
+    {
+     "date": "2026-10-29",
+     "close": 26184.72
+    },
+    {
+     "date": "2026-10-30",
+     "close": 25437.0
+    },
+    {
+     "date": "2026-11-02",
+     "close": 25164.31
+    },
+    {
+     "date": "2026-11-03",
+     "close": 25372.01
+    },
+    {
+     "date": "2026-11-04",
+     "close": 25736.51
+    },
+    {
+     "date": "2026-11-05",
+     "close": 24315.0
+    },
+    {
+     "date": "2026-11-06",
+     "close": 24579.43
+    },
+    {
+     "date": "2026-11-09",
+     "close": 25253.14
+    },
+    {
+     "date": "2026-11-10",
+     "close": 25065.87
+    },
+    {
+     "date": "2026-11-11",
+     "close": 25466.19
+    },
+    {
+     "date": "2026-11-12",
+     "close": 25366.09
+    },
+    {
+     "date": "2026-11-13",
+     "close": 25136.27
+    }
+   ],
+   "price": 25136.273,
+   "market_time_utc": "2026-11-13T22:15+00:00",
+   "state": "closed",
+   "exchange_tz": "America/New_York",
+   "name": "Nasdaq"
+  }
+ },
+ "asx_header": {
+  "dateListed": "2011-07-26",
+  "displayName": "ION VIDEO LTD",
+  "priceAsk": 0.63,
+  "priceBid": 0.595,
+  "priceChange": 0,
+  "priceChangePercent": 0,
+  "priceLast": 0.6,
+  "sector": "Information Technology",
+  "industryGroup": "Software & Services",
+  "securityType": 1,
+  "symbol": "IOV",
+  "volume": 166782,
+  "xid": "35079877",
+  "marketCap": 84883418,
+  "statusCode": "RE"
+ },
+ "asx_key_stats": {
+  "isin": "AU0000440992",
+  "priceAsk": 0.63,
+  "priceBid": 0.595,
+  "priceClose": 0.6,
+  "priceDayHigh": 0.61,
+  "priceDayLow": 0.59,
+  "priceFiftyTwoWeekHigh": 0.67,
+  "priceFiftyTwoWeekLow": 0.1,
+  "volumeAverage": 80970.395349,
+  "cashFlow": -3.2096,
+  "earningsPerShare": -0.05489,
+  "freeCashFlowYield": -1.00000010000001e-05,
+  "priceEarningsRatio": -99999.99,
+  "priceToCash": -99999.99,
+  "enterprisevalue": 84.11251,
+  "totalAssets": 1.3957,
+  "totalLiabilities": 0.54195,
+  "opCashFlowRevTTM": -954.2725,
+  "currency": "AUD",
+  "foreignExempt": false,
+  "shareDescription": "Ordinary Fully Paid",
+  "numOfShares": 141472364,
+  "yieldAnnual": 0,
+  "incomeStatement": [
+   {
+    "revenue": 336340,
+    "netIncome": -4515910,
+    "period": "2026A",
+    "fPeriodEndDate": 46203,
+    "curCode": "AUD"
+   },
+   {
+    "revenue": 785420,
+    "netIncome": -5006360,
+    "period": "2025A",
+    "fPeriodEndDate": 45838,
+    "curCode": "AUD"
+   },
+   {
+    "revenue": 811120,
+    "netIncome": -4789130,
+    "period": "2024A",
+    "fPeriodEndDate": 45473,
+    "curCode": "AUD"
+   },
+   {
+    "revenue": 228910,
+    "netIncome": -5237230,
+    "period": "2023A",
+    "fPeriodEndDate": 45107,
+    "curCode": "AUD"
+   }
+  ]
+ },
+ "asx_announcements": [
+  {
+   "date": "2026-11-13T05:19:17.000Z",
+   "headline": "Alteration in Proposed Performance-Based Securities",
+   "price_sensitive": false,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03161594-6A1354988?access_token=83ff96335c2d45a094df02a206a39ff4"
+  },
+  {
+   "date": "2026-11-10T22:07:31.000Z",
+   "headline": "Proposed issue of securities - IOV",
+   "price_sensitive": false,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03160360-6A1354494?access_token=83ff96335c2d45a094df02a206a39ff4",
+   "register_kind": "issue"
+  },
+  {
+   "date": "2026-11-10T21:31:16.000Z",
+   "headline": "A$1m Strategic Investment by Priority Impact CEO and Founder",
+   "price_sensitive": true,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03160311-6A1354493?access_token=83ff96335c2d45a094df02a206a39ff4"
+  },
+  {
+   "date": "2026-11-02T00:17:11.000Z",
+   "headline": "Becoming a substantial holder",
+   "price_sensitive": false,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03157041-6A1353242?access_token=83ff96335c2d45a094df02a206a39ff4",
+   "register_kind": "substantial",
+   "notice_text": "603 Page 1 of 4 15 July 2001 Form 603 Corporations Act 2001 Section 671B Notice of initial substantial holder To Company Name/Scheme ION Video Limited ACN/ARSN ABN 84 149 796 332 1. Details of substantial holder (1) Name Technical Investing Pty Ltd ACN/ARSN (if applicable) ACN 111 646 032 The holder became a substantial holder on 7 October 2026 2. Details of voting power The total number of votes attached to all the voting shares in the company or voting interests in the scheme that the substantial holder or an associate (2) had a relevant interest (3) in on the date the substantial holder became a substantial holder are as follows: Class of securities (4) Number of securities Person's votes (5) Voting power (6) Fully Paid Ordinary (FPO) shares 8,050,123 8,050,123 5.7% 3. Details of relevant interests The nature of the relevant interest the substantial holder or an associate had in the following voting securities on the date the substantial holder became a substantial holder are as follows: Holder of relevant interest Nature of relevant interest (7) Class and number of securities Technical Investing Pty Ltd As trustee for Technical Investing Absolute Return Fund 860,764 FPO Technical Investing Pty Ltd As trustee for TI Family Wealth Fund 95,305 FPO Technical Investing Pty Ltd As trustee for TI High Conviction Fund 250,000 FPO Technical Investing Pty Ltd As trustee for TI Growth Fund 5,934,400 FPO Technical Investing Pty Ltd beneficially owns 8,000 FPO Craig Scheef As trustee for CAS super fund 520,440 FPO Craig Scheef As trustee for CAS family trust 381,214 FPO 4. Details of present registered holders The persons registered as holders of the securities referred to in paragraph 3 above are as follows: Holder of relevant interest Registered holder of securities Person entitled to be registered as holder (8) Class and number of securities Technical Investing Pty Ltd One Managed Investment Funds Ltd One Managed Investment Funds Ltd 7,045,164 FPO Technical Investing Pty Ltd Technical Investing Pty Ltd Technical Investing Pty Ltd 103,305 FPO Craig Scheef Craig Scheef Craig Scheef 901,654 FPO 5. Consideration For personal use only 603 Page 2 of 4 15 July 2001 The consideration paid for each relevant interest referred to in paragraph 3 above, and acquired in the four months prior to the day that the substantial holder became a substantial holder is as follows: Holder of relevant interest Date of acquisition Consideration (9) Class and number of securities Cash Non-cash See attached 6. Associates The reasons the persons named in paragraph 3 above are associates of the substantial holder are as follows: Name and ACN/ARSN (if applicable) Nature of association Technical Investing Pty Ltd Trustee of investment funds Craig Scheef Director of Technical Investing Pty Ltd 7. Addresses The addresses of persons named in this form are as follows: Name Address Technical Investing Pty Ltd Level 6, 350 Collins St, Melbourne Vic 3000 Craig Scheef 1 Spencer Place Richmon"
+  },
+  {
+   "date": "2026-10-30T06:38:21.000Z",
+   "headline": "Notice of Annual General Meeting/Proxy Form",
+   "price_sensitive": false,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03156508-6A1352998?access_token=83ff96335c2d45a094df02a206a39ff4"
+  }
+ ],
+ "news_google": [
+  {
+   "title": "ION Video Cuts Performance Rights for Executive Chair Brent Jones and Two Non-Executive Directors Ahead of 30 November AGM - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-cuts-performance-rights-for-executive-chair-brent-jones-and-two-non-executive-directors-ahead-of-30-november-agm",
+   "published": "2026-11-13T05:21:26+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQQ21yXzRUMGxJYkFzbF9xdzdBUkxwMnItM211cjZXeUtMUGpZX0hfdktqc2RFM1c0RW8xY0VMREdDb1oyMTF1aHBiajVmWklqY1ppQml6SURWMlQ3R0JPVmRkVGY5d2lSSEVjWkxNUHpUTFBlNmFVZEJrRTR0S3Q0bVF6NzhQQ1hzWjBuYjVSMTZMTEVkUWF4bUFGNVAzNW9CUU92ZGVEQ2NlX3lEUDVwbUw3YkVMdnhMcHFWS01UWF91R3daLVQwalYyeElNd3FKXzVjRE1NbXkxTXM4a0xjeGhRcjI1dG5fblo2UEhmOXBxQkFnWGlZ?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION Video Limited (ASX:IOV): Nordic Data Centre Trials Put Video Virtualisation to the Test - Kalkine",
+   "link": "https://kalkine.com.au/news/technology/ion-video-limited-asxiov-nordic-data-centre-trials-put-video-virtualisation-to-the-test",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYzJ4X3YwZmNnYUJJM01XMENuU1pObU5HNmhjZF9pSjZKU2k1RW1XQTllLXFMR2ZPbFp3NWswYnZlTjZzT0pxYW54aFZfWWVzZjhwNlZXVDA5eTRPZGFMd2VOUlVNRnh2WmQzQVFCS1NiRmlMRHR4dTdWN0YxY3RrSVdkRm9aRVB5M015RjEyblVzQjNTbWJyV1kzUGQtLUF3N1lhbWZaY19kSk5ELXA1VWxGVUFsRVVWV1lPX0pKZDdFY0ln?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
+   "published": "2026-11-11T01:32:27+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "WiseTech Global Limited (ASX:WTC): How Are e2open Integration and AI Reshaping FY27 Margins? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSUFrOUxXXzUzLU1URXRybFRoRE5kbXFvOFFQRHBtNW1lakRqTDFEa2FoSlVreGJ0Qlh3RkFwMTdxU0VJc2dTVWlJVEgwT3QwQU9XY3hrSm9CVDVZUnp2WnVzbjJYamdfUW41ZDlSYW9VSHo1SWZDM29BYWRjbDJNTHl0VVE1dVY2QUZ0d1JwdTY3R3NXRDAtcjIyWU1oTTQwRHpQR0o2NWtfOE02S1ZHM3VxeGVtNnM3eG9JRW03QWRPS0U0UUQ4MDJYWFZCTG9qRkE?oc=5",
+   "published": "2026-11-11T06:15:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNX0pTUWlWTDJkWGRlZE5RTWVkdno1RjhaR0hleElmZzJqZ1VVWE5aWHNkUzhyNC1zaE9BMGtFN3dKYTN1aFoxVFZlRDgxWEM5Q1JjdlhGZDhYMm9UajJFVXNId3d5OTRmUmE3YVp5bktZS0NYRlo5eHVBc3VDSVRHYXpRbjhyMHJINXNvdWc1azhpQ0c0eFpwSHF0NmRTelZ3Q1QtM2dMZ09rODJlcVRJ?oc=5",
+   "published": "2026-11-11T05:50:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Fluence Corporation Quotes 28.96 Million Shares Issued via Interest Conversion to Directors Oldendorff and Brown - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPQlRCZTNCc2NIUTEwSmR0Vm9rdlJrSGFQN01OTlFFVjFEQ3ViV0hpRzduSXBHV3BDaHhZZmhDcEJTRDFPZ0FSbUIyYXJIa2R3ZVc1UTdJbVNIUEJjZFN6R0ZsZ3owYXhBSUR2YUwzWEZnYWNXQVBXWHdTUDU5VEo2RlVaOFpWZ1hHVkFmcEYtWXdQaFhMT3V5ekplSG9jU3k5emNDczlGMXgtLThRTjFLZ2s5UFlBRndlTVVLeGV1TUZqVlhnMDRvakJGV21ramhkUlJQaG16OXBMVnExZ0tzZzMycXMzaVpv?oc=5",
+   "published": "2026-11-13T05:21:26+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
+   "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
+   "published": "2026-11-13T06:07:43+00:00",
+   "outlet": "TipRanks",
+   "outlet_url": "https://www.tipranks.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "COSOL Limited (ASX:COS): Can Rail Contracts Extend Its FY26 Margin Recovery? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWEZFYy1lNDFybGVoUU95aTV2dEQ1bXZGRXhkMHBnd2c5Y2ROZTlIZE1LczdoUllDblh1S2VKZ0pBbXZrN0p0X19TR1lWNG5iU2l6ZTNqMlFIb3RRcWFleXpMZG9WT1JxT3hKd1N6Wldqa3Q2Y1k1UmVyeDVBZDRTSjdaV01uakR2MkxVOUloNUU2RjdRMEpqTGN6Wm5nUmtGZ1BWRlc1U3pBaUUwMTkw?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Metallium Limited (ASX:MTM): Texas Reactor Tests and the PCB Commercialisation Plan - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOFJXS0s1QUFVWWJ1WGJYRXZRWTNWMWpoMVJ2X1F5QU1XenJxUDVhVHVubVo4cVU4bHJ2OTYxb1lZVHVXbTdIME43b21oTUtLaS1wZENXYkhEQW0tUkluMG1NcjNEdXN1ZXNONk5sLXI3YjhnMmhfdThKSVVldmRYVG1meEZhSHAydUNTTDkxTEVBc3I5ajBHQU90QWhDZ3IwRUtGN0tXQnkyS2FlZi12cDV1bW1NYll2bXc?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Chrysos Corporation Limited (ASX:C79): How PhotonAssay Leasing Is Changing Its FY27 Pipeline - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQekVRaDhiV3l2T20wVUIwb0R2WjVCOG9fNDZoQ2RSWENBcGJUd3JwZFBrSU5VcTJNbjJSaWZKRk5nVlhTVW1mWHhHT2ZvcElIbGtsWlotQnIwYnQwa3Q2eUdvbnI5UnlUTkgzUzJBQXFsd0hhdjIyWEF3WW9Selg4bzFJYTNQSGxqQXphc1h6TGtuaTJfSzh1dVhwczBfZDJJdi04b1UyT1dQQzZiV3FLS2ZvN1M5ZHdObXBQY2pCaUNva0JZRFE?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  }
+ ],
+ "google_links_resolved": 4,
+ "news_bing": [
+  {
+   "title": "Ion Video restructures video to enable AI to supercharge its use",
+   "link": "https://itwire.com/business-it-news/data/ion-video-restructures-video-to-enable-ai-to-supercharge-its-use/",
+   "published": "2026-03-18T06:10:00+00:00",
+   "snippet": "Melbourne tech company Ion Video says it has solved one of the biggest structural limitations of the internet: video’s incompatibility with AI. The issue for AI is that it can analyse a video and ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Ion Video explains the future of AI-powered content - ICYMI",
+   "link": "https://www.proactiveinvestors.com.au/companies/news/1092730/ion-video-explains-the-future-of-ai-powered-content-icymi-1092730.html",
+   "published": "2026-05-22T05:15:00+00:00",
+   "snippet": "Ion Video Ltd (ASX:IOV) earlier this week outlined how its patented programmable video technology could position the company at the centre of the next wave of AI-driven media transformation, with ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
+   "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
+   "published": "2026-10-27T23:49:00+00:00",
+   "snippet": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video Cuts Debt with Early Note Conversion to Equity",
+   "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/1128389/ion-video-cuts-debt-with-early-note-conversion-to-equity/",
+   "published": "2026-05-10T09:42:00+00:00",
+   "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video clears debt after converting $2.65 million in notes",
+   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
+   "published": "2026-05-19T04:45:00+00:00",
+   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Ion Video Plans Equity Placement and Option Issue on ASX",
+   "link": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/4646706/ion-video-plans-equity-placement-and-option-issue-on-asx/",
+   "published": "2026-09-16T17:06:00+00:00",
+   "snippet": "An announcement from Ion Video ( (AU:IOV)) is now available. Ion Video Ltd, an ASX-listed video and media technology company trading under the ticker IOV, participates actively in Australia’s public ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video unlocks a new era of AI-driven video assembly",
+   "link": "https://uk.finance.yahoo.com/video/ion-video-unlocks-era-ai-024849090.html",
+   "published": "2026-02-25T18:48:00+00:00",
+   "snippet": "ION Video founder and Head of Innovation Finbar O'Hanlon talked with Proactive about the company's patented video virtualisation technology and how it aims to unlock a new era of AI-driven video ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  }
+ ],
+ "articles_enriched": 4,
+ "news_window": "3d",
+ "reddit": null,
+ "ratings": {
+  "Morningstar": {
+   "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
+   "status": 200,
+   "text_len": 3865,
+   "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
+   "snippets": [
+    "atens margins Apple shares are trading at record highs after posting solid results. William Kerwin, CFA | 13 November 2026 stocks Nvidia: Cutting our fair value estimate by 19% given the firm’s CEO transition and turmoil We’re reducing our long-term revenue estimates. Brian Colello, CPA | 13 November 2026 Morningstar Investment Ideas Markets Equity Commodity Currency Index Last price Change % Chan"
+   ],
+   "data_hits": []
+  },
+  "Market Index": {
+   "url": "https://www.marketindex.com.au/asx/iov",
+   "status": 200,
+   "text_len": 11490,
+   "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
+   "snippets": [
+    "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 256 ASX RANK 1,060 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +196.24% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,060 of 2,356 Sector Rank 75 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
+    " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
+    "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
+    " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
+    "46,250 $1.00 $546,250 As advised by the company 01/12/25 Brent Jones Issued 50,000,000 $0.002 $100,000 As advised by the company 01/12/25 Brent Jones Sell +50,000,000 $0.002 ($75,000) Off-market trade 01/12/25 Brent Jones Issued 200,000,000 $0.002 $400,000 Director remuneration 01/12/25 Brent Jones Issued 300,000,000 $0.002 $600,000 As advised by the company Director Interests The current holdings",
+    " shareholder's stake drops below 5%, the \"Shareholders Selling\" field shows full ownership as sold and sets \"New %\" to zero, even if they continue to hold shares under the limit. Name Last Notice Total Shares Shares Held (%) Citicorp Nominees Pty Limited 28/09/2026 9,262,453 6.93 Oxbo Holdings 2 Pty Ltd 28/09/2026 17,021,033 12.74 Unrandom Pty Ltd 28/09/2026 21,558,904 16.14 Technical Investing Pt"
+   ],
+   "data_hits": []
+  }
+ },
+ "sources": [
+  {
+   "source": "yahoo",
+   "ok": true
+  },
+  {
+   "source": "stooq",
+   "ok": false,
+   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+  },
+  {
+   "source": "index:ASX 200",
+   "ok": true
+  },
+  {
+   "source": "index:ASX tech",
+   "ok": true
+  },
+  {
+   "source": "index:S&P 500",
+   "ok": true
+  },
+  {
+   "source": "index:Nasdaq",
+   "ok": true
+  },
+  {
+   "source": "asx_header",
+   "ok": true
+  },
+  {
+   "source": "asx_key_stats",
+   "ok": true
+  },
+  {
+   "source": "asx_announcements",
+   "ok": true
+  },
+  {
+   "source": "google_news",
+   "ok": true
+  },
+  {
+   "source": "google_link_resolve",
+   "ok": true
+  },
+  {
+   "source": "bing_news",
+   "ok": true
+  },
+  {
+   "source": "article_enrich",
+   "ok": true
+  },
+  {
+   "source": "reddit",
+   "ok": false,
+   "error": "HTTPError: HTTP Error 403: Blocked"
+  },
+  {
+   "source": "rating:Morningstar",
+   "ok": true
+  },
+  {
+   "source": "rating:Market Index",
+   "ok": true
+  }
+ ]
+}
