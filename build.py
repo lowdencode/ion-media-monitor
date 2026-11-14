@@ -472,7 +472,8 @@ if reg:
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_html}</table>'))
 
 # ---------- top 50 shareholders (weekly edition) ----------
-KEEP_UPPER_SHORT = {"MR": "Mr", "MRS": "Mrs", "MS": "Ms", "DR": "Dr", "AND": "and", "THE": "The", "OF": "of", "FOR": "for"}
+KEEP_UPPER_SHORT = {"MR": "Mr", "MRS": "Mrs", "MS": "Ms", "DR": "Dr", "AND": "and", "THE": "The", "OF": "of", "FOR": "for",
+                    "PTY": "Pty", "LTD": "Ltd", "LIMITED": "Limited", "INC": "Inc", "SUPER": "Super", "FUND": "Fund"}
 
 
 def holder_name(raw):
