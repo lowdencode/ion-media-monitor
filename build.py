@@ -70,6 +70,22 @@ else:
     OUT_HTML, OUT_SUBJECT = sys.argv[3], sys.argv[4]
     CHART_PNG = os.path.join(os.path.dirname(os.path.abspath(OUT_HTML)), "chart.png")
 OUT_DIR = os.path.dirname(os.path.abspath(OUT_HTML)) if OUT_HTML else None
+
+
+def _dedupe_sessions(series):
+    """Yahoo sometimes returns the latest bar twice; keep one bar per date (the last seen), in date order."""
+    if isinstance(series, dict) and isinstance(series.get("sessions"), list):
+        by_date = {}
+        for row in series["sessions"]:
+            if isinstance(row, dict) and row.get("date"):
+                by_date[row["date"]] = row
+        series["sessions"] = [by_date[d] for d in sorted(by_date)]
+
+
+for _key in ("price_yahoo", "price_stooq"):
+    _dedupe_sessions(latest.get(_key))
+for _ix in (latest.get("markets") or {}).values():
+    _dedupe_sessions(_ix)
 report_date = dt.date.fromisoformat(a["report_date"])
 # "local": draw chart.png here and reference it as cid:att0.
 # "collector": the email carries the chart the GitHub collector drew (ASX release markers only).
@@ -397,10 +413,15 @@ else:
 mention_tile = tile(mentions_label, f"{m24}", escape(m_sub))
 
 if trade:
-    up = trade["chg_pct"] >= 0
-    price_tile = tile("IOV last close", cents(trade["close"]),
-                      f"{pct(trade['chg_pct'])} on {dt.date.fromisoformat(trade['date']):%a}",
-                      ACCENT if up else NEG)
+    if WEEKLY and trade.get("week"):
+        chg, when = trade["week"]["chg_pct"], "over 5 sessions"
+    else:
+        chg, when = trade["chg_pct"], f"on {dt.date.fromisoformat(trade['date']):%a}"
+    if abs(chg) < 0.05:
+        price_sub, price_col = f"Unchanged {when}", SLATE
+    else:
+        price_sub, price_col = f"{pct(chg)} {when}", ACCENT if chg > 0 else NEG
+    price_tile = tile("IOV last close", cents(trade["close"]), price_sub, price_col)
     ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
     vol_tile = tile("Volume, shares", f"{trade['volume']:,}",
                     f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
