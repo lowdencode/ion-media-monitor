@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-14T02:11:40+00:00",
+ "fetched_at_utc": "2026-11-14T02:25:23+00:00",
  "melbourne_date": "2026-11-14",
  "price_yahoo": {
   "sessions": [
@@ -1154,6 +1154,16 @@
    "via": "google_news"
   },
   {
+   "title": "COSOL Limited (ASX:COS): Can Rail Contracts Extend Its FY26 Margin Recovery? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWEZFYy1lNDFybGVoUU95aTV2dEQ1bXZGRXhkMHBnd2c5Y2ROZTlIZE1LczdoUllDblh1S2VKZ0pBbXZrN0p0X19TR1lWNG5iU2l6ZTNqMlFIb3RRcWFleXpMZG9WT1JxT3hKd1N6Wldqa3Q2Y1k1UmVyeDVBZDRTSjdaV01uakR2MkxVOUloNUU2RjdRMEpqTGN6Wm5nUmtGZ1BWRlc1U3pBaUUwMTkw?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
    "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
    "published": "2026-11-13T06:07:43+00:00",
@@ -1164,16 +1174,6 @@
    "via": "google_news",
    "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "title": "COSOL Limited (ASX:COS): Can Rail Contracts Extend Its FY26 Margin Recovery? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWEZFYy1lNDFybGVoUU95aTV2dEQ1bXZGRXhkMHBnd2c5Y2ROZTlIZE1LczdoUllDblh1S2VKZ0pBbXZrN0p0X19TR1lWNG5iU2l6ZTNqMlFIb3RRcWFleXpMZG9WT1JxT3hKd1N6Wldqa3Q2Y1k1UmVyeDVBZDRTSjdaV01uakR2MkxVOUloNUU2RjdRMEpqTGN6Wm5nUmtGZ1BWRlc1U3pBaUUwMTkw?oc=5",
-   "published": "2026-11-11T05:49:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
   },
   {
    "title": "Chrysos Corporation Limited (ASX:C79): How PhotonAssay Leasing Is Changing Its FY27 Pipeline - Kalkine",
@@ -1194,23 +1194,33 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news"
+  },
+  {
+   "title": "Regal Investment Fund Issues Corrected October 2026 Monthly Report After NAV Exposure Data Errors - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxObUpULXRJcjJHVEx1NkNUSlVWSzdHWnBKbzNTR3JzU1VOQTl4a1puUURnaDFISXVvbkU2WUtDOGdYaXQ3aHBZZHJlSV9FX2p2UmJIVGZzcnh4dEFvZ3FFV2Y2SmU5LV81eE1JN2JCSFhJWGFFM0VvYlNERDQ1YjRnbXFnY1NkSGlNMzVFaDBhSkliOVRvNmN1SW1OMmRoODVKOHBvOUVTQkpmbEljb1I3ejRXS3oxRGdxb193RDV1NlJQZkhzRVoyM2Q2SEtuZnhsNGN5RVpR?oc=5",
+   "published": "2026-11-13T05:21:26+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "US",
+   "via": "google_news"
   }
  ],
  "google_links_resolved": 3,
  "news_bing": [
   {
-   "title": "Ion Video restructures video to enable AI to supercharge its use",
-   "link": "https://itwire.com/business-it-news/data/ion-video-restructures-video-to-enable-ai-to-supercharge-its-use/",
-   "published": "2026-03-18T06:10:00+00:00",
-   "snippet": "Melbourne tech company Ion Video says it has solved one of the biggest structural limitations of the internet: video’s incompatibility with AI. The issue for AI is that it can analyse a video and ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Ion Video explains the future of AI-powered content - ICYMI",
    "link": "https://www.proactiveinvestors.com.au/companies/news/1092730/ion-video-explains-the-future-of-ai-powered-content-icymi-1092730.html",
    "published": "2026-05-22T05:15:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) earlier this week outlined how its patented programmable video technology could position the company at the centre of the next wave of AI-driven media transformation, with ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Ion Video restructures video to enable AI to supercharge its use",
+   "link": "https://itwire.com/business-it-news/data/ion-video-restructures-video-to-enable-ai-to-supercharge-its-use/",
+   "published": "2026-03-18T06:10:00+00:00",
+   "snippet": "Melbourne tech company Ion Video says it has solved one of the biggest structural limitations of the internet: video’s incompatibility with AI. The issue for AI is that it can analyse a video and ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1255,10 +1265,10 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video",
-   "link": "https://www.businessnews.com.au/Company/Ion-Video",
-   "published": "2026-04-05T01:43:00+00:00",
-   "snippet": "Get notifications in MyBN when activity occurs. Yes. Corporate subscriptions are available for teams and organisations, with discounted rates as user numbers increase. Pricing starts from $1,625 + GST ...",
+   "title": "Ion Video Stock Price History",
+   "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data",
+   "published": "2026-10-10T17:00:00+00:00",
+   "snippet": "The average daily trading volume for Ion Video (IOV) is 119,143. The opening price for Ion Video today was 0.590.",
    "query": "\"ION Video\"",
    "via": "bing_news"
   }
