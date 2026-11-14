@@ -805,13 +805,21 @@ if ratings:
 title = {"monday": "Weekly media and market monitor", "weekend": "Weekend media monitor"}.get(
     edition, "Media and market monitor")
 date_line = f"{report_date:%A} {report_date.day} {report_date:%B %Y}"
-header = (f'<tr><td bgcolor="{INK}" style="background:{INK};padding:24px 28px;border-radius:14px 14px 0 0;{FONT}">'
-          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-          f'<td style="{FONT}font-size:22px;font-weight:bold;letter-spacing:3px;color:#FFFFFF;">ION</td>'
-          f'<td align="right" style="{FONT}font-size:13px;color:#B9C6C2;">{date_line}</td></tr></table>'
-          f'<p style="margin:14px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">{title}</p>'
-          f'</td></tr>'
-          f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
+WORDMARK = f'{FONT}font-size:22px;font-weight:bold;letter-spacing:3px;color:#FFFFFF;'
+# The ION send (image_mode collector or none) attaches assets/ion-logo-email.png as cid:logo; other routes use the wordmark.
+LOGO_CID = IMAGE_MODE != "local"
+
+
+def header_html(logo):
+    mark = (f'<img src="cid:logo" width="96" height="36" alt="ION" style="display:block;width:96px;height:36px;'
+            f'border:0;outline:none;{WORDMARK}">' if logo else "ION")
+    return (f'<tr><td bgcolor="{INK}" style="background:{INK};padding:24px 28px;border-radius:14px 14px 0 0;{FONT}">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td valign="middle" style="{WORDMARK}">{mark}</td>'
+            f'<td align="right" valign="middle" style="{FONT}font-size:13px;color:#B9C6C2;">{date_line}</td></tr></table>'
+            f'<p style="margin:16px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">{title}</p>'
+            f'</td></tr>'
+            f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
 mline = markets_line()
 summary = (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}'
            + (p(escape(mline), 13, SLATE, f"padding-top:10px;{NUM}") if mline else "") + '</td></tr>')
@@ -829,8 +837,8 @@ footer = (f'<tr><td style="padding:28px 28px 26px 28px;">'
           f'{footer_text}</td></tr></table></td></tr>')
 
 
-def page(image):
-    body = (header + summary + tiles + "".join(parts) + trading_section(image) + ratings_html + footer)
+def page(image, logo=False):
+    body = (header_html(logo) + summary + tiles + "".join(parts) + trading_section(image) + ratings_html + footer)
     out = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E9EEEC" '
            f'style="background:#E9EEEC;"><tr><td align="center" style="padding:24px 10px;">'
            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" '
@@ -868,7 +876,7 @@ elif IMAGE_MODE == "none":
 else:
     have_image = bool(trade) and not WEEKEND and len(trade["month"]) >= 5 and render_chart(trade["month"], CHART_PNG)
 open(os.path.join(OUT_DIR, "out_fallback.html"), "w").write(page(False))
-open(OUT_HTML, "w").write(page(have_image))
+open(OUT_HTML, "w").write(page(have_image, logo=LOGO_CID))
 
 bits = [f"{report_date:%a} {report_date.day} {report_date:%b}"]
 if flags:
