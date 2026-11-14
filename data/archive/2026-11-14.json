@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-14T00:17:48+00:00",
+ "fetched_at_utc": "2026-11-14T01:46:10+00:00",
  "melbourne_date": "2026-11-14",
  "price_yahoo": {
   "sessions": [
@@ -658,6 +658,10 @@
     {
      "date": "2026-11-13",
      "close": 9082.2
+    },
+    {
+     "date": "2026-11-13",
+     "close": 9082.2
     }
    ],
    "price": 9082.2,
@@ -1110,18 +1114,6 @@
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
-   "title": "ION Video Receives A$1 Million Placement Commitment from Priority Impact CEO Magnus Rosengren - Kalkine",
-   "link": "https://kalkine.com.au/news/announcements/ion-video-receives-a1-million-placement-commitment-from-priority-impact-ceo-magnus-rosengren",
-   "published": "2026-11-11T01:32:27+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPdS1GWHYwQ3djdU5DNFNIUUJfeEVBYzhXV001Ynp1YVNkNG1GVDNCbG5HMDhRRUcxb2FUNHRSWWlxNWJBT29HWVBfTHJId0VsZjRkcGZTODN6SFhaYjlfX0RhZF9FTTBUdmlsLU80cTdxVll6azJ3Q3hKNmpfMmRqR1dnTlJMejBHQVk2OGpLRzFaU1N1aDVpV05RQjlybWt6ZmtRd0VhM2ltV2hvejlxa2Foemp2UDViMXUwdDc5akxzbVhDd2Y2U01Ba2p0Q28?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
    "title": "WiseTech Global Limited (ASX:WTC): How Are e2open Integration and AI Reshaping FY27 Margins? - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSUFrOUxXXzUzLU1URXRybFRoRE5kbXFvOFFQRHBtNW1lakRqTDFEa2FoSlVreGJ0Qlh3RkFwMTdxU0VJc2dTVWlJVEgwT3QwQU9XY3hrSm9CVDVZUnp2WnVzbjJYamdfUW41ZDlSYW9VSHo1SWZDM29BYWRjbDJNTHl0VVE1dVY2QUZ0d1JwdTY3R3NXRDAtcjIyWU1oTTQwRHpQR0o2NWtfOE02S1ZHM3VxeGVtNnM3eG9JRW03QWRPS0U0UUQ4MDJYWFZCTG9qRkE?oc=5",
    "published": "2026-11-11T06:15:00+00:00",
@@ -1132,9 +1124,9 @@
    "via": "google_news"
   },
   {
-   "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNX0pTUWlWTDJkWGRlZE5RTWVkdno1RjhaR0hleElmZzJqZ1VVWE5aWHNkUzhyNC1zaE9BMGtFN3dKYTN1aFoxVFZlRDgxWEM5Q1JjdlhGZDhYMm9UajJFVXNId3d5OTRmUmE3YVp5bktZS0NYRlo5eHVBc3VDSVRHYXpRbjhyMHJINXNvdWc1azhpQ0c0eFpwSHF0NmRTelZ3Q1QtM2dMZ09rODJlcVRJ?oc=5",
-   "published": "2026-11-11T05:50:00+00:00",
+   "title": "Fluence Corporation Quotes 28.96 Million Shares Issued via Interest Conversion to Directors Oldendorff and Brown - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPQlRCZTNCc2NIUTEwSmR0Vm9rdlJrSGFQN01OTlFFVjFEQ3ViV0hpRzduSXBHV3BDaHhZZmhDcEJTRDFPZ0FSbUIyYXJIa2R3ZVc1UTdJbVNIUEJjZFN6R0ZsZ3owYXhBSUR2YUwzWEZnYWNXQVBXWHdTUDU5VEo2RlVaOFpWZ1hHVkFmcEYtWXdQaFhMT3V5ekplSG9jU3k5emNDczlGMXgtLThRTjFLZ2s5UFlBRndlTVVLeGV1TUZqVlhnMDRvakJGV21ramhkUlJQaG16OXBMVnExZ0tzZzMycXMzaVpv?oc=5",
+   "published": "2026-11-13T05:21:26+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
@@ -1142,9 +1134,19 @@
    "via": "google_news"
   },
   {
-   "title": "Fluence Corporation Quotes 28.96 Million Shares Issued via Interest Conversion to Directors Oldendorff and Brown - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPQlRCZTNCc2NIUTEwSmR0Vm9rdlJrSGFQN01OTlFFVjFEQ3ViV0hpRzduSXBHV3BDaHhZZmhDcEJTRDFPZ0FSbUIyYXJIa2R3ZVc1UTdJbVNIUEJjZFN6R0ZsZ3owYXhBSUR2YUwzWEZnYWNXQVBXWHdTUDU5VEo2RlVaOFpWZ1hHVkFmcEYtWXdQaFhMT3V5ekplSG9jU3k5emNDczlGMXgtLThRTjFLZ2s5UFlBRndlTVVLeGV1TUZqVlhnMDRvakJGV21ramhkUlJQaG16OXBMVnExZ0tzZzMycXMzaVpv?oc=5",
+   "title": "Felix Group Holdings Applies to Quote 77.98 Million Shares from Tranche 2 Placement at $0.038 - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPU1NPUUF2SVhmbHZUenNzQThMb2NSUEctYzZMSGN1cVRyN0lEYkdsQzJmMVVESDdzZUY1VjgtSXNDYVZKZV94czJEVjZMSmFjLXhjWnRaa2hrWFktZGdPaGJWeGZ4TTI3c2t5N2pUWGNPTV9wUm5FMktzZklKYXdyN255NG10T3hjakhpV2xxX1VwMzFwUXRzcC1FcmJ1TVlhenJwcUhqR1FLRXJrT21zMEpmSTZiQVRQNDd1VFZRdmxOUnR3ODgxNk1TZUw?oc=5",
    "published": "2026-11-13T05:21:26+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNX0pTUWlWTDJkWGRlZE5RTWVkdno1RjhaR0hleElmZzJqZ1VVWE5aWHNkUzhyNC1zaE9BMGtFN3dKYTN1aFoxVFZlRDgxWEM5Q1JjdlhGZDhYMm9UajJFVXNId3d5OTRmUmE3YVp5bktZS0NYRlo5eHVBc3VDSVRHYXpRbjhyMHJINXNvdWc1azhpQ0c0eFpwSHF0NmRTelZ3Q1QtM2dMZ09rODJlcVRJ?oc=5",
+   "published": "2026-11-11T05:50:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
@@ -1174,16 +1176,6 @@
    "via": "google_news"
   },
   {
-   "title": "Metallium Limited (ASX:MTM): Texas Reactor Tests and the PCB Commercialisation Plan - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOFJXS0s1QUFVWWJ1WGJYRXZRWTNWMWpoMVJ2X1F5QU1XenJxUDVhVHVubVo4cVU4bHJ2OTYxb1lZVHVXbTdIME43b21oTUtLaS1wZENXYkhEQW0tUkluMG1NcjNEdXN1ZXNONk5sLXI3YjhnMmhfdThKSVVldmRYVG1meEZhSHAydUNTTDkxTEVBc3I5ajBHQU90QWhDZ3IwRUtGN0tXQnkyS2FlZi12cDV1bW1NYll2bXc?oc=5",
-   "published": "2026-11-11T05:49:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "Chrysos Corporation Limited (ASX:C79): How PhotonAssay Leasing Is Changing Its FY27 Pipeline - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQekVRaDhiV3l2T20wVUIwb0R2WjVCOG9fNDZoQ2RSWENBcGJUd3JwZFBrSU5VcTJNbjJSaWZKRk5nVlhTVW1mWHhHT2ZvcElIbGtsWlotQnIwYnQwa3Q2eUdvbnI5UnlUTkgzUzJBQXFsd0hhdjIyWEF3WW9Selg4bzFJYTNQSGxqQXphc1h6TGtuaTJfSzh1dVhwczBfZDJJdi04b1UyT1dQQzZiV3FLS2ZvN1M5ZHdObXBQY2pCaUNva0JZRFE?oc=5",
    "published": "2026-11-11T05:49:00+00:00",
@@ -1192,9 +1184,19 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news"
+  },
+  {
+   "title": "Metallium Limited (ASX:MTM): Texas Reactor Tests and the PCB Commercialisation Plan - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOFJXS0s1QUFVWWJ1WGJYRXZRWTNWMWpoMVJ2X1F5QU1XenJxUDVhVHVubVo4cVU4bHJ2OTYxb1lZVHVXbTdIME43b21oTUtLaS1wZENXYkhEQW0tUkluMG1NcjNEdXN1ZXNONk5sLXI3YjhnMmhfdThKSVVldmRYVG1meEZhSHAydUNTTDkxTEVBc3I5ajBHQU90QWhDZ3IwRUtGN0tXQnkyS2FlZi12cDV1bW1NYll2bXc?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
   }
  ],
- "google_links_resolved": 4,
+ "google_links_resolved": 3,
  "news_bing": [
   {
    "title": "Ion Video restructures video to enable AI to supercharge its use",
@@ -1261,7 +1263,7 @@
    "via": "bing_news"
   }
  ],
- "articles_enriched": 4,
+ "articles_enriched": 3,
  "news_window": "3d",
  "reddit": null,
  "ratings": {
