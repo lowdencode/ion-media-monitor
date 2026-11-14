@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-14T02:44:54+00:00",
+ "fetched_at_utc": "2026-11-14T03:17:30+00:00",
  "melbourne_date": "2026-11-14",
  "price_yahoo": {
   "sessions": [
@@ -1118,6 +1118,18 @@
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
+   "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
+   "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
+   "published": "2026-11-13T06:07:43+00:00",
+   "outlet": "TipRanks",
+   "outlet_url": "https://www.tipranks.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
    "title": "WiseTech Global Limited (ASX:WTC): How Are e2open Integration and AI Reshaping FY27 Margins? - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSUFrOUxXXzUzLU1URXRybFRoRE5kbXFvOFFQRHBtNW1lakRqTDFEa2FoSlVreGJ0Qlh3RkFwMTdxU0VJc2dTVWlJVEgwT3QwQU9XY3hrSm9CVDVZUnp2WnVzbjJYamdfUW41ZDlSYW9VSHo1SWZDM29BYWRjbDJNTHl0VVE1dVY2QUZ0d1JwdTY3R3NXRDAtcjIyWU1oTTQwRHpQR0o2NWtfOE02S1ZHM3VxeGVtNnM3eG9JRW03QWRPS0U0UUQ4MDJYWFZCTG9qRkE?oc=5",
    "published": "2026-11-11T06:15:00+00:00",
@@ -1156,18 +1168,6 @@
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news"
-  },
-  {
-   "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
-   "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
-   "published": "2026-11-13T06:07:43+00:00",
-   "outlet": "TipRanks",
-   "outlet_url": "https://www.tipranks.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
    "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
@@ -1219,18 +1219,18 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video Cuts Debt with Early Note Conversion to Equity",
-   "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/1128389/ion-video-cuts-debt-with-early-note-conversion-to-equity/",
-   "published": "2026-05-10T09:42:00+00:00",
-   "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
    "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
    "published": "2026-10-27T23:49:00+00:00",
    "snippet": "The company described it as the initial of several proposed trials and said it follows a placement announced in mid September.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video Cuts Debt with Early Note Conversion to Equity",
+   "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/1128389/ion-video-cuts-debt-with-early-note-conversion-to-equity/",
+   "published": "2026-05-10T09:42:00+00:00",
+   "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1272,14 +1272,6 @@
    "published": "2026-04-05T01:43:00+00:00",
    "snippet": "Get notifications in MyBN when activity occurs. Yes. Corporate subscriptions are available for teams and organisations, with discounted rates as user numbers increase. Pricing starts from $1,625 + GST ...",
    "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video Ltd (ASX:IOV)",
-   "link": "https://kalkinemedia.com/au/companies/asx-iov",
-   "published": "2026-09-17T17:00:00+00:00",
-   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
-   "query": "\"ASX: IOV\"",
    "via": "bing_news"
   }
  ],
@@ -1323,7 +1315,7 @@
   {
    "source": "stooq",
    "ok": false,
-   "error": "URLError: <urlopen error timed out>"
+   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
   },
   {
    "source": "index:ASX 200",
