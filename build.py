@@ -14,7 +14,7 @@ latest.json   the collector output (data/latest.json in the repo)
 analysis.json written by the daily run:
   {
     "report_date": "YYYY-MM-DD",            Melbourne date of the report
-    "edition": "weekday" | "monday" | "weekend",
+    "edition": "weekday" | "monday" | "weekly" | "weekend",   weekly = the Wednesday report; monday is the same layout
     "summary": "Two or three plain sentences for the CEO.",
     "mentions_24h": 0,                       count shown in the mentions tile
     "mentions_label": "Mentions, 24 hours",  optional tile label
@@ -92,8 +92,8 @@ report_date = dt.date.fromisoformat(a["report_date"])
 IMAGE_MODE = a.get("image_mode") or "local"
 assert IMAGE_MODE in ("local", "collector", "none"), f"unknown image_mode {IMAGE_MODE}"
 edition = a.get("edition") or "weekday"
-assert edition in ("weekday", "monday", "weekend"), f"unknown edition {edition}"
-WEEKLY, WEEKEND = edition == "monday", edition == "weekend"
+assert edition in ("weekday", "monday", "weekly", "weekend"), f"unknown edition {edition}"
+WEEKLY, WEEKEND = edition in ("monday", "weekly"), edition == "weekend"
 
 
 # ---------- formatting ----------
@@ -773,7 +773,7 @@ def trading_section(image):
         if not trade:
             return ""
         return section("Trading", p(f"No trading since {dt.date.fromisoformat(trade['date']):%A}'s close of "
-                                    f"{cents(trade['close'])}. Monday's edition covers the week.", 14, SLATE))
+                                    f"{cents(trade['close'])}. Wednesday's weekly report covers the week.", 14, SLATE))
     if not trade:
         return section("Trading", p("Price data unavailable this morning.", 14, SLATE))
     if image:
@@ -823,7 +823,8 @@ if ratings:
                            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_rows}</table>')
 
 # ---------- assemble ----------
-title = {"monday": "Weekly media and market monitor", "weekend": "Weekend media monitor"}.get(
+title = {"monday": "Weekly media and market monitor", "weekly": "Weekly media and market monitor",
+         "weekend": "Weekend media monitor"}.get(
     edition, "Media and market monitor")
 date_line = f"{report_date:%A} {report_date.day} {report_date:%B %Y}"
 WORDMARK = f'{FONT}font-size:22px;font-weight:bold;letter-spacing:3px;color:#FFFFFF;'
@@ -907,7 +908,8 @@ if trade and WEEKLY and trade.get("week"):
 elif trade and not WEEKEND:
     bits.append(f"IOV {cents(trade['close'])} {pct(trade['chg_pct'])}")
 bits.append(f"{m24} mention{'' if m24 == 1 else 's'}" + (" this week" if WEEKLY else ""))
-name = {"monday": "ION weekly monitor", "weekend": "ION weekend monitor"}.get(edition, "ION monitor")
+name = {"monday": "ION weekly monitor", "weekly": "ION weekly report",
+        "weekend": "ION weekend monitor"}.get(edition, "ION monitor")
 subject = f"{name}, " + bits[0] + ": " + ", ".join(bits[1:])
 open(OUT_SUBJECT, "w").write(subject)
 print(subject)
