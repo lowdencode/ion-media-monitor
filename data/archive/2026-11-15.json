@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-14T22:16:43+00:00",
+ "fetched_at_utc": "2026-11-14T22:56:11+00:00",
  "melbourne_date": "2026-11-15",
  "price_yahoo": {
   "sessions": [
@@ -1106,6 +1106,21 @@
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
   },
   {
+   "title": "Ion Video Ltd (IOV.XA) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "link": "https://ca.finance.yahoo.com/quote/IOV.XA/seasonality/",
+   "published": "2026-11-14T12:34:02+00:00",
+   "outlet": "Yahoo! Finance Canada",
+   "outlet_url": "https://ca.finance.yahoo.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MM09YcWhPbGZTcjluTFFWWWdVZk5CUHdEQ3d5ancxVlNxUkVPRDFISkFyM1dsWWVDLUN0MVlIZjJGYUdTbjNLel9nNUJsVjEwV2FHWVVEY1N3eWthUkQwTHpOX3g?oc=5",
+   "description": "Ion Video Ltd (IOV.XA) seasonal returns chart provides the mean and median returns by month to inform your investment strategy.",
+   "published_meta": null,
+   "author": null,
+   "error_terms": []
+  },
+  {
    "title": "Felix Group Holdings Applies to Quote 77.98 Million Shares from Tranche 2 Placement at $0.038 - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPU1NPUUF2SVhmbHZUenNzQThMb2NSUEctYzZMSGN1cVRyN0lEYkdsQzJmMVVESDdzZUY1VjgtSXNDYVZKZV94czJEVjZMSmFjLXhjWnRaa2hrWFktZGdPaGJWeGZ4TTI3c2t5N2pUWGNPTV9wUm5FMktzZklKYXdyN255NG10T3hjakhpV2xxX1VwMzFwUXRzcC1FcmJ1TVlhenJwcUhqR1FLRXJrT21zMEpmSTZiQVRQNDd1VFZRdmxOUnR3ODgxNk1TZUw?oc=5",
    "published": "2026-11-13T05:21:26+00:00",
@@ -1126,21 +1141,6 @@
    "via": "google_news",
    "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
    "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "title": "Ion Video Ltd (IOV.XA) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
-   "link": "https://ca.finance.yahoo.com/quote/IOV.XA/seasonality/",
-   "published": "2026-11-14T12:34:02+00:00",
-   "outlet": "Yahoo! Finance Canada",
-   "outlet_url": "https://ca.finance.yahoo.com",
-   "query": "\"ION Video\"",
-   "edition": "US",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MM09YcWhPbGZTcjluTFFWWWdVZk5CUHdEQ3d5ancxVlNxUkVPRDFISkFyM1dsWWVDLUN0MVlIZjJGYUdTbjNLel9nNUJsVjEwV2FHWVVEY1N3eWthUkQwTHpOX3g?oc=5",
-   "description": "Ion Video Ltd (IOV.XA) seasonal returns chart provides the mean and median returns by month to inform your investment strategy.",
-   "published_meta": null,
-   "author": null,
-   "error_terms": []
   }
  ],
  "google_links_resolved": 3,
