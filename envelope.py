@@ -1,11 +1,11 @@
-"""Wrap a built report into a Microsoft Graph sendMail request for the ION Outbox flow.
+"""Wrap a built report into a Microsoft Graph message for the ION Outbox flow.
 
 Usage:
     python3 envelope.py out.html subject.txt "anthony@ion.video;evan@ion.video" envelope.json
 
 The Power Automate flow "ION Monitor send" picks the file up from /ION Monitor/Outbox,
-swaps __CHART__ for the base64 of the collector's chart.png, posts it to
-/me/sendMail from evan@ion.video and moves the file to /ION Monitor/Sent.
+swaps __CHART__ for the base64 of the collector's chart.png, creates the message
+in evan@ion.video's mailbox, sends it and moves the file to /ION Monitor/Sent.
 
 If out.html has no cid:att0 image, no attachment is added and the flow's
 replace() is a no-op.
@@ -35,7 +35,9 @@ if "cid:att0" in html:
         "contentBytes": "__CHART__",
     }]
 
-payload = json.dumps({"message": message, "saveToSentItems": True}, ensure_ascii=True, separators=(",", ":"))
+# The Outlook connector's HTTP action only allows /me/messages, so the flow creates
+# this message as a draft and then calls /me/messages/{id}/send.
+payload = json.dumps(message, ensure_ascii=True, separators=(",", ":"))
 open(out_path, "w", encoding="ascii").write(payload)
 print(f"envelope: {len(payload.encode())} bytes, {len(recipients)} recipient(s), "
       f"{'with' if 'attachments' in message else 'no'} chart")
