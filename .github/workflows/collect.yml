@@ -10,7 +10,7 @@ on:
   # A change to the collector runs it straight away, so new sources can be checked.
   push:
     branches: [main]
-    paths: [collect.py, .github/workflows/collect.yml]
+    paths: [collect.py, build.py, .github/workflows/collect.yml]
   workflow_dispatch:
     inputs:
       backfill:
@@ -34,12 +34,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install the PDF reader for register notices
-        run: pip install --quiet "pypdf[crypto]"
+      - name: Install the PDF reader and chart tools
+        run: |
+          sudo apt-get install -y -qq fonts-inter > /dev/null 2>&1 || echo "Inter font not installed; chart falls back to DejaVu"
+          pip install --quiet "pypdf[crypto]" matplotlib
       - name: Collect
         env:
           NEWS_WINDOW: ${{ inputs.backfill && '30d' || '3d' }}
         run: python collect.py
+      - name: Draw the one-month price and volume chart (public price data only)
+        run: python build.py --chart-only data/latest.json data/chart.png || echo "chart skipped"
       - name: Commit data
         run: |
           git config user.name "ion-monitor-bot"

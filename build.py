@@ -30,8 +30,15 @@ analysis.json written by the daily run:
     "ratings": [{"source": "...", "value": "...", "as_at": "...", "change": ""}],   Mondays
     "sentiment_30d": [{"date": "YYYY-MM-DD", "positive": 0, "neutral": 0, "negative": 0}],   Mondays
     "notion_url": "https://...",
-    "window_label": "optional footer line"
+    "window_label": "optional footer line",
+    "image_mode": "local" | "collector" | "none",   collector = the chart the GitHub collector drew
+    "top50": {                               Mondays: InvestorHub top-50 mover alerts
+      "week_start": "YYYY-MM-DD", "week_end": "YYYY-MM-DD", "history_from": "YYYY-MM-DD",
+      "moves":   [{"date": "YYYY-MM-DD", "holder": "AS IN THE ALERT", "shares": -7257, "value": 3629}],
+      "history": [same shape, earlier alerts]
+    }
   }
+Also: python3 build.py --chart-only latest.json chart.png   draws only the chart (used by the collector).
 """
 import datetime as dt
 import json
@@ -51,12 +58,23 @@ FONT = "font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;"
 NUM = "font-variant-numeric:tabular-nums;"
 SENT_COLOUR = {"positive": ACCENT, "neutral": GREY, "negative": NEG}
 
-latest = json.load(open(sys.argv[1]))
-a = json.load(open(sys.argv[2]))
-OUT_HTML, OUT_SUBJECT = sys.argv[3], sys.argv[4]
-OUT_DIR = os.path.dirname(os.path.abspath(OUT_HTML))
-CHART_PNG = os.path.join(OUT_DIR, "chart.png")
+CHART_ONLY = len(sys.argv) > 1 and sys.argv[1] == "--chart-only"
+if CHART_ONLY:
+    # python3 build.py --chart-only latest.json chart.png   (run by the GitHub collector)
+    latest = json.load(open(sys.argv[2]))
+    a = {"report_date": dt.datetime.now(MEL).date().isoformat(), "summary": ""}
+    OUT_HTML, OUT_SUBJECT, CHART_PNG = None, None, sys.argv[3]
+else:
+    latest = json.load(open(sys.argv[1]))
+    a = json.load(open(sys.argv[2]))
+    OUT_HTML, OUT_SUBJECT = sys.argv[3], sys.argv[4]
+    CHART_PNG = os.path.join(os.path.dirname(os.path.abspath(OUT_HTML)), "chart.png")
+OUT_DIR = os.path.dirname(os.path.abspath(OUT_HTML)) if OUT_HTML else None
 report_date = dt.date.fromisoformat(a["report_date"])
+# "local": draw chart.png here and reference it as cid:att0.
+# "collector": the email carries the chart the GitHub collector drew (ASX release markers only).
+IMAGE_MODE = a.get("image_mode") or "local"
+assert IMAGE_MODE in ("local", "collector", "none"), f"unknown image_mode {IMAGE_MODE}"
 edition = a.get("edition") or "weekday"
 assert edition in ("weekday", "monday", "weekend"), f"unknown edition {edition}"
 WEEKLY, WEEKEND = edition == "monday", edition == "weekend"
@@ -359,6 +377,11 @@ def render_chart(month, path):
     return True
 
 
+if CHART_ONLY:
+    ok = bool(trade) and len(trade["month"]) >= 5 and render_chart(trade["month"], CHART_PNG)
+    print("chart written" if ok else "chart not written (no price data or matplotlib)")
+    sys.exit(0 if ok else 1)
+
 # ---------- tiles ----------
 sent = a.get("sentiment") or {}
 pos, neu, neg = (int(sent.get(k, 0)) for k in ("positive", "neutral", "negative"))
@@ -447,6 +470,108 @@ if reg:
                    f'{escape(r["text"])}{lk}</td></tr>')
     parts.append(section(a.get("register_title") or ("Register, last 7 days" if WEEKLY else "Register"),
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_html}</table>'))
+
+# ---------- top 50 shareholders (weekly edition) ----------
+KEEP_UPPER_SHORT = {"MR": "Mr", "MRS": "Mrs", "MS": "Ms", "DR": "Dr", "AND": "and", "THE": "The", "OF": "of", "FOR": "for"}
+
+
+def holder_name(raw):
+    """Registry names arrive in capitals; keep short codes (PTY, LTD, BNP, A/C) and title-case the rest."""
+    out = []
+    for w in str(raw).split():
+        core = w.strip("<>()")
+        if core in KEEP_UPPER_SHORT:
+            nw = w.replace(core, KEEP_UPPER_SHORT[core])
+        elif len(core) <= 3 or "/" in core or any(ch.isdigit() for ch in core):
+            nw = w
+        else:
+            nw = w.replace(core, core[:1] + core[1:].lower())
+        out.append(nw)
+    return " ".join(out)
+
+
+def is_nominee(raw):
+    u = str(raw).upper()
+    return "NOMINEE" in u or "CUSTODIAN" in u
+
+
+t50 = a.get("top50") or {}
+if WEEKLY and t50:
+    shares_on_issue = trade["mcap"] / trade["close"] if trade and trade["close"] else SHARES_ON_ISSUE
+    SIZEABLE = round(shares_on_issue * 0.001)  # 0.1% of issued capital: always flagged
+    SIGNAL = round(shares_on_issue * 0.0002)   # 0.02%: the floor for any other flag
+    wk_start, wk_end = t50["week_start"], t50["week_end"]
+    moves = [m for m in t50.get("moves") or [] if wk_start <= m["date"] <= wk_end]
+    hist = [m for m in t50.get("history") or [] if m["date"] < wk_start]
+    hist_from = t50.get("history_from") or (min(m["date"] for m in hist) if hist else wk_start)
+    sign = lambda m: 1 if int(m["shares"]) >= 0 else -1
+    net = {}
+    for m in moves:
+        h = net.setdefault(m["holder"], {"shares": 0, "value": 0.0, "days": set(), "sell_days": set()})
+        h["shares"] += int(m["shares"])
+        h["value"] += sign(m) * abs(float(m.get("value") or 0))
+        h["days"].add(m["date"])
+        if int(m["shares"]) < 0:
+            h["sell_days"].add(m["date"])
+    four_wk = (dt.date.fromisoformat(wk_start) - dt.timedelta(days=28)).isoformat()
+    t50_flags = []
+    for holder, h in net.items():
+        name = holder_name(holder) + (" (nominee account)" if is_nominee(holder) else "")
+        prior = [m for m in hist if m["holder"] == holder]
+        prior_buys = [m for m in prior if int(m["shares"]) > 0 and m["date"] >= four_wk]
+        prior_sells = [m for m in prior if int(m["shares"]) < 0 and m["date"] >= four_wk]
+        qty, val = abs(h["shares"]), abs(h["value"])
+        if h["shares"] > 0:
+            if not prior and qty >= SIGNAL:
+                t50_flags.append(("buy", qty, f"{name} bought {qty:,} shares (A${kfmt(val)}), its first move in the "
+                                          f"top-50 alerts since {day_month(hist_from)}."))
+            elif qty >= SIZEABLE:
+                t50_flags.append(("buy", qty, f"{name} bought {qty:,} shares (A${kfmt(val)}), above 0.1% of issued capital."))
+            elif prior_buys and qty >= SIGNAL and not is_nominee(holder):
+                earlier = sum(int(m["shares"]) for m in prior_buys)
+                t50_flags.append(("buy", qty, f"{name} is buying again: {qty:,} shares this week after {earlier:,} "
+                                          f"in the previous four weeks."))
+        elif h["shares"] < 0:
+            if not prior_sells and qty >= SIGNAL:
+                t50_flags.append(("sell", qty, f"{name} started selling: {qty:,} shares (A${kfmt(val)}), "
+                                           f"with no sales in the previous four weeks."))
+            elif qty >= SIZEABLE or len(h["sell_days"]) >= 3 or qty >= SIGNAL:
+                earlier = -sum(int(m["shares"]) for m in prior_sells)
+                t50_flags.append(("sell", qty, f"{name} is selling again: {qty:,} shares (A${kfmt(val)}) this week "
+                                           f"after {earlier:,} in the previous four weeks."))
+    t50_flags.sort(key=lambda f: -f[1])
+    rows_sorted = sorted(net.items(), key=lambda kv: -abs(kv[1]["shares"]))
+    n_buy = sum(1 for _, h in rows_sorted if h["shares"] > 0)
+    n_sell = sum(1 for _, h in rows_sorted if h["shares"] < 0)
+    head_right = f"{n_buy} bought, {n_sell} sold" if rows_sorted else ""
+    body = ""
+    if t50_flags:
+        f_html = ""
+        for kind, _, text in t50_flags[:4]:
+            f_html += (f'<tr><td width="16" valign="top" style="padding:13px 0 0 0;">{dot(ACCENT if kind == "buy" else NEG)}</td>'
+                       f'<td style="padding:8px 0;{FONT}font-size:14px;line-height:1.45;color:{BODY};">{escape(text)}</td></tr>')
+        body += f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{f_html}</table>{spacer(8)}'
+    if rows_sorted:
+        cell = f"padding:8px 0;{FONT}font-size:13px;"
+        t_html = (f'<tr><td style="{cell}color:{SLATE};font-size:12px;">Holder</td>'
+                  f'<td align="right" style="{cell}color:{SLATE};font-size:12px;">Shares</td>'
+                  f'<td align="right" style="{cell}color:{SLATE};font-size:12px;width:72px;">A$</td></tr>')
+        for i, (holder, h) in enumerate(rows_sorted):
+            colour = ACCENT if h["shares"] > 0 else NEG
+            wt = "font-weight:bold;" if i == 0 else ""
+            t_html += (f'<tr><td style="{cell}border-top:1px solid {LINE};color:{BODY};{wt}">{escape(holder_name(holder))}</td>'
+                       f'<td align="right" style="{cell}border-top:1px solid {LINE};color:{colour};white-space:nowrap;{NUM}{wt}">'
+                       f'{"+" if h["shares"] > 0 else "-"}{abs(h["shares"]):,}</td>'
+                       f'<td align="right" style="{cell}border-top:1px solid {LINE};color:{BODY};white-space:nowrap;{NUM}">'
+                       f'{kfmt(abs(h["value"]))}</td></tr>')
+        body += f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{t_html}</table>'
+    else:
+        body += p("No top-50 holder bought or sold last week.", 14, SLATE)
+    body += p(f"From InvestorHub's daily top-50 mover alerts, {day_month(wk_start)} to {day_month(wk_end)}. "
+              f"Dollar values use the market price on the day. Flags need at least 0.02% of issued capital "
+              f"({SIGNAL:,} shares); anything above 0.1% ({SIZEABLE:,}) is always flagged. Nominee accounts hold shares "
+              f"for underlying clients.", 11, GREY, "padding-top:10px;")
+    parts.append(section("Top 50 shareholders, last week", body, right=head_right))
 
 # ---------- 30-day sentiment wave (weekly edition) ----------
 s30 = {r["date"]: r for r in (a.get("sentiment_30d") or [])}
@@ -555,9 +680,12 @@ def trading_section(image):
     else:
         chart = table_charts()
         marks_in = trade["seven"]
-    any_marks = any(r["date"] in releases or r["date"] in coverage_days for r in marks_in)
-    key = p(f'<span style="color:{VIVID};">&#9679;</span> ASX release &nbsp; '
-            f'<span style="color:{GREY};">&#9679;</span> Media coverage', 12, SLATE, "padding:8px 0 4px 0;") if any_marks else ""
+    cov_marks = coverage_days if not (image and IMAGE_MODE == "collector") else set()
+    any_rel = any(r["date"] in releases for r in marks_in)
+    any_cov = any(r["date"] in cov_marks for r in marks_in)
+    key_bits = ([f'<span style="color:{VIVID};">&#9679;</span> ASX release'] if any_rel else []) + \
+               ([f'<span style="color:{GREY};">&#9679;</span> Media coverage'] if any_cov else [])
+    key = p(" &nbsp; ".join(key_bits), 12, SLATE, "padding:8px 0 4px 0;") if key_bits else ""
     stats = [] if image else [("1-month average close", cents(trade["avg_close"]))]
     stats.append(("1-month average volume", f"{round(trade['avg_vol']):,} shares a day"))
     if trade.get("prior_value") is not None:
@@ -651,7 +779,12 @@ class Nest(HTMLParser):
 
 if os.path.exists(CHART_PNG):
     os.remove(CHART_PNG)
-have_image = bool(trade) and not WEEKEND and len(trade["month"]) >= 5 and render_chart(trade["month"], CHART_PNG)
+if IMAGE_MODE == "collector":
+    have_image = bool(trade) and not WEEKEND and len(trade["month"]) >= 5
+elif IMAGE_MODE == "none":
+    have_image = False
+else:
+    have_image = bool(trade) and not WEEKEND and len(trade["month"]) >= 5 and render_chart(trade["month"], CHART_PNG)
 open(os.path.join(OUT_DIR, "out_fallback.html"), "w").write(page(False))
 open(OUT_HTML, "w").write(page(have_image))
 
