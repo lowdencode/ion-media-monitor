@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-14T02:25:23+00:00",
+ "fetched_at_utc": "2026-11-14T02:32:31+00:00",
  "melbourne_date": "2026-11-14",
  "price_yahoo": {
   "sessions": [
@@ -768,6 +768,10 @@
     {
      "date": "2026-11-13",
      "close": 1822.3
+    },
+    {
+     "date": "2026-11-13",
+     "close": 1822.3
     }
    ],
    "price": 1822.3,
@@ -1144,6 +1148,28 @@
    "via": "google_news"
   },
   {
+   "title": "Regal Investment Fund Issues Corrected October 2026 Monthly Report After NAV Exposure Data Errors - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxObUpULXRJcjJHVEx1NkNUSlVWSzdHWnBKbzNTR3JzU1VOQTl4a1puUURnaDFISXVvbkU2WUtDOGdYaXQ3aHBZZHJlSV9FX2p2UmJIVGZzcnh4dEFvZ3FFV2Y2SmU5LV81eE1JN2JCSFhJWGFFM0VvYlNERDQ1YjRnbXFnY1NkSGlNMzVFaDBhSkliOVRvNmN1SW1OMmRoODVKOHBvOUVTQkpmbEljb1I3ejRXS3oxRGdxb193RDV1NlJQZkhzRVoyM2Q2SEtuZnhsNGN5RVpR?oc=5",
+   "published": "2026-11-13T05:21:26+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
+   "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
+   "published": "2026-11-13T06:07:43+00:00",
+   "outlet": "TipRanks",
+   "outlet_url": "https://www.tipranks.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
    "title": "EROAD Limited (ASX:ERD): HY2027 Results Date and Briefing Details Announced - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNX0pTUWlWTDJkWGRlZE5RTWVkdno1RjhaR0hleElmZzJqZ1VVWE5aWHNkUzhyNC1zaE9BMGtFN3dKYTN1aFoxVFZlRDgxWEM5Q1JjdlhGZDhYMm9UajJFVXNId3d5OTRmUmE3YVp5bktZS0NYRlo5eHVBc3VDSVRHYXpRbjhyMHJINXNvdWc1azhpQ0c0eFpwSHF0NmRTelZ3Q1QtM2dMZ09rODJlcVRJ?oc=5",
    "published": "2026-11-11T05:50:00+00:00",
@@ -1164,28 +1190,6 @@
    "via": "google_news"
   },
   {
-   "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
-   "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
-   "published": "2026-11-13T06:07:43+00:00",
-   "outlet": "TipRanks",
-   "outlet_url": "https://www.tipranks.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "title": "Chrysos Corporation Limited (ASX:C79): How PhotonAssay Leasing Is Changing Its FY27 Pipeline - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQekVRaDhiV3l2T20wVUIwb0R2WjVCOG9fNDZoQ2RSWENBcGJUd3JwZFBrSU5VcTJNbjJSaWZKRk5nVlhTVW1mWHhHT2ZvcElIbGtsWlotQnIwYnQwa3Q2eUdvbnI5UnlUTkgzUzJBQXFsd0hhdjIyWEF3WW9Selg4bzFJYTNQSGxqQXphc1h6TGtuaTJfSzh1dVhwczBfZDJJdi04b1UyT1dQQzZiV3FLS2ZvN1M5ZHdObXBQY2pCaUNva0JZRFE?oc=5",
-   "published": "2026-11-11T05:49:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "Metallium Limited (ASX:MTM): Texas Reactor Tests and the PCB Commercialisation Plan - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOFJXS0s1QUFVWWJ1WGJYRXZRWTNWMWpoMVJ2X1F5QU1XenJxUDVhVHVubVo4cVU4bHJ2OTYxb1lZVHVXbTdIME43b21oTUtLaS1wZENXYkhEQW0tUkluMG1NcjNEdXN1ZXNONk5sLXI3YjhnMmhfdThKSVVldmRYVG1meEZhSHAydUNTTDkxTEVBc3I5ajBHQU90QWhDZ3IwRUtGN0tXQnkyS2FlZi12cDV1bW1NYll2bXc?oc=5",
    "published": "2026-11-11T05:49:00+00:00",
@@ -1196,9 +1200,9 @@
    "via": "google_news"
   },
   {
-   "title": "Regal Investment Fund Issues Corrected October 2026 Monthly Report After NAV Exposure Data Errors - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxObUpULXRJcjJHVEx1NkNUSlVWSzdHWnBKbzNTR3JzU1VOQTl4a1puUURnaDFISXVvbkU2WUtDOGdYaXQ3aHBZZHJlSV9FX2p2UmJIVGZzcnh4dEFvZ3FFV2Y2SmU5LV81eE1JN2JCSFhJWGFFM0VvYlNERDQ1YjRnbXFnY1NkSGlNMzVFaDBhSkliOVRvNmN1SW1OMmRoODVKOHBvOUVTQkpmbEljb1I3ejRXS3oxRGdxb193RDV1NlJQZkhzRVoyM2Q2SEtuZnhsNGN5RVpR?oc=5",
-   "published": "2026-11-13T05:21:26+00:00",
+   "title": "Chrysos Corporation Limited (ASX:C79): How PhotonAssay Leasing Is Changing Its FY27 Pipeline - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQekVRaDhiV3l2T20wVUIwb0R2WjVCOG9fNDZoQ2RSWENBcGJUd3JwZFBrSU5VcTJNbjJSaWZKRk5nVlhTVW1mWHhHT2ZvcElIbGtsWlotQnIwYnQwa3Q2eUdvbnI5UnlUTkgzUzJBQXFsd0hhdjIyWEF3WW9Selg4bzFJYTNQSGxqQXphc1h6TGtuaTJfSzh1dVhwczBfZDJJdi04b1UyT1dQQzZiV3FLS2ZvN1M5ZHdObXBQY2pCaUNva0JZRFE?oc=5",
+   "published": "2026-11-11T05:49:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
@@ -1271,6 +1275,14 @@
    "snippet": "The average daily trading volume for Ion Video (IOV) is 119,143. The opening price for Ion Video today was 0.590.",
    "query": "\"ION Video\"",
    "via": "bing_news"
+  },
+  {
+   "title": "Ion Video Ltd (ASX:IOV)",
+   "link": "https://kalkinemedia.com/au/companies/asx-iov",
+   "published": "2026-09-17T17:00:00+00:00",
+   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
+   "query": "\"ASX: IOV\"",
+   "via": "bing_news"
   }
  ],
  "articles_enriched": 3,
@@ -1313,7 +1325,7 @@
   {
    "source": "stooq",
    "ok": false,
-   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+   "error": "URLError: <urlopen error timed out>"
   },
   {
    "source": "index:ASX 200",
