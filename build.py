@@ -496,6 +496,55 @@ def is_nominee(raw):
     return "NOMINEE" in u or "CUSTODIAN" in u
 
 
+def share_short(n):
+    n = int(n)
+    if n >= 1_000_000:
+        return f"{n / 1e6:.2f}m"
+    if n >= 100_000:
+        return f"{round(n / 1e3):,}k"
+    if n >= 1_000:
+        return f"{n / 1e3:.1f}k"
+    return f"{n:,}"
+
+
+def name_key(raw):
+    """Match registry names across the alerts (capitals, A/C) and the InvestorHub list (title case)."""
+    s = str(raw).upper().replace("A/C", " ")
+    return " ".join("".join(ch if ch.isalnum() else " " for ch in s).split())
+
+
+def make_holding_lookup(snapshot, moves_all, as_of):
+    """Holding at as_of = snapshot balance + top-50 alert moves dated after the snapshot, up to as_of.
+    Returns holder -> (shares, rank_in_snapshot) or None when the holder was not in the snapshot."""
+    if not snapshot or not snapshot.get("rows"):
+        return None, None
+    snap_date = snapshot["as_at"]
+    by_id = {str(r["id"]): r for r in snapshot["rows"] if r.get("id")}
+    by_key = {}
+    for r in snapshot["rows"]:
+        by_key.setdefault(name_key(r["holder"]), r)
+
+    def find(m):
+        if m.get("id") and str(m["id"]) in by_id:
+            return by_id[str(m["id"])]
+        k = name_key(m["holder"])
+        if k in by_key:
+            return by_key[k]
+        for sk, r in by_key.items():  # snapshot names can be cut short; accept a clean prefix match
+            if len(sk) >= 20 and (k.startswith(sk) or sk.startswith(k)):
+                return r
+        return None
+
+    def holding(holder, sample_move):
+        r = find(sample_move)
+        if r is None:
+            return None
+        later = sum(int(m["shares"]) for m in moves_all
+                    if snap_date < m["date"] <= as_of and (find(m) is r))
+        return int(r["shares"]) + later
+
+    return holding, snap_date
+
 t50 = a.get("top50") or {}
 if WEEKLY and t50:
     shares_on_issue = trade["mcap"] / trade["close"] if trade and trade["close"] else SHARES_ON_ISSUE
@@ -514,9 +563,23 @@ if WEEKLY and t50:
         h["days"].add(m["date"])
         if int(m["shares"]) < 0:
             h["sell_days"].add(m["date"])
+    sample = {}
+    for m in moves:
+        if m.get("id") or m["holder"] not in sample:
+            sample[m["holder"]] = m
+    holding_fn, snap_date = make_holding_lookup(t50.get("snapshot"), list(t50.get("history") or []) + moves, wk_end)
+    holdings = {hd: (holding_fn(hd, sample[hd]) if holding_fn else None) for hd in net}
+
+    def now_holds(hd):
+        n = holdings.get(hd)
+        if n is None:
+            return ""
+        return f" Now holds {n:,} ({n / shares_on_issue * 100:.2f}%)." if n > 0 else " No longer on the register."
+
     four_wk = (dt.date.fromisoformat(wk_start) - dt.timedelta(days=28)).isoformat()
     t50_flags = []
     for holder, h in net.items():
+        n_before = len(t50_flags)
         name = holder_name(holder) + (" (nominee account)" if is_nominee(holder) else "")
         prior = [m for m in hist if m["holder"] == holder]
         prior_buys = [m for m in prior if int(m["shares"]) > 0 and m["date"] >= four_wk]
@@ -540,6 +603,9 @@ if WEEKLY and t50:
                 earlier = -sum(int(m["shares"]) for m in prior_sells)
                 t50_flags.append(("sell", qty, f"{name} is selling again: {qty:,} shares (A${kfmt(val)}) this week "
                                            f"after {earlier:,} in the previous four weeks."))
+        if len(t50_flags) > n_before:
+            kind_, qty_, text_ = t50_flags[-1]
+            t50_flags[-1] = (kind_, qty_, text_ + now_holds(holder))
     t50_flags.sort(key=lambda f: -f[1])
     rows_sorted = sorted(net.items(), key=lambda kv: -abs(kv[1]["shares"]))
     n_buy = sum(1 for _, h in rows_sorted if h["shares"] > 0)
@@ -554,24 +620,39 @@ if WEEKLY and t50:
         body += f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{f_html}</table>{spacer(8)}'
     if rows_sorted:
         cell = f"padding:8px 0;{FONT}font-size:13px;"
+        show_hold = holding_fn is not None
         t_html = (f'<tr><td style="{cell}color:{SLATE};font-size:12px;">Holder</td>'
-                  f'<td align="right" style="{cell}color:{SLATE};font-size:12px;">Shares</td>'
-                  f'<td align="right" style="{cell}color:{SLATE};font-size:12px;width:72px;">A$</td></tr>')
+                  f'<td align="right" style="{cell}color:{SLATE};font-size:12px;padding-left:8px;">Change</td>'
+                  f'<td align="right" style="{cell}color:{SLATE};font-size:12px;width:56px;">A$</td>'
+                  + (f'<td align="right" style="{cell}color:{SLATE};font-size:12px;padding-left:8px;">Holding</td>' if show_hold else "")
+                  + '</tr>')
         for i, (holder, h) in enumerate(rows_sorted):
             colour = ACCENT if h["shares"] > 0 else NEG
             wt = "font-weight:bold;" if i == 0 else ""
-            t_html += (f'<tr><td style="{cell}border-top:1px solid {LINE};color:{BODY};{wt}">{escape(holder_name(holder))}</td>'
-                       f'<td align="right" style="{cell}border-top:1px solid {LINE};color:{colour};white-space:nowrap;{NUM}{wt}">'
+            n_hold = holdings.get(holder)
+            hold_txt = "n/a" if n_hold is None else share_short(n_hold)
+            nm = holder_name(holder)
+            main, _, desig = nm.partition(" <")
+            desig_html = (f'<br><span style="font-size:11px;color:{SLATE};font-weight:normal;">{escape(desig.rstrip(">").replace(" A/C", "").strip())}</span>'
+                          if desig else "")
+            t_html += (f'<tr><td style="{cell}border-top:1px solid {LINE};color:{BODY};{wt}">{escape(main)}{desig_html}</td>'
+                       f'<td align="right" style="{cell}border-top:1px solid {LINE};color:{colour};white-space:nowrap;padding-left:8px;{NUM}{wt}">'
                        f'{"+" if h["shares"] > 0 else "-"}{abs(h["shares"]):,}</td>'
                        f'<td align="right" style="{cell}border-top:1px solid {LINE};color:{BODY};white-space:nowrap;{NUM}">'
-                       f'{kfmt(abs(h["value"]))}</td></tr>')
+                       f'{kfmt(abs(h["value"]))}</td>'
+                       + (f'<td align="right" style="{cell}border-top:1px solid {LINE};color:{BODY if n_hold is not None else GREY};'
+                          f'white-space:nowrap;padding-left:8px;{NUM}">{hold_txt}</td>' if show_hold else "")
+                       + '</tr>')
         body += f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{t_html}</table>'
     else:
         body += p("No top-50 holder bought or sold last week.", 14, SLATE)
     body += p(f"From InvestorHub's daily top-50 mover alerts, {day_month(wk_start)} to {day_month(wk_end)}. "
               f"Dollar values use the market price on the day. Flags need at least 0.02% of issued capital "
               f"({SIGNAL:,} shares); anything above 0.1% ({SIZEABLE:,}) is always flagged. Nominee accounts hold shares "
-              f"for underlying clients.", 11, GREY, "padding-top:10px;")
+              f"for underlying clients."
+              + (f" Holding is the InvestorHub register balance on {day_month(snap_date)} plus the alert moves since; "
+                 f"n/a means the holder was outside the top 100 on that date." if holding_fn else ""),
+              11, GREY, "padding-top:10px;")
     parts.append(section("Top 50 shareholders, last week", body, right=head_right))
 
 # ---------- 30-day sentiment wave (weekly edition) ----------
