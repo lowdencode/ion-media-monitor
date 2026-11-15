@@ -1,6 +1,6 @@
 {
- "fetched_at_utc": "2026-11-14T22:56:11+00:00",
- "melbourne_date": "2026-11-15",
+ "fetched_at_utc": "2026-11-15T22:44:55+00:00",
+ "melbourne_date": "2026-11-16",
  "price_yahoo": {
   "sessions": [
    {
@@ -988,8 +988,8 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.63,
-  "priceBid": 0.595,
+  "priceAsk": 0.6,
+  "priceBid": 0.605,
   "priceChange": 0,
   "priceChangePercent": 0,
   "priceLast": 0.6,
@@ -997,18 +997,16 @@
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 166782,
+  "volume": 0,
   "xid": "35079877",
   "marketCap": 84883418,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.63,
-  "priceBid": 0.595,
+  "priceAsk": 0.6,
+  "priceBid": 0.605,
   "priceClose": 0.6,
-  "priceDayHigh": 0.61,
-  "priceDayLow": 0.59,
   "priceFiftyTwoWeekHigh": 0.67,
   "priceFiftyTwoWeekLow": 0.1,
   "volumeAverage": 80970.395349,
@@ -1121,16 +1119,6 @@
    "error_terms": []
   },
   {
-   "title": "Felix Group Holdings Applies to Quote 77.98 Million Shares from Tranche 2 Placement at $0.038 - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPU1NPUUF2SVhmbHZUenNzQThMb2NSUEctYzZMSGN1cVRyN0lEYkdsQzJmMVVESDdzZUY1VjgtSXNDYVZKZV94czJEVjZMSmFjLXhjWnRaa2hrWFktZGdPaGJWeGZ4TTI3c2t5N2pUWGNPTV9wUm5FMktzZklKYXdyN255NG10T3hjakhpV2xxX1VwMzFwUXRzcC1FcmJ1TVlhenJwcUhqR1FLRXJrT21zMEpmSTZiQVRQNDd1VFZRdmxOUnR3ODgxNk1TZUw?oc=5",
-   "published": "2026-11-13T05:21:26+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
    "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
    "published": "2026-11-13T06:07:43+00:00",
@@ -1202,10 +1190,10 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video Stock Price History",
-   "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data",
-   "published": "2026-10-10T17:00:00+00:00",
-   "snippet": "The average daily trading volume for Ion Video (IOV) is 119,143. The opening price for Ion Video today was 0.590.",
+   "title": "Ion Video Ltd (LNNTF) Shareholder/Analyst Call Transcript",
+   "link": "https://seekingalpha.com/article/4921730-ion-video-ltd-lnntf-shareholder-analyst-call-transcript",
+   "published": "2026-07-13T23:01:00+00:00",
+   "snippet": "Well, good morning, everyone, and welcome. My name is Anthony Baker. I'm CEO of ION Video. Today, we're hosting this live Q&A to address the many questions we received from shareholders. Joining me ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1233,7 +1221,7 @@
   "Morningstar": {
    "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
    "status": 200,
-   "text_len": 3865,
+   "text_len": 3864,
    "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
    "snippets": [
     "atens margins Apple shares are trading at record highs after posting solid results. William Kerwin, CFA | 13 November 2026 stocks Nvidia: Cutting our fair value estimate by 19% given the firm’s CEO transition and turmoil We’re reducing our long-term revenue estimates. Brian Colello, CPA | 13 November 2026 Morningstar Investment Ideas Markets Equity Commodity Currency Index Last price Change % Chan"
