@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-17T01:50:17+00:00",
+ "fetched_at_utc": "2026-11-17T02:26:45+00:00",
  "melbourne_date": "2026-11-17",
  "price_yahoo": {
   "sessions": [
@@ -536,13 +536,13 @@
     "open": 0.800000011920929,
     "high": 0.9850000143051147,
     "low": 0.800000011920929,
-    "close": 0.91,
-    "volume": 795157
+    "close": 0.945,
+    "volume": 859061
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.91,
-   "regularMarketTime": 1794878856,
+   "regularMarketPrice": 0.945,
+   "regularMarketTime": 1794880958,
    "previousClose": null,
    "chartPreviousClose": 0.43,
    "fiftyTwoWeekHigh": 0.985,
@@ -637,11 +637,11 @@
     },
     {
      "date": "2026-11-17",
-     "close": 8897.9
+     "close": 8911.3
     }
    ],
-   "price": 8897.9,
-   "market_time_utc": "2026-11-17T01:30+00:00",
+   "price": 8911.3,
+   "market_time_utc": "2026-11-17T02:06+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -731,11 +731,11 @@
     },
     {
      "date": "2026-11-17",
-     "close": 1840.0
+     "close": 1841.0
     }
    ],
-   "price": 1840.0,
-   "market_time_utc": "2026-11-17T01:30+00:00",
+   "price": 1841.0,
+   "market_time_utc": "2026-11-17T02:06+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -932,24 +932,24 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.935,
-  "priceBid": 0.9,
-  "priceChange": 0.19000000000000006,
-  "priceChangePercent": 26.3888888888889,
-  "priceLast": 0.91,
+  "priceAsk": 0.9450000000000001,
+  "priceBid": 0.92,
+  "priceChange": 0.2250000000000001,
+  "priceChangePercent": 31.25000000000001,
+  "priceLast": 0.9450000000000001,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 795157,
+  "volume": 859061,
   "xid": "35079877",
   "marketCap": 101860102,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.935,
-  "priceBid": 0.9,
+  "priceAsk": 0.9450000000000001,
+  "priceBid": 0.92,
   "priceClose": 0.72,
   "priceDayHigh": 0.985,
   "priceDayLow": 0.8,
@@ -1077,6 +1077,14 @@
    "via": "bing_news"
   },
   {
+   "title": "Ion Video Plans Equity Placement and Option Issue on ASX",
+   "link": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/4646706/ion-video-plans-equity-placement-and-option-issue-on-asx/",
+   "published": "2026-09-16T17:06:00+00:00",
+   "snippet": "An announcement from Ion Video ( (AU:IOV)) is now available. Ion Video Ltd, an ASX-listed video and media technology company trading under the ticker IOV, participates actively in Australia’s public ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
    "title": "ION Video unlocks a new era of AI-driven video assembly",
    "link": "https://uk.finance.yahoo.com/video/ion-video-unlocks-era-ai-024849090.html",
    "published": "2026-02-25T18:48:00+00:00",
@@ -1085,10 +1093,10 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video Plans Equity Placement and Option Issue on ASX",
-   "link": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/4646706/ion-video-plans-equity-placement-and-option-issue-on-asx/",
-   "published": "2026-09-16T17:06:00+00:00",
-   "snippet": "An announcement from Ion Video ( (AU:IOV)) is now available. Ion Video Ltd, an ASX-listed video and media technology company trading under the ticker IOV, participates actively in Australia’s public ...",
+   "title": "Ion Video Ltd (LNNTF) Shareholder/Analyst Call Transcript",
+   "link": "https://seekingalpha.com/article/4921730-ion-video-ltd-lnntf-shareholder-analyst-call-transcript",
+   "published": "2026-07-13T23:01:00+00:00",
+   "snippet": "Well, good morning, everyone, and welcome. My name is Anthony Baker. I'm CEO of ION Video. Today, we're hosting this live Q&A to address the many questions we received from shareholders. Joining me ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1124,7 +1132,7 @@
   "Morningstar": {
    "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
    "status": 200,
-   "text_len": 3849,
+   "text_len": 3848,
    "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
    "snippets": [
     "ees Recommended Stock market news and analysis Australian Market News US Market News ASX Today How to invest in stocks? Stocks News & Analysis stocks Overvalued ASX share has overly ambitious profit target We think the new profit target is aggressive and unlikely to be met. Lochlan Halloway, CFA | 16 November 2026 stocks 7 undervalued US stocks that crushed earnings Arista and GE Vernova remain am",
@@ -1139,8 +1147,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 62 of 256 ASX RANK 931 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +351.65% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 931 of 2,356 Sector Rank 62 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 61 of 256 ASX RANK 920 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +361.90% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 920 of 2,356 Sector Rank 61 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
