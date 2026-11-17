@@ -1,6 +1,6 @@
 {
- "fetched_at_utc": "2026-11-15T23:21:56+00:00",
- "melbourne_date": "2026-11-16",
+ "fetched_at_utc": "2026-11-17T01:50:17+00:00",
+ "melbourne_date": "2026-11-17",
  "price_yahoo": {
   "sessions": [
    {
@@ -526,18 +526,26 @@
    {
     "date": "2026-11-16",
     "open": 0.6050000190734863,
-    "high": 0.6050000190734863,
+    "high": 0.7350000143051147,
     "low": 0.6050000190734863,
-    "close": 0.605,
-    "volume": 8690
+    "close": 0.72,
+    "volume": 274069
+   },
+   {
+    "date": "2026-11-17",
+    "open": 0.800000011920929,
+    "high": 0.9850000143051147,
+    "low": 0.800000011920929,
+    "close": 0.91,
+    "volume": 795157
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.605,
-   "regularMarketTime": 1794783610,
+   "regularMarketPrice": 0.91,
+   "regularMarketTime": 1794878856,
    "previousClose": null,
-   "chartPreviousClose": 0.45,
-   "fiftyTwoWeekHigh": 0.67,
+   "chartPreviousClose": 0.43,
+   "fiftyTwoWeekHigh": 0.985,
    "fiftyTwoWeekLow": 0.1,
    "currency": "AUD"
   }
@@ -547,10 +555,6 @@
   "asx200": {
    "symbol": "^AXJO",
    "sessions": [
-    {
-     "date": "2026-10-16",
-     "close": 8806.7
-    },
     {
      "date": "2026-10-19",
      "close": 8845.7
@@ -632,12 +636,12 @@
      "close": 9082.2
     },
     {
-     "date": "2026-11-16",
-     "close": 9068.1
+     "date": "2026-11-17",
+     "close": 8897.9
     }
    ],
-   "price": 9068.1,
-   "market_time_utc": "2026-11-15T23:02+00:00",
+   "price": 8897.9,
+   "market_time_utc": "2026-11-17T01:30+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -645,10 +649,6 @@
   "asx_tech": {
    "symbol": "^AXIJ",
    "sessions": [
-    {
-     "date": "2026-10-16",
-     "close": 1686.6
-    },
     {
      "date": "2026-10-19",
      "close": 1664.5
@@ -730,12 +730,12 @@
      "close": 1822.3
     },
     {
-     "date": "2026-11-16",
-     "close": 1831.4
+     "date": "2026-11-17",
+     "close": 1840.0
     }
    ],
-   "price": 1831.4,
-   "market_time_utc": "2026-11-15T23:02+00:00",
+   "price": 1840.0,
+   "market_time_utc": "2026-11-17T01:30+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -743,18 +743,6 @@
   "sp500": {
    "symbol": "^GSPC",
    "sessions": [
-    {
-     "date": "2026-10-14",
-     "close": 7718.94
-    },
-    {
-     "date": "2026-10-15",
-     "close": 7744.06
-    },
-    {
-     "date": "2026-10-16",
-     "close": 7659.44
-    },
     {
      "date": "2026-10-19",
      "close": 7690.73
@@ -834,10 +822,14 @@
     {
      "date": "2026-11-13",
      "close": 7561.67
+    },
+    {
+     "date": "2026-11-16",
+     "close": 7416.59
     }
    ],
-   "price": 7561.67,
-   "market_time_utc": "2026-11-13T21:43+00:00",
+   "price": 7416.59,
+   "market_time_utc": "2026-11-16T22:22+00:00",
    "state": "closed",
    "exchange_tz": "America/New_York",
    "name": "S&P 500"
@@ -845,18 +837,6 @@
   "nasdaq": {
    "symbol": "^IXIC",
    "sessions": [
-    {
-     "date": "2026-10-14",
-     "close": 26692.87
-    },
-    {
-     "date": "2026-10-15",
-     "close": 26713.03
-    },
-    {
-     "date": "2026-10-16",
-     "close": 26140.03
-    },
     {
      "date": "2026-10-19",
      "close": 26430.89
@@ -936,10 +916,14 @@
     {
      "date": "2026-11-13",
      "close": 25136.27
+    },
+    {
+     "date": "2026-11-16",
+     "close": 24509.76
     }
    ],
-   "price": 25136.273,
-   "market_time_utc": "2026-11-13T22:15+00:00",
+   "price": 24509.758,
+   "market_time_utc": "2026-11-16T22:15+00:00",
    "state": "closed",
    "exchange_tz": "America/New_York",
    "name": "Nasdaq"
@@ -948,30 +932,30 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.63,
-  "priceBid": 0.6,
-  "priceChange": 0.0050000000000000044,
-  "priceChangePercent": 0.8333333333333341,
-  "priceLast": 0.605,
+  "priceAsk": 0.935,
+  "priceBid": 0.9,
+  "priceChange": 0.19000000000000006,
+  "priceChangePercent": 26.3888888888889,
+  "priceLast": 0.91,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 8690,
+  "volume": 795157,
   "xid": "35079877",
-  "marketCap": 84883418,
+  "marketCap": 101860102,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.63,
-  "priceBid": 0.6,
-  "priceClose": 0.6,
-  "priceDayHigh": 0.605,
-  "priceDayLow": 0.605,
-  "priceFiftyTwoWeekHigh": 0.67,
+  "priceAsk": 0.935,
+  "priceBid": 0.9,
+  "priceClose": 0.72,
+  "priceDayHigh": 0.985,
+  "priceDayLow": 0.8,
+  "priceFiftyTwoWeekHigh": 0.985,
   "priceFiftyTwoWeekLow": 0.1,
-  "volumeAverage": 80970.395349,
+  "volumeAverage": 84039.674419,
   "cashFlow": -3.2096,
   "earningsPerShare": -0.05489,
   "freeCashFlowYield": -1.00000010000001e-05,
@@ -1019,6 +1003,18 @@
  },
  "asx_announcements": [
   {
+   "date": "2026-11-16T22:40:12.000Z",
+   "headline": "Response to ASX Price Query",
+   "price_sensitive": true,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03162447-6A1355317?access_token=83ff96335c2d45a094df02a206a39ff4"
+  },
+  {
+   "date": "2026-11-16T22:09:12.000Z",
+   "headline": "Amazon Funded POC Achieves 99% Cost Reduction",
+   "price_sensitive": true,
+   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03162403-6A1355296?access_token=83ff96335c2d45a094df02a206a39ff4"
+  },
+  {
    "date": "2026-11-15T22:51:57.000Z",
    "headline": "Appointment of Company Secretary",
    "price_sensitive": false,
@@ -1036,64 +1032,9 @@
    "price_sensitive": false,
    "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03160360-6A1354494?access_token=83ff96335c2d45a094df02a206a39ff4",
    "register_kind": "issue"
-  },
-  {
-   "date": "2026-11-10T21:31:16.000Z",
-   "headline": "A$1m Strategic Investment by Priority Impact CEO and Founder",
-   "price_sensitive": true,
-   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03160311-6A1354493?access_token=83ff96335c2d45a094df02a206a39ff4"
-  },
-  {
-   "date": "2026-11-02T00:17:11.000Z",
-   "headline": "Becoming a substantial holder",
-   "price_sensitive": false,
-   "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03157041-6A1353242?access_token=83ff96335c2d45a094df02a206a39ff4",
-   "register_kind": "substantial",
-   "notice_text": "603 Page 1 of 4 15 July 2001 Form 603 Corporations Act 2001 Section 671B Notice of initial substantial holder To Company Name/Scheme ION Video Limited ACN/ARSN ABN 84 149 796 332 1. Details of substantial holder (1) Name Technical Investing Pty Ltd ACN/ARSN (if applicable) ACN 111 646 032 The holder became a substantial holder on 7 October 2026 2. Details of voting power The total number of votes attached to all the voting shares in the company or voting interests in the scheme that the substantial holder or an associate (2) had a relevant interest (3) in on the date the substantial holder became a substantial holder are as follows: Class of securities (4) Number of securities Person's votes (5) Voting power (6) Fully Paid Ordinary (FPO) shares 8,050,123 8,050,123 5.7% 3. Details of relevant interests The nature of the relevant interest the substantial holder or an associate had in the following voting securities on the date the substantial holder became a substantial holder are as follows: Holder of relevant interest Nature of relevant interest (7) Class and number of securities Technical Investing Pty Ltd As trustee for Technical Investing Absolute Return Fund 860,764 FPO Technical Investing Pty Ltd As trustee for TI Family Wealth Fund 95,305 FPO Technical Investing Pty Ltd As trustee for TI High Conviction Fund 250,000 FPO Technical Investing Pty Ltd As trustee for TI Growth Fund 5,934,400 FPO Technical Investing Pty Ltd beneficially owns 8,000 FPO Craig Scheef As trustee for CAS super fund 520,440 FPO Craig Scheef As trustee for CAS family trust 381,214 FPO 4. Details of present registered holders The persons registered as holders of the securities referred to in paragraph 3 above are as follows: Holder of relevant interest Registered holder of securities Person entitled to be registered as holder (8) Class and number of securities Technical Investing Pty Ltd One Managed Investment Funds Ltd One Managed Investment Funds Ltd 7,045,164 FPO Technical Investing Pty Ltd Technical Investing Pty Ltd Technical Investing Pty Ltd 103,305 FPO Craig Scheef Craig Scheef Craig Scheef 901,654 FPO 5. Consideration For personal use only 603 Page 2 of 4 15 July 2001 The consideration paid for each relevant interest referred to in paragraph 3 above, and acquired in the four months prior to the day that the substantial holder became a substantial holder is as follows: Holder of relevant interest Date of acquisition Consideration (9) Class and number of securities Cash Non-cash See attached 6. Associates The reasons the persons named in paragraph 3 above are associates of the substantial holder are as follows: Name and ACN/ARSN (if applicable) Nature of association Technical Investing Pty Ltd Trustee of investment funds Craig Scheef Director of Technical Investing Pty Ltd 7. Addresses The addresses of persons named in this form are as follows: Name Address Technical Investing Pty Ltd Level 6, 350 Collins St, Melbourne Vic 3000 Craig Scheef 1 Spencer Place Richmon"
   }
  ],
- "news_google": [
-  {
-   "title": "ION Video Cuts Performance Rights for Executive Chair Brent Jones and Two Non-Executive Directors Ahead of 30 November AGM - Kalkine",
-   "link": "https://kalkine.com.au/news/announcements/ion-video-cuts-performance-rights-for-executive-chair-brent-jones-and-two-non-executive-directors-ahead-of-30-november-agm",
-   "published": "2026-11-13T05:21:26+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQQ21yXzRUMGxJYkFzbF9xdzdBUkxwMnItM211cjZXeUtMUGpZX0hfdktqc2RFM1c0RW8xY0VMREdDb1oyMTF1aHBiajVmWklqY1ppQml6SURWMlQ3R0JPVmRkVGY5d2lSSEVjWkxNUHpUTFBlNmFVZEJrRTR0S3Q0bVF6NzhQQ1hzWjBuYjVSMTZMTEVkUWF4bUFGNVAzNW9CUU92ZGVEQ2NlX3lEUDVwbUw3YkVMdnhMcHFWS01UWF91R3daLVQwalYyeElNd3FKXzVjRE1NbXkxTXM4a0xjeGhRcjI1dG5fblo2UEhmOXBxQkFnWGlZ?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "title": "Ion Video Ltd (IOV.XA) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
-   "link": "https://ca.finance.yahoo.com/quote/IOV.XA/seasonality/",
-   "published": "2026-11-14T12:34:02+00:00",
-   "outlet": "Yahoo! Finance Canada",
-   "outlet_url": "https://ca.finance.yahoo.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MM09YcWhPbGZTcjluTFFWWWdVZk5CUHdEQ3d5ancxVlNxUkVPRDFISkFyM1dsWWVDLUN0MVlIZjJGYUdTbjNLel9nNUJsVjEwV2FHWVVEY1N3eWthUkQwTHpOX3g?oc=5",
-   "description": "Ion Video Ltd (IOV.XA) seasonal returns chart provides the mean and median returns by month to inform your investment strategy.",
-   "published_meta": null,
-   "author": null,
-   "error_terms": []
-  },
-  {
-   "title": "ION Video Reduces Proposed Performance Rights Awards - TipRanks",
-   "link": "https://www.tipranks.com/news/company-announcements/ion-video-reduces-proposed-performance-rights-awards",
-   "published": "2026-11-13T06:07:43+00:00",
-   "outlet": "TipRanks",
-   "outlet_url": "https://www.tipranks.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWszQnQ1S2p5QkFacFF0UzRNeFBqT00yNi1Lc3U2MnRTeHNxOTFZN3dwMTlwVVVFQ1c5NFpzb0RHYVRjeVI1cDVIWVVvNmE2NFZDYW9za1FIcFIyUjBZc0RyajZNMEh2RnRKUFBJWnNTREQycDRWQms3alpJRUF0VXlnbjdORzdHQ2I2bWZlZGRpN3lFeDFFNWVfSExCRUltSEVjSEJaZw?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
-  }
- ],
- "google_links_resolved": 3,
+ "news_google": null,
  "news_bing": [
   {
    "title": "Ion Video restructures video to enable AI to supercharge its use",
@@ -1154,16 +1095,8 @@
   {
    "title": "Ion Video Stock Price History",
    "link": "https://www.investing.com/equities/firestrike-resources-ltd-historical-data",
-   "published": "2026-10-10T17:00:00+00:00",
-   "snippet": "The average daily trading volume for Ion Video (IOV) is 119,143. The opening price for Ion Video today was 0.590.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video Ltd (LNNTF) Shareholder/Analyst Call Transcript",
-   "link": "https://seekingalpha.com/article/4921730-ion-video-ltd-lnntf-shareholder-analyst-call-transcript",
-   "published": "2026-07-13T23:01:00+00:00",
-   "snippet": "Well, good morning, everyone, and welcome. My name is Anthony Baker. I'm CEO of ION Video. Today, we're hosting this live Q&A to address the many questions we received from shareholders. Joining me ...",
+   "published": "2026-10-14T17:00:00+00:00",
+   "snippet": "The average daily trading volume for Ion Video (IOV) is 320,530. The opening price for Ion Video today was 0.800.",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1184,29 +1117,30 @@
    "via": "bing_news"
   }
  ],
- "articles_enriched": 3,
+ "articles_enriched": 0,
  "news_window": "3d",
  "reddit": null,
  "ratings": {
   "Morningstar": {
    "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
    "status": 200,
-   "text_len": 3864,
+   "text_len": 3849,
    "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
    "snippets": [
-    "atens margins Apple shares are trading at record highs after posting solid results. William Kerwin, CFA | 13 November 2026 stocks Nvidia: Cutting our fair value estimate by 19% given the firm’s CEO transition and turmoil We’re reducing our long-term revenue estimates. Brian Colello, CPA | 13 November 2026 Morningstar Investment Ideas Markets Equity Commodity Currency Index Last price Change % Chan"
+    "ees Recommended Stock market news and analysis Australian Market News US Market News ASX Today How to invest in stocks? Stocks News & Analysis stocks Overvalued ASX share has overly ambitious profit target We think the new profit target is aggressive and unlikely to be met. Lochlan Halloway, CFA | 16 November 2026 stocks 7 undervalued US stocks that crushed earnings Arista and GE Vernova remain am",
+    "ings Arista and GE Vernova remain among the cheapest Morningstar-covered stocks after strong earnings beats. Bella Albrecht | 16 November 2026 stocks Undervalued ASX share hitting on all cylinders Strong performance across all segments in latest earnings release. Angus Hewitt, CFA | 16 November 2026 Morningstar Investment Ideas Markets Equity Commodity Currency Index Last price Change % Change All"
    ],
    "data_hits": []
   },
   "Market Index": {
    "url": "https://www.marketindex.com.au/asx/iov",
    "status": 200,
-   "text_len": 11490,
+   "text_len": 11505,
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 75 of 256 ASX RANK 1,058 of 2,354 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +134.91% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 1,058 of 2,354 Sector Rank 75 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilati",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 62 of 256 ASX RANK 931 of 2,356 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +351.65% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 931 of 2,356 Sector Rank 62 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
@@ -1224,7 +1158,7 @@
   {
    "source": "stooq",
    "ok": false,
-   "error": "URLError: <urlopen error timed out>"
+   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
   },
   {
    "source": "index:ASX 200",
@@ -1256,11 +1190,8 @@
   },
   {
    "source": "google_news",
-   "ok": true
-  },
-  {
-   "source": "google_link_resolve",
-   "ok": true
+   "ok": false,
+   "error": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   {
    "source": "bing_news",
