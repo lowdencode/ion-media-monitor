@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-19T00:17:24+00:00",
+ "fetched_at_utc": "2026-11-19T01:05:25+00:00",
  "melbourne_date": "2026-11-19",
  "price_yahoo": {
   "sessions": [
@@ -534,15 +534,15 @@
    {
     "date": "2026-11-19",
     "open": 0.7900000214576721,
-    "high": 0.8100000023841858,
-    "low": 0.7799999713897705,
-    "close": 0.81,
-    "volume": 21527
+    "high": 0.824999988079071,
+    "low": 0.7749999761581421,
+    "close": 0.78,
+    "volume": 41642
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.81,
-   "regularMarketTime": 1795045615,
+   "regularMarketPrice": 0.78,
+   "regularMarketTime": 1795049067,
    "previousClose": null,
    "chartPreviousClose": 0.425,
    "fiftyTwoWeekHigh": 0.985,
@@ -645,11 +645,11 @@
     },
     {
      "date": "2026-11-19",
-     "close": 8714.6
+     "close": 8761.0
     }
    ],
-   "price": 8714.6,
-   "market_time_utc": "2026-11-18T23:57+00:00",
+   "price": 8761.0,
+   "market_time_utc": "2026-11-19T00:45+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -747,11 +747,11 @@
     },
     {
      "date": "2026-11-19",
-     "close": 1785.8
+     "close": 1803.4
     }
    ],
-   "price": 1785.8,
-   "market_time_utc": "2026-11-18T23:57+00:00",
+   "price": 1803.4,
+   "market_time_utc": "2026-11-19T00:45+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -964,27 +964,27 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.835,
-  "priceBid": 0.8,
-  "priceChange": 0.020000000000000018,
-  "priceChangePercent": 2.531645569620255,
-  "priceLast": 0.81,
+  "priceAsk": 0.8150000000000001,
+  "priceBid": 0.775,
+  "priceChange": -0.010000000000000009,
+  "priceChangePercent": -1.2658227848101276,
+  "priceLast": 0.78,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 21527,
+  "volume": 41642,
   "xid": "35079877",
   "marketCap": 111763168,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.835,
-  "priceBid": 0.8,
+  "priceAsk": 0.8150000000000001,
+  "priceBid": 0.775,
   "priceClose": 0.79,
-  "priceDayHigh": 0.81,
-  "priceDayLow": 0.78,
+  "priceDayHigh": 0.8250000000000001,
+  "priceDayLow": 0.775,
   "priceFiftyTwoWeekHigh": 0.985,
   "priceFiftyTwoWeekLow": 0.1,
   "volumeAverage": 97426.906977,
@@ -1244,6 +1244,30 @@
    "enrich_error": "HTTPError: HTTP Error 406: Not Acceptable"
   },
   {
+   "title": "ION Video Responds to ASX Price Query Over AWS Proof of Concept Results Ahead of 17 November Market Open - Kalkine",
+   "link": "https://kalkine.com.au/news/announcements/ion-video-responds-to-asx-price-query-over-aws-proof-of-concept-results-ahead-of-17-november-market-open",
+   "published": "2026-11-16T23:15:02+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "US",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZ0kxcUxOZTB0Uk16QVBQQ2JCM2lFaVZnZHA3MndscXZ3RWlJRnFOd1RNeGRJQ25KOGEtSzJMOUJtNlZpN1NPemhBTGFxcHVXb2NRekhuOE16ZGp4OEZYVVJaX2Z0eUg0cFhmX09FVlB0YjJuZVM1OVBGTkxYRGJiX2k1c2xxUkJIdGxMelI3NzZFVEdNRGxteTJpLWhqWnlId2Y1dG9jV3Z3bFB0eExOWi1qRkVDbFlaTUNpenhfc0dMTkd2RG1YajNhOFVGeVYtVmVEXzF3NjhCSEJSS2ZZ?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "title": "ION says AWS test slashes video editing costs & time - IT Brief Australia",
+   "link": "https://itbrief.com.au/story/ion-says-aws-test-slashes-video-editing-costs-time",
+   "published": "2026-11-16T23:30:22+00:00",
+   "outlet": "IT Brief Australia",
+   "outlet_url": "https://itbrief.com.au",
+   "query": "\"ion.video\"",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQNGNlWHk4eGF3em1ZSXRaTmtsX202VURpb3ZXclNqNlZUaWdtNU0tNFdYZkdSMmg1SGl2Y3dSRmJUc2xfU0xEYzNtQmlNc3UzM2J2d1lUQm9rU2FrOTdremN4N043OWRiWjNZdVdvLTN4WnRXMzRtYUdQSzkwX2FFczktaUU3QQ?oc=5",
+   "enrich_error": "HTTPError: HTTP Error 406: Not Acceptable"
+  },
+  {
    "title": "This company has almost no revenue. So why are its shares up nearly 10 times? - The Motley Fool Australia",
    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbVZfX1FzVm5XTVd3MUgtdDFnWWp5NlRvRmxFYjdjZXF3VTFJZWZjV2tIeTBiT0F3RkxwN21BTHhvMld4bkxxMnlNZkJZVWFOTDBXdXUyYzJvYVpuWEJMQUpZaVR3RFZUQ3EwSWJrN2RTYnFneTBxdHF2NjRuT2RlelFKSXg0YVBZNmctS01tWTN2b2dPTHNXbS03cjZqOFgzWlEwS1dBVzc0UQ?oc=5",
    "published": "2026-11-17T01:43:43+00:00",
@@ -1262,14 +1286,10 @@
    "query": "\"programmable video\" OR \"virtual video\" ION",
    "edition": "AU",
    "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWVR1ejNqbnVtT0lfY1NIdlM2dHdjU2UwNGNOcnpCWGJ1Q1JQV3RuOHlDU0hsbUo4eUp0Yklrbm9rR2hDbFFzZTFvX1RiVk43U0s4RVlPaWFEZk9ReU9xQkhWc2pfVmJ3MjcyeVp6Nk16OEttSzFCRjQ3NEkwU2d1OWdRSkpYUXpRQnRqNWZlakVZSk5MNkZhRUlDSzQ2eGlsRVVIQjgxLU9Sa3o2YVMzbE1Mbw?oc=5",
-   "description": "ION Video cut key editing resource use by more than 99% in an AWS-funded test, editing clips around 40 times faster than AI rivals.",
-   "published_meta": "2026-11-17T03:43:09.523Z",
-   "author": "Nik Hill",
-   "error_terms": []
+   "google_link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWVR1ejNqbnVtT0lfY1NIdlM2dHdjU2UwNGNOcnpCWGJ1Q1JQV3RuOHlDU0hsbUo4eUp0Yklrbm9rR2hDbFFzZTFvX1RiVk43U0s4RVlPaWFEZk9ReU9xQkhWc2pfVmJ3MjcyeVp6Nk16OEttSzFCRjQ3NEkwU2d1OWdRSkpYUXpRQnRqNWZlakVZSk5MNkZhRUlDSzQ2eGlsRVVIQjgxLU9Sa3o2YVMzbE1Mbw?oc=5"
   }
  ],
- "google_links_resolved": 14,
+ "google_links_resolved": 16,
  "news_bing": [
   {
    "title": "ION Video Drastically Cuts Editing Costs in Amazon-Funded Technology PoC Testing",
@@ -1277,25 +1297,13 @@
    "published": "2026-11-16T19:43:00+00:00",
    "snippet": "ION Video cut key editing resource use by more than 99% in an AWS-funded test, editing clips around 40 times faster than AI rivals.",
    "query": "\"ION Video\"",
-   "via": "bing_news",
-   "description": "ION Video cut key editing resource use by more than 99% in an AWS-funded test, editing clips around 40 times faster than AI rivals.",
-   "published_meta": "2026-11-17T03:43:09.523Z",
-   "author": "Nik Hill",
-   "error_terms": []
+   "via": "bing_news"
   },
   {
    "title": "ION cuts the computing, storage and AI cost of video edits by 99% in AWS-funded proof of concept",
    "link": "https://itwire.com/business-it-news/business-intelligence/ion-cuts-the-computing-storage-and-ai-cost-of-video-edits-by-99-in-aws-funded-proof-of-concept",
    "published": "2026-11-18T06:22:00+00:00",
    "snippet": "ION Video’s technology has used 99% less computing time, storage and AI cost than two off-the-shelf AI agents including Google Gemini in a proof of concept to test its ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
-   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
-   "published": "2026-11-17T05:08:00+00:00",
-   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1312,14 +1320,6 @@
    "link": "https://www.proactiveinvestors.com.au/companies/news/1092730/ion-video-explains-the-future-of-ai-powered-content-icymi-1092730.html",
    "published": "2026-05-22T05:15:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) earlier this week outlined how its patented programmable video technology could position the company at the centre of the next wave of AI-driven media transformation, with ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Tuesday’s HotCopper trends, Mayne Pharma Group, ION video, Larvotto Resources and other daily topics",
-   "link": "https://www.msn.com/en-au/money/top-stocks/tuesday-s-hotcopper-trends-mayne-pharma-group-ion-video-larvotto-resources-and-other-daily-topics/ar-AA2hA6aJ",
-   "published": "2026-11-16T19:06:54+00:00",
-   "snippet": "With more than 600k average monthly users on the HotCopper forums, each and every discussion can move markets. That’s why getting in front of those red-hot trends is key for every trader worth their ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1345,6 +1345,38 @@
    "published": "2026-09-16T17:06:00+00:00",
    "snippet": "An announcement from Ion Video ( (AU:IOV)) is now available. Ion Video Ltd, an ASX-listed video and media technology company trading under the ticker IOV, participates actively in Australia’s public ...",
    "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video unlocks a new era of AI-driven video assembly",
+   "link": "https://finance.yahoo.com/video/ion-video-unlocks-era-ai-024849090.html",
+   "published": "2026-02-25T18:48:00+00:00",
+   "snippet": "The above button links to Coinbase. Yahoo Finance is not a broker-dealer or investment adviser and does not offer securities or cryptocurrencies for sale or facilitate trading. Coinbase pays us for ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
+   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
+   "published": "2026-11-17T05:08:00+00:00",
+   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Tuesday’s HotCopper trends, Mayne Pharma Group, ION video, Larvotto Resources and other daily topics",
+   "link": "https://www.msn.com/en-au/money/top-stocks/tuesday-s-hotcopper-trends-mayne-pharma-group-ion-video-larvotto-resources-and-other-daily-topics/ar-AA2hA6aJ",
+   "published": "2026-11-16T19:06:54+00:00",
+   "snippet": "With more than 600k average monthly users on the HotCopper forums, each and every discussion can move markets. That’s why getting in front of those red-hot trends is key for every trader worth their ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Ion Video Ltd (ASX:IOV)",
+   "link": "https://kalkinemedia.com/au/companies/asx-iov",
+   "published": "2026-09-17T17:00:00+00:00",
+   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
+   "query": "\"ASX: IOV\"",
    "via": "bing_news"
   },
   {
@@ -1378,8 +1410,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 66 of 256 ASX RANK 956 of 2,358 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +301.72% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 956 of 2,358 Sector Rank 66 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 66 of 256 ASX RANK 966 of 2,358 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +283.93% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 966 of 2,358 Sector Rank 66 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
