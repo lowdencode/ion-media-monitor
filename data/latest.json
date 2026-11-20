@@ -1,6 +1,6 @@
 {
- "fetched_at_utc": "2026-11-20T01:12:35+00:00",
- "melbourne_date": "2026-11-20",
+ "fetched_at_utc": "2026-11-20T23:57:33+00:00",
+ "melbourne_date": "2026-11-21",
  "price_yahoo": {
   "sessions": [
    {
@@ -535,14 +535,22 @@
     "date": "2026-11-20",
     "open": 0.824999988079071,
     "high": 0.8550000190734863,
-    "low": 0.8199999928474426,
+    "low": 0.8149999976158142,
     "close": 0.82,
-    "volume": 134631
+    "volume": 170816
+   },
+   {
+    "date": "2026-11-20",
+    "open": 0.824999988079071,
+    "high": 0.8550000190734863,
+    "low": 0.8149999976158142,
+    "close": 0.82,
+    "volume": 170816
    }
   ],
   "meta": {
    "regularMarketPrice": 0.82,
-   "regularMarketTime": 1795135769,
+   "regularMarketTime": 1795151407,
    "previousClose": null,
    "chartPreviousClose": 0.44,
    "fiftyTwoWeekHigh": 0.985,
@@ -644,13 +652,17 @@
      "close": 8821.8
     },
     {
+     "date": "2026-11-19",
+     "close": 8730.4
+    },
+    {
      "date": "2026-11-20",
-     "close": 8632.6
+     "close": 8592.6
     }
    ],
-   "price": 8632.6,
-   "market_time_utc": "2026-11-20T00:52+00:00",
-   "state": "open",
+   "price": 8592.6,
+   "market_time_utc": "2026-11-20T06:07+00:00",
+   "state": "closed",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
   },
@@ -746,23 +758,23 @@
      "close": 1793.7
     },
     {
+     "date": "2026-11-19",
+     "close": 1811.0
+    },
+    {
      "date": "2026-11-20",
-     "close": 1725.9
+     "close": 1725.8
     }
    ],
-   "price": 1725.9,
-   "market_time_utc": "2026-11-20T00:52+00:00",
-   "state": "open",
+   "price": 1725.8,
+   "market_time_utc": "2026-11-20T06:07+00:00",
+   "state": "closed",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
   },
   "sp500": {
    "symbol": "^GSPC",
    "sessions": [
-    {
-     "date": "2026-10-20",
-     "close": 7712.57
-    },
     {
      "date": "2026-10-21",
      "close": 7757.17
@@ -850,10 +862,14 @@
     {
      "date": "2026-11-19",
      "close": 7175.83
+    },
+    {
+     "date": "2026-11-20",
+     "close": 6910.39
     }
    ],
-   "price": 7175.83,
-   "market_time_utc": "2026-11-19T21:59+00:00",
+   "price": 6910.39,
+   "market_time_utc": "2026-11-20T21:35+00:00",
    "state": "closed",
    "exchange_tz": "America/New_York",
    "name": "S&P 500"
@@ -861,10 +877,6 @@
   "nasdaq": {
    "symbol": "^IXIC",
    "sessions": [
-    {
-     "date": "2026-10-20",
-     "close": 26424.82
-    },
     {
      "date": "2026-10-21",
      "close": 26702.86
@@ -952,10 +964,14 @@
     {
      "date": "2026-11-19",
      "close": 23879.2
+    },
+    {
+     "date": "2026-11-20",
+     "close": 22617.73
     }
    ],
-   "price": 23879.2,
-   "market_time_utc": "2026-11-19T22:15+00:00",
+   "price": 22617.732,
+   "market_time_utc": "2026-11-20T22:15+00:00",
    "state": "closed",
    "exchange_tz": "America/New_York",
    "name": "Nasdaq"
@@ -964,8 +980,8 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.8200000000000001,
-  "priceBid": 0.8150000000000001,
+  "priceAsk": 0.84,
+  "priceBid": 0.81,
   "priceChange": -0.004999999999999893,
   "priceChangePercent": -0.6060606060605932,
   "priceLast": 0.8200000000000001,
@@ -973,27 +989,27 @@
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 134631,
+  "volume": 170816,
   "xid": "35079877",
   "marketCap": 116714700,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.8200000000000001,
-  "priceBid": 0.8150000000000001,
+  "priceAsk": 0.84,
+  "priceBid": 0.81,
   "priceClose": 0.825,
   "priceDayHigh": 0.855,
-  "priceDayLow": 0.8200000000000001,
+  "priceDayLow": 0.8150000000000001,
   "priceFiftyTwoWeekHigh": 0.985,
   "priceFiftyTwoWeekLow": 0.1,
-  "volumeAverage": 96899.034884,
+  "volumeAverage": 98428.069767,
   "cashFlow": -3.2096,
   "earningsPerShare": -0.05489,
   "freeCashFlowYield": -1.00000010000001e-05,
   "priceEarningsRatio": -99999.99,
   "priceToCash": -99999.99,
-  "enterprisevalue": 110.9923,
+  "enterprisevalue": 115.9438,
   "totalAssets": 1.3957,
   "totalLiabilities": 0.54195,
   "opCashFlowRevTTM": -954.2725,
@@ -1095,74 +1111,24 @@
    "error_terms": []
   },
   {
-   "title": "Ion Video Responds To ASX Price Query - TradingView",
-   "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN46X1RZ:0-ion-video-responds-to-asx-price-query/",
-   "published": "2026-11-17T01:23:10+00:00",
-   "outlet": "TradingView",
-   "outlet_url": "https://www.tradingview.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZnJDMnFmbURndGk5Zk9LWXluU3d1RHNkWV8xek9LbGtYOGViZTc2cFpZX3FCM0VhSVF2UUtPX1pIdFRtc0hSa3NkcUk4T2Y3RlFmNUV1UkVHUWctY2FocXBrbXlRZkY3WU1PZjVqbmNlZVJfQnNOVy1rZWdDZll2OElkQUJ0NnA4UEhsa19fVlZVQk00QjEta3MwaEc2Uzh6OF9PQ3Zham9HUVE?oc=5",
-   "description": "Ion Video Ltd ASX:IOV:",
-   "published_meta": null,
-   "author": null,
-   "error_terms": []
-  },
-  {
-   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta - Sharecafe",
-   "link": "https://www.sharecafe.com.au/2026/11/17/daily-special-li-s-energy-western-gold-resources-ion-video-imagion-biosystems-adalta/",
-   "published": "2026-11-17T02:07:13+00:00",
-   "outlet": "Sharecafe",
-   "outlet_url": "https://www.sharecafe.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOZURmaTljWGFFZ25mMDltN2R1N2JJMmQ0ZE1INnFZQkFwU1hUSWFSWG5XeGJxSV96VzNJT3hWNWJRdnBNdURZUGdvazQwZHJGUlFNSE5DY2VRVEswT1JtZTJSd2hQS1FLYTJVQTIwc214ZE5Nbk1XLWJ0QVhJVURrOEM2OHR5WElfT1BsY2IwUm1BZTVzOVJFcFkwS0RZMFpCOGZ2S242YUYzZ3pPUXIydm8wX1g0aG1WN196NEExOUVnQlk?oc=5",
-   "description": "The Australian sharemarket extended its losses towards noon on Tuesday, following another sharp sell-off in US technology stocks and continued weakness in commodity prices. The S&P/ASX 200 dropped 143.3 points, or 1.58 per cent, to 8,901.4 at 12.09pm AEDT, with 10 of the 11 sectors trading lower. Mi",
-   "published_meta": "2026-11-17T02:02:18+00:00",
-   "author": "Sharecafe Team",
-   "error_terms": []
-  },
-  {
-   "title": "This company has almost no revenue. So why are its shares up nearly 10 times? - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbVZfX1FzVm5XTVd3MUgtdDFnWWp5NlRvRmxFYjdjZXF3VTFJZWZjV2tIeTBiT0F3RkxwN21BTHhvMld4bkxxMnlNZkJZVWFOTDBXdXUyYzJvYVpuWEJMQUpZaVR3RFZUQ3EwSWJrN2RTYnFneTBxdHF2NjRuT2RlelFKSXg0YVBZNmctS01tWTN2b2dPTHNXbS03cjZqOFgzWlEwS1dBVzc0UQ?oc=5",
-   "published": "2026-11-17T01:43:43+00:00",
-   "outlet": "The Motley Fool Australia",
-   "outlet_url": "https://www.fool.com.au",
+   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaFlLbVZUVDB5VVROMllPVVVQZ3JzbnVxWk1MWXlLeXRydzhTS0xuR2tVTC1HR2NwVmVMZ1J6QzlEM1luazV3X3locUh0Q2VtM2Y0V1JZXzZZcHQwYTJ3T1FhTTlDTEVFcl94ZFJ0bXBmREpVNC1YM1VFamZHLUJHZ1ZzLVltMkNvRjJ1Ql9SUW03b1BrR1FB?oc=5",
+   "published": "2026-11-20T09:05:22+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news"
   },
   {
-   "title": "Ion Video Ltd (3O2.MU) latest stock news and headlines - Yahoo Finance Singapore",
-   "link": "https://sg.finance.yahoo.com/quote/3O2.MU/news/",
-   "published": "2026-11-17T20:20:45+00:00",
-   "outlet": "Yahoo Finance Singapore",
-   "outlet_url": "https://sg.finance.yahoo.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBEaGRhU3hieXc4cEFuWG5UN2pkMlAyLVowTTdLS1FKRHRjT2VyTzVCU05TSEpuRktBYzUwRFl5RUR6R2lTeUJDZjlkZkpuZU9hbXdNaThMZ1RwVGM?oc=5",
-   "description": "Get the latest Ion Video Ltd (3O2.MU) stock news and headlines to help you in your trading and investment decisions.",
-   "published_meta": null,
-   "author": null,
-   "error_terms": []
-  },
-  {
-   "title": "ION Video Drastically Cuts Editing Costs in Amazon-Funded Technology PoC Testing - TradingView",
-   "link": "https://www.tradingview.com/news/smallcaps:f434fdbd1094b:0-ion-video-drastically-cuts-editing-costs-in-amazon-funded-technology-poc-testing/",
-   "published": "2026-11-17T03:43:00+00:00",
+   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - TradingView",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZzRTUVBGWl9XX1RBb1lJRER5U1VkVzc1SVR4NVRKdUZfWVdBZDFfeGcxZGNQcVRLMGhDdnJBQjVzdEpBTnVmTk13bUE5M3hBOEM2LUl6cUl3THhQQWZSMllpU084RUticXh5R2o2M0tLZ1NVeGJSeDU3TGJDR0tJSGZzSFNwR2JDdUF3TkVLZElXOW9VbFVlSGFVUlF3dXRtem16bXBmd2xmZ0dydGhXeEY4dnhpRmNZWDRFV1pTZVgxVEVvZnVF?oc=5",
+   "published": "2026-11-20T09:03:26+00:00",
    "outlet": "TradingView",
    "outlet_url": "https://www.tradingview.com",
    "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOSE5lYjJWLVVua0VDVG5wZWkwakxFd3dra25FU0pEZDNHYmpmWnliQUVCNFBjQ0JNbDBXcmJQRm5ia0pMN05FUEpCQVNzakllN01JbDNReGlxOElXUlFrcVQ2aXNYSUpMNEFieVFhM000TktvTFF3RXdybEN4UnFFV25UUWpDZGpQUmxuNlBUMi16cFNHdFFBTVJ3UXVYTWtxRTZtMzFZUUlsM1pXOEd1ZnUyWjlwSWxBRWN4aUVnYldzNHoyUEFnMzhXX2NxZkFPbHdtVVhaSQ?oc=5",
-   "description": "ION Video ASX:IOV has recorded reductions of more than 99% in several video-editing resource measures during a proof-of-concept (PoC) test funded by Amazon Web Services (AWS).The Melbourne technology developer completed five editing requests from a football broadcast in one minute and 47 seconds, c…",
-   "published_meta": null,
-   "author": null,
-   "error_terms": []
+   "via": "google_news"
   },
   {
    "title": "Aerometrex (ASX:AMX): Aerometrex Reviews MetroMap Growth and November Strategic Developments - Kalkine",
@@ -1175,32 +1141,57 @@
    "via": "google_news"
   },
   {
+   "title": "Nuix Receives $1bn Takeover Offer from US Private Equity Firm Haveli Investments - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOU280SjZHcHk4M3VYM095S3BjZUpMMmpYR2o2NkQ0YVBUV1c1dEZkSm1vU2E5Q1RYRHBDNnhMZWJENklCanhoeW1kbGMwam9LRG01a01zeVRZb1lnU2E4d0p2a1A3MS1wbmpacWpZZjJHZXI2eFE1VlJHUW9SNm5WclZOR0ZtdEhJTXhfcTNNUXFyU0w5SVAzUG9lWHBPOFQzeE5sRE9NN0dPUkMyUUhVZGJJb0ZBWDREN3c?oc=5",
+   "published": "2026-11-18T01:24:55+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Janus Electric (ASX:JNS): North American Truck Orders and Delivery Targets in Focus - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWUg2bzd4MU9rdy1kUTI0Q0dDUGlseDdkOHFqOURDSUxpYm1nMkw2M1ZKOWt4YjFnMFNLREE5c2I2aGs4YVBTaGRmWVJFTXdJVjQ1NF9RX1d3MHNoelV4aVNSbmdnQ0pXYkwyOEhqWWZKZXcxRGVTQWZqVzRFM2F4anBHRXptRzhIS0swaks5WHZfQU1MZGpUMXJYdnRIclQxTlhMRjU5NGFSVFBVWkhjbWNsZjlSYk9lZlE?oc=5",
    "published": "2026-11-18T12:15:00+00:00",
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
-   "query": "\"ion.video\"",
+   "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news"
   },
   {
-   "title": "ION Video Drastically Cuts Editing Costs in Amazon-Funded Technology PoC Testing - Small Caps",
-   "link": "https://smallcaps.com.au/article/ion-video-drastically-cuts-editing-costs-in-amazon-funded-technology-poc-testing",
-   "published": "2026-11-17T04:04:51+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"programmable video\" OR \"virtual video\" ION",
+   "title": "Which Buyers Are Powering Nvidia's (NASDAQ:NVDA) Chip Sales as AI Cloud and Corporate Revenue Almost Trebles to USD 47.5 Billion? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOV1FhWEJXVWw3THo3cWhBdWhUQ0VCbG84SG5INjBYNWlTWUJyZ0xVMk1iUmdLbHdUQ2FCTHBaUERYZTVacEplVl9MblpxWFlVbUZCeXRncy1DSm0wSGhNd0lLNmMtWDNjNldXWnB3eFhpTHF5Ykc4YnlGQjBjMm1pWFBsclVNYjRYTml3NmZ1Qkl0NzQyZ3kySnp3VWpMWWJfNjFNX3VoV3A3d2xQWVRQcklPaUs0VnBaMlFvWHZrWmdXaVU0RmItME5KdnA3OVRCRWlsNXJqalBvaVBNaWNWNEFUa1hJdWlndGZlMzk1aGUwNG5k?oc=5",
+   "published": "2026-11-18T12:21:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
    "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWVR1ejNqbnVtT0lfY1NIdlM2dHdjU2UwNGNOcnpCWGJ1Q1JQV3RuOHlDU0hsbUo4eUp0Yklrbm9rR2hDbFFzZTFvX1RiVk43U0s4RVlPaWFEZk9ReU9xQkhWc2pfVmJ3MjcyeVp6Nk16OEttSzFCRjQ3NEkwU2d1OWdRSkpYUXpRQnRqNWZlakVZSk5MNkZhRUlDSzQ2eGlsRVVIQjgxLU9Sa3o2YVMzbE1Mbw?oc=5",
-   "description": "ION Video cut key editing resource use by more than 99% in an AWS-funded test, editing clips around 40 times faster than AI rivals.",
-   "published_meta": "2026-11-17T03:43:09.523Z",
-   "author": "Nik Hill",
-   "error_terms": []
+   "via": "google_news"
+  },
+  {
+   "title": "What Lifted Nvidia (NASDAQ:NVDA) Shares About 3% Before the Open Following Four Down Sessions? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZ0YzdkZnNVNRbFVjTnRZS18zRUpOeVo0ZmJwVVVQWVhBVHBZQTZEbVhQSXJha2w5aTNyZkNNWWFSc19vcU1VUTRVNloxRFF6SGNzb1c5UFJ0bXFyek5FOE54SWNwUDZGM2tmbEJ0VU1VcEE1eE1mNHFoSFFycVphUFpDVk9EYTZLUDBwYXFfX0g4b1JBNWNONlQyMXhZRTdoR2xGc1hTNUMtVkllOWpoSUR5bE9mWE1PWGxCM3JNcFFzeHBLQWVj?oc=5",
+   "published": "2026-11-18T12:21:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "What Does Nvidia (NASDAQ:NVDA) Face in China as Hopper Deliveries and Export Licensing Tighten? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQN3pvZzlBNTRzZWpGb1EzN0dHNTFWeXdXQ2RRTUFaNGkzZHhSeVY0TTVvYlF0SWozd0laMzYzUGJ6R0hDZXJxQ1Q3dlZUQUQxWEIzX2FuTDRjTi1PNW5QLTBZYWNVWjVrbG13OVRkQ0xjSGJOdFpQeWtPQWRnbXB5SlNMSUdjUzFWYWZvUUlPTFdQU0YxVGtBQkVXdnVreUYydE12V1JlUG5ad2h3UWZuQkVwVW9NYkE3MjNSWnRaVXhrMFJPSzR4X05B?oc=5",
+   "published": "2026-11-18T12:21:00+00:00",
+   "outlet": "Kalkine",
+   "outlet_url": "https://kalkine.com.au",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
   }
  ],
- "google_links_resolved": 7,
+ "google_links_resolved": 2,
  "news_bing": [
   {
    "title": "ION Video Drastically Cuts Editing Costs in Amazon-Funded Technology PoC Testing",
@@ -1223,6 +1214,14 @@
    "error_terms": []
   },
   {
+   "title": "Ion Video restructures video to enable AI to supercharge its use",
+   "link": "https://itwire.com/business-it-news/data/ion-video-restructures-video-to-enable-ai-to-supercharge-its-use/",
+   "published": "2026-03-18T06:10:00+00:00",
+   "snippet": "Melbourne tech company Ion Video says it has solved one of the biggest structural limitations of the internet: video’s incompatibility with AI. The issue for AI is that it can analyse a video and ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
    "title": "ION Video (ASX:IOV) Adds Strategic Funding as Data Centre Technology Trials Advance",
    "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-adds-strategic-funding-as-data-centre-technology-trials-advance",
    "published": "2026-11-13T06:48:00+00:00",
@@ -1239,18 +1238,18 @@
    "via": "bing_news"
   },
   {
-   "title": "Ion Video restructures video to enable AI to supercharge its use",
-   "link": "https://itwire.com/business-it-news/data/ion-video-restructures-video-to-enable-ai-to-supercharge-its-use/",
-   "published": "2026-03-18T06:10:00+00:00",
-   "snippet": "Melbourne tech company Ion Video says it has solved one of the biggest structural limitations of the internet: video’s incompatibility with AI. The issue for AI is that it can analyse a video and ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
    "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
    "published": "2026-02-26T16:19:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
+   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
+   "published": "2026-11-17T05:08:00+00:00",
+   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1263,22 +1262,10 @@
    "via": "bing_news"
   },
   {
-   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
-   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
-   "published": "2026-11-17T05:08:00+00:00",
-   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news",
-   "description": "17 Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off",
-   "published_meta": "2026-11-17T02:08:52Z",
-   "author": "Finance News Network",
-   "error_terms": []
-  },
-  {
-   "title": "ION Video clears debt after converting $2.65 million in notes",
-   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
-   "published": "2026-05-19T04:45:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
+   "title": "ION Video unlocks a new era of AI-driven video assembly",
+   "link": "https://finance.yahoo.com/video/ion-video-unlocks-era-ai-024849090.html",
+   "published": "2026-02-25T18:48:00+00:00",
+   "snippet": "The above button links to Coinbase. Yahoo Finance is not a broker-dealer or investment adviser and does not offer securities or cryptocurrencies for sale or facilitate trading. Coinbase pays us for ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1299,17 +1286,17 @@
    "via": "bing_news"
   }
  ],
- "articles_enriched": 9,
+ "articles_enriched": 3,
  "news_window": "3d",
  "reddit": null,
  "ratings": {
   "Morningstar": {
    "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
    "status": 200,
-   "text_len": 3821,
+   "text_len": 3782,
    "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
    "snippets": [
-    "underpinned by rent uplifts and development pipeline. Adrian Atkins | 18 November 2026 stocks Chart of the Week: Anthropic’s IPO range sits below our fair value Our fair value is above the IPO range, but outcomes could differ widely. Joshua Groot | 18 November 2026 Morningstar Investment Ideas Markets Equity Commodity Currency Index Last price Change % Change All Ordinaries 8,720.50 - 116.10 -1.31"
+    "ews and analysis Australian Market News US Market News ASX Today How to invest in stocks? Stocks News & Analysis stocks Reassuring organic growth for undervalued ASX share Efficiency gains are starting to make their mark. Brian Han | 20 November 2026 stocks Big IPOs are enticing but are they good investments? Historically, buzzy debuts have been painful for buyers. Colin Laidley | 20 November 2026"
    ],
    "data_hits": []
   },
@@ -1320,8 +1307,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 65 of 256 ASX RANK 943 of 2,355 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +172.67% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 943 of 2,355 Sector Rank 65 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 65 of 256 ASX RANK 946 of 2,357 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +172.87% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 946 of 2,357 Sector Rank 65 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
@@ -1339,7 +1326,7 @@
   {
    "source": "stooq",
    "ok": false,
-   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+   "error": "URLError: <urlopen error timed out>"
   },
   {
    "source": "index:ASX 200",
