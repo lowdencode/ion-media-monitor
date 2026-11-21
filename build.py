@@ -592,6 +592,21 @@ if DAILY and trade:
         ctx.append(("52-week range", f"{cents(lo52)} to {cents(hi52)}"))
     ctx.append(("Market cap", f"A${trade['mcap'] / 1e6:,.1f}m"))
     context_html = section(f"IOV and the market on {sess:%A} {sess.day} {sess:%B}", stat_rows(ctx))
+elif WEEKLY and trade and len(rows) >= 6:
+    def index_5(key, day):
+        s_ = ((latest.get("markets") or {}).get(key) or {}).get("sessions") or []
+        for i, r in enumerate(s_):
+            if r["date"] == day and i >= 5 and s_[i - 5]["close"]:
+                return (r["close"] / s_[i - 5]["close"] - 1) * 100
+        return None
+    d1, d2 = dt.date.fromisoformat(rows[-5]["date"]), dt.date.fromisoformat(rows[-1]["date"])
+    chg5 = (rows[-1]["close"] / rows[-6]["close"] - 1) * 100 if rows[-6]["close"] else None
+    ctx = [("IOV", coloured_pct(chg5)),
+           ("ASX 200", coloured_pct(index_5("asx200", trade["date"]))),
+           ("Small Ordinaries", coloured_pct(index_5("small_ords", trade["date"]))),
+           ("ASX tech", coloured_pct(index_5("asx_tech", trade["date"])))]
+    context_html = section("IOV and the market, last 5 sessions", stat_rows(ctx), top=24,
+                           right=(f"{d1.day} to {d2.day} {d2:%b}" if d1.month == d2.month else f"{d1.day} {d1:%b} to {d2.day} {d2:%b}"))
 
 # ---------- ION's ASX announcements ----------
 ann_hours = int(a.get("announcements_hours") or (168 if WEEKLY else 24))
@@ -877,55 +892,48 @@ if WEEKLY and t50:
               11, GREY, "padding-top:10px;")
     parts.append(section("Top 50 shareholders, last week", body, right=head_right))
 
-# ---------- 30-day sentiment wave (weekly edition) ----------
+# ---------- sentiment by week (weekly edition) ----------
 s30 = {r["date"]: r for r in (a.get("sentiment_30d") or [])}
 if WEEKLY and s30:
-    days = [report_date - dt.timedelta(days=i) for i in range(29, -1, -1)]
-    raw = [(int(s30.get(d.isoformat(), {}).get("positive", 0)), int(s30.get(d.isoformat(), {}).get("neutral", 0)),
-            int(s30.get(d.isoformat(), {}).get("negative", 0))) for d in days]
-    WEIGHTS = (1, 2, 3, 2, 1)  # 5-day centred, triangular: smooths daily spikes into a wave
+    weeks = []
+    for k in range(4):
+        w_end = report_date - dt.timedelta(days=7 * k)
+        w_days = [(w_end - dt.timedelta(days=i)).isoformat() for i in range(7)]
+        counts = [sum(int(s30.get(d, {}).get(key, 0)) for d in w_days) for key in ("positive", "neutral", "negative")]
+        weeks.append((w_end, counts))
+    top = max(sum(c) for _, c in weeks) or 1
 
-    def roll(i, k):
-        num = den = 0
-        for off, w in zip(range(-2, 3), WEIGHTS):
-            j = i + off
-            if 0 <= j < len(raw):
-                num += raw[j][k] * w
-                den += w
-        return num / den
+    def seg(n, colour, text_colour):
+        w = round(n / top * 100, 1)
+        return (f'<td width="{w}%" bgcolor="{colour}" align="center" style="width:{w}%;height:20px;background:{colour};'
+                f'{FONT}font-size:11px;font-weight:bold;color:{text_colour};{NUM}">{n}</td>')
 
-    up_s = [roll(i, 0) for i in range(len(raw))]
-    down_s = [roll(i, 2) for i in range(len(raw))]
-    top = max(up_s + down_s) or 1
-    WH = 44
-    DH = round(max(down_s) / top * WH)  # negative half only takes the room it needs
-    up_row = dn_row = lab_row = ""
-    for i, d in enumerate(days):
-        hu = round(up_s[i] / top * WH)
-        hd = round(down_s[i] / top * WH) if DH else 0
-        up_bar = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-                  f'<td height="{hu}" bgcolor="{ACCENT}" style="height:{hu}px;background:{ACCENT};font-size:0;line-height:0;">&nbsp;</td>'
-                  f'</tr></table>') if hu else ""
-        dn_bar = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-                  f'<td height="{hd}" bgcolor="{NEG}" style="height:{hd}px;background:{NEG};font-size:0;line-height:0;">&nbsp;</td>'
-                  f'</tr></table>') if hd else ""
-        up_row += f'<td valign="bottom" style="height:{WH}px;padding:0;">{up_bar}</td>'
-        dn_row += f'<td valign="top" style="height:{DH}px;padding:0;">{dn_bar}</td>'
-        label = f"{d.day} {d:%b}" if i in (0, 14, 29) else ""
-        align = "left" if i == 0 else "right" if i == 29 else "center"
-        lab_row += (f'<td align="{align}" style="padding-top:6px;{FONT}font-size:11px;color:{SLATE};'
-                    f'white-space:nowrap;overflow:visible;">{label}</td>') if label else '<td></td>'
-    tp, tn, tg = (sum(x[k] for x in raw) for k in (0, 1, 2))
-    tot = tp + tn + tg
-    net = round((tp - tg) / tot * 100) if tot else 0
-    wave_chart = (chart_head(f"{tot} mention{'' if tot == 1 else 's'}: {tp} positive, {tn} neutral, {tg} negative",
-                             f"Net {'+' if net > 0 else ''}{net}")
-                  + '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">'
-                  + f"<tr>{up_row}</tr>" + axis(len(days)) + (f"<tr>{dn_row}</tr>" if DH else "") + f"<tr>{lab_row}</tr></table>"
-                  + p(f'<span style="color:{ACCENT};">&#9632;</span> Positive above the line &nbsp; '
-                      f'<span style="color:{NEG};">&#9632;</span> Negative below the line &nbsp;|&nbsp; 5-day smoothing',
+    gap = '<td width="2" style="width:2px;font-size:0;line-height:0;">&nbsp;</td>'
+    rows_html = ""
+    for i, (w_end, (pos_n, neu_n, neg_n)) in enumerate(weeks):
+        border = f"border-top:1px solid {LINE};" if i else ""
+        cells = [seg(n, col, tc) for n, col, tc in ((pos_n, ACCENT, "#FFFFFF"), (neu_n, GREY, INK), (neg_n, NEG, "#FFFFFF")) if n]
+        used = round(sum((pos_n, neu_n, neg_n)) / top * 100, 1)
+        rest = f'<td style="font-size:0;line-height:0;">&nbsp;</td>' if used < 100 else ""
+        bar = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+               f'style="table-layout:fixed;"><tr>{gap.join(cells)}{rest}</tr></table>') if cells else \
+            p("none", 12, GREY)
+        rows_html += (f'<tr><td width="104" style="padding:8px 8px 8px 0;{border}{FONT}font-size:12px;color:{SLATE};'
+                      f'white-space:nowrap;">Week to {w_end.day} {w_end:%b}</td>'
+                      f'<td style="padding:8px 0;{border}">{bar}</td>'
+                      f'<td width="40" align="right" style="padding:8px 0;{border}{FONT}font-size:13px;font-weight:bold;'
+                      f'color:{INK};{NUM}">{pos_n + neu_n + neg_n}</td></tr>')
+    pos_n, neu_n, neg_n = weeks[0][1]
+    this_week = (f"This week: {pos_n} positive, {neu_n} neutral, "
+                 + (f"{neg_n} negative" if neg_n else "none negative"))
+    week_chart = (chart_head(this_week, "Mentions")
+                  + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows_html}</table>'
+                  + p(f'<span style="color:{ACCENT};">&#9632;</span> Positive &nbsp; '
+                      f'<span style="color:{GREY};">&#9632;</span> Neutral &nbsp; '
+                      f'<span style="color:{NEG};">&#9632;</span> Negative &nbsp;|&nbsp; '
+                      f'Numbers are mentions; a longer bar means more coverage that week.',
                       12, SLATE, "padding-top:8px;"))
-    parts.append(section("Sentiment, last 30 days", wave_chart))
+    parts.append(section("Sentiment of coverage, last 4 weeks", week_chart))
 
 
 # ---------- trading ----------
@@ -1045,9 +1053,9 @@ def header_html(logo):
             f'<p style="margin:16px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">{title}</p>'
             f'</td></tr>'
             f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
-mline = "" if DAILY else markets_line()
-summary = (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}'
-           + (p(escape(mline), 13, SLATE, f"padding-top:10px;{NUM}") if mline else "") + '</td></tr>')
+mline = "" if (DAILY or WEEKLY) else markets_line()
+summary = "" if WEEKLY else (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a.get("summary") or ""), 16, BODY)}'
+                             + (p(escape(mline), 13, SLATE, f"padding-top:10px;{NUM}") if mline else "") + '</td></tr>')
 log = a.get("notion_url") or a.get("log_url")
 if trade and price_check["status"] in ("confirmed", "corrected", "asx_only", "no_trade"):
     _sd = dt.date.fromisoformat(trade["date"])
@@ -1062,7 +1070,7 @@ footer_text = ((a.get("window_label") or "Covers the 24 hours to 6:30am Melbourn
                + price_line + data_notes
                + " Value traded is shares times the closing price. Index moves are from Yahoo Finance.")
 if WEEKLY and s30:
-    footer_text += " Net sentiment is positive minus negative mentions as a share of all mentions."
+    footer_text += " Sentiment is the tone of each piece towards ION: positive, neutral or negative."
 if log:
     footer_text += f' Full archive in the {link(log, "mentions log", bold=False)}.'
 footer = (f'<tr><td style="padding:28px 28px 26px 28px;">'
