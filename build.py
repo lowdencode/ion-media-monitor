@@ -1128,6 +1128,14 @@ subject = f"{name}, " + bits[0] + ": " + ", ".join(bits[1:])
 open(OUT_SUBJECT, "w").write(subject)
 print(subject)
 print(f"edition {edition}; price source {price_source}; sessions {len(rows)}; markets: {mline or 'none'}")
+if trade:
+    _r = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
+    print(f"trade: session {trade['date']} ({dt.date.fromisoformat(trade['date']):%A}); close {cents(trade['close'])}; "
+          f"change {pct(trade['chg_pct'])}; volume {trade['volume']:,} shares; value A${kfmt(trade['value'])}; "
+          f"{_r:.1f}x the 1-month average volume"
+          + (f"; last 5 sessions {kfmt(trade['week']['volume'])} shares, A${kfmt(trade['week']['value'])}, "
+             f"{pct(trade['week']['chg_pct'])} (previous 5: {kfmt(trade['week']['prev_volume'])} shares, "
+             f"A${kfmt(trade['week']['prev_value'])})" if trade.get("week") else ""))
 print(f"price check: {price_check['status']}; expected session {price_check['expected']}; "
       f"last session {trade['date'] if trade else 'none'}; notes: {'; '.join(price_check['notes']) or 'none'}")
 print("chart: image" if have_image else "chart: tables")
