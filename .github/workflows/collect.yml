@@ -51,5 +51,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
           git commit -m "data $(date -u +%Y-%m-%dT%H:%MZ)" || echo "no changes"
-          git pull --rebase --quiet || true
-          git push
+          # Retry the push: a report run may push a trigger file at the same moment.
+          for i in 1 2 3 4 5; do
+            git pull --rebase --quiet origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
