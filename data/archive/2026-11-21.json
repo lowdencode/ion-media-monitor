@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-21T01:26:09+00:00",
+ "fetched_at_utc": "2026-11-21T01:27:41+00:00",
  "melbourne_date": "2026-11-21",
  "price_yahoo": {
   "sessions": [
@@ -1217,16 +1217,6 @@
    "error_terms": []
   },
   {
-   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaFlLbVZUVDB5VVROMllPVVVQZ3JzbnVxWk1MWXlLeXRydzhTS0xuR2tVTC1HR2NwVmVMZ1J6QzlEM1luazV3X3locUh0Q2VtM2Y0V1JZXzZZcHQwYTJ3T1FhTTlDTEVFcl94ZFJ0bXBmREpVNC1YM1VFamZHLUJHZ1ZzLVltMkNvRjJ1Ql9SUW03b1BrR1FB?oc=5",
-   "published": "2026-11-20T09:05:22+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - TradingView",
    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZzRTUVBGWl9XX1RBb1lJRER5U1VkVzc1SVR4NVRKdUZfWVdBZDFfeGcxZGNQcVRLMGhDdnJBQjVzdEpBTnVmTk13bUE5M3hBOEM2LUl6cUl3THhQQWZSMllpU084RUticXh5R2o2M0tLZ1NVeGJSeDU3TGJDR0tJSGZzSFNwR2JDdUF3TkVLZElXOW9VbFVlSGFVUlF3dXRtem16bXBmd2xmZ0dydGhXeEY4dnhpRmNZWDRFV1pTZVgxVEVvZnVF?oc=5",
    "published": "2026-11-20T09:03:26+00:00",
@@ -1283,6 +1273,26 @@
    "outlet": "Kalkine",
    "outlet_url": "https://kalkine.com.au",
    "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaFlLbVZUVDB5VVROMllPVVVQZ3JzbnVxWk1MWXlLeXRydzhTS0xuR2tVTC1HR2NwVmVMZ1J6QzlEM1luazV3X3locUh0Q2VtM2Y0V1JZXzZZcHQwYTJ3T1FhTTlDTEVFcl94ZFJ0bXBmREpVNC1YM1VFamZHLUJHZ1ZzLVltMkNvRjJ1Ql9SUW03b1BrR1FB?oc=5",
+   "published": "2026-11-20T09:05:22+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"ION Video\"",
+   "edition": "US",
+   "via": "google_news"
+  },
+  {
+   "title": "Chrysos Corporation Lifts Revenue 27% on Record Gold Assay Volumes - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMWl4RnVLd0M5RTZ1VFEza05CVHI0eG1ZR3ZHSDNfdDM2Wjl0UEc2dl8wbEJmU0RUS0N2cG8tSzRWaDAxSm1mbnZ3cjZIUUNfRnJMZ1h0SGRXdTY1aTV2RlVPNnk2S1d3dDJ3WEo1eXFKUHlHejdHTTlBQ0RpVG5Ec3l6dVg0Zm5QWFMzZWE4bWVmQ3BXVHpOOURtbldFSG1FVUhuSGJjcjQ?oc=5",
+   "published": "2026-11-19T04:05:11+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"ion.video\"",
    "edition": "AU",
    "via": "google_news"
   }
@@ -1366,14 +1376,6 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video clears debt after converting $2.65 million in notes",
-   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
-   "published": "2026-05-19T04:45:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Tuesday’s HotCopper trends, Mayne Pharma Group, ION video, Larvotto Resources and other daily topics",
    "link": "https://www.msn.com/en-au/money/top-stocks/tuesday-s-hotcopper-trends-mayne-pharma-group-ion-video-larvotto-resources-and-other-daily-topics/ar-AA2hA6aJ",
    "published": "2026-11-16T19:06:54+00:00",
@@ -1426,11 +1428,6 @@
   {
    "source": "yahoo",
    "ok": true
-  },
-  {
-   "source": "stooq",
-   "ok": false,
-   "error": "URLError: <urlopen error timed out>"
   },
   {
    "source": "index:ASX 200",
