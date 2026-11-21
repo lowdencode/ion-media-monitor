@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-20T23:57:33+00:00",
+ "fetched_at_utc": "2026-11-21T00:45:58+00:00",
  "melbourne_date": "2026-11-21",
  "price_yahoo": {
   "sessions": [
@@ -1238,18 +1238,18 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
-   "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
-   "published": "2026-02-26T16:19:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
    "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
    "published": "2026-11-17T05:08:00+00:00",
    "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
+   "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
+   "published": "2026-02-26T16:19:00+00:00",
+   "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1266,6 +1266,14 @@
    "link": "https://finance.yahoo.com/video/ion-video-unlocks-era-ai-024849090.html",
    "published": "2026-02-25T18:48:00+00:00",
    "snippet": "The above button links to Coinbase. Yahoo Finance is not a broker-dealer or investment adviser and does not offer securities or cryptocurrencies for sale or facilitate trading. Coinbase pays us for ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video clears debt after converting $2.65 million in notes",
+   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
+   "published": "2026-05-19T04:45:00+00:00",
+   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1326,7 +1334,7 @@
   {
    "source": "stooq",
    "ok": false,
-   "error": "URLError: <urlopen error timed out>"
+   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
   },
   {
    "source": "index:ASX 200",
