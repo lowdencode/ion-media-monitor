@@ -122,6 +122,7 @@ def yahoo():
 # ASX first (as at IOV's last session), then the US (usually mid-session when this runs).
 INDICES = [("asx200", "ASX 200", ["^AXJO"]),
            ("asx_tech", "ASX tech", ["^AXIJ", "^AXTJ"]),
+           ("small_ords", "Small Ords", ["^AXSO"]),
            ("sp500", "S&P 500", ["^GSPC"]),
            ("nasdaq", "Nasdaq", ["^IXIC"])]
 

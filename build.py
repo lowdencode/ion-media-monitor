@@ -92,8 +92,9 @@ report_date = dt.date.fromisoformat(a["report_date"])
 IMAGE_MODE = a.get("image_mode") or "local"
 assert IMAGE_MODE in ("local", "collector", "none"), f"unknown image_mode {IMAGE_MODE}"
 edition = a.get("edition") or "weekday"
-assert edition in ("weekday", "monday", "weekly", "weekend"), f"unknown edition {edition}"
+assert edition in ("daily", "weekday", "monday", "weekly", "weekend"), f"unknown edition {edition}"
 WEEKLY, WEEKEND = edition in ("monday", "weekly"), edition == "weekend"
+DAILY = edition == "daily"  # the every-day report: price, context, announcements, media, coming up
 
 
 # ---------- formatting ----------
@@ -139,6 +140,103 @@ def sessions():
 
 
 rows, price_source = sessions()
+
+# ---------- check the last session against the ASX's own figures ----------
+# Yahoo is used for history; the ASX quote (asx_header, asx_key_stats) is the record for the last session.
+# Dates when the ASX cash market is closed (weekends aside). A missing date here is harmless: the checks
+# below fall back to comparing Yahoo with the ASX quote.
+ASX_CLOSED = {"2026-12-25", "2026-12-28", "2027-01-01", "2027-01-26", "2027-03-26", "2027-03-29",
+              "2027-06-14", "2027-12-27", "2027-12-28"}
+
+
+def trading_day(d):
+    return d.weekday() < 5 and d.isoformat() not in ASX_CLOSED
+
+
+def prev_trading_day(d):
+    d -= dt.timedelta(days=1)
+    while not trading_day(d):
+        d -= dt.timedelta(days=1)
+    return d
+
+
+def next_trading_day(d):
+    d += dt.timedelta(days=1)
+    while not trading_day(d):
+        d += dt.timedelta(days=1)
+    return d
+
+
+def _fetched():
+    try:
+        return dt.datetime.fromisoformat(str(latest.get("fetched_at_utc")).replace("Z", "+00:00")).astimezone(MEL)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+FETCHED = _fetched()
+EXPECTED = prev_trading_day(report_date)
+price_check = {"status": "none", "expected": EXPECTED.isoformat(), "notes": [], "source": price_source}
+
+
+def _num(v):
+    return float(v) if isinstance(v, (int, float)) else None
+
+
+def reconcile(rows):
+    """Make the last session match the ASX. Returns rows; fills price_check."""
+    pc = price_check
+    if FETCHED is None:
+        pc["status"] = "unconfirmed"
+        pc["notes"].append("the price feed has no fetch time")
+        return rows
+    # a bar dated on the fetch day before the close is a part-day bar
+    if FETCHED.time() < dt.time(16, 30):
+        rows = [r for r in rows if r["date"] < FETCHED.date().isoformat()]
+    close_dt = dt.datetime.combine(EXPECTED, dt.time(16, 30), MEL)
+    open_dt = dt.datetime.combine(next_trading_day(EXPECTED), dt.time(10, 0), MEL)
+    hdr = latest.get("asx_header") if isinstance(latest.get("asx_header"), dict) else {}
+    ks = latest.get("asx_key_stats") if isinstance(latest.get("asx_key_stats"), dict) else {}
+    a_close, a_vol = _num(hdr.get("priceLast")), _num(hdr.get("volume"))
+    a_chg = _num(hdr.get("priceChangePercent"))
+    hi, lo = _num(ks.get("priceDayHigh")), _num(ks.get("priceDayLow"))
+    in_window = close_dt <= FETCHED < open_dt
+    if FETCHED < close_dt:
+        pc["status"] = "unconfirmed"
+        pc["notes"].append(f"{EXPECTED:%A}'s figures were not available when the data was collected "
+                           f"({FETCHED:%a} {FETCHED:%-I:%M}{FETCHED:%p})".replace("AM", "am").replace("PM", "pm"))
+        return rows
+    if not (in_window and a_close and a_vol is not None):
+        pc["status"] = "yahoo_only" if rows and rows[-1]["date"] == EXPECTED.isoformat() else "unconfirmed"
+        pc["notes"].append("the ASX quote could not be read, so the close is Yahoo Finance's")
+        return rows
+    a_close = round(a_close, 4)
+    a_vol = int(a_vol)
+    last = rows[-1] if rows else None
+    exp = EXPECTED.isoformat()
+    if last and last["date"] >= exp:
+        match = abs(last["close"] - a_close) < 0.0051 and abs(last["volume"] - a_vol) <= max(1, a_vol) * 0.02
+        if not match:
+            pc["notes"].append(f"Yahoo Finance showed {cents(last['close'])} on {last['volume']:,} shares; "
+                               f"the ASX figures are used")
+        last.update(close=a_close, volume=a_vol, source="ASX")
+        if hi and lo:
+            last.update(high=hi, low=lo)
+        last["asx_chg"] = a_chg
+        pc["status"] = "confirmed" if match else "corrected"
+    elif last and abs(last["close"] - a_close) < 0.0051 and last["volume"] == a_vol:
+        # the ASX quote still shows the earlier session: IOV did not trade on the expected day
+        pc["status"] = "no_trade"
+        pc["notes"].append(f"no IOV trades were recorded on {EXPECTED:%A %-d %B}")
+    else:
+        rows = rows + [{"date": exp, "open": None, "high": hi, "low": lo, "close": a_close,
+                        "volume": a_vol, "source": "ASX", "asx_chg": a_chg}]
+        pc["status"] = "asx_only"
+        pc["notes"].append(f"Yahoo Finance had not updated for {EXPECTED:%A}, so that session is from the ASX")
+    return rows
+
+
+rows = reconcile(rows)
 releases = {}
 for ann in latest.get("asx_announcements") or []:
     try:
@@ -170,7 +268,9 @@ if len(rows) >= 2:
     shares = shares if isinstance(shares, (int, float)) and shares > 1e7 else SHARES_ON_ISSUE
     trade = {
         "close": last["close"], "date": last["date"],
-        "chg_pct": (last["close"] / prev["close"] - 1) * 100 if prev["close"] else 0.0,
+        "chg_pct": (last["asx_chg"] if isinstance(last.get("asx_chg"), (int, float))
+                    else (last["close"] / prev["close"] - 1) * 100 if prev["close"] else 0.0),
+        "high": last.get("high"), "low": last.get("low"), "shares": shares,
         "volume": last["volume"],
         "avg_vol": avg([r["volume"] for r in month]),
         "avg_close": avg([r["close"] for r in month]),
@@ -421,9 +521,13 @@ if trade:
         price_sub, price_col = f"Unchanged {when}", SLATE
     else:
         price_sub, price_col = f"{pct(chg)} {when}", ACCENT if chg > 0 else NEG
-    price_tile = tile("IOV last close", cents(trade["close"]), price_sub, price_col)
+    sess = dt.date.fromisoformat(trade["date"])
+    if DAILY:
+        price_sub = price_sub.replace(f" on {sess:%a}", " on the day")
+    price_tile = tile(f"IOV close, {sess:%a} {sess.day} {sess:%b}" if DAILY else "IOV last close",
+                      cents(trade["close"]), price_sub, price_col)
     ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
-    vol_tile = tile("Volume, shares", f"{trade['volume']:,}",
+    vol_tile = tile(f"Volume, {sess:%a} {sess.day} {sess:%b}" if DAILY else "Volume, shares", f"{trade['volume']:,}",
                     f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
 else:
     price_tile = tile("IOV last close", "n/a", "price feed unavailable", GREY)
@@ -451,6 +555,100 @@ if flags:
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
                          f'bgcolor="{MIST}" style="background:{MIST};">{rows_html}</table>'))
 
+# ---------- IOV against the market (daily) ----------
+def index_on(key, day):
+    ix = (latest.get("markets") or {}).get(key) or {}
+    s_ = ix.get("sessions") or []
+    for i, r in enumerate(s_):
+        if r["date"] == day and i and s_[i - 1]["close"]:
+            return (r["close"] / s_[i - 1]["close"] - 1) * 100
+    return None
+
+
+def coloured_pct(v):
+    if v is None:
+        return f'<span style="color:{GREY};">n/a</span>'
+    col = SLATE if abs(v) < 0.05 else ACCENT if v > 0 else NEG
+    return f'<span style="color:{col};">{pct(v)}</span>'
+
+
+context_html = ""
+if DAILY and trade:
+    sess = dt.date.fromisoformat(trade["date"])
+    last_d = sess
+    ks = latest.get("asx_key_stats") if isinstance(latest.get("asx_key_stats"), dict) else {}
+    chg5 = (rows[-1]["close"] / rows[-6]["close"] - 1) * 100 if len(rows) >= 6 and rows[-6]["close"] else None
+    base_m = [r for r in rows if dt.date.fromisoformat(r["date"]) <= last_d - dt.timedelta(days=30)]
+    chg1m = (rows[-1]["close"] / base_m[-1]["close"] - 1) * 100 if base_m and base_m[-1]["close"] else None
+    hi52, lo52 = ks.get("priceFiftyTwoWeekHigh"), ks.get("priceFiftyTwoWeekLow")
+    ctx = [("IOV", coloured_pct(trade["chg_pct"])),
+           ("ASX 200", coloured_pct(index_on("asx200", trade["date"]))),
+           ("Small Ordinaries", coloured_pct(index_on("small_ords", trade["date"])))]
+    if trade.get("high") and trade.get("low"):
+        ctx.append(("Day range", f"{cents(trade['low'])} to {cents(trade['high'])}"))
+    ctx.append(("Last 5 sessions", coloured_pct(chg5)))
+    ctx.append(("Last month", coloured_pct(chg1m)))
+    if isinstance(hi52, (int, float)) and isinstance(lo52, (int, float)):
+        ctx.append(("52-week range", f"{cents(lo52)} to {cents(hi52)}"))
+    ctx.append(("Market cap", f"A${trade['mcap'] / 1e6:,.1f}m"))
+    context_html = section(f"IOV and the market on {sess:%A} {sess.day} {sess:%B}", stat_rows(ctx))
+
+# ---------- ION's ASX announcements ----------
+ann_hours = int(a.get("announcements_hours") or (168 if WEEKLY else 24))
+ann_to = dt.datetime.combine(report_date, dt.time(7, 30), MEL)
+ann_from = ann_to - dt.timedelta(hours=ann_hours)
+anns = []
+for ann in latest.get("asx_announcements") or []:
+    try:
+        t = dt.datetime.fromisoformat(ann["date"].replace("Z", "+00:00")).astimezone(MEL)
+    except Exception:  # noqa: BLE001
+        continue
+    if ann_from < t <= ann_to:
+        anns.append((t, ann))
+anns.sort(key=lambda x: x[0], reverse=True)
+ann_title = "ION announcements, last 7 days" if WEEKLY else "ION announcements, last 24 hours"
+if anns:
+    a_html = ""
+    for i, (t, ann) in enumerate(anns):
+        border = f"border-top:1px solid {LINE};" if i else ""
+        when = f"{t:%a} {t.day} {t:%b}, {t:%-I:%M}{t:%p}".replace("AM", "am").replace("PM", "pm")
+        tag = (f' <span style="font-size:11px;color:{ACCENT};font-weight:bold;white-space:nowrap;">'
+               f'Price sensitive</span>') if ann.get("price_sensitive") else ""
+        a_html += (f'<tr><td style="padding:9px 0;{border}{FONT}">'
+                   f'<p style="margin:0;font-size:12px;color:{SLATE};{NUM}">{escape(when)}</p>'
+                   f'<p style="margin:2px 0 0 0;font-size:14px;line-height:1.4;">'
+                   f'{link(ann.get("url") or "#", escape(ann.get("headline") or ""), bold=False)}{tag}</p></td></tr>')
+    announcements_html = section(ann_title, f'<table role="presentation" width="100%" cellpadding="0" '
+                                            f'cellspacing="0" border="0">{a_html}</table>')
+else:
+    none_txt = "No ION announcements this week." if WEEKLY else "No ION announcements in the last 24 hours."
+    announcements_html = section(ann_title, p(none_txt, 14, SLATE))
+
+# ---------- coming up ----------
+coming_html = ""
+upcoming = []
+for c in a.get("coming_up") or []:
+    try:
+        d = dt.date.fromisoformat(c["date"])
+    except Exception:  # noqa: BLE001
+        continue
+    if report_date <= d <= report_date + dt.timedelta(days=14):
+        upcoming.append((d, c.get("text") or ""))
+if upcoming:
+    c_html = ""
+    for i, (d, txt) in enumerate(sorted(upcoming)):
+        border = f"border-top:1px solid {LINE};" if i else ""
+        c_html += (f'<tr><td width="88" valign="top" style="padding:9px 0;{border}{FONT}font-size:12px;color:{SLATE};'
+                   f'white-space:nowrap;{NUM}">{d:%a} {d.day} {d:%b}</td>'
+                   f'<td style="padding:9px 0;{border}{FONT}font-size:14px;line-height:1.45;color:{BODY};">'
+                   f'{escape(txt)}</td></tr>')
+    coming_html = section("Coming up", f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" '
+                                       f'border="0">{c_html}</table>')
+
+if context_html:
+    parts.insert(0, context_html)
+parts.append(announcements_html)
+
 # ---------- coverage ----------
 cov = (a.get("coverage") or [])[:5]
 split = ", ".join(f"{n} {w}" for n, w in ((pos, "positive"), (neu, "neutral"), (neg, "negative")) if n)
@@ -469,14 +667,14 @@ if cov:
     more = int(a.get("more_count") or 0)
     tail = ""
     if more:
-        log = a.get("notion_url")
-        label = f"{more} more in the mentions log"
+        log = a.get("notion_url") or a.get("log_url")
+        label = f"{more} more in the mentions log" if log else f"{more} more not shown"
         tail = p(link(log, label, bold=False) if log else label, 13, SLATE, "padding-top:4px;")
-    parts.append(section("Coverage",
+    parts.append(section("Media" if DAILY else "Coverage",
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{items}</table>{tail}',
                          right=split))
 else:
-    parts.append(section("Coverage", p("No new coverage since the last report.", 14, SLATE)))
+    parts.append(section("Media" if DAILY else "Coverage", p("No new coverage since the last report.", 14, SLATE)))
 
 # ---------- register ----------
 reg = a.get("register") or []
@@ -491,6 +689,9 @@ if reg:
                    f'{escape(r["text"])}{lk}</td></tr>')
     parts.append(section(a.get("register_title") or ("Register, last 7 days" if WEEKLY else "Register"),
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_html}</table>'))
+
+if coming_html:
+    parts.append(coming_html)
 
 # ---------- top 50 shareholders (weekly edition) ----------
 KEEP_UPPER_SHORT = {"MR": "Mr", "MRS": "Mrs", "MS": "Ms", "DR": "Dr", "AND": "and", "THE": "The", "OF": "of", "FOR": "for",
@@ -799,7 +1000,8 @@ def trading_section(image):
         stats.append(("Last 5 sessions",
                       f"{kfmt(w['volume'])} shares, A${kfmt(w['value'])} (previous 5: {kfmt(w['prev_volume'])}, "
                       f"A${kfmt(w['prev_value'])})"))
-    stats.append(("Market cap at the last close", f"A${trade['mcap'] / 1e6:,.1f}m"))
+    if not DAILY:
+        stats.append(("Market cap at the last close", f"A${trade['mcap'] / 1e6:,.1f}m"))
     if not image:
         return section("Trading, last 7 sessions", chart + key + spacer(6) + stat_rows(stats))
     # the image gets most of the card's width; the title, key and figures keep the usual margins
@@ -823,7 +1025,8 @@ if ratings:
                            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{r_rows}</table>')
 
 # ---------- assemble ----------
-title = {"monday": "Weekly media and market monitor", "weekly": "Weekly media and market monitor",
+title = {"monday": "Weekly media and market monitor", "weekly": "Weekly media and market report",
+         "daily": "Daily market and media report",
          "weekend": "Weekend media monitor"}.get(
     edition, "Media and market monitor")
 date_line = f"{report_date:%A} {report_date.day} {report_date:%B %Y}"
@@ -842,13 +1045,22 @@ def header_html(logo):
             f'<p style="margin:16px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">{title}</p>'
             f'</td></tr>'
             f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
-mline = markets_line()
+mline = "" if DAILY else markets_line()
 summary = (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a["summary"]), 16, BODY)}'
            + (p(escape(mline), 13, SLATE, f"padding-top:10px;{NUM}") if mline else "") + '</td></tr>')
-log = a.get("notion_url")
+log = a.get("notion_url") or a.get("log_url")
+if trade and price_check["status"] in ("confirmed", "corrected", "asx_only", "no_trade"):
+    _sd = dt.date.fromisoformat(trade["date"])
+    price_line = (f" IOV's close and volume are the ASX's figures for {_sd:%A} {_sd.day} {_sd:%B}"
+                  + (", which matched Yahoo Finance." if price_check["status"] == "confirmed" else "."))
+elif trade:
+    price_line = " Prices are Yahoo Finance's last session close."
+else:
+    price_line = ""
+data_notes = "".join(f" Note: {n[0].upper() + n[1:]}." for n in price_check["notes"])
 footer_text = ((a.get("window_label") or "Covers the 24 hours to 6:30am Melbourne time.")
-               + " Prices are the last session close; value traded is shares times the closing price."
-               + " Index moves are from Yahoo Finance.")
+               + price_line + data_notes
+               + " Value traded is shares times the closing price. Index moves are from Yahoo Finance.")
 if WEEKLY and s30:
     footer_text += " Net sentiment is positive minus negative mentions as a share of all mentions."
 if log:
@@ -905,13 +1117,17 @@ if flags:
     bits.append(f"{len(flags)} flag{'' if len(flags) == 1 else 's'}")
 if trade and WEEKLY and trade.get("week"):
     bits.append(f"IOV {cents(trade['close'])}, {pct(trade['week']['chg_pct'])} on the week")
+elif trade and DAILY:
+    bits.append(f"IOV {cents(trade['close'])} {pct(trade['chg_pct'])} ({dt.date.fromisoformat(trade['date']):%a})")
 elif trade and not WEEKEND:
     bits.append(f"IOV {cents(trade['close'])} {pct(trade['chg_pct'])}")
 bits.append(f"{m24} mention{'' if m24 == 1 else 's'}" + (" this week" if WEEKLY else ""))
-name = {"monday": "ION weekly monitor", "weekly": "ION weekly report",
+name = {"monday": "ION weekly monitor", "weekly": "ION weekly report", "daily": "ION daily report",
         "weekend": "ION weekend monitor"}.get(edition, "ION monitor")
 subject = f"{name}, " + bits[0] + ": " + ", ".join(bits[1:])
 open(OUT_SUBJECT, "w").write(subject)
 print(subject)
 print(f"edition {edition}; price source {price_source}; sessions {len(rows)}; markets: {mline or 'none'}")
+print(f"price check: {price_check['status']}; expected session {price_check['expected']}; "
+      f"last session {trade['date'] if trade else 'none'}; notes: {'; '.join(price_check['notes']) or 'none'}")
 print("chart: image" if have_image else "chart: tables")
