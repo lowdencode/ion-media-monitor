@@ -412,7 +412,8 @@ def main():
            "melbourne_date": now.astimezone(MEL).date().isoformat()}
 
     out["price_yahoo"] = attempt("yahoo", yahoo)
-    out["price_stooq"] = attempt("stooq", stooq)
+    # Stooq stopped serving ASX data (blocked page, then timeouts) in Nov 2026; the ASX quote is the cross-check now.
+    out["price_stooq"] = None
     out["markets"] = markets()
     out["asx_header"] = attempt("asx_header", lambda: asx_json("header"))
     out["asx_key_stats"] = attempt("asx_key_stats", lambda: asx_json("key-statistics"))
