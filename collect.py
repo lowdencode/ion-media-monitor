@@ -35,6 +35,13 @@ NEWS_QUERIES = [
     '"Finbar O\'Hanlon"',
     '"programmable video" OR "virtual video" ION',
     '"Priority Impact" Swinburne video',
+    # Outlets that have covered ION but rarely surface in a plain query (live blogs, wraps, columns).
+    '"Ion Video" (site:afr.com OR site:theaustralian.com.au OR site:smh.com.au OR site:theage.com.au '
+    'OR site:dailytelegraph.com.au OR site:heraldsun.com.au OR site:news.com.au OR site:abc.net.au)',
+    '"Ion Video" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com '
+    'OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)',
+    '"Ion Video" (site:itwire.com OR site:itbrief.com.au OR site:itnews.com.au OR site:crn.com.au '
+    'OR site:mumbrella.com.au OR site:mediaweek.com.au OR site:ausbiz.com.au)',
 ]
 NEWS_EDITIONS = [("AU", "en-AU", "AU:en"), ("US", "en-US", "US:en")]
 # Daily runs look back 3 days; a manual backfill run (workflow input) looks back 30.
@@ -346,9 +353,22 @@ def enrich(items, cap=15):
     return n
 
 
+def fool_feed():
+    """The Motley Fool's IOV ticker feed: every Fool article tagged with the stock."""
+    _, body = get("https://www.fool.com.au/tickers/asx-iov/feed/", "application/rss+xml")
+    out = []
+    for item in ET.fromstring(body).iter("item"):
+        title = (item.findtext("title") or "").strip()
+        if title:
+            out.append({"title": title, "link": item.findtext("link"),
+                        "published": to_iso(item.findtext("pubDate") or ""),
+                        "outlet": "The Motley Fool", "via": "fool_feed"})
+    return out[:15]
+
+
 def bing_news():
     found = {}
-    for q in ('"ION Video"', '"ASX: IOV"'):
+    for q in ('"ION Video"', '"ASX: IOV"', '"Ion Video" ASX shares', '"Ion Video" Stockhead OR AFR'):
         url = ("https://www.bing.com/news/search?format=rss&setlang=en-AU&cc=AU&q=" +
                urllib.parse.quote(q))
         _, body = get(url, "application/rss+xml")
@@ -423,6 +443,7 @@ def main():
         out["google_links_resolved"] = attempt("google_link_resolve",
                                                lambda: resolve_google_links(out["news_google"]))
     out["news_bing"] = attempt("bing_news", bing_news)
+    out["news_fool"] = attempt("fool_feed", fool_feed)
     recent_cut = (now - dt.timedelta(days=31 if BACKFILL else 3)).isoformat()
     fresh = [it for it in (out["news_google"] or []) + (out["news_bing"] or [])
              if str(it.get("published", "")) >= recent_cut]
