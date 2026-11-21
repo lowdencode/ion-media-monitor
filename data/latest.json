@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-21T01:29:57+00:00",
+ "fetched_at_utc": "2026-11-21T01:31:27+00:00",
  "melbourne_date": "2026-11-21",
  "price_yahoo": {
   "sessions": [
@@ -1188,219 +1188,39 @@
    "register_kind": "issue"
   }
  ],
- "news_google": [
+ "news_google": null,
+ "news_bing": null,
+ "news_fool": [
   {
-   "title": "Ion Video (ASX:IOV): Ion Video Reviews AI Video-Editing Tests and Nordic Data-Centre Programme - Kalkine",
-   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-ion-video-reviews-ai-video-editing-tests-and-nordic-data-centre-programme",
-   "published": "2026-11-18T12:15:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSGNfOTAxZzdIVEtfVjhEZmp2T19vcldYSHJfVVlGYk5MOTJKeEdqNmNHMklHa2xYY2JMN05xcDRtM3FiNllULXpmM256NjJteHdRSGJoYVhPVzRnamk5dUZLbU1CcFZCai11d0pvT1ZaN1E5N0gwTXJrdEtXdVhBWXJRbmQ1RHdwbHh3c2xSODJxcTdnb3lSYkxSQzVSQjhnYVAxR09nUmFLaWZzSGVYa3gtLTZkb3o2aDlfdDQ4MW9qRWZFclBDYg?oc=5",
-   "enrich_error": "HTTPError: HTTP Error 403: Forbidden"
+   "title": "This company has almost no revenue. So why are its shares up nearly 10 times?",
+   "link": "https://www.fool.com.au/2026/11/17/this-company-has-almost-no-revenue-so-why-are-its-shares-up-nearly-10x/",
+   "published": "2026-11-17T01:43:43+00:00",
+   "outlet": "The Motley Fool",
+   "via": "fool_feed"
   },
   {
-   "title": "ION cuts the computing, storage and AI cost of video edits by 99% in AWS-funded proof of concept - iTWire",
-   "link": "https://itwire.com/business-it-news/business-intelligence/ion-cuts-the-computing-storage-and-ai-cost-of-video-edits-by-99-in-aws-funded-proof-of-concept",
-   "published": "2026-11-18T03:22:12+00:00",
-   "outlet": "iTWire",
-   "outlet_url": "https://itwire.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news",
-   "google_link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPQU0ydzRlWDR0ODh3SmRoN0RkTHZ6ZV9mTjQ0d0t5OUV3ajlqdjZyaEFhaHhZdm1jQVM5Ukl4OGJyZUJ6VWlySUlmNFdOMHlVLUlqVXJld3lvMGJ4TXpPck93ODZ1RXprZUp1VzM4eE9VeWVoWEhOUjYzR3RSeXlmLWZFVTQ4WnNQcnQ5bzJMbkg5UE1oN29zcFB6TEpoc2YzTzJuVUJUdm5vUHRrMGhrTkF4TUNjZ25wUXRuN2pLUkc5STUycWNxWEU0MzE1RlZVUEthcDhpVzZ4RVBVUHhkMG4tbFBlXzg?oc=5",
-   "description": "ION Video’s technology has used 99% less computing time, storage and AI cost than two off-the-shelf AI agents including Google Gemini in a proof of concept to test its video...",
-   "published_meta": "2026-11-18T03:22:12.437Z",
-   "author": null,
-   "error_terms": []
+   "title": "ASX stock of the day: Linius (ASX:LNU) share price blasts up 30% on product debut",
+   "link": "https://www.fool.com.au/2020/12/08/asx-stock-of-the-day-linius-asxlnu-share-price-blasts-up-30-on-product-debut/",
+   "published": "2020-12-08T04:38:54+00:00",
+   "outlet": "The Motley Fool",
+   "via": "fool_feed"
   },
   {
-   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaFlLbVZUVDB5VVROMllPVVVQZ3JzbnVxWk1MWXlLeXRydzhTS0xuR2tVTC1HR2NwVmVMZ1J6QzlEM1luazV3X3locUh0Q2VtM2Y0V1JZXzZZcHQwYTJ3T1FhTTlDTEVFcl94ZFJ0bXBmREpVNC1YM1VFamZHLUJHZ1ZzLVltMkNvRjJ1Ql9SUW03b1BrR1FB?oc=5",
-   "published": "2026-11-20T09:05:22+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
+   "title": "These 3 small cap ASX shares are posting strong gains on Wednesday",
+   "link": "https://www.fool.com.au/2018/10/03/these-3-small-cap-asx-shares-are-posting-strong-gains-on-wednesday/",
+   "published": "2018-10-03T02:59:00+00:00",
+   "outlet": "The Motley Fool",
+   "via": "fool_feed"
   },
   {
-   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZzRTUVBGWl9XX1RBb1lJRER5U1VkVzc1SVR4NVRKdUZfWVdBZDFfeGcxZGNQcVRLMGhDdnJBQjVzdEpBTnVmTk13bUE5M3hBOEM2LUl6cUl3THhQQWZSMllpU084RUticXh5R2o2M0tLZ1NVeGJSeDU3TGJDR0tJSGZzSFNwR2JDdUF3TkVLZElXOW9VbFVlSGFVUlF3dXRtem16bXBmd2xmZ0dydGhXeEY4dnhpRmNZWDRFV1pTZVgxVEVvZnVF?oc=5",
-   "published": "2026-11-20T09:03:26+00:00",
-   "outlet": "TradingView",
-   "outlet_url": "https://www.tradingview.com",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Aerometrex (ASX:AMX): Aerometrex Reviews MetroMap Growth and November Strategic Developments - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQME1kTGdPWEwtLTY5SmlJc3JFU1dDQldsY09ONVZjaUNVSWxobUQzbEdKMmtoT09LWnRLaEp2bzVnZE85MHltaWRSYWVRTnB3dHlsU2MxM21BQUtPTlFpby1SQWM4TkVTWWZWTVZ0aGJvMlFKSTl0bXEzcHpPdTIwbHVFcWhCRDZaSHRqME9HTXF5TDF2VE0xemVwZUpuYXpMSWlLMmdvbkU3UVB0REVaME0xeGNtZ0REd1pvV1JZSmRHZU1ZTmc?oc=5",
-   "published": "2026-11-18T12:15:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Chrysos Corporation Lifts Revenue 27% on Record Gold Assay Volumes - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMWl4RnVLd0M5RTZ1VFEza05CVHI0eG1ZR3ZHSDNfdDM2Wjl0UEc2dl8wbEJmU0RUS0N2cG8tSzRWaDAxSm1mbnZ3cjZIUUNfRnJMZ1h0SGRXdTY1aTV2RlVPNnk2S1d3dDJ3WEo1eXFKUHlHejdHTTlBQ0RpVG5Ec3l6dVg0Zm5QWFMzZWE4bWVmQ3BXVHpOOURtbldFSG1FVUhuSGJjcjQ?oc=5",
-   "published": "2026-11-19T04:05:11+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Janus Electric (ASX:JNS): North American Truck Orders and Delivery Targets in Focus - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWUg2bzd4MU9rdy1kUTI0Q0dDUGlseDdkOHFqOURDSUxpYm1nMkw2M1ZKOWt4YjFnMFNLREE5c2I2aGs4YVBTaGRmWVJFTXdJVjQ1NF9RX1d3MHNoelV4aVNSbmdnQ0pXYkwyOEhqWWZKZXcxRGVTQWZqVzRFM2F4anBHRXptRzhIS0swaks5WHZfQU1MZGpUMXJYdnRIclQxTlhMRjU5NGFSVFBVWkhjbWNsZjlSYk9lZlE?oc=5",
-   "published": "2026-11-18T12:15:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Which Buyers Are Powering Nvidia's (NASDAQ:NVDA) Chip Sales as AI Cloud and Corporate Revenue Almost Trebles to USD 47.5 Billion? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOV1FhWEJXVWw3THo3cWhBdWhUQ0VCbG84SG5INjBYNWlTWUJyZ0xVMk1iUmdLbHdUQ2FCTHBaUERYZTVacEplVl9MblpxWFlVbUZCeXRncy1DSm0wSGhNd0lLNmMtWDNjNldXWnB3eFhpTHF5Ykc4YnlGQjBjMm1pWFBsclVNYjRYTml3NmZ1Qkl0NzQyZ3kySnp3VWpMWWJfNjFNX3VoV3A3d2xQWVRQcklPaUs0VnBaMlFvWHZrWmdXaVU0RmItME5KdnA3OVRCRWlsNXJqalBvaVBNaWNWNEFUa1hJdWlndGZlMzk1aGUwNG5k?oc=5",
-   "published": "2026-11-18T12:21:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "What Lifted Nvidia (NASDAQ:NVDA) Shares About 3% Before the Open Following Four Down Sessions? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZ0YzdkZnNVNRbFVjTnRZS18zRUpOeVo0ZmJwVVVQWVhBVHBZQTZEbVhQSXJha2w5aTNyZkNNWWFSc19vcU1VUTRVNloxRFF6SGNzb1c5UFJ0bXFyek5FOE54SWNwUDZGM2tmbEJ0VU1VcEE1eE1mNHFoSFFycVphUFpDVk9EYTZLUDBwYXFfX0g4b1JBNWNONlQyMXhZRTdoR2xGc1hTNUMtVkllOWpoSUR5bE9mWE1PWGxCM3JNcFFzeHBLQWVj?oc=5",
-   "published": "2026-11-18T12:21:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "What Does Nvidia (NASDAQ:NVDA) Face in China as Hopper Deliveries and Export Licensing Tighten? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQN3pvZzlBNTRzZWpGb1EzN0dHNTFWeXdXQ2RRTUFaNGkzZHhSeVY0TTVvYlF0SWozd0laMzYzUGJ6R0hDZXJxQ1Q3dlZUQUQxWEIzX2FuTDRjTi1PNW5QLTBZYWNVWjVrbG13OVRkQ0xjSGJOdFpQeWtPQWRnbXB5SlNMSUdjUzFWYWZvUUlPTFdQU0YxVGtBQkVXdnVreUYydE12V1JlUG5ad2h3UWZuQkVwVW9NYkE3MjNSWnRaVXhrMFJPSzR4X05B?oc=5",
-   "published": "2026-11-18T12:21:00+00:00",
-   "outlet": "Kalkine",
-   "outlet_url": "https://kalkine.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
+   "title": "This fund manager believes a bubble is brewing among small-cap tech stocks",
+   "link": "https://www.fool.com.au/2018/01/14/this-fund-manager-believes-a-bubble-is-brewing-among-small-cap-tech-stocks/",
+   "published": "2018-01-13T21:09:59+00:00",
+   "outlet": "The Motley Fool",
+   "via": "fool_feed"
   }
  ],
- "google_links_resolved": 2,
- "news_bing": [
-  {
-   "title": "ION Video Drastically Cuts Editing Costs in Amazon-Funded Technology PoC Testing",
-   "link": "https://smallcaps.com.au/article/ion-video-drastically-cuts-editing-costs-in-amazon-funded-technology-poc-testing",
-   "published": "2026-11-16T19:43:00+00:00",
-   "snippet": "ION Video cut key editing resource use by more than 99% in an AWS-funded test, editing clips around 40 times faster than AI rivals.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "ION cuts the computing, storage and AI cost of video edits by 99% in AWS-funded proof of concept",
-   "link": "https://itwire.com/business-it-news/business-intelligence/ion-cuts-the-computing-storage-and-ai-cost-of-video-edits-by-99-in-aws-funded-proof-of-concept",
-   "published": "2026-11-18T06:22:00+00:00",
-   "snippet": "ION Video’s technology has used 99% less computing time, storage and AI cost than two off-the-shelf AI agents including Google Gemini in a proof of concept to test its ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news",
-   "description": "ION Video’s technology has used 99% less computing time, storage and AI cost than two off-the-shelf AI agents including Google Gemini in a proof of concept to test its video...",
-   "published_meta": "2026-11-18T03:22:12.437Z",
-   "author": null,
-   "error_terms": []
-  },
-  {
-   "title": "ION Video (ASX:IOV) Adds Strategic Funding as Data Centre Technology Trials Advance",
-   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-adds-strategic-funding-as-data-centre-technology-trials-advance",
-   "published": "2026-11-13T06:48:00+00:00",
-   "snippet": "ION Video Limited (ASX:IOV) announced a further strategic investment on 11 November 2026, extending a technology-validation program focused on data-centre efficiency and video delivery. The AUD 1 mn ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video restructures video to enable AI to supercharge its use",
-   "link": "https://itwire.com/business-it-news/data/ion-video-restructures-video-to-enable-ai-to-supercharge-its-use/",
-   "published": "2026-03-18T06:10:00+00:00",
-   "snippet": "Melbourne tech company Ion Video says it has solved one of the biggest structural limitations of the internet: video’s incompatibility with AI. The issue for AI is that it can analyse a video and ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video explains the future of AI-powered content - ICYMI",
-   "link": "https://www.proactiveinvestors.com.au/companies/news/1092730/ion-video-explains-the-future-of-ai-powered-content-icymi-1092730.html",
-   "published": "2026-05-22T05:15:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) earlier this week outlined how its patented programmable video technology could position the company at the centre of the next wave of AI-driven media transformation, with ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
-   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
-   "published": "2026-11-17T05:08:00+00:00",
-   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
-   "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
-   "published": "2026-02-26T16:19:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "ION Video clears debt after converting $2.65 million in notes",
-   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
-   "published": "2026-05-19T04:45:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "ION Video unlocks a new era of AI-driven video assembly",
-   "link": "https://finance.yahoo.com/video/ion-video-unlocks-era-ai-024849090.html",
-   "published": "2026-02-25T18:48:00+00:00",
-   "snippet": "The above button links to Coinbase. Yahoo Finance is not a broker-dealer or investment adviser and does not offer securities or cryptocurrencies for sale or facilitate trading. Coinbase pays us for ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video Seeks ASX Quotation for 1.29 Million New Shares",
-   "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/3624120/ion-video-seeks-asx-quotation-for-129-million-new-shares/",
-   "published": "2026-08-12T19:25:00+00:00",
-   "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Tuesday’s HotCopper trends, Mayne Pharma Group, ION video, Larvotto Resources and other daily topics",
-   "link": "https://www.msn.com/en-au/money/top-stocks/tuesday-s-hotcopper-trends-mayne-pharma-group-ion-video-larvotto-resources-and-other-daily-topics/ar-AA2hA6aJ",
-   "published": "2026-11-16T19:06:54+00:00",
-   "snippet": "With more than 600k average monthly users on the HotCopper forums, each and every discussion can move markets. That’s why getting in front of those red-hot trends is key for every trader worth their ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
-   "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
-   "published": "2026-10-27T23:49:00+00:00",
-   "snippet": "ION said its own preliminary modelling on AWS servers indicates improvements beyond both thresholds, but those projections have not been independently validated. The tender sets a minimum value of ...",
-   "query": "\"ASX: IOV\"",
-   "via": "bing_news"
-  }
- ],
- "articles_enriched": 3,
+ "articles_enriched": 0,
  "news_window": "3d",
  "reddit": null,
  "ratings": {
@@ -1471,14 +1291,16 @@
   },
   {
    "source": "google_news",
-   "ok": true
-  },
-  {
-   "source": "google_link_resolve",
-   "ok": true
+   "ok": false,
+   "error": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   {
    "source": "bing_news",
+   "ok": false,
+   "error": "ParseError: not well-formed (invalid token): line 1, column 41"
+  },
+  {
+   "source": "fool_feed",
    "ok": true
   },
   {
