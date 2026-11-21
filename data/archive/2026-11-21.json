@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-21T00:45:58+00:00",
+ "fetched_at_utc": "2026-11-21T01:26:09+00:00",
  "melbourne_date": "2026-11-21",
  "price_yahoo": {
   "sessions": [
@@ -772,6 +772,112 @@
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
   },
+  "small_ords": {
+   "symbol": "^AXSO",
+   "sessions": [
+    {
+     "date": "2026-10-20",
+     "close": 3150.2
+    },
+    {
+     "date": "2026-10-21",
+     "close": 3153.7
+    },
+    {
+     "date": "2026-10-22",
+     "close": 3138.4
+    },
+    {
+     "date": "2026-10-23",
+     "close": 3066.5
+    },
+    {
+     "date": "2026-10-26",
+     "close": 3092.0
+    },
+    {
+     "date": "2026-10-27",
+     "close": 3126.4
+    },
+    {
+     "date": "2026-10-28",
+     "close": 3158.5
+    },
+    {
+     "date": "2026-10-29",
+     "close": 3171.4
+    },
+    {
+     "date": "2026-10-30",
+     "close": 3147.9
+    },
+    {
+     "date": "2026-11-02",
+     "close": 3141.7
+    },
+    {
+     "date": "2026-11-03",
+     "close": 3151.8
+    },
+    {
+     "date": "2026-11-04",
+     "close": 3124.7
+    },
+    {
+     "date": "2026-11-05",
+     "close": 3272.3
+    },
+    {
+     "date": "2026-11-06",
+     "close": 3199.3
+    },
+    {
+     "date": "2026-11-09",
+     "close": 3231.1
+    },
+    {
+     "date": "2026-11-10",
+     "close": 3305.0
+    },
+    {
+     "date": "2026-11-11",
+     "close": 3322.1
+    },
+    {
+     "date": "2026-11-12",
+     "close": 3289.1
+    },
+    {
+     "date": "2026-11-13",
+     "close": 3231.7
+    },
+    {
+     "date": "2026-11-16",
+     "close": 3218.0
+    },
+    {
+     "date": "2026-11-17",
+     "close": 3144.0
+    },
+    {
+     "date": "2026-11-18",
+     "close": 3097.4
+    },
+    {
+     "date": "2026-11-19",
+     "close": 3054.2
+    },
+    {
+     "date": "2026-11-20",
+     "close": 2971.3
+    }
+   ],
+   "price": 2971.3,
+   "market_time_utc": "2026-11-20T06:07+00:00",
+   "state": "closed",
+   "exchange_tz": "Australia/Sydney",
+   "name": "Small Ords"
+  },
   "sp500": {
    "symbol": "^GSPC",
    "sessions": [
@@ -1141,16 +1247,6 @@
    "via": "google_news"
   },
   {
-   "title": "Nuix Receives $1bn Takeover Offer from US Private Equity Firm Haveli Investments - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOU280SjZHcHk4M3VYM095S3BjZUpMMmpYR2o2NkQ0YVBUV1c1dEZkSm1vU2E5Q1RYRHBDNnhMZWJENklCanhoeW1kbGMwam9LRG01a01zeVRZb1lnU2E4d0p2a1A3MS1wbmpacWpZZjJHZXI2eFE1VlJHUW9SNm5WclZOR0ZtdEhJTXhfcTNNUXFyU0w5SVAzUG9lWHBPOFQzeE5sRE9NN0dPUkMyUUhVZGJJb0ZBWDREN3c?oc=5",
-   "published": "2026-11-18T01:24:55+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "Janus Electric (ASX:JNS): North American Truck Orders and Delivery Targets in Focus - Kalkine",
    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWUg2bzd4MU9rdy1kUTI0Q0dDUGlseDdkOHFqOURDSUxpYm1nMkw2M1ZKOWt4YjFnMFNLREE5c2I2aGs4YVBTaGRmWVJFTXdJVjQ1NF9RX1d3MHNoelV4aVNSbmdnQ0pXYkwyOEhqWWZKZXcxRGVTQWZqVzRFM2F4anBHRXptRzhIS0swaks5WHZfQU1MZGpUMXJYdnRIclQxTlhMRjU5NGFSVFBVWkhjbWNsZjlSYk9lZlE?oc=5",
    "published": "2026-11-18T12:15:00+00:00",
@@ -1334,7 +1430,7 @@
   {
    "source": "stooq",
    "ok": false,
-   "error": "ValueError: unexpected stooq response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+   "error": "URLError: <urlopen error timed out>"
   },
   {
    "source": "index:ASX 200",
@@ -1342,6 +1438,10 @@
   },
   {
    "source": "index:ASX tech",
+   "ok": true
+  },
+  {
+   "source": "index:Small Ords",
    "ok": true
   },
   {
