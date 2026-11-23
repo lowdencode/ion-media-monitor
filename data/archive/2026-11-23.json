@@ -1,24 +1,8 @@
 {
- "fetched_at_utc": "2026-11-22T19:51:21+00:00",
+ "fetched_at_utc": "2026-11-23T00:28:47+00:00",
  "melbourne_date": "2026-11-23",
  "price_yahoo": {
   "sessions": [
-   {
-    "date": "2026-08-20",
-    "open": 0.4399999976158142,
-    "high": 0.4449999928474426,
-    "low": 0.42500001192092896,
-    "close": 0.44,
-    "volume": 20525
-   },
-   {
-    "date": "2026-08-21",
-    "open": 0.3799999952316284,
-    "high": 0.4350000023841858,
-    "low": 0.3799999952316284,
-    "close": 0.43,
-    "volume": 80888
-   },
    {
     "date": "2026-08-24",
     "open": 0.42500001192092896,
@@ -540,19 +524,19 @@
     "volume": 170816
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-23",
     "open": 0.824999988079071,
     "high": 0.8550000190734863,
-    "low": 0.8149999976158142,
-    "close": 0.82,
-    "volume": 170816
+    "low": 0.8199999928474426,
+    "close": 0.83,
+    "volume": 25242
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.82,
-   "regularMarketTime": 1795151405,
+   "regularMarketPrice": 0.83,
+   "regularMarketTime": 1795391428,
    "previousClose": null,
-   "chartPreviousClose": 0.44,
+   "chartPreviousClose": 0.43,
    "fiftyTwoWeekHigh": 0.985,
    "fiftyTwoWeekLow": 0.1,
    "currency": "AUD"
@@ -563,18 +547,6 @@
   "asx200": {
    "symbol": "^AXJO",
    "sessions": [
-    {
-     "date": "2026-10-20",
-     "close": 8816.9
-    },
-    {
-     "date": "2026-10-21",
-     "close": 8831.3
-    },
-    {
-     "date": "2026-10-22",
-     "close": 8793.2
-    },
     {
      "date": "2026-10-23",
      "close": 8795.2
@@ -660,31 +632,19 @@
      "close": 8592.6
     },
     {
-     "date": "2026-11-20",
-     "close": 8592.6
+     "date": "2026-11-23",
+     "close": 8591.7
     }
    ],
-   "price": 8592.6,
-   "market_time_utc": "2026-11-20T06:07+00:00",
-   "state": "closed",
+   "price": 8591.7,
+   "market_time_utc": "2026-11-22T23:56+00:00",
+   "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
   },
   "asx_tech": {
    "symbol": "^AXIJ",
    "sessions": [
-    {
-     "date": "2026-10-20",
-     "close": 1670.5
-    },
-    {
-     "date": "2026-10-21",
-     "close": 1615.1
-    },
-    {
-     "date": "2026-10-22",
-     "close": 1615.2
-    },
     {
      "date": "2026-10-23",
      "close": 1600.4
@@ -770,31 +730,19 @@
      "close": 1725.8
     },
     {
-     "date": "2026-11-20",
-     "close": 1725.8
+     "date": "2026-11-23",
+     "close": 1725.4
     }
    ],
-   "price": 1725.8,
-   "market_time_utc": "2026-11-20T06:07+00:00",
-   "state": "closed",
+   "price": 1725.4,
+   "market_time_utc": "2026-11-22T23:56+00:00",
+   "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
   },
   "small_ords": {
    "symbol": "^AXSO",
    "sessions": [
-    {
-     "date": "2026-10-20",
-     "close": 3150.2
-    },
-    {
-     "date": "2026-10-21",
-     "close": 3153.7
-    },
-    {
-     "date": "2026-10-22",
-     "close": 3138.4
-    },
     {
      "date": "2026-10-23",
      "close": 3066.5
@@ -880,13 +828,13 @@
      "close": 2971.3
     },
     {
-     "date": "2026-11-20",
-     "close": 2971.3
+     "date": "2026-11-23",
+     "close": 2986.1
     }
    ],
-   "price": 2971.3,
-   "market_time_utc": "2026-11-20T06:07+00:00",
-   "state": "closed",
+   "price": 2986.1,
+   "market_time_utc": "2026-11-22T23:56+00:00",
+   "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "Small Ords"
   },
@@ -1098,25 +1046,27 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.84,
-  "priceBid": 0.81,
-  "priceChange": 0,
-  "priceChangePercent": 0,
-  "priceLast": 0.82,
+  "priceAsk": 0.845,
+  "priceBid": 0.8300000000000001,
+  "priceChange": 0.020000000000000018,
+  "priceChangePercent": 2.4390243902439046,
+  "priceLast": 0.84,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 0,
+  "volume": 25253,
   "xid": "35079877",
-  "marketCap": 116714700,
+  "marketCap": 116007338,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.84,
-  "priceBid": 0.81,
+  "priceAsk": 0.845,
+  "priceBid": 0.8300000000000001,
   "priceClose": 0.82,
+  "priceDayHigh": 0.855,
+  "priceDayLow": 0.8200000000000001,
   "priceFiftyTwoWeekHigh": 0.985,
   "priceFiftyTwoWeekLow": 0.1,
   "volumeAverage": 98428.069767,
@@ -1200,21 +1150,21 @@
  ],
  "news_google": [
   {
-   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaFlLbVZUVDB5VVROMllPVVVQZ3JzbnVxWk1MWXlLeXRydzhTS0xuR2tVTC1HR2NwVmVMZ1J6QzlEM1luazV3X3locUh0Q2VtM2Y0V1JZXzZZcHQwYTJ3T1FhTTlDTEVFcl94ZFJ0bXBmREpVNC1YM1VFamZHLUJHZ1ZzLVltMkNvRjJ1Ql9SUW03b1BrR1FB?oc=5",
-   "published": "2026-11-20T09:05:22+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"ION Video\"",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - TradingView",
    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZzRTUVBGWl9XX1RBb1lJRER5U1VkVzc1SVR4NVRKdUZfWVdBZDFfeGcxZGNQcVRLMGhDdnJBQjVzdEpBTnVmTk13bUE5M3hBOEM2LUl6cUl3THhQQWZSMllpU084RUticXh5R2o2M0tLZ1NVeGJSeDU3TGJDR0tJSGZzSFNwR2JDdUF3TkVLZElXOW9VbFVlSGFVUlF3dXRtem16bXBmd2xmZ0dydGhXeEY4dnhpRmNZWDRFV1pTZVgxVEVvZnVF?oc=5",
    "published": "2026-11-20T09:03:26+00:00",
    "outlet": "TradingView",
    "outlet_url": "https://www.tradingview.com",
+   "query": "\"ION Video\"",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Weekly Wrap: Miner And Bank Selling Sends ASX Lower As Small Caps Lag - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaFlLbVZUVDB5VVROMllPVVVQZ3JzbnVxWk1MWXlLeXRydzhTS0xuR2tVTC1HR2NwVmVMZ1J6QzlEM1luazV3X3locUh0Q2VtM2Y0V1JZXzZZcHQwYTJ3T1FhTTlDTEVFcl94ZFJ0bXBmREpVNC1YM1VFamZHLUJHZ1ZzLVltMkNvRjJ1Ql9SUW03b1BrR1FB?oc=5",
+   "published": "2026-11-20T09:05:22+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
    "query": "\"ION Video\"",
    "edition": "AU",
    "via": "google_news"
@@ -1519,16 +1469,6 @@
    "via": "google_news"
   },
   {
-   "title": "DUG Technology Lifts Revenue 49% on Contracted Work Surge - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQWVyVkt0TjBSYnI2d0I2bGZES3JPbUNUV1hyRzdzRjRubXdWUWpiMnhuMHNxZ0RNYnFYWkZVQkVlRFMyY2VPa2R5NXdtcmVodEg3UGwxdjlGSkdTaGlHVUx6Rm9mRVJITVZfU1dwbndOdGxmcEhyUm9PazdpcmYxRjVQZ2YwRW1Gak9mNUt1V01ZX0RPSG9RX0sycXk?oc=5",
-   "published": "2026-11-16T01:41:45+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
    "title": "ASX Small Caps Weekly Form Guide - Stockhead",
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1lclB6ZjNRd3R4Y2NiSEtWck1HX1NnOWg3UVBsdmxxQXBGWGZkRTNYZ0VrX1piSVBPclZxZ3I5bzhCdW0xdTJSdEtXaW5fWmRzWWh4RTI0YTh5UE5zdXJaeVFFXzlLMEVIWmlGVDlfVy1lSTVIYktkWA?oc=5",
    "published": "2026-10-30T07:00:00+00:00",
@@ -1542,6 +1482,16 @@
    "title": "iCetana prepares to join ASX tech stocks, IPO proceeds to advance AI surveillance software - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMlpucDNnZFBtWXowOTQtSjF3Ym8tWjBzVzJ1NzYxN1h3WFJ6U29ESWh1aWw3RXJRYjRUTkhMamlxbHhsdXpDa0swbUVqTzlkVmFjMk9UVUJGMjZNdFFKZkc3Ri1DZGdxUDIxMnB1NGZ5RmRmV1BlWVAyOTJid09aMkh3VTRRMVlEamJLNTFoUnZXMXdNMkk1SDlJVnQzSV9GNzVVMV9oOWxEbTQ?oc=5",
    "published": "2025-10-30T14:52:34+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "DUG Technology Lifts Revenue 49% on Contracted Work Surge - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQWVyVkt0TjBSYnI2d0I2bGZES3JPbUNUV1hyRzdzRjRubXdWUWpiMnhuMHNxZ0RNYnFYWkZVQkVlRFMyY2VPa2R5NXdtcmVodEg3UGwxdjlGSkdTaGlHVUx6Rm9mRVJITVZfU1dwbndOdGxmcEhyUm9PazdpcmYxRjVQZ2YwRW1Gak9mNUt1V01ZX0RPSG9RX0sycXk?oc=5",
+   "published": "2026-11-16T01:41:45+00:00",
    "outlet": "Small Caps",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
@@ -1643,16 +1593,6 @@
    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQTBhNUtaUERRZEc0ZGgtZ0QxaGdZUzh5WTRqb2tDRnpEQTQyZmZ1VTNRQ0liVXR3X1M3MlNjby1vRG9XdEdIMkhLcDhqNmhCazJuUmJBd195Nl82bzBTSTVTSm1IZ0hfS0c2ZEhuX1NfZWtfaFJJcHBEQ1hzdGxLTGtZZVlfR0I4SjVUaV96QlNHcEJMeWZnOXd2TjF4M2xuVGgtYnl6OA?oc=5",
    "published": "2026-08-16T07:00:00+00:00",
    "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Xamble Group Bolsters Creator Ecosystem with YouthsToday Acquisition - smallcaps.com.au",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQaDh6RWJ5dUN4d0JSRTFFVG5DenpNSVF0cjQwU25PNVlqZ05zdU41Q1ZTVjNtVllSd2pXYWZvckJuSjRHMzhJVjVQWmFwT2NXLWJxY3lnT3RHajEzbGV6MkY0NHdIMHg5aUJ2Q2t1YTVyeDVZMUtTQThRWUZLMVdub25VMEk5dGRTT24weWtoM2NPV0NGbDVhOW4yQVhXRm0zRkVr?oc=5",
-   "published": "2026-02-08T08:00:00+00:00",
-   "outlet": "smallcaps.com.au",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
    "edition": "AU",
@@ -1889,6 +1829,16 @@
    "via": "google_news"
   },
   {
+   "title": "NOVONIX Delivers Panasonic C-Sample As Battery-Grade Qualification Advances - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZjdCZW5fWlc0clVHYTBIS1RBMUczV1FXajZCay1qMHRUejVxVEVkSUJNRXlRTi1WYWZJN0RJN3pWc3dlQjVWVWgtOEpNZDM0THRuWUEzQ0dXTUt2bHNrdE5Ock5kem54VVNLV3B4VHpWTHNCMGk2U2NGdERzNnlFcW96Yi1MTk93cUhTT3d0SUdnd3JlYjViY3BoOWZPTzEwM3RZaEROczI3RVdY?oc=5",
+   "published": "2026-06-10T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Objective Corporation Loses DoD Support Agreement after 25-Year Partnership - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNM3JyWFBPYVV6dmxKWmZ2MlJ0eFQzdWppM1o3UU83WU9kS2ZjOFg0cG9SOEpTRzlTZDE3LXhJc0sydDdhNmVwY2d0SWgweDBQdXhrbTh4ODFzQTI5ZjE5Y2lIT1ZWZzJZQ2NTbFFiZ0VJQ1dNbC1SMDBkdmdOZlhyd1laQ0RmN0JVSE5VZFlJUkhkSHFnb0VpSXUycm91T3RiLUlMWkhfbmh3cnpG?oc=5",
    "published": "2026-06-30T07:00:00+00:00",
@@ -1944,14 +1894,6 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video (ASX:IOV) Adds Strategic Funding as Data Centre Technology Trials Advance",
-   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-adds-strategic-funding-as-data-centre-technology-trials-advance",
-   "published": "2026-11-13T06:48:00+00:00",
-   "snippet": "ION Video Limited (ASX:IOV) announced a further strategic investment on 11 November 2026, extending a technology-validation program focused on data-centre efficiency and video delivery. The AUD 1 mn ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "ION Video Limited Announces Management Changes",
    "link": "https://www.marketscreener.com/news/ion-video-limited-announces-management-changes-ce785ed3df8ef621",
    "published": "2026-11-15T14:52:00+00:00",
@@ -1964,6 +1906,14 @@
    "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
    "published": "2026-02-26T16:19:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video (ASX:IOV) Adds Strategic Funding as Data Centre Technology Trials Advance",
+   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-adds-strategic-funding-as-data-centre-technology-trials-advance",
+   "published": "2026-11-13T06:48:00+00:00",
+   "snippet": "ION Video Limited (ASX:IOV) announced a further strategic investment on 11 November 2026, extending a technology-validation program focused on data-centre efficiency and video delivery. The AUD 1 mn ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1992,6 +1942,14 @@
    "via": "bing_news"
   },
   {
+   "title": "Ion Video Ltd (ASX:IOV)",
+   "link": "https://kalkinemedia.com/au/companies/asx-iov",
+   "published": "2026-09-17T17:00:00+00:00",
+   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
+   "query": "\"ASX: IOV\"",
+   "via": "bing_news"
+  },
+  {
    "title": "Can ION Video (ASX:IOV) Break Into Data Centres?",
    "link": "https://kalkinemedia.com/au/stocks/healthcare/can-ion-video-asxiov-break-into-data-centres",
    "published": "2026-10-27T23:49:00+00:00",
@@ -2012,14 +1970,6 @@
    "link": "https://www.msn.com/en-au/money/top-stocks/tuesday-s-hotcopper-trends-mayne-pharma-group-ion-video-larvotto-resources-and-other-daily-topics/ar-AA2hA6aJ",
    "published": "2026-11-16T19:06:54+00:00",
    "snippet": "With more than 600k average monthly users on the HotCopper forums, each and every discussion can move markets. That’s why getting in front of those red-hot trends is key for every trader worth their ...",
-   "query": "\"Ion Video\" ASX shares",
-   "via": "bing_news"
-  },
-  {
-   "title": "ASX posts biggest drop in six weeks; Bunnings slashes 350 tech jobs",
-   "link": "https://www.afr.com/markets/equity-markets/asx-to-fall-nasdaq-hit-by-fresh-selloff-us-dollar-strengthens-20261117-p61eoj",
-   "published": "2026-11-17T00:18:00+00:00",
-   "snippet": "Nvidia drops 2.5 per cent as leadership crisis continues; traders await Warsh remarks; oil falls again. Follow live updates.",
    "query": "\"Ion Video\" ASX shares",
    "via": "bing_news"
   }
@@ -2061,10 +2011,10 @@
   "Morningstar": {
    "url": "https://www.morningstar.com.au/investments/security/asx/IOV",
    "status": 200,
-   "text_len": 3782,
+   "text_len": 3778,
    "title": "Ion Video Ltd (asx:IOV) Share Price | Morningstar",
    "snippets": [
-    "ews and analysis Australian Market News US Market News ASX Today How to invest in stocks? Stocks News & Analysis stocks Reassuring organic growth for undervalued ASX share Efficiency gains are starting to make their mark. Brian Han | 20 November 2026 stocks Big IPOs are enticing but are they good investments? Historically, buzzy debuts have been painful for buyers. Colin Laidley | 20 November 2026"
+    "ews and analysis Australian Market News US Market News ASX Today How to invest in stocks? Stocks News & Analysis stocks Reassuring organic growth for undervalued ASX share Efficiency gains are starting to make their mark. Brian Han | 23 November 2026 stocks Big IPOs are enticing but are they good investments? Historically, buzzy debuts have been painful for buyers. Colin Laidley | 20 November 2026"
    ],
    "data_hits": []
   },
@@ -2075,8 +2025,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 65 of 256 ASX RANK 946 of 2,357 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +172.87% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 946 of 2,357 Sector Rank 65 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 65 of 256 ASX RANK 938 of 2,357 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +229.88% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 938 of 2,357 Sector Rank 65 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
