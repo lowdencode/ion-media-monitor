@@ -14,7 +14,7 @@ latest.json   the collector output (data/latest.json in the repo)
 analysis.json written by the daily run:
   {
     "report_date": "YYYY-MM-DD",            Melbourne date of the report
-    "edition": "weekday" | "monday" | "weekly" | "weekend",   weekly = the Wednesday report; monday is the same layout
+    "edition": "daily" | "saturday" | "weekly" (others are legacy),   daily = Tuesday to Friday, saturday = the week's summary
     "summary": "Two or three plain sentences for the CEO.",
     "mentions_24h": 0,                       count shown in the mentions tile
     "mentions_label": "Mentions, 24 hours",  optional tile label
@@ -92,9 +92,10 @@ report_date = dt.date.fromisoformat(a["report_date"])
 IMAGE_MODE = a.get("image_mode") or "local"
 assert IMAGE_MODE in ("local", "collector", "none"), f"unknown image_mode {IMAGE_MODE}"
 edition = a.get("edition") or "weekday"
-assert edition in ("daily", "weekday", "monday", "weekly", "weekend"), f"unknown edition {edition}"
+assert edition in ("daily", "weekday", "monday", "weekly", "weekend", "saturday"), f"unknown edition {edition}"
 WEEKLY, WEEKEND = edition in ("monday", "weekly"), edition == "weekend"
-DAILY = edition == "daily"  # the every-day report: price, context, announcements, media, coming up
+DAILY = edition == "daily"  # the Tuesday to Friday report: price, context, announcements, media, coming up
+SATURDAY = edition == "saturday"  # the short Saturday summary of the trading week (Monday to Friday)
 
 
 # ---------- formatting ----------
@@ -288,6 +289,19 @@ if len(rows) >= 2:
             "prev_volume": sum(r["volume"] for r in wk0), "prev_value": sum(r["close"] * r["volume"] for r in wk0),
             "chg_pct": (wk[-1]["close"] / rows[-6]["close"] - 1) * 100 if rows[-6]["close"] else 0.0,
         }
+    if SATURDAY:
+        # this trading week (Monday to the report date) against the week before
+        monday = report_date - dt.timedelta(days=report_date.weekday())
+        cw = [r for r in rows if monday <= dt.date.fromisoformat(r["date"]) <= report_date]
+        pw = [r for r in rows if monday - dt.timedelta(days=7) <= dt.date.fromisoformat(r["date"]) < monday]
+        before = [r for r in rows if dt.date.fromisoformat(r["date"]) < monday]
+        if cw:
+            trade["cw"] = {
+                "first": cw[0]["date"], "last": cw[-1]["date"], "base_date": before[-1]["date"] if before else None,
+                "volume": sum(r["volume"] for r in cw), "value": sum(r["close"] * r["volume"] for r in cw),
+                "prev_volume": sum(r["volume"] for r in pw), "prev_value": sum(r["close"] * r["volume"] for r in pw),
+                "chg_pct": (cw[-1]["close"] / before[-1]["close"] - 1) * 100 if before and before[-1]["close"] else None,
+            }
 
 
 # ---------- markets line ----------
@@ -524,11 +538,20 @@ if trade:
     sess = dt.date.fromisoformat(trade["date"])
     if DAILY:
         price_sub = price_sub.replace(f" on {sess:%a}", " on the day")
-    price_tile = tile(f"IOV close, {sess:%a} {sess.day} {sess:%b}" if DAILY else "IOV last close",
+    if SATURDAY and trade.get("cw") and trade["cw"]["chg_pct"] is not None:
+        c = trade["cw"]["chg_pct"]
+        price_sub = "Unchanged this week" if abs(c) < 0.05 else f"{pct(c)} this week"
+        price_col = SLATE if abs(c) < 0.05 else (ACCENT if c > 0 else NEG)
+    price_tile = tile(f"IOV close, {sess:%a} {sess.day} {sess:%b}" if (DAILY or SATURDAY) else "IOV last close",
                       cents(trade["close"]), price_sub, price_col)
     ratio = trade["volume"] / trade["avg_vol"] if trade["avg_vol"] else 0
-    vol_tile = tile(f"Volume, {sess:%a} {sess.day} {sess:%b}" if DAILY else "Volume, shares", f"{trade['volume']:,}",
-                    f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
+    if SATURDAY and trade.get("cw"):
+        cw = trade["cw"]
+        vol_tile = tile("Volume this week", kfmt(cw["volume"]),
+                        f"shares, A${kfmt(cw['value'])} traded (previous week {kfmt(cw['prev_volume'])})")
+    else:
+        vol_tile = tile(f"Volume, {sess:%a} {sess.day} {sess:%b}" if DAILY else "Volume, shares", f"{trade['volume']:,}",
+                        f"A${kfmt(trade['value'])} traded, {ratio:.1f}x 1-month average")
 else:
     price_tile = tile("IOV last close", "n/a", "price feed unavailable", GREY)
     vol_tile = tile("Volume", "n/a", "price feed unavailable", GREY)
@@ -592,6 +615,23 @@ if DAILY and trade:
         ctx.append(("52-week range", f"{cents(lo52)} to {cents(hi52)}"))
     ctx.append(("Market cap", f"A${trade['mcap'] / 1e6:,.1f}m"))
     context_html = section(f"IOV and the market on {sess:%A} {sess.day} {sess:%B}", stat_rows(ctx))
+elif SATURDAY and trade and trade.get("cw") and trade["cw"]["base_date"]:
+    cw = trade["cw"]
+
+    def index_between(key, base_day, end_day):
+        s_ = ((latest.get("markets") or {}).get(key) or {}).get("sessions") or []
+        b = [r for r in s_ if r["date"] <= base_day]
+        e = [r for r in s_ if r["date"] <= end_day]
+        if not b or not e or not b[-1]["close"] or e[-1]["date"] <= b[-1]["date"]:
+            return None
+        return (e[-1]["close"] / b[-1]["close"] - 1) * 100
+    d1, d2 = dt.date.fromisoformat(cw["first"]), dt.date.fromisoformat(cw["last"])
+    ctx = [("IOV", coloured_pct(cw["chg_pct"]))] + [
+        (nm, coloured_pct(index_between(k, cw["base_date"], cw["last"])))
+        for nm, k in (("ASX 200", "asx200"), ("Small Ordinaries", "small_ords"), ("ASX tech", "asx_tech"))]
+    context_html = section("IOV and the market this week", stat_rows(ctx), top=24,
+                           right=(f"{d1.day} to {d2.day} {d2:%b}" if d1 != d2 and d1.month == d2.month
+                                  else f"{d2.day} {d2:%b}" if d1 == d2 else f"{d1.day} {d1:%b} to {d2.day} {d2:%b}"))
 elif WEEKLY and trade and len(rows) >= 6:
     def index_5(key, day):
         s_ = ((latest.get("markets") or {}).get(key) or {}).get("sessions") or []
@@ -609,7 +649,7 @@ elif WEEKLY and trade and len(rows) >= 6:
                            right=(f"{d1.day} to {d2.day} {d2:%b}" if d1.month == d2.month else f"{d1.day} {d1:%b} to {d2.day} {d2:%b}"))
 
 # ---------- ION's ASX announcements ----------
-ann_hours = int(a.get("announcements_hours") or (168 if WEEKLY else 24))
+ann_hours = int(a.get("announcements_hours") or (168 if (WEEKLY or SATURDAY) else 24))
 ann_to = dt.datetime.combine(report_date, dt.time(7, 30), MEL)
 ann_from = ann_to - dt.timedelta(hours=ann_hours)
 anns = []
@@ -621,7 +661,15 @@ for ann in latest.get("asx_announcements") or []:
     if ann_from < t <= ann_to:
         anns.append((t, ann))
 anns.sort(key=lambda x: x[0], reverse=True)
-ann_title = "ION announcements, last 7 days" if WEEKLY else "ION announcements, last 24 hours"
+if SATURDAY:
+    ann_title, none_txt = "ION announcements this week", "No ION announcements this week."
+elif WEEKLY:
+    ann_title, none_txt = "ION announcements, last 7 days", "No ION announcements this week."
+elif ann_hours == 24:
+    ann_title, none_txt = "ION announcements, last 24 hours", "No ION announcements in the last 24 hours."
+else:  # Tuesday's daily covers everything since Saturday's summary
+    ann_title = f"ION announcements since {ann_from:%A}"
+    none_txt = f"No ION announcements since {ann_from:%A}."
 if anns:
     a_html = ""
     for i, (t, ann) in enumerate(anns):
@@ -636,7 +684,6 @@ if anns:
     announcements_html = section(ann_title, f'<table role="presentation" width="100%" cellpadding="0" '
                                             f'cellspacing="0" border="0">{a_html}</table>')
 else:
-    none_txt = "No ION announcements this week." if WEEKLY else "No ION announcements in the last 24 hours."
     announcements_html = section(ann_title, p(none_txt, 14, SLATE))
 
 # ---------- coming up ----------
@@ -685,11 +732,12 @@ if cov:
         log = a.get("notion_url") or a.get("log_url")
         label = f"{more} more in the mentions log" if log else f"{more} more not shown"
         tail = p(link(log, label, bold=False) if log else label, 13, SLATE, "padding-top:4px;")
-    parts.append(section("Media" if DAILY else "Coverage",
+    parts.append(section("Media" if DAILY else "Coverage this week" if SATURDAY else "Coverage",
                          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{items}</table>{tail}',
                          right=split))
 else:
-    parts.append(section("Media" if DAILY else "Coverage", p("No new coverage since the last report.", 14, SLATE)))
+    parts.append(section("Media" if DAILY else "Coverage this week" if SATURDAY else "Coverage",
+                         p("No coverage of ION this week." if SATURDAY else "No new coverage since the last report.", 14, SLATE)))
 
 # ---------- register ----------
 reg = a.get("register") or []
@@ -998,6 +1046,10 @@ def trading_section(image):
     key_bits = ([f'<span style="color:{VIVID};">&#9679;</span> ASX release'] if any_rel else []) + \
                ([f'<span style="color:{GREY};">&#9679;</span> Media coverage'] if any_cov else [])
     key = p(" &nbsp; ".join(key_bits), 12, SLATE, "padding:8px 0 4px 0;") if key_bits else ""
+    if SATURDAY and image:
+        return (section("Trading, last month", "")
+                + f'<tr><td style="padding:0 14px;">{chart}</td></tr>'
+                + f'<tr><td style="padding:0 28px;">{key}</td></tr>')
     stats = [] if image else [("1-month average close", cents(trade["avg_close"]))]
     stats.append(("1-month average volume", f"{round(trade['avg_vol']):,} shares a day"))
     if trade.get("prior_value") is not None:
@@ -1034,7 +1086,7 @@ if ratings:
 
 # ---------- assemble ----------
 title = {"monday": "Weekly media and market monitor", "weekly": "Weekly media and market report",
-         "daily": "Daily market and media report",
+         "daily": "Daily market and media report", "saturday": "Week summary",
          "weekend": "Weekend media monitor"}.get(
     edition, "Media and market monitor")
 date_line = f"{report_date:%A} {report_date.day} {report_date:%B %Y}"
@@ -1053,8 +1105,8 @@ def header_html(logo):
             f'<p style="margin:16px 0 0 0;{FONT}font-size:20px;font-weight:bold;color:#FFFFFF;">{title}</p>'
             f'</td></tr>'
             f'<tr><td bgcolor="{VIVID}" style="height:3px;background:{VIVID};font-size:0;line-height:0;">&nbsp;</td></tr>')
-mline = "" if (DAILY or WEEKLY) else markets_line()
-summary = "" if WEEKLY else (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a.get("summary") or ""), 16, BODY)}'
+mline = "" if (DAILY or WEEKLY or SATURDAY) else markets_line()
+summary = "" if (WEEKLY or SATURDAY) else (f'<tr><td style="padding:24px 28px 0 28px;">{p(escape(a.get("summary") or ""), 16, BODY)}'
                              + (p(escape(mline), 13, SLATE, f"padding-top:10px;{NUM}") if mline else "") + '</td></tr>')
 log = a.get("notion_url") or a.get("log_url")
 if trade and price_check["status"] in ("confirmed", "corrected", "asx_only", "no_trade"):
@@ -1123,14 +1175,17 @@ open(OUT_HTML, "w").write(page(have_image, logo=LOGO_CID))
 bits = [f"{report_date:%a} {report_date.day} {report_date:%b}"]
 if flags:
     bits.append(f"{len(flags)} flag{'' if len(flags) == 1 else 's'}")
-if trade and WEEKLY and trade.get("week"):
+if trade and SATURDAY and trade.get("cw") and trade["cw"]["chg_pct"] is not None:
+    bits.append(f"IOV {cents(trade['close'])}, {pct(trade['cw']['chg_pct'])} on the week")
+elif trade and WEEKLY and trade.get("week"):
     bits.append(f"IOV {cents(trade['close'])}, {pct(trade['week']['chg_pct'])} on the week")
 elif trade and DAILY:
     bits.append(f"IOV {cents(trade['close'])} {pct(trade['chg_pct'])} ({dt.date.fromisoformat(trade['date']):%a})")
 elif trade and not WEEKEND:
     bits.append(f"IOV {cents(trade['close'])} {pct(trade['chg_pct'])}")
-bits.append(f"{m24} mention{'' if m24 == 1 else 's'}" + (" this week" if WEEKLY else ""))
+bits.append(f"{m24} mention{'' if m24 == 1 else 's'}" + (" this week" if (WEEKLY or SATURDAY) else ""))
 name = {"monday": "ION weekly monitor", "weekly": "ION weekly report", "daily": "ION daily report",
+        "saturday": "ION week summary",
         "weekend": "ION weekend monitor"}.get(edition, "ION monitor")
 subject = f"{name}, " + bits[0] + ": " + ", ".join(bits[1:])
 open(OUT_SUBJECT, "w").write(subject)
