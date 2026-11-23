@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-23T00:28:47+00:00",
+ "fetched_at_utc": "2026-11-23T00:46:53+00:00",
  "melbourne_date": "2026-11-23",
  "price_yahoo": {
   "sessions": [
@@ -528,13 +528,13 @@
     "open": 0.824999988079071,
     "high": 0.8550000190734863,
     "low": 0.8199999928474426,
-    "close": 0.83,
-    "volume": 25242
+    "close": 0.845,
+    "volume": 25486
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.83,
-   "regularMarketTime": 1795391428,
+   "regularMarketPrice": 0.845,
+   "regularMarketTime": 1795393255,
    "previousClose": null,
    "chartPreviousClose": 0.43,
    "fiftyTwoWeekHigh": 0.985,
@@ -633,11 +633,11 @@
     },
     {
      "date": "2026-11-23",
-     "close": 8591.7
+     "close": 8601.1
     }
    ],
-   "price": 8591.7,
-   "market_time_utc": "2026-11-22T23:56+00:00",
+   "price": 8601.1,
+   "market_time_utc": "2026-11-23T00:26+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -731,11 +731,11 @@
     },
     {
      "date": "2026-11-23",
-     "close": 1725.4
+     "close": 1727.5
     }
    ],
-   "price": 1725.4,
-   "market_time_utc": "2026-11-22T23:56+00:00",
+   "price": 1727.5,
+   "market_time_utc": "2026-11-23T00:26+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -829,11 +829,11 @@
     },
     {
      "date": "2026-11-23",
-     "close": 2986.1
+     "close": 2986.0
     }
    ],
-   "price": 2986.1,
-   "market_time_utc": "2026-11-22T23:56+00:00",
+   "price": 2986.0,
+   "market_time_utc": "2026-11-23T00:26+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "Small Ords"
@@ -1046,23 +1046,23 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.845,
+  "priceAsk": 0.84,
   "priceBid": 0.8300000000000001,
-  "priceChange": 0.020000000000000018,
-  "priceChangePercent": 2.4390243902439046,
-  "priceLast": 0.84,
+  "priceChange": 0.025000000000000022,
+  "priceChangePercent": 3.0487804878048808,
+  "priceLast": 0.845,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 25253,
+  "volume": 25486,
   "xid": "35079877",
   "marketCap": 116007338,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.845,
+  "priceAsk": 0.84,
   "priceBid": 0.8300000000000001,
   "priceClose": 0.82,
   "priceDayHigh": 0.855,
@@ -1894,10 +1894,10 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video Limited Announces Management Changes",
-   "link": "https://www.marketscreener.com/news/ion-video-limited-announces-management-changes-ce785ed3df8ef621",
-   "published": "2026-11-15T14:52:00+00:00",
-   "snippet": "ION Video Limited advised that Justyn Stedwell has been appointed as Company Secretary. Justyn has 20 years? experience as a Company Secretary of ASX listed companies and has also previously served as ...",
+   "title": "ION Video (ASX:IOV) Adds Strategic Funding as Data Centre Technology Trials Advance",
+   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-adds-strategic-funding-as-data-centre-technology-trials-advance",
+   "published": "2026-11-13T06:48:00+00:00",
+   "snippet": "ION Video Limited (ASX:IOV) announced a further strategic investment on 11 November 2026, extending a technology-validation program focused on data-centre efficiency and video delivery. The AUD 1 mn ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1910,18 +1910,10 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video (ASX:IOV) Adds Strategic Funding as Data Centre Technology Trials Advance",
-   "link": "https://kalkine.com.au/news/technology/ion-video-asxiov-adds-strategic-funding-as-data-centre-technology-trials-advance",
-   "published": "2026-11-13T06:48:00+00:00",
-   "snippet": "ION Video Limited (ASX:IOV) announced a further strategic investment on 11 November 2026, extending a technology-validation program focused on data-centre efficiency and video delivery. The AUD 1 mn ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
-   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
-   "published": "2026-11-17T05:08:00+00:00",
-   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
+   "title": "ION Video Limited Announces Management Changes",
+   "link": "https://www.marketscreener.com/news/ion-video-limited-announces-management-changes-ce785ed3df8ef621",
+   "published": "2026-11-15T14:52:00+00:00",
+   "snippet": "ION Video Limited advised that Justyn Stedwell has been appointed as Company Secretary. Justyn has 20 years? experience as a Company Secretary of ASX listed companies and has also previously served as ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1930,6 +1922,14 @@
    "link": "https://www.theglobeandmail.com/investing/markets/stocks/LNNTF/pressreleases/3624120/ion-video-seeks-asx-quotation-for-129-million-new-shares/",
    "published": "2026-08-12T19:25:00+00:00",
    "snippet": "Detailed price information for Linius Technologies Ltd (LNNTF) from The Globe and Mail including charting and trades.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "Daily Special: Li-S Energy, Western Gold Resources, ION Video, Imagion Biosystems, AdAlta",
+   "link": "https://www.finnewsnetwork.com.au/archives/finance_news_network6163372.html",
+   "published": "2026-11-17T05:08:00+00:00",
+   "snippet": "Nov 2026 - Australian shares tumble as mining stocks slide on weaker commodity prices and another Wall Street technology sell-off ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -2025,8 +2025,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 65 of 256 ASX RANK 938 of 2,357 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +229.88% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 938 of 2,357 Sector Rank 65 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 64 of 256 ASX RANK 935 of 2,357 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +235.85% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 935 of 2,357 Sector Rank 64 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
