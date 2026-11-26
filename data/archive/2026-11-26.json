@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-26T02:26:22+00:00",
+ "fetched_at_utc": "2026-11-26T02:45:23+00:00",
  "melbourne_date": "2026-11-26",
  "price_yahoo": {
   "sessions": [
@@ -534,15 +534,15 @@
    {
     "date": "2026-11-26",
     "open": 0.8349999785423279,
-    "high": 0.8450000286102295,
+    "high": 0.8600000143051147,
     "low": 0.8299999833106995,
-    "close": 0.845,
-    "volume": 13472
+    "close": 0.86,
+    "volume": 16472
    }
   ],
   "meta": {
-   "regularMarketPrice": 0.845,
-   "regularMarketTime": 1795657189,
+   "regularMarketPrice": 0.86,
+   "regularMarketTime": 1795659733,
    "previousClose": null,
    "chartPreviousClose": 0.405,
    "fiftyTwoWeekHigh": 0.985,
@@ -649,11 +649,11 @@
     },
     {
      "date": "2026-11-26",
-     "close": 8760.6
+     "close": 8764.3
     }
    ],
-   "price": 8760.6,
-   "market_time_utc": "2026-11-26T02:06+00:00",
+   "price": 8764.3,
+   "market_time_utc": "2026-11-26T02:25+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX 200"
@@ -755,11 +755,11 @@
     },
     {
      "date": "2026-11-26",
-     "close": 1725.8
+     "close": 1732.1
     }
    ],
-   "price": 1725.8,
-   "market_time_utc": "2026-11-26T02:06+00:00",
+   "price": 1732.1,
+   "market_time_utc": "2026-11-26T02:25+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "ASX tech"
@@ -861,11 +861,11 @@
     },
     {
      "date": "2026-11-26",
-     "close": 3017.0
+     "close": 3021.5
     }
    ],
-   "price": 3017.0,
-   "market_time_utc": "2026-11-26T02:06+00:00",
+   "price": 3021.5,
+   "market_time_utc": "2026-11-26T02:25+00:00",
    "state": "open",
    "exchange_tz": "Australia/Sydney",
    "name": "Small Ords"
@@ -1078,26 +1078,26 @@
  "asx_header": {
   "dateListed": "2011-07-26",
   "displayName": "ION VIDEO LTD",
-  "priceAsk": 0.845,
+  "priceAsk": 0.865,
   "priceBid": 0.8300000000000001,
-  "priceChange": 0.010000000000000009,
-  "priceChangePercent": 1.197604790419163,
-  "priceLast": 0.845,
+  "priceChange": 0.025000000000000022,
+  "priceChangePercent": 2.994011976047907,
+  "priceLast": 0.86,
   "sector": "Information Technology",
   "industryGroup": "Software & Services",
   "securityType": 1,
   "symbol": "IOV",
-  "volume": 13472,
+  "volume": 16472,
   "xid": "35079877",
   "marketCap": 118129424,
   "statusCode": "RE"
  },
  "asx_key_stats": {
   "isin": "AU0000440992",
-  "priceAsk": 0.845,
+  "priceAsk": 0.865,
   "priceBid": 0.8300000000000001,
   "priceClose": 0.835,
-  "priceDayHigh": 0.845,
+  "priceDayHigh": 0.86,
   "priceDayLow": 0.8300000000000001,
   "priceFiftyTwoWeekHigh": 0.985,
   "priceFiftyTwoWeekLow": 0.1,
@@ -1565,6 +1565,16 @@
    "via": "google_news"
   },
   {
+   "title": "Giuseppe Joe Rinarelli | Chief Financial Officer,Company Secretary,Executive Director | Wingara Ag Ltd - Market Index",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE53ZTVKNGNmMnV1REh6UU5odXZkSHhQS21ManRoamVoRmJTc2oyN0tTa0VVSDJkcDljNVhxTXNMNy1lSFljcTJpX1M1UXlTcmdxWEpkRVdUc1ZLWXlIMXpabVVWY0ZXT24xSTlrdHljUzk?oc=5",
+   "published": "2025-01-15T21:02:06+00:00",
+   "outlet": "Market Index",
+   "outlet_url": "https://www.marketindex.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "FortifAI NOL8 Benchmark Shows Massive Data Cost Advantage over Google RE2 - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRkRjOTR0VFFXMGFBM3RZYkxTLVVCNWNQbjdMMnU3cTVfRGlybmk1d0MwVGFuZW5oNzY5LTB1OXpOemx1YnVtdlZ4S1pHTmFKbzBGUWFGcFRxU0VzNGdzLVlRSzZNYVhJYUFZYlhrcjRHdllsS0xKWFR4VnFIVUg5Yng4T1pyTjB0RHg0X1pDdDlLWU1OSXdfWTFhVVZMLWZZanZqdHBLb1RsZw?oc=5",
    "published": "2026-10-11T07:00:00+00:00",
@@ -1685,6 +1695,47 @@
    "via": "google_news"
   },
   {
+   "title": "InFocus to Launch Digital Ventures Business Backed by $10m Funding from Mythos Group - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcFRyMGRXaW9ScHdPZENheUVaTmtuWS10cXg3LWxsQThNZDhmckhmQVhndnN0cXhpQnR2MkFFbDZCblZSXzNrRU93TVVVWS1kZjF6WVNOQ0c3TkJTUC04eE5URjZ3Sm5NRUJKeDROZk4yTlBBVkJfQ1NnbXBYdWdaNEVwYnJHWTA2MFFMRkhpT1B2VXo2dEd4UUQzS0xEQQ?oc=5",
+   "published": "2025-09-01T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Dominic O'Hanlon | Non-Executive Director,Non-Executive Chairman | BikeExchange Limited - Market Index",
+   "link": "https://www.marketindex.com.au/asx/directors/dominic-ohanlon",
+   "published": "2023-09-22T08:22:52+00:00",
+   "outlet": "Market Index",
+   "outlet_url": "https://www.marketindex.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news",
+   "google_link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5UdFBRNjNFUDR1OXFzbVBMN2tDNjNZMGdvSFRpQWpuRFRhc1dobWdtb21qY0RPVnZ0ZDZrRVpON0xWbkJGN1VVMk43TUhfWUdMRU5qbTNHcDJYczRUMGItMExHUWUwZWpCTTdJYQ?oc=5"
+  },
+  {
+   "title": "Fatfish flying with key Virtual Gaming Worlds appointment and launch of applied AI lab - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWmx1V1lfVXp5VlJRNFViV2FUSEdXU2tFYU90SGZlNks5bFp3LTJuc1B0MTMwSjlORjg5eHV1Z24yR3JtVEJmdHpudWdmeGRIM3l4c21WWnhIWm52ZTJyeVlSUkxYTW9WMVNvQWdGc2JNUjdsaEczMW1hb0VoSng5Zmd1NWI0Q0JMUDk5Mnh0cXNvYjhkZHZzVXBNckxJWkNRTHc?oc=5",
+   "published": "2024-01-25T08:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Energy Technologies Secures Commercial Agreement with Israeli Company for Smart Glasses Program - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQdUNSbFo2cTRONk80bkNFbmFZM1NRamg5bTBpRUNlQnNCeTNiNEtrenZmSnRqbVRfdDlUdld2N1FBWjl4Y0J4T2czekltM3VrNVh5SGtpUVk2WlpzRWl1aDRvdHFHTDJYM3hQcnp2SWxGN3hlMlRQdDJ1RDlkWUxlQ1Jhak9penNPNTdyMVh5cXdXamhmOHVXV0xlQk1XMi1JVWdNSC1kNTg5cUtMWTBQMm52c3JKdjFzRHpMbW84Sl95bEt1V3Bn?oc=5",
+   "published": "2026-10-20T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Gentrack Group Lifts Recurring Revenue but Project Delays Weigh on Profit - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPS2xCVEJSRmdZOHhCdkNxU1ZwOVplNTd6ak5UUTRzV2JtR2NrRG1NUE5kdlBvQTA5RVpTcUdyaTJkYkw4T2xZU0ZlTkVFTFM2MUV5QkFDcVU1cWJUVnJ4NlpZbVJRdkhWTGJMNi13dDhfUi1Mb3pvY01WRHRFaGNhYVVjaUhoLXFENUJoTlJWSjNydHlTUzFsSjhJNWJLcHJNdGZrVkRiaWhUQQ?oc=5",
    "published": "2026-11-23T02:11:31+00:00",
@@ -1695,9 +1746,49 @@
    "via": "google_news"
   },
   {
+   "title": "FirstWave Cloud Technology Files Patent for AI Network Monitoring System - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNa0VyTG1CRmUzQTFaRHNMdnl1MnVYUzR0UExJenNoWVhBM3RHR1VhMU5pTVhWVHBSeDNlVnl2aWdLNWdoNloxN0JuNVJIbTFVRWE0eEtqSFhEb0x2Xzd2OG5kMy1OX081TnB3X09xYTFoQzJKTVc0dVlJenh2X3l3Ykx2YXpZeHlOdjNNUklnNks1WlhEeDZWOVFtNTg4clVNRGw0MjlpcEs?oc=5",
+   "published": "2026-09-03T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Orcoda Signs Multi-Year Logistics Contract with Wellcamp Accommodation - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQjVBUWFnTk1PMmZCRF9wQlVVZG1FUXJ3dXg1ZEhWNDZMV3hONGRROV9RakhEUXhsajhBSDJnaDBaeE9Yd3dwR1FCbDlLZ1RsM2VnNzhKTTZDYmxIMU1ZY2RMak9tdDMxWGRFVUdFcko5NTZvczN2WXQzdEZEVW05VjNEaEpJak1KeHdrdHRYeTZ1NGlOdE8yUTEtSWhrQWRnWjJyUnln?oc=5",
+   "published": "2026-06-24T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Beamtree Wins $2m Saudi Healthcare Contract as Strategic Review Resets Cost Base - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMGhRMTk3bEhaSkFhdnJOSmtoZTlyMF9PaU9hRjlrZWhLTll1QTBld0dheU5DNDBjOVEwUTlUM29xOXZ1b21CUGNmNFRhWDl2MnNQN3J5WmxZMkQ1czFIMlYzRkJxNWRkNEdxNlUyS3JDemVKM29wQXMybTE0RmN3SE5oRkY5MU1qMktlNndrNl9WUFNZOGNXUUxBOVFDbE5mSWlVR29WM1ZsX3B4Wm9VVmJpMGhHWFlidkE?oc=5",
+   "published": "2026-05-04T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Vitasora Health Executes vCare Rollout as Patient Enrolment Momentum Accelerates - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUTUtZFl0RkhnQi1rekY0cldsWVpVa0F6SHY5b0d3VjhyTkZHZ1hhRktacDlobmN0Q1VlNVpPMldRb25NQVVrNVRyWkh2eDNwME9fOTlnTWNxLWpnbmVad25YeVg0c1VMVnBaRUpBeVB6ZU54cTlEaVdtdXZDQmVaNmtfdGF6YXZrOG9rUWVsYkZLZ004Y1FNNWJEb2ZxdXpCd2l0cS1tNlFCaG5kSERFNW9MWms?oc=5",
    "published": "2026-05-17T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Norwood Systems Initiates OpenSpan Paid Pilot Trial with Major UK Teleco Provider - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQSGxUQXhZbmxMN25GVTByUE9pSXV2RFlmdEtqbzZmalNwRGZ5dFFZNjN6enc5bE1yS2owOGJCU2JHaXVURUVBY3RUcURsOHMyNTlLVTRMLU4wZUN4aXdTQklkUVU1ajBiV1JTMEFpM1RXT19CVDdldUVJMFNpVHhsQWdsYW4tcHZuWUJoMVJMVS16QmJoOUdoem41TENDN3hCUnkyN2d6OUdvcGFSOUpGTVRxa20?oc=5",
+   "published": "2026-06-16T07:00:00+00:00",
    "outlet": "Small Caps",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
@@ -1735,10 +1826,40 @@
    "via": "google_news"
   },
   {
+   "title": "Beamtree wins $1.4m contract to supply PICQ clinical coding software in Saudi Arabia - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc0dqN0tTeEo5b3RnYVhFOXVvLTc3eGNIYndYaVh4VnRrejB5Zk9WcDZ0UDNKRkRta0wxbHhLbjRpRzJzQlVnV2xiMURNalFCV1g1NjY3LUpBazRXTFhYNl9XZXJsOUhXQ2s3WmFjb28tQ3JydEZwUjlqeWtqd01Cc3l6YzBZMURIUVlkZHZlLW92QnRnTTJQYUN1UGVidmpQcHlwak1hT2U?oc=5",
+   "published": "2024-09-25T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "FirstWave Cloud Tech Pivots to AI Compliance with Open-AudIT v6, Secures Funding - smallcaps.com.au",
    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSTUzUkhsT0dhZkNvTF8tUW11LVhmckt6UTZzSmFUT1h1MUNMcjg3VHBDNmVUN3pkZ09NM1VHbUthWllpM1EtWEx1RjRtU0tVMTVtRmljRVpHZTJ4elg2d3VQLTk1bUh0S1psMGE0M2RMNThBMFhiWXJETHFGZlE2ZVo0WUh3eVpFbXBLY2lqclItS0c5b1poSHRVQkFpVDE2WXh5akhBbUxoMzBSSmJDNThn?oc=5",
    "published": "2026-02-05T08:00:00+00:00",
    "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Doctor Care Anywhere secures $18m working capital loan from AXA Health UK - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMk5RcFlGbFZUYXhvVmdTMHNER2FpMmdXX19nd3RNN2FFNExCcEZpNGE1bnlMQTRMNDBZcEJsZTJsdGIyZDZaSnNPeFdXNS1mazNYODlQdkQ5OFlLekI3WGR3T3IyazZ0SmVSczItS0RFVFJjZkV5ek5Pal9hem5KUFAwNTVkYi1RQ2lRUG1TWU4tVi14amg1b1phTGs?oc=5",
+   "published": "2025-10-30T15:03:22+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Superloop Forecasting Above 20% EBITDA Growth as Customer Base Expands - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNeko5MGVBXzNqemlONVVDNHZ3RjE2SVZiVi1RdlBBd0Z0d28tZEhjSDBITkRhV0hQd1VoWEJmUGRILUFORDlqaXNVaFdSczlpQUF4YmdBODk0Q2JFcTJMOFdYSFNLamoxTVpBRGh4QnJJS1JRR2RRV1h0UE5mdTEyRmI5Wm9HODFwVncwQ2ZiNDRGVXZoN1hucnpnQk8yMlFPaUZRODVWajZRZWJreHc?oc=5",
+   "published": "2026-11-09T08:00:00+00:00",
+   "outlet": "Small Caps",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
    "edition": "AU",
@@ -1755,10 +1876,60 @@
    "via": "google_news"
   },
   {
+   "title": "ikeGPS expands IKE PoleForeman footprint in the US with new utility clients - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVV9UM2Zlb1lvSHM2OEd2NlQxdmtIV2laRmZyVDkxY2thM1VrNkFodDAyWDJYUlFQX2dGeDlmdEF1cVdkZUVRRXN3ZTdyTjZENl8wMTJ3YmxXMEQtODdiRXVKYkVDbGQ5dmp2bjM1VmVGODZZVmNxOGkyaTFNZjZkMDZSWjd3al8tVWpjcWtBcUNsSjdHemV4YmEzeVU?oc=5",
+   "published": "2024-05-07T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "IODM Hits Record September Revenue as University Rollout Accelerates - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnBHMFc0MGl3Sjg0cXN5Q2ZWSU5OVlk2dFdYUllicDRvaC0yMnZhbHhLYUNrUWs2aTllTER3czhNS1ZnSkFEZVF1emEwMV9fZHJ2eENPQktXNUh4RjBwVS05Sy1WWXlDN0VIbDVaYXdXbVdaOXV5Y3U1dUw1bVEyTzY1cmE1dlJlSzZwdklWdkttQU9WU00yUlZuZ1l4V0UwSDdN?oc=5",
+   "published": "2026-10-18T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Chrysos Corporation Lifts Revenue 27% on Record Gold Assay Volumes - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMWl4RnVLd0M5RTZ1VFEza05CVHI0eG1ZR3ZHSDNfdDM2Wjl0UEc2dl8wbEJmU0RUS0N2cG8tSzRWaDAxSm1mbnZ3cjZIUUNfRnJMZ1h0SGRXdTY1aTV2RlVPNnk2S1d3dDJ3WEo1eXFKUHlHejdHTTlBQ0RpVG5Ec3l6dVg0Zm5QWFMzZWE4bWVmQ3BXVHpOOURtbldFSG1FVUhuSGJjcjQ?oc=5",
    "published": "2026-11-19T04:05:11+00:00",
    "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Janison Education lands groundbreaking $45m contract for digital testing in NSW - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMktpQkI0dUliZzdIODJVRkotLVlrVjRXSGhyYUFscFpRX1VTTkYwTnFDX3kyM3FXMkZSaDJQS3JyTFNCdlFMNlNnU2QwMzR0RVY3OTJOb1hEajhycHJTRjg4U3Rrd2lDT1FLbnZabVJ0VHl5LWllQWNMaHYtMlRQYXRXcWRGMkFpV210eTlPVC1rSGg5XzJOYXg3d09ia3YzREE?oc=5",
+   "published": "2024-02-06T08:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "InFocus Group Completes Development of Codexa Sweepstakes Casino Platform - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWHU0bll6MnJaLVdVMTlSTnBKMnJFY2lpWFg0T2Z4UVBHVjV6cXJOTlEyZkxkRWNPV09abXRlS3N4VzcydGxSeWh6VGJLR3NKMXk5bXhVR1ZENk85dk15czR6eXoySUlDbUVjRTBHSEtJXzRRb1NxSWZuc0RybHhyS2h6Z0JEN2wyT2QwZ1ZXeWF4RkJ5UXJ3OWV1RHdzdjZwbXVhLWQwUHpKdw?oc=5",
+   "published": "2026-03-26T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Visionflex and Amplar Home Health to partner on $1m telehealth pilot for aged care homes - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZ1RpMzBRUkxsbDdTQnJFbk1nLXB4emg2ZnAzRGNmekE3VHZ3T055bnNwVlQyZTNpdUVZU2daYnJOd1lxMFUzUzJTdWpaTmRPTzVhTUt0ZTdfc3VZVVBPSDliSm16Qks4WnVXZXN2V25aN0toZjJFMEpnMmU1MF9BUjRlWXIxaGdsUDZFaDNUSFhNOEtyOHRsRWVBSQ?oc=5",
+   "published": "2025-10-31T00:10:28+00:00",
+   "outlet": "smallcaps.com.au",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
    "edition": "AU",
@@ -1785,10 +1956,190 @@
    "via": "google_news"
   },
   {
+   "title": "Elsight Receives $1.45m Repeat Halo Order from Undisclosed US Defence Customer - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPTjkxUnZWOS03d2ZFUDYtNVNnQjNaazNiMWRhQndzOERpdVFxV2VSNmFkT3djSDRhU2RnbGRlSXJ0QnNfNVE0RGFVZjk4WGUzUVpNbVVYcnptZUFLbDFlRWNvQ0VRSzFOTFJLcHJfekNiVlVBdnhIVUlJZUxMRlBvdXZoZTc0eEFZRlZ6Q2NwYmI1S243TEpwVjU0WEtRVkJiNkY3RWFfYjh3QkQ4?oc=5",
+   "published": "2026-11-08T08:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Audeara strengthens Asian presence with Clinico healthy hearing earbuds contract - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPbnd6LUo2MTA2QUhYTV9qY2xfSzFiM2NPcTJYbWo3RUphX2xQVnhjSU04eXVjX2Zkd0s4SHJ0TlhfaVZHc09YcWplOUNVQ2hnX3RsNTBxUHlyaHBPa3dTNmFfRWVEeE1qSG9xMG1EN0hwMnZfNm1QWHBFbWhuYml1UVZyUWtaSl9FYnBjRkFZc3FmV2pTR2d5ZVdJS21Yd1hja2R6XzUyLVdwOVZT?oc=5",
+   "published": "2024-10-08T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "FBR’s Hadrian X robot completes first home walls in US demonstration program - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVEtDNEJ2TXZXT3Z5bXVPN00waGdPT0owY0tRUUxqaW5hQzZ3aXVHekhsc2dwY3JDNDM1LUlOZWhfR3hrbjB6MFMtREZ1d0Vsd0gzLXM5MnYwNzNlaG9Zd0xoMWwtTHJrQTQxTEt0M2ZMbFZzblp6Sk1NbGNtYmlFRTZXWE9OLVc5cW1MVjJ5b0xtdw?oc=5",
+   "published": "2024-09-10T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Splitit and Alipay partner to offer ‘pay after delivery’ on AliExpress - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTXpoZi1MaWNIa0xmSW1tOGNXdEhYdTBFanpGOFdiZHdiY3dvVFc3bk9WQ3hydlRfb1BmVjFpRWUzNjJpSWdNSlZKMzFZSGlDZW1ta0Jfc2t0RktXSVhnb1ZDVXNpVmhTb0VYLUM4M0dHcC1wRUdIcWpRdERLV0Vqdk1lZzNJd3dBWVVyWjhNeTR3cEl6WVE?oc=5",
+   "published": "2023-01-17T08:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Weebit Nano packages first ReRAM memory chip - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMVc2bFEyLUtpUnE2ZUkxaXhualBseUtsVUoybnpjNlRZSkJMVEI4cklRenFsN2NPb252YWxEbkRkaG9NWGNGUFAyY2FlSzRVNHYtUmpWVmxIVjJ6MXpCR3JfRmJlUGNTUWZaS1Q3RXpMVGc0akJWampxeWp5Y2QyY1BKcw?oc=5",
+   "published": "2018-08-27T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "CardieX conducts successful trial of wearable blood pressure sensor - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOSnRaRjF2LXdxMjYwNVgyQnpmTmpYLVlXYkJmTFFGblZnemtxOGUyZDNLZTBNdU15YklZZXlyMmJpNUdYWlZJTHdHYUxhS3NaWXE1aFhBZEppYlpTUjR0Vlp5bXVyZTFCTm5aZGppSGgwWFY4T2JYVldVbzF6SW0tQTVXemZkdG9FYW9qVjlDZWJpaU9QRVNiQTdoOEtsQQ?oc=5",
+   "published": "2025-10-30T14:18:30+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "ArchTIS Lands US/EU Military Alliance Contract for NC Protect, Secures A$8M Facility - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOM0pUd0stZFFBTlZLRGFSaUZiNHZ2Y2ZvTUs5MVhZaC1PUElxc0hXWllobEJLT292Y3U5WW5GV2FvbFQwNHFmdDhPMk9XTGpOTk9BdElCQ3RXX2lQN1dJV0t6UXh5cDFPTEpVRTBHRlAxbWw2ZmtkYkI3Z2xCN2ZMR0E2ZGFJakN0UUJ3dnZqOWxuWkJVek5NWi1SWDdjbG9IdGdLUDB4bGRTOW9nVG5fMnhYaXprMkk?oc=5",
+   "published": "2026-02-25T08:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Compumedics eyes US market with Somfit sleep diagnostic device - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcFZ3T1k1SkphMk1WR2JTS0xXOE1FeU40UUc3cnRyRHpqTEVveDhYVXRHVklucnNXT1ZsajNDX21WbUJtOWNDV25yc1lqRU14WWxyV0p4U2VLRG1fdG0wNzJHZVJsRldDOS1wd2xWWmRlV1NqMmxHVHM5cVF3VXhQd1lUeWJMRl9ad0U5RUdDREtlbDhk?oc=5",
+   "published": "2023-12-04T08:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Aurora Labs and Mayman Aerospace collaborate on 3D-printed turbines and propulsion systems for US market - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQc3phbmNtRzJmblNTemlpRHhQVDdRQ3k2MVdZTzV4Z2xqTW5IaXh5WE40aXItU3VGaGJGNkt3Zy10TDlTX2gxOWZYOGt0QjhSVjFkLW5PbDZvbmNndlFock91THVobTRwbDF4S3A4THFGdHZlOWFGbmJGR3puU3ZMMlBUQjJyNWRlRGVjRWVUaWswVmVFZktHSUVlM2V0S1luX3c?oc=5",
    "published": "2025-05-28T07:00:00+00:00",
    "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Icetana Extends SoftBank Robotics Distribution Partnership into Americas - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZEJDSVRWZ2Z4SU51MmhxVTlSa0JmMWRkNTJHSFl2ZXh4VXgzNVhXSkMwM2hqV3RfWmZpMDFWWjZld3V0QkdadnU3QS1jVWQ5cDRKYktVY09ZQ2t6S2ZaOVhBYlhLVG9POWJJc1QtZ2VMeGN1dDdzSW5pb3h4U0ZKYlZjLW5odV83YTI1bDY4bUhjeGlxa3NaSkpIWThNd0J1Vi1QMkVfRmw?oc=5",
+   "published": "2026-06-11T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "CurveBeam AI Secures Regulatory Clearance for Bone Density Technology - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPejZEaEZaMW9zRGxSQldmN18zQ1JkUG5pejZuRTZuMG1aV2dGLUI5Y3FyOUJfSDNMejYxbmNvd0FXWnJ6TzlKLV9RdGthMzF0VHlUeGdKQm9lX0M0R0dlenRKaG5adTNKWXJzaUlfYzNIX2RRY2xrNFBnYzVBSFdqWjlhd3ZVdnFxRTZPU1B4R2JQa2FZRzVJUm4ydE1Ebk5iRHlNQQ?oc=5",
+   "published": "2026-09-14T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Scout Security reels in industry giant Prosegur to extend access to global market - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNWt6UUpuaDItQUxsSUxkM3ROdXlZbWZLOXV5UTdGUTZ3eGZqUWdNUWw1SjNOSVdIS1A4WHVnclI1Y0wwR1U0U1IyblhTQkpCRTFQU0M5dHdkSm1YRUVEYks1VUU3RFFkcl9NSk1GN1RFZnVBTXJzWUJ6NXJkRTBFalZmQ1lYdXpHSHcwU1Z0bFJ3dFJoSnlMMmR1S3ZjaFVF?oc=5",
+   "published": "2025-10-30T17:24:29+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Security Matters announces $518m merger with Lionheart III Corp and Nasdaq listing - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSHhzcmNldzE5N2dUVzA2a1NuODIyb1FNRTRfOGR1Vm1OclB6bmJpaERxa0p2N2JseHdzcWNhRk5qeUc2MnFuaGx5VWttYXJXVlpDelVHWHhMTm5STFlCQjI0RzkydW13Y3dwdXNCYUZrSmpzUG1hLUdQUkF3RzZjVElfdExQWjduVHREQmNOQTR4OUsyRThvdEtnQWZpc3l0dnc?oc=5",
+   "published": "2025-10-30T15:44:37+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Spirit Technology Solutions boosts cyber security capabilities with $34.6m InfoTrust acquisition - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObFBlRzg4WXk0ZUdMdGh5SGttQzdXdDVHSkxqc09XdjFtVHJ4MEp2ejlvc1lNWnl6VHZZR3IzcEVMVzV4N20xdUotb1BfeTh6NkpRX1llSWVJVV9qdm9PNWlmQXVYX3BrRDVfcm1kdmhuSUpFc1l2SW5rc2N5WWd6OXh5RlJuNG5CZ3hrRC1jMGxSb2RmN0JJZzJpd3NfcXB1UHlDdDRkUQ?oc=5",
+   "published": "2025-10-30T16:55:15+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Dubber and Telstra to scale cloud call recording and AI platform - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPMW93UHpqX1JmMXB5ZWJKbndiSHNtLS1MWW1VUURkVmRuMGhXSU1pUjRRQl95ZEVyMGRWNWdrWXRSZFR4SWFLNlBuUDBBU0tOYnp2THotYUtnQjFYVzFQenZNemVvc1A2cm0tTWh6RXNoLVdiZ3ZJWFU5SnI1RDhfSHRVRVM4dlUtRFRqLWpfNA?oc=5",
+   "published": "2020-02-03T08:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Skyfii secures Nando’s Australia as new client for its IO platform - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNaGZNWlBhbHcyV3NnaXNmOWFsa3JHTlFzaXJXbWlIV2c4ZmJFSE1QQUd0WEwybVVYbzE3anNxaEF5OXZSUHBIUzU2NFY2NzJCRVFHOEhYbEJMVXdZcmp5MVphcWdvUWdra1gzRnNtLS1ER2JtS3N5S1R5VHdkMDZkNnNPTXUtQQ?oc=5",
+   "published": "2018-06-19T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "4DS Memory achieves new write speed milestone on Fourth Platform Lot - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWHVJeGtvdDNaVXVzZkY0TmdTSjIydEpSelJ0cDRaMGtoaDRXaHl1OTNkNXNpeS1rcHp2bG9jenVjdW9yMGk3MHZha2RndkVQMlVHcWpNcWI5cU1fNy11V1g1d24yYm4xRXVWOXRybEVWRU5YZ3N3WkR3ZTBlYXJNMTdfTjhmXzhHOWgzYXJtQ3RZQzg?oc=5",
+   "published": "2024-02-05T08:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Shekel Brainweigh leads autonomous shopping transition with AI-powered smart coolers - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMWZ5S0ozbFd4alY2WkpNeG1kWU5MTHNRX3JDcTIzOWJmdkJsZ1BFQ0FBb0lBMlJBakdIRV9xZHVwbWxCU090cUxnQ1M3TV8waTBJZnpuaTktcTFZNlF1NkpZbERJQ1NKeHQxcW1RSDBJT2V3aEc5RGhZNUZnWEQycFBFOFYyaktBdGxTaWJjc20yd1g3bXY0SnJzcHBxY2U2MUR6S052TlVFZw?oc=5",
+   "published": "2022-05-31T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Elsight Aims for Profitability after Achieving Record Revenue In First Half of FY25 - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdlVJWXYxME1wT29xb0R3Tjh5WWlhQkZLWm5JTVlETDBGRk5yeVBfQ0haQUNYX1F1aWFMQmZXQzVVaEtxUUVsRWx5VDEzTXBPUWFOZFBoamh4UHd4XzBLY1lHNmNJTzRKRnF1d00yeGtQdlpPUEJrZm5NbkdNNmoweFhPMkxaTWF0VlF4N0F3?oc=5",
+   "published": "2025-07-21T07:00:00+00:00",
+   "outlet": "smallcaps.com.au",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
    "edition": "AU",
@@ -1815,9 +2166,99 @@
    "via": "google_news"
   },
   {
+   "title": "Daily Special: IVE Group, IperionX, Emyria, CONNEQT Health, Terrain Minerals - Sharecafe",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8wUjFwUndmOThsdWI4UGJtYmVlTnJDcVgwdk1qZDhyLVRIY0lCRGVMbUJwRlpKa1F4TDR0T0hLRmhjME42NGFIYk5zM2hKM1RCWkxOUDVDSUdBbExfaVE?oc=5",
+   "published": "2024-12-23T03:15:00+00:00",
+   "outlet": "Sharecafe",
+   "outlet_url": "https://www.sharecafe.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
    "title": "Elsight Validates Halo Platform with US$2m Follow-On Order as BVLOS Tailwinds Continue - Small Caps",
    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOem1UdGVxTFFKWTVDaTZXd18yaEpBdnhoVTNFNmtGVHdSQ0NpX0t0NmdEQ0M4R3BDNUZNT0hmcE4wRGhuY2tmaHpPemY3WFVaRjJxN2RfcExmVDJnOWpySWhQbVY0NFhSRFRIVU1RcGhwa2lBTkQzOC1qS2Vwd1BkVl9zTWl2NkYxUVQ3X2JmWW1CMmVHNC1INVFuYXVDbzgyRkVheUFRZDdJUHl3bWlaNDhDMUE?oc=5",
    "published": "2026-05-28T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Evening Wrap: ASX 200 sinks in Commodapocalypse – copper, iron ore and rare earths stocks hammered - Market Index",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVG5UYi1ITnNHWGNYTTNPUnl3dUNaMDYtdVVOWlV5SWMwZlppMnFaY0lZQTlXS2p3XzJBM1k3RXl5U3lFLS1OdVpiLUgtdEFOMWw0NEVpd1pnWnJsNEhKYXVuMThJYXkzOTgxWlJXY2Utb2ZzZTVvTk1mbi1VQWU5bEoyTm40X3dPQS1zZVVITTJmeDBYR0FFWlA3bjgxS2dwWUdnTW0wNk54M28?oc=5",
+   "published": "2026-11-17T06:31:42+00:00",
+   "outlet": "Market Index",
+   "outlet_url": "https://www.marketindex.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Calix Partners with Perdaman to Develop Hydrogen Supply for Proposed Zesty Demo Plant - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRnVaU3FnZUoteUlYZ2pWeTJsQjdBMFlUN0F4T2thdk9SY0dmcmt2OHVqYVUtXzUwZVo4alRScXBWOWs0bkd1blNhZFhya0RITGF0dHdGR3o4dG14QXlZeVRfdnlSdHlISXViYkN2dW5PVlIzdVpjRmNYMjBXTDFyZnVsN01QQUl5TV9JeS1oWEVXNVN5MHlCX0Y2SkNXck5mSkZFTXF5UUFTT0UxSWpiem5uajZuTmR2X1E?oc=5",
+   "published": "2026-08-26T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "FBR builds first outdoor home using Hadrian X robot - smallcaps.com.au",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQYkxQSmZDUHZBT0I2cTFGbG9ZMkktNjZxY3pxNmJSXzJMRUM1eFNWNmg2bmM4Y3NmUVhLT19WVHpkd0ZnOUhaVUVrcTNSUGRNQXBSNG1XNHFMWTFBLVU5YUFyNGtxMW1lZjkyNWt1QlZySzFGNkJSWnAtLVZFNXFpZ0JZaXBYSHRsQWFzcw?oc=5",
+   "published": "2025-10-30T14:51:47+00:00",
+   "outlet": "smallcaps.com.au",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Nuix Reports Strong 1H26 with Neo Growth and Linkurious Acquisition - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVhmMzVSYmhKUU1mWVpwZmlBVkxYZm1HM2k5VzFMRl8wMkJCQTdlcnEwR3l0XzZwemlsc184WGVhN3pKSEZSaUdLYktfNlMwS1JJZlF5TTdpYWo4OW1VMy04bm42S0NFOFloNnRDMkdQVFROWnZ0QkdTNnNfangwZGtDUURGRUJ1elZhaGNBbl81TjI2c3lXdEhXVkQ3VlROM1E?oc=5",
+   "published": "2026-02-22T08:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Zimi Signs Exclusive Three-Year Distribution Agreement with Directed Electronics - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWUVWYWtESGtBSTM5UmtiYVI1U21jalloN1lvSHAzd0Vrb2ROa19rZUxWVlJuem5JWGw5WXBuV1phTGY3YzU0Ti1UUmFpVW9ESUlGd1lfSXI4cDhkVUdXeUp3SExCdUhvYlc1RlR5RWtBR1V4dExYT19tY3ZkWVp6dXctUDVqdGFLei1wYVc2cV80Q2REVXQyY1dkZmt3dTVSRWVJbGI1ZWxqQnphOFpnZ2FzZw?oc=5",
+   "published": "2026-09-23T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "InteliCare to Enter New Sector with Warrigal Care Contract for 65 Retirement Villas - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWHZOSVJOWjcxUzdYNWRubVRLQmJLNjZVTHYyTDUtMkw1SnJzRVB1ZzRLTEtKR3JRR1pReHFWeE9zS1BYNE9uWWtUR2hoVHUybW9sdGQtakE2elBZelhMWWROUjBNcGpVSzM5VXRPOXF3UjFxZFA2T3RINFRRVXFyZkllclJ2d1BDcE5RdWFkYjNTVmJqS1U5Y1haQXdyRG9ZN0hFcVBwM2tqSjd5?oc=5",
+   "published": "2026-04-22T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Enlitic Adds Southwest Medical Imaging Contract to Growing Ensight Subscription Portfolio - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcW13NlVEOTVtUU1aMlFqN1RBM3FZNHpYSERKX0NVSHZFSUNhZ181dDZmYWxVRG1hNWJ1QjZUZ0ZUYUpHZjAwbEJKQ2hKSm4xdE5wMGpIWC1MaVdkaHZoS2RGM3FQNngyNUcyYzllWlNuSFZXMVNGNDA3NUdadm9BY1ZYVWRqZXRfNU5SenA4S3VjQTdZQU1MTEVXcnN5R0Z1V3lBSUc4SnpmUDI0OThxR3h3bTdLaVo3eFZmUjY1UQ?oc=5",
+   "published": "2026-10-27T07:00:00+00:00",
+   "outlet": "Small Caps",
+   "outlet_url": "https://smallcaps.com.au",
+   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
+   "edition": "AU",
+   "via": "google_news"
+  },
+  {
+   "title": "Atturra Maintains Earnings Guidance Despite Revenue Falling Short - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdHB6OUg3NDh3QWJDLUt3Z2RyVUlRb0Z4c210TWtUV0k2Qy1NdzdIMVhPZW1SSW5rbXhPN0pXNW1tbTNIOTVySzcwcDFkeGRhcGhNWEM3X0phSHVDdFNzU3Q2UGZCT1lrNnpJOWJfTDZ4SktkclZpN2VZUjRmdnllenNiOHhtRDlmLWZfSlBIbi1qREQzVVVlUUV4OXlzbUE?oc=5",
+   "published": "2026-07-21T07:00:00+00:00",
    "outlet": "Small Caps",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
@@ -1835,9 +2276,9 @@
    "via": "google_news"
   },
   {
-   "title": "Credit Clear appoints ARMA Group co-founder as new CEO - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQUGwyWlhORTlXNl84a2k1UlBaelY1OExheGxMd2VlaUkyeXp1OWdiTlAtSTY4QXpORVRYMlNmTlo0VmhFWDR3VWwwSkF3cFhJOXVwNFBMa2ZMemlPdVVfMVlYWklNbVRieWFCTnlTTlE1T2xwX2g3V0dveWM4UHBZYkxwbWM0NW5MRVlGTQ?oc=5",
-   "published": "2022-02-09T08:00:00+00:00",
+   "title": "Peppermint Innovation Launches Direct Payments Integration with InstaPay - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNU1pqSzc5WWVUQ0ZJYlM5VzhaZXhBTDdUVDVmaTY3Mlp5Y2F5VWJPWm5neW1iQmdybFRmbThiaDFKWk5mSnVKR3EzdUtpc1dYWm1sZTJsTXd3RV9jY2hZZWRBdjhTZF9mLUtzbFBPdjBRZjJzYU9tUUFwVG8yblhhY0J6eVZlOGV4YW5OcFlSRFk0ajVFM3VaRGtGQ1FCNEdGRUE?oc=5",
+   "published": "2025-08-13T07:00:00+00:00",
    "outlet": "Small Caps",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
@@ -1845,59 +2286,9 @@
    "via": "google_news"
   },
   {
-   "title": "SKS Technologies awarded $100m electrical infrastructure contract for Melbourne data centre - smallcaps.com.au",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZnBsMTBncXhQd2hyYkpGckU2aDg2NXh3TVItOVFzb1loVXQ0Ykw0UHhHVWNYQmhMRDdKRnMzUHNTYXJqQmlhcjR6Nm1VZk1NWTZkR28ybFhhREVJczg5OTZYNVRVX2Y2MmljMjZibmVWczhNT2p6cEhBdjNURUpjTkRPeTBISVhwMlBXRk5saXBLUk54enlyWW1nZ3Zyd0hRRUJmUkxCbVQwUQ?oc=5",
-   "published": "2025-10-30T17:57:35+00:00",
-   "outlet": "smallcaps.com.au",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Credit Clear to acquire ARMA Group Holdings in $46m deal - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdnhaODlEOE5GSFFrV0VrTzNJUmpCaUc1VG9ZUTR5b2xDRFBfNUxGWW1EcjkwM21PQ2VHUU16bUJTZllTd1ctemxqNXkwVV9TRUs5Rzhid2trSERZMlV1LVYwVFBTSGxHWXpFVktwMEF1bVJiZnRSLTBzbXU1UlZMSVVtTno?oc=5",
-   "published": "2025-10-30T16:48:53+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Closing Bell: CSL investors lose lunch (and arvo tea) as energy stocks bolster ASX - Stockhead",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbF9aWTBtZFM5Q0NNRlEyOG1uc3ItZ1JpeERTdy1Fb0hsbXdqVUdrZ2Q4dExKQVJFMWRrQlNIWE9uaEdrT21KS0JFMjBNLWxmMVUyXzI1bWtoMERHeVlPZ3htaVB2UTJ6aDd6SG9mdFBsUUtGMG0telRSOV9oNURUcTVMMHl0VFdjUzUxYUV5MDhtaFVteklLXzFLa0hDSFFtNGhtZVNILUhSVThoQk9TOVZIUUZwYm8?oc=5",
-   "published": "2026-05-11T07:00:00+00:00",
-   "outlet": "Stockhead",
-   "outlet_url": "https://stockhead.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Micro-X Wins US Homeland Security Extension for Miniaturised Baggage Scanner - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVUYxMm8xcmJRNFdYaFlBWEFBMEFvNGFockRBRmdQeVpBM091ZWc0RnB3SFB5UGJaenlVM2FmR0FfMGlGX05GT050eDBOTm1MX05SaDE3TkM2NFl5ZFVXVk5nOEZxbVJJLXJGSE95Z19TbmlWNW9SOVN2Mzd4RlJCc0hXa3VmMGlWZGhaWjFJNjdqTjBjSlNDQktvM3VmYnZKYjlPNUpaV0hxOFBUU0E?oc=5",
-   "published": "2026-09-27T07:00:00+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "NOVONIX Delivers Panasonic C-Sample As Battery-Grade Qualification Advances - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZjdCZW5fWlc0clVHYTBIS1RBMUczV1FXajZCay1qMHRUejVxVEVkSUJNRXlRTi1WYWZJN0RJN3pWc3dlQjVWVWgtOEpNZDM0THRuWUEzQ0dXTUt2bHNrdE5Ock5kem54VVNLV3B4VHpWTHNCMGk2U2NGdERzNnlFcW96Yi1MTk93cUhTT3d0SUdnd3JlYjViY3BoOWZPTzEwM3RZaEROczI3RVdY?oc=5",
-   "published": "2026-06-10T07:00:00+00:00",
-   "outlet": "Small Caps",
-   "outlet_url": "https://smallcaps.com.au",
-   "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
-   "edition": "AU",
-   "via": "google_news"
-  },
-  {
-   "title": "Objective Corporation Loses DoD Support Agreement after 25-Year Partnership - Small Caps",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNM3JyWFBPYVV6dmxKWmZ2MlJ0eFQzdWppM1o3UU83WU9kS2ZjOFg0cG9SOEpTRzlTZDE3LXhJc0sydDdhNmVwY2d0SWgweDBQdXhrbTh4ODFzQTI5ZjE5Y2lIT1ZWZzJZQ2NTbFFiZ0VJQ1dNbC1SMDBkdmdOZlhyd1laQ0RmN0JVSE5VZFlJUkhkSHFnb0VpSXUycm91T3RiLUlMWkhfbmh3cnpG?oc=5",
-   "published": "2026-06-30T07:00:00+00:00",
+   "title": "Pentanet and Nvidia strengthen alliance with addition of New Zealand to GeForce NOW territory - Small Caps",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQWFxRGVOdHhZdHJqdnZZY21uZzZpc05ENVRvXy1yM3J0YVp2TXVYSWdHc2NRS3lYSWRKbXVJM0hjNjFYd1ZtaHpYM1hwUjVqREQ1U0xRTnU0OTJLczZSN3RCX3paeVJpa2xHVFhOeTZYTVo5cUoybDM0cUhOTTZ2RXJFZ0tRdWV4UW84XzZ6dTFRRzBURlRyVHZKV1QtSzh4NGlNUg?oc=5",
+   "published": "2024-03-15T07:00:00+00:00",
    "outlet": "Small Caps",
    "outlet_url": "https://smallcaps.com.au",
    "query": "\"Ion Video\" (site:stockhead.com.au OR site:fool.com.au OR site:marketindex.com.au OR site:livewiremarkets.com OR site:proactiveinvestors.com.au OR site:smallcaps.com.au OR site:sharecafe.com.au OR site:themarketonline.com.au)",
@@ -1905,7 +2296,7 @@
    "via": "google_news"
   }
  ],
- "google_links_resolved": 21,
+ "google_links_resolved": 22,
  "news_bing": [
   {
    "title": "Ion Video Notifies Issue of Unquoted Options",
@@ -1920,18 +2311,18 @@
    "error_terms": []
   },
   {
-   "title": "ION cuts the computing, storage and AI cost of video edits by 99% in AWS-funded proof of concept",
-   "link": "https://itwire.com/business-it-news/business-intelligence/ion-cuts-the-computing-storage-and-ai-cost-of-video-edits-by-99-in-aws-funded-proof-of-concept",
-   "published": "2026-11-18T06:22:00+00:00",
-   "snippet": "ION Video’s technology has used 99% less computing time, storage and AI cost than two off-the-shelf AI agents including Google Gemini in a proof of concept to test its ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "ION Video Drastically Cuts Editing Costs in Amazon-Funded Technology PoC Testing",
    "link": "https://smallcaps.com.au/article/ion-video-drastically-cuts-editing-costs-in-amazon-funded-technology-poc-testing",
    "published": "2026-11-16T19:43:00+00:00",
    "snippet": "ION Video cut key editing resource use by more than 99% in an AWS-funded test, editing clips around 40 times faster than AI rivals.",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION cuts the computing, storage and AI cost of video edits by 99% in AWS-funded proof of concept",
+   "link": "https://itwire.com/business-it-news/business-intelligence/ion-cuts-the-computing-storage-and-ai-cost-of-video-edits-by-99-in-aws-funded-proof-of-concept",
+   "published": "2026-11-18T06:22:00+00:00",
+   "snippet": "ION Video’s technology has used 99% less computing time, storage and AI cost than two off-the-shelf AI agents including Google Gemini in a proof of concept to test its ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1952,18 +2343,18 @@
    "via": "bing_news"
   },
   {
-   "title": "ION Video clears debt after converting $2.65 million in notes",
-   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
-   "published": "2026-05-19T04:45:00+00:00",
-   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
-   "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
    "title": "ION Video resets strategy, cuts liabilities and pushes towards AI commercialisation",
    "link": "https://au.finance.yahoo.com/news/ion-video-resets-strategy-cuts-001900174.html",
    "published": "2026-02-26T16:19:00+00:00",
    "snippet": "Ion Video Ltd (ASX:IOV) has detailed a sweeping strategic reset in its CEO half-year report, repositioning the company as enabling infrastructure that makes video programmable for artificial ...",
+   "query": "\"ION Video\"",
+   "via": "bing_news"
+  },
+  {
+   "title": "ION Video clears debt after converting $2.65 million in notes",
+   "link": "https://www.proactiveinvestors.com.au/companies/news/1092486/ion-video-clears-debt-after-converting-2-65-million-in-notes-1092486.html",
+   "published": "2026-05-19T04:45:00+00:00",
+   "snippet": "Ion Video Ltd (ASX:IOV) has eliminated all outstanding debt after exercising its right to convert the remaining $2.65 million in convertible notes into fully paid shares. The conversion, completed at ...",
    "query": "\"ION Video\"",
    "via": "bing_news"
   },
@@ -1989,14 +2380,6 @@
    "published": "2026-11-13T06:48:00+00:00",
    "snippet": "ION Video Limited (ASX:IOV) announced a further strategic investment on 11 November 2026, extending a technology-validation program focused on data-centre efficiency and video delivery. The AUD 1 mn ...",
    "query": "\"ION Video\"",
-   "via": "bing_news"
-  },
-  {
-   "title": "Ion Video Ltd (ASX:IOV)",
-   "link": "https://kalkinemedia.com/au/companies/asx-iov",
-   "published": "2026-09-17T17:00:00+00:00",
-   "snippet": "Suite 202, 234 George Street, Welcome to Kalkine Media Pty Ltd. website. Your website access and usage is governed by the applicable Terms of Use & Privacy Policy ...",
-   "query": "\"ASX: IOV\"",
    "via": "bing_news"
   },
   {
@@ -2092,8 +2475,8 @@
    "title": "Ion Video Ltd (ASX:IOV) Share Price - Market Index",
    "snippets": [
     "Sound Commodities Iron Ore Crude Oil Gold Silver Copper Lithium Uranium Popular Pages List of ASX Companies Highest Dividend Yield Upcoming Dividends Broker Consensus ASX Announcements Director Transactions ASX Sectors ASX ETFs ASX Short Sale Data Cboe Funds Australian Dollar Plans & Portfolios ASX Top 5 Portfolio Stock Scores Free & Supporter Plans Ion Video Ltd (IOV) HALTED SUSPENDED ___ : ___ ·",
-    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 64 of 256 ASX RANK 936 of 2,359 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
-    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +179.84% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 936 of 2,359 Sector Rank 64 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
+    "). More about Cboe Live pricing. OK, got it 0.00 0.00 ( 0.00 ) VOLUME DIV YIELD PE RATIO 1 YR RETURN 52 WEEK RANGE 1 YR RETURN Key Information SECTOR RANK 64 of 256 ASX RANK 937 of 2,359 Overview Financials Stock Scores NEW News Announcements Overview Financials Stock Scores NEW News Announcements IOV ASX Chart Snapshot Ion Video Ltd (IOV, formerly Linius Technologies Limited) is into technology b",
+    "1 Week 1 Month 2026 YTD 1 Year vs Sector (1yr) - vs ASX 200 (1yr) +179.74% Size Market Cap Excludes mandatory escrowed shares and foreign shares. ASX Rank 937 of 2,359 Sector Rank 64 of 256 Key Fundamentals Shares Issued Sector Technology Similar Companies - EPS -$0.051 DPS $0.00 Book Value Per Share $0.006 Broker Consensus IOV is not covered by a major broker, or data from most recent compilation",
     " Holder Notices Company Administration Non-Procedural Admission to Official List AGMs ASX Queries Capital Raises & Escrow Director Transactions Share Buy-Backs Trading Halts Price Sensitive only << < 1 2 3 4 5 > >> Corporate Overview Corporate Details Head Office Melbourne VIC 3000 Website www.ion.video Registry Automic Group Auditor William Buck Date Listed 26 Jul 2011 Upcoming Calendar (Forecast",
     "o the ASX within 5 business days. See Director Transactions for all ASX companies. Date Director Type Amount Price Value Notes 14/09/26 Anthony Baker Sell +1,000,000 $0.395 ($395,000) As advised by the company 14/09/26 Brent Jones Sell +1,000,000 $0.395 ($395,000) As advised by the company 03/08/26 Brent Jones Issued 186,666 $0.40 $74,666 Exercise of options 03/08/26 Brent Jones Exercise 186,666 $",
     " $0.365 $64,360 Off-market transfer 21/05/26 Anthony Baker Exercise 1,127,419 $1.22 $1,374,622 Conversion of convertible notes 21/05/26 Anthony Baker Buy +13,746,221 $0.10 $1,374,622 Conversion of convertible notes 21/05/26 Brent Jones Transfer 246,000 $0.365 $89,790 Off-market transfer 21/05/26 Brent Jones Buy +11,586,677 $0.153 $1,768,308 Conversion of convertible notes 21/05/26 Brent Jones Exer",
